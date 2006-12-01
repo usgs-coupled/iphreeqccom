@@ -12,7 +12,7 @@ import "ocidl.idl";
 	version(1.0),
 	helpstring("PhreeqcCOM 1.0 Type Library")
 ]
-library PhreeqcCOMLib
+library PhreeqcCOM
 {
 	importlib("stdole2.tlb");
 };
