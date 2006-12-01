@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PhreeqcCOM", "PhreeqcCOM.vcproj", "{0C4F08B7-1757-4858-95E5-AA85A24BA6A6}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PhreeqcCOMPS", "PhreeqcCOMPS.vcproj", "{03D8A390-33E3-46F2-9A71-EBDFF1FE2BF1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0C4F08B7-1757-4858-95E5-AA85A24BA6A6} = {0C4F08B7-1757-4858-95E5-AA85A24BA6A6}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0C4F08B7-1757-4858-95E5-AA85A24BA6A6}.Debug|Win32.ActiveCfg = Debug|Win32
+		{0C4F08B7-1757-4858-95E5-AA85A24BA6A6}.Debug|Win32.Build.0 = Debug|Win32
+		{0C4F08B7-1757-4858-95E5-AA85A24BA6A6}.Release|Win32.ActiveCfg = Release|Win32
+		{0C4F08B7-1757-4858-95E5-AA85A24BA6A6}.Release|Win32.Build.0 = Release|Win32
+		{03D8A390-33E3-46F2-9A71-EBDFF1FE2BF1}.Debug|Win32.ActiveCfg = Debug|Win32
+		{03D8A390-33E3-46F2-9A71-EBDFF1FE2BF1}.Release|Win32.ActiveCfg = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,18 @@
+// PhreeqcCOM.idl : IDL source for PhreeqcCOM
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (PhreeqcCOM.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	uuid(0B8469C4-8F3E-4FC4-B8F6-FA782292735A),
+	version(1.0),
+	helpstring("PhreeqcCOM 1.0 Type Library")
+]
+library PhreeqcCOMLib
+{
+	importlib("stdole2.tlb");
+};
