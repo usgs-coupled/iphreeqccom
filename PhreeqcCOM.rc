@@ -1,4 +1,4 @@
-//Microsoft Visual C++ generated resource script.
+// Microsoft Visual C++ generated resource script.
 //
 #include "resource.h"
 
@@ -12,27 +12,33 @@
 /////////////////////////////////////////////////////////////////////////////
 #undef APSTUDIO_READONLY_SYMBOLS
 
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
-LANGUAGE 9, 1
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
 #pragma code_page(1252)
+#endif //_WIN32
+
 #ifdef APSTUDIO_INVOKED
 /////////////////////////////////////////////////////////////////////////////
 //
 // TEXTINCLUDE
 //
 
-1 TEXTINCLUDE  
+1 TEXTINCLUDE 
 BEGIN
     "resource.h\0"
 END
 
-2 TEXTINCLUDE  
+2 TEXTINCLUDE 
 BEGIN
     "#include ""winres.h""\r\n"
     "\0"
 END
 
-3 TEXTINCLUDE  
+3 TEXTINCLUDE 
 BEGIN
     "1 TYPELIB ""PhreeqcCOM.tlb""\r\n"
     "\0"
@@ -40,7 +46,7 @@ END
 
 #endif    // APSTUDIO_INVOKED
 
-#ifndef _MAC
+
 /////////////////////////////////////////////////////////////////////////////
 //
 // Version
@@ -71,32 +77,37 @@ BEGIN
             VALUE "OriginalFilename", "PhreeqcCOM.dll"
             VALUE "ProductName", "TODO: <Product name>"
             VALUE "ProductVersion", "1.0.0.1"
-            VALUE "OLESelfRegister", ""
         END
     END
     BLOCK "VarFileInfo"
     BEGIN
-		VALUE "Translation", 0x0409, 1252
+        VALUE "Translation", 0x409, 1252
     END
 END
 
-#endif    // !_MAC
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// REGISTRY
+//
+
+IDR_PHREEQCCOM          REGISTRY                "PhreeqcCOM.rgs"
+IDR_PHREEQC             REGISTRY                "Phreeqc.rgs"
 
 /////////////////////////////////////////////////////////////////////////////
 //
 // String Table
 //
 
-STRINGTABLE  
+STRINGTABLE 
 BEGIN
-	IDS_PROJNAME					"PhreeqcCOM"
+    IDS_PROJNAME            "PhreeqcCOM"
 END
 
-IDR_PHREEQCCOM REGISTRY "PhreeqcCOM.rgs"
-////////////////////////////////////////////////////////////////////////////
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
 
 
-#endif
 
 #ifndef APSTUDIO_INVOKED
 /////////////////////////////////////////////////////////////////////////////
@@ -104,6 +115,7 @@ IDR_PHREEQCCOM REGISTRY "PhreeqcCOM.rgs"
 // Generated from the TEXTINCLUDE 3 resource.
 //
 1 TYPELIB "PhreeqcCOM.tlb"
+
 /////////////////////////////////////////////////////////////////////////////
 #endif    // not APSTUDIO_INVOKED
 
