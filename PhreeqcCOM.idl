@@ -7,6 +7,8 @@
 import "oaidl.idl";
 import "ocidl.idl";
 
+#include "HelpID.h"
+
 [
 	object,
 	uuid(9EFD3E9C-EF32-4F9F-BFE7-6880B5E168C2),
@@ -16,7 +18,7 @@ import "ocidl.idl";
 	pointer_default(unique)
 ]
 interface IPhreeqc : IDispatch{
-	[id(1), helpstring("method LoadDatabase")] HRESULT LoadDatabase([in] BSTR* filename, [out,retval] LONG* retval);
+	[id(1), helpstring("method LoadDatabase"), helpcontext(HID_LOADDATABASE)] HRESULT LoadDatabase([in] BSTR* FileName, [out,retval] LONG* RHS);
 	[propget, id(2), helpstring("property OutputOn")] HRESULT OutputOn([out, retval] VARIANT_BOOL* pVal);
 	[propput, id(2), helpstring("property OutputOn")] HRESULT OutputOn([in] VARIANT_BOOL newVal);
 	[propget, id(3), helpstring("property ErrorOn")] HRESULT ErrorOn([out, retval] VARIANT_BOOL* pVal);
@@ -29,8 +31,8 @@ interface IPhreeqc : IDispatch{
 	[propput, id(7), helpstring("property SelectedOutputOn")] HRESULT SelectedOutputOn([in] VARIANT_BOOL newVal);
 	[id(8), helpstring("method RunString")] HRESULT RunString([in] BSTR* input, [out,retval] LONG* retval);
 	[id(9), helpstring("method AccumulateLine")] HRESULT AccumulateLine([in] BSTR* line);
-	[propget, id(10), helpstring("property Cols")] HRESULT Cols([out, retval] LONG* pVal);
-	[propget, id(11), helpstring("property Rows")] HRESULT Rows([out, retval] LONG* pVal);
+	[propget, id(10), helpstring("property ColumnCount"), helpcontext(HID_COLUMNCOUNT)] HRESULT ColumnCount([out, retval] LONG* pVal);
+	[propget, id(11), helpstring("property RowCount"), helpcontext(HID_ROWCOUNT)] HRESULT RowCount([out, retval] LONG* pVal);
 	[propget, id(12), helpstring("property Lines")] HRESULT Lines([out, retval] BSTR* pVal);
 	[id(13), helpstring("method GetSelectedOutputArray")] HRESULT GetSelectedOutputArray([out,retval] VARIANT* retval);
 	[id(14), helpstring("method GetLastErrorString")] HRESULT GetLastErrorString([out,retval] BSTR* retval);
@@ -38,18 +40,23 @@ interface IPhreeqc : IDispatch{
 	[id(16), helpstring("method GetSelectedOutputRowCount")] HRESULT GetSelectedOutputRowCount([out,retval] LONG* retval);
 	[id(17), helpstring("method GetSelectedOutputValue")] HRESULT GetSelectedOutputValue([in] LONG row, [in] LONG col, [out,retval] VARIANT* retval);
 	[id(18), helpstring("method LoadDatabaseString")] HRESULT LoadDatabaseString([in] BSTR* input, [out,retval] LONG* retval);
+	[id(19), helpstring("method VarArgCount"), hidden, vararg] HRESULT VarArgCount([in] SAFEARRAY(VARIANT) psa, [out,retval] LONG* retval);
+	[id(20), helpstring("method RunOpt")] HRESULT RunOpt([in, optional] VARIANT* OutputOn, [in, optional] VARIANT* ErrorOn, [in, optional] VARIANT* LogOn, [in, optional] VARIANT* SelectedOutputOn, [out,retval] LONG* retval);
+	[id(21), helpstring("method ShowHelp")] HRESULT ShowHelp([in] LONG* id);
 };
 [
 	uuid(0B8469C4-8F3E-4FC4-B8F6-FA782292735A),
 	version(1.0),
-	helpstring("PhreeqcCOM 1.0 Type Library")
+	helpstring("PhreeqcCOM 1.0 Type Library"),
+	helpfile("PhreeqcCOM.chm"),
 ]
 library PhreeqcCOM
 {
 	importlib("stdole2.tlb");
 	[
 		uuid(6F59EA62-F726-4008-A61C-039ACB860F44),
-		helpstring("Phreeqc Class")
+		helpstring("Phreeqc Class"),
+		helpcontext(HID_PHREEQCCOM)
 	]
 	coclass Phreeqc
 	{
