@@ -24,7 +24,7 @@
 		<h2><a id="#example" name="#example">Example</a></h2><p>The example attempts to run the "ex1" input file and fails and displays the reason for failure (no database is loaded).</p><pre>
 <code>On Error Resume Next
 Set Phreeqc = CreateObject("PhreeqcCOM.Phreeqc")
-If (Phreeqc.RunFile("C:\Program Files\USGS\phreeqc-2.12.1\examples\ex1") <> 0) Then
+If (Phreeqc.RunFile("C:\Program Files\USGS\phreeqc-2.12.1\examples\ex1") &lt;&gt; 0) Then
     MsgBox Phreeqc.<b class="bterm">GetLastErrorString</b>()
 End If</code>
 		</pre><script type="text/javascript" language="JScript" src="ofvbanl.js"></script><span id="ofVBAISpan" class="ofvbaispan">
