@@ -1,0 +1,17 @@
+<html dir="ltr" xmlns:msxsl="urn:schemas-microsoft-com:xslt"><head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<META HTTP-EQUIV="assetid" CONTENT="HV05200484"><META NAME="lcid" CONTENT="1033">
+<title>Lines Property</title>
+<link rel="stylesheet" type="text/css" href="office10.css">
+<script type="text/javascript" language="Javascript" src="sExpCollapse.js"></script>
+<script type="text/javascript" language="JavaScript" src="inline.js"></script>
+</head>
+<body><h1>Lines Property</h1>
+<DIV class="ofvbanav"><span class="ofvbanavreuse" id="seealso" onclick="toggleList()" onkeypress="toggleList()"></span><span class="ofvbanavreuse" id="appliesto" onclick="toggleList()" onkeypress="toggleList()"></span><a class="ofvbanavex" href="#example"><span class="ofvbanavreuse" id="example"></span></a><span class="ofvbanavreuse" id="specifics" onclick="toggleList()" onkeypress="toggleList()"></span></DIV><p>Returns the accumlated text contained within the phreeqc objects input buffer. Read-only <b class="bterm">String</b>.</p>
+<h2><a id="#example" name="#example">Example</a></h2><p>This example loads some keyword input into the phreeqc object and displays the result.</p><pre>
+<code>set Phreeqc = CreateObject("PhreeqcCOM.Phreeqc")
+Phreeqc.AccumulateLine "SOLUTION 1"
+Phreeqc.AccumulateLine "END"
+MsgBox "The input to run is:" Phreeqc.<b class="bterm">Lines</b></code>
+		</pre><script type="text/javascript" language="JScript" src="ofvbanl.js"></script><span id="ofVBAISpan" class="ofvbaispan"><iframe id="ofVBAIFrame" frameborder="0" marginheight="0" marginwidth="4" scrolling="auto" width="100%" src="../links/proLines_l.htm"></iframe></span>
+</body></html>

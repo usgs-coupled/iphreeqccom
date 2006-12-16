@@ -1,0 +1,31 @@
+<html dir="ltr" xmlns:msxsl="urn:schemas-microsoft-com:xslt"><head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<META HTTP-EQUIV="assetid" CONTENT="HV05199071">
+<META NAME="lcid" CONTENT="1033">
+<title>GetLastErrorString Method</title><link rel="stylesheet" type="text/css" href="office10.css">
+<script type="text/javascript" language="Javascript" src="sExpCollapse.js"></script>
+<script type="text/javascript" language="JavaScript" src="inline.js"></script>
+</head>
+<body>
+<p id="ExpandAllLine" class="ExpFav">
+<!--
+<a href="#" onclick="ExpandAll()" onkeypress="ExpandAll()" class="DropDown">
+<img id="picHeader" border="0" src="../img/expandtri.gif" alt="Show All">
+<span id="ExpandAll">Show All</span>
+</a>
+-->
+</p>
+<h1>GetLastErrorString Method</h1>
+<DIV class="ofvbanav"><span class="ofvbanavreuse" id="seealso" onclick="toggleList()" onkeypress="toggleList()"></span><span class="ofvbanavreuse" id="appliesto" onclick="toggleList()" onkeypress="toggleList()"></span><a class="ofvbanavex" href="#example"><span class="ofvbanavreuse" id="example"></span></a><span class="ofvbanavreuse" id="specifics" onclick="toggleList()" onkeypress="toggleList()"></span></DIV><p>Returns a string containing any possible error messages that occured during the last invokation of the following methods: AccumulateLine, GetSelectedOutputValue, LoadDatabase, LoadDatabaseString, Run, RunFile, RunString.</p>
+			<p class="signature"><i>expression</i>.<b class="bterm">GetLastErrorString</b>()</p>
+		<p><i>expression   </i>   Required. An expression that returns a phreeqc object.</p><p><div id="ExpCol" class="collapsed" border="0"><div class="ind">
+		<!-- -->
+		</div></div>
+		<h2><a id="#example" name="#example">Example</a></h2><p>The example attempts to run the "ex1" input file and fails and displays the reason for failure (no database is loaded).</p><pre>
+<code>On Error Resume Next
+Set Phreeqc = CreateObject("PhreeqcCOM.Phreeqc")
+If (Phreeqc.RunFile("C:\Program Files\USGS\phreeqc-2.12.1\examples\ex1") <> 0) Then
+    MsgBox Phreeqc.<b class="bterm">GetLastErrorString</b>()
+End If</code>
+		</pre><script type="text/javascript" language="JScript" src="ofvbanl.js"></script><span id="ofVBAISpan" class="ofvbaispan">
+<iframe id="ofVBAIFrame" frameborder="0" marginheight="0" marginwidth="4" scrolling="auto" width="100%" src="../links/mthGetLastErrorString_l.htm"></iframe></span></body></html>

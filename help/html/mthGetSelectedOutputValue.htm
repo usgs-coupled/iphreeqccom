@@ -1,0 +1,41 @@
+<html dir="ltr" xmlns:msxsl="urn:schemas-microsoft-com:xslt"><head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<META HTTP-EQUIV="assetid" CONTENT="HV05199071">
+<META NAME="lcid" CONTENT="1033">
+<title>GetSelectedOutputValue Method</title><link rel="stylesheet" type="text/css" href="office10.css">
+<script type="text/javascript" language="Javascript" src="sExpCollapse.js"></script>
+<script type="text/javascript" language="JavaScript" src="inline.js"></script>
+</head>
+<body>
+<p id="ExpandAllLine" class="ExpFav">
+<!--
+<a href="#" onclick="ExpandAll()" onkeypress="ExpandAll()" class="DropDown">
+<img id="picHeader" border="0" src="../img/expandtri.gif" alt="Show All">
+<span id="ExpandAll">Show All</span>
+</a>
+-->
+</p>
+<h1>GetSelectedOutputValue Method</h1><DIV class="ofvbanav"><span class="ofvbanavreuse" id="seealso" onclick="toggleList()" onkeypress="toggleList()"></span><span class="ofvbanavreuse" id="appliesto" onclick="toggleList()" onkeypress="toggleList()"></span><a class="ofvbanavex" href="#example"><span class="ofvbanavreuse" id="example"></span></a><span class="ofvbanavreuse" id="specifics" onclick="toggleList()" onkeypress="toggleList()"></span></DIV><p>Loads a phreeqc database into the phreeqc object. Returns the number of errors encountered while loading the database.</p>
+			<p class="signature"><i>expression</i>.<b class="bterm">GetSelectedOutputValue</b>(<b class="bterm"><i>Row</i></b>, <b class="bterm"><i>Column</i></b>)</p>
+		<p><i>expression   </i>   Required. An expression that returns a phreeqc object.</p><p><b class="runinhead"><i>Row</i></b>   Required <b class="bterm">Long</b>.  Zero-based row index.</p><p><b class="runinhead"><i>Column</i></b>   Required <b class="bterm">Long</b>.  Zero-based column index.</p><div id="ExpCol" class="collapsed" border="0"><div class="ind">
+		<!-- -->
+		</div></div>
+		<h2><a id="#example" name="#example">Example</a></h2><p>This example runs the "ex2" input file and writes the selected output to stdout.</p><pre>
+<code>sPath = "C:\Program Files\USGS\phreeqc-2.12.1\"
+
+Set Phreeqc = CreateObject("PhreeqcCOM.Phreeqc")
+Phreeqc.LoadDatabase sPath & "phreeqc.dat"
+Phreeqc.RunFile sPath & "examples\ex2"
+
+For i = 0 To Phreeqc.RowCount - 1
+    For j = 0 To Phreeqc.ColumnCount - 1
+        If (IsObject(WScript.Stdout)) Then
+            WScript.Stdout.Write (Phreeqc.<b class="bterm">GetSelectedOutputValue</b>(i, j) & " ")
+        End If
+    Next
+    If (IsObject(WScript.Stdout)) Then
+        WScript.Stdout.WriteLine
+    End If
+Next</code>
+		</pre><script type="text/javascript" language="JScript" src="ofvbanl.js"></script><span id="ofVBAISpan" class="ofvbaispan">
+<iframe id="ofVBAIFrame" frameborder="0" marginheight="0" marginwidth="4" scrolling="auto" width="100%" src="../links/mthLoadDatabase_l.htm"></iframe></span></body></html>

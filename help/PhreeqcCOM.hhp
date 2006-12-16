@@ -1,0 +1,75 @@
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=PhreeqcCOM.chm
+Contents file=contents.hhc
+Default topic=html\objPhreeqc.htm
+Display compile progress=No
+Language=0x409 English (United States)
+Title=Phreeqc COM Reference
+
+
+[FILES]
+links\ofvbareuse.txt
+html\inline.js
+html\sExpCollapse.js
+html\objPhreeqc.htm
+links\objPhreeqc_l.htm
+html\mthLoadDatabase.htm
+links\mthLoadDatabase_l.htm
+html\proOutputOn.htm
+links\proOutputOn_l.htm
+html\proErrorOn.htm
+links\proErrorOn_l.htm
+html\proLogOn.htm
+links\proLogOn_l.htm
+html\mthRunFile.htm
+links\mthRunFile_l.htm
+html\mthRun.htm
+links\mthRun_l.htm
+html\proSelectedOutputOn.htm
+links\proSelectedOutputOn_l.htm
+html\mthRunString.htm
+links\mthRunString_l.htm
+html\mthAccumulateLine.htm
+links\mthAccumulateLine_l.htm
+html\proColumnCount.htm
+links\proColumnCount_l.htm
+html\proRowCount.htm
+links\proRowCount_l.htm
+html\proLines.htm
+links\proLines_l.htm
+html\mthLoadDatabaseString.htm
+links\mthLoadDatabaseString_l.htm
+html\mthGetLastErrorString.htm
+links\mthGetLastErrorString_l.htm
+html\mthGetSelectedOutputArray.htm
+links\mthGetSelectedOutputArray_l.htm
+html\mthGetSelectedOutputValue.htm
+links\mthGetSelectedOutputValue_l.htm
+
+[ALIAS]
+HID_ACCUMULATELINE = html\mthAccumulateLine.htm
+HID_COLUMNCOUNT = html\proColumnCount.htm
+HID_ERRORON = html\proErrorOn.htm
+HID_GETLASTERRORSTRING=html\mthGetLastErrorString.htm
+HID_GETSELECTEDOUTPUTARRAY=html\mthGetSelectedOutputArray.htm
+HID_GETSELECTEDOUTPUTCOLUMNCOUNT = html\objPhreeqc.htm
+HID_GETSELECTEDOUTPUTROWCOUNT = html\objPhreeqc.htm
+HID_GETSELECTEDOUTPUTVALUE=html\mthGetSelectedOutputValue.htm
+HID_LINES = html\proLines.htm
+HID_LOADDATABASE = html\mthLoadDatabase.htm
+HID_LOADDATABASESTRING = html\mthLoadDatabaseString.htm
+HID_LOGON = html\proLogOn.htm
+HID_OUTPUTON = html\proOutputOn.htm
+HID_PHREEQCCOM = html\objPhreeqc.htm
+HID_ROWCOUNT = html\proRowCount.htm
+HID_RUN = html\mthRun.htm
+HID_RUNFILE = html\mthRunFile.htm
+HID_RUNSTRING = html\mthRunString.htm
+HID_SELECTEDOUTPUTON = html\proSelectedOutputOn.htm
+
+[MAP]
+#include "..\HelpID.h"
+
+[INFOTYPES]
+
