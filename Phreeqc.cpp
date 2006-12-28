@@ -34,7 +34,7 @@ STDMETHODIMP CPhreeqc::LoadDatabase(BSTR* filename, LONG* retval)
 		return E_POINTER;
 	}
 
-	_bstr_t f(*filename, false);
+	_bstr_t f(*filename, true);
 
 	if (*retval = ::LoadDatabase(f))
 	{
@@ -147,7 +147,7 @@ STDMETHODIMP CPhreeqc::RunFile(BSTR* filename, LONG* retval)
 		return E_POINTER;
 	}
 
-	_bstr_t f(*filename, false);
+	_bstr_t f(*filename, true);
 
 	if (*retval = ::RunFile(f, this->m_OutputOn, this->m_ErrorOn, this->m_LogOn, this->m_SelectedOutputOn))
 	{
@@ -214,7 +214,7 @@ STDMETHODIMP CPhreeqc::RunString(BSTR* input, LONG* retval)
 		return E_POINTER;
 	}
 
-	_bstr_t in(*input, false);
+	_bstr_t in(*input, true);
 
 	if (*retval = ::RunString(in, this->m_OutputOn, this->m_ErrorOn, this->m_LogOn, this->m_SelectedOutputOn))
 	{
@@ -233,7 +233,7 @@ STDMETHODIMP CPhreeqc::AccumulateLine(BSTR* line)
 		return E_POINTER;
 	}
 
-	_bstr_t in(*line, false);
+	_bstr_t in(*line, true);
 
 	VRESULT vr = ::AccumulateLine(in);
 
@@ -456,7 +456,7 @@ STDMETHODIMP CPhreeqc::LoadDatabaseString(BSTR* input, LONG* retval)
 		return E_POINTER;
 	}
 
-	_bstr_t in(*input, false);
+	_bstr_t in(*input, true);
 
 	if (*retval = ::LoadDatabaseString(in))
 	{

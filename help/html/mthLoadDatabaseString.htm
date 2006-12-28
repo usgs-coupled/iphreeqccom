@@ -22,13 +22,12 @@
 		</div></div>
 		<h2><a id="#example" name="#example">Example</a></h2><p>This example loads the "phreeqc.dat" database into the phreeqc object.</p><pre>
 <code>Const ForReading = 1
-Const sPath = "C:\Program Files\USGS\phreeqc-2.12.1\"
 
 Set fso = CreateObject("Scripting.FileSystemObject")
-Set ts = fso.OpenTextFile(sPath & "phreeqc.dat", ForReading)
-sDB = ts.ReadAll()
+Set ts = fso.OpenTextFile("phreeqc.dat", ForReading)
+strDB = ts.ReadAll()
 
 Set Phreeqc = CreateObject("PhreeqcCOM.Phreeqc")
-Phreeqc.<b class="bterm">LoadDatabaseString</b>(sDB)</code>
+Phreeqc.<b class="bterm">LoadDatabaseString</b>(strDB)</code>
 		</pre><script type="text/javascript" language="JScript" src="ofvbanl.js"></script><span id="ofVBAISpan" class="ofvbaispan">
-<iframe id="ofVBAIFrame" frameborder="0" marginheight="0" marginwidth="4" scrolling="auto" width="100%" src="../links/mthLoadDatabase_l.htm"></iframe></span></body></html>
+<iframe id="ofVBAIFrame" frameborder="0" marginheight="0" marginwidth="4" scrolling="auto" width="100%" src="../links/mthLoadDatabaseString_l.htm"></iframe></span></body></html>
