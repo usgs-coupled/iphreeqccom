@@ -17,12 +17,11 @@
 <p>The <b class="bterm">LogOn</b> property is used only by the Run methods: <a class="ofvbalink" href="mthRun.htm">Run</a>, <a class="ofvbalink" href="mthRunFile.htm">RunFile</a> and <a class="ofvbalink" href="mthRunString.htm">RunString</a>.</p>
 <!-- Example -->
 <h2><a id="#example" name="#example">Example</a></h2>
-<p>This example runs <b class="bterm">"ex2"</b> with the <b class="bterm">"phreeqc.log"</b> file turned on.</p><pre>
-<code>sPath = "C:\Program Files\USGS\phreeqc-2.12.1\"
-set Phreeqc = CreateObject("PhreeqcCOM.Phreeqc")
-Phreeqc.LoadDatabase sPath & "phreeqc.dat"
+<p>This example runs <b class="bterm">"ex2"</b> with the <b class="bterm">"phreeqc.out"</b> file turned on.</p><pre>
+<code>set Phreeqc = CreateObject("PhreeqcCOM.Phreeqc")
+Phreeqc.LoadDatabase("phreeqc.dat")
 Phreeqc.<b class="bterm">OutputOn</b> = True
-Phreeqc.RunFile sPath & "examples\ex2"
+Phreeqc.RunFile("ex2")
 </code>
 </pre>
 <script type="text/javascript" language="JScript" src="ofvbanl.js"></script><span id="ofVBAISpan" class="ofvbaispan"><iframe id="ofVBAIFrame" frameborder="0" marginheight="0" marginwidth="4" scrolling="auto" width="100%" src="../links/proOutputOn_l.htm"></iframe></span>

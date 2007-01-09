@@ -7,22 +7,38 @@
 <script type="text/javascript" language="JavaScript" src="inline.js"></script>
 </head>
 <body>
-<p id="ExpandAllLine" class="ExpFav">
-<!--
-<a href="#" onclick="ExpandAll()" onkeypress="ExpandAll()" class="DropDown">
-<img id="picHeader" border="0" src="../img/expandtri.gif" alt="Show All">
-<span id="ExpandAll">Show All</span>
-</a>
--->
-</p>
-<h1>RunFile Method</h1><DIV class="ofvbanav"><span class="ofvbanavreuse" id="seealso" onclick="toggleList()" onkeypress="toggleList()"></span><span class="ofvbanavreuse" id="appliesto" onclick="toggleList()" onkeypress="toggleList()"></span><a class="ofvbanavex" href="#example"><span class="ofvbanavreuse" id="example"></span></a><span class="ofvbanavreuse" id="specifics" onclick="toggleList()" onkeypress="toggleList()"></span></DIV><p>Runs a phreeqc input file. Returns the number of errors encountered.</p>
-			<p class="signature"><i>expression</i>.<b class="bterm">RunFile</b>(<b class="bterm"><i>FileName</i></b> )</p>
-		<p><i>expression   </i>   Required. An expression that returns a phreeqc object.</p><p><b class="runinhead"><i>FileName</i></b>   Required.  The file name of the phreeqc input file to run.</p><div id="ExpCol" class="collapsed" border="0"><div class="ind">
-		<!-- -->
-		</div></div>
-		<h2><a id="#example" name="#example">Example</a></h2><p>This example loads the "phreeqc.dat" database and runs the "ex2" input file.</p><pre>
-<code>Set Phreeqc = CreateObject("PhreeqcCOM.Phreeqc")
-Phreeqc.LoadDatabase "C:\Program Files\USGS\phreeqc-2.12.1\phreeqc.dat"
-Phreeqc.<b class="bterm">RunFile</b> "C:\Program Files\USGS\phreeqc-2.12.1\examples\ex2"</code>
-		</pre><script type="text/javascript" language="JScript" src="ofvbanl.js"></script><span id="ofVBAISpan" class="ofvbaispan">
-<iframe id="ofVBAIFrame" frameborder="0" marginheight="0" marginwidth="4" scrolling="auto" width="100%" src="../links/mthRunFile_l.htm"></iframe></span></body></html>
+
+<!-- Heading -->
+<h1>RunFile Method</h1>
+
+<!-- Links -->
+<DIV class="ofvbanav"><span class="ofvbanavreuse" id="seealso" onclick="toggleList()" onkeypress="toggleList()"></span><span class="ofvbanavreuse" id="appliesto" onclick="toggleList()" onkeypress="toggleList()"></span><a class="ofvbanavex" href="#example"><span class="ofvbanavreuse" id="example"></span></a><span class="ofvbanavreuse" id="specifics" onclick="toggleList()" onkeypress="toggleList()"></span></DIV>
+
+<!-- Description -->
+<p>Runs phreeqc using the given file as input. Returns the number of errors encountered during the run.</p>
+
+<!-- Prototype -->
+<p class="signature"><i>expression</i>.<b class="bterm">RunFile</b>(<b class="bterm"><i>FileName</i></b> )</p>
+<p><i>expression   </i>   Required. An expression that returns a phreeqc object.</p>
+<p><b class="runinhead"><i>FileName</i></b>   Required.  The name of the phreeqc input file to run.</p>
+<div id="ExpCol" class="collapsed" border="0"><div class="ind"></div></div>
+
+<!-- Remarks -->
+<h2>Remarks</h2>
+<p>The <b class="bterm">RunFile</b> method cannot be called until a database has been successfully loaded by one of the following methods: <a class="ofvbalink" href="mthLoadDatabase.htm">LoadDatabase</a> or <a class="ofvbalink" href="mthLoadDatabaseString.htm">LoadDatabaseString</a>.</p>
+
+<!-- Example -->
+<h2><a id="#example" name="#example">Example</a></h2><p>This example runs the <b class="bterm">"ex1"</b> input file in the phreeqc simulator.</p>
+<pre><code>Set Phreeqc = CreateObject("PhreeqcCOM.Phreeqc")
+Phreeqc.LoadDatabase("phreeqc.dat")
+Phreeqc.OutputOn = True
+Phreeqc.<b class="bterm">RunFile</b>("ex1")
+</code></pre>
+
+<!-- Script -->
+<script type="text/javascript" language="JScript" src="ofvbanl.js"></script><span id="ofVBAISpan" class="ofvbaispan">
+<iframe id="ofVBAIFrame" frameborder="0" marginheight="0" marginwidth="4" scrolling="auto" width="100%" src="../links/mthRunFile_l.htm">
+</iframe>
+</span>
+</body>
+</html>

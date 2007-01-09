@@ -7,21 +7,52 @@
 <script type="text/javascript" language="JavaScript" src="inline.js"></script>
 </head>
 <body>
-<p id="ExpandAllLine" class="ExpFav">
-<!--
-<a href="#" onclick="ExpandAll()" onkeypress="ExpandAll()" class="DropDown">
-<img id="picHeader" border="0" src="../img/expandtri.gif" alt="Show All">
-<span id="ExpandAll">Show All</span>
-</a>
--->
-</p>
-<h1>Run Method</h1><DIV class="ofvbanav"><span class="ofvbanavreuse" id="seealso" onclick="toggleList()" onkeypress="toggleList()"></span><span class="ofvbanavreuse" id="appliesto" onclick="toggleList()" onkeypress="toggleList()"></span><a class="ofvbanavex" href="#example"><span class="ofvbanavreuse" id="example"></span></a><span class="ofvbanavreuse" id="specifics" onclick="toggleList()" onkeypress="toggleList()"></span></DIV><p>Loads a phreeqc database into the phreeqc object. Returns the number of errors encountered while loading the database.</p>
-			<p class="signature"><i>expression</i>.<b class="bterm">Run</b>()</p>
-		<p><i>expression   </i>   Required. An expression that returns a phreeqc object.</p><div id="ExpCol" class="collapsed" border="0"><div class="ind">
-		<!-- -->
-		</div></div>
-		<h2><a id="#example" name="#example">Example</a></h2><p>This example loads the "phreeqc.dat" database into the phreeqc object.</p><pre>
-<code>Set Phreeqc = CreateObject("PhreeqcCOM.Phreeqc")
-Phreeqc.<b class="bterm">LoadDatabase</b>("phreeqc.dat")</code>
-		</pre><script type="text/javascript" language="JScript" src="ofvbanl.js"></script><span id="ofVBAISpan" class="ofvbaispan">
-<iframe id="ofVBAIFrame" frameborder="0" marginheight="0" marginwidth="4" scrolling="auto" width="100%" src="../links/mthRun_l.htm"></iframe></span></body></html>
+
+<!-- Heading -->
+<h1>Run Method</h1>
+
+<!-- Links -->
+<DIV class="ofvbanav"><span class="ofvbanavreuse" id="seealso" onclick="toggleList()" onkeypress="toggleList()"></span><span class="ofvbanavreuse" id="appliesto" onclick="toggleList()" onkeypress="toggleList()"></span><a class="ofvbanavex" href="#example"><span class="ofvbanavreuse" id="example"></span></a><span class="ofvbanavreuse" id="specifics" onclick="toggleList()" onkeypress="toggleList()"></span></DIV>
+
+<!-- Description -->
+<p>Runs phreeqc using input that's been collected using the <a class="ofvbalink" href="mthAccumulateLine.htm">AccumulateLine</a> method. Returns the number of errors encountered during the run.</p>
+
+<!-- Prototype -->
+<p class="signature"><i>expression</i>.<b class="bterm">Run</b>()</p>
+<p><i>expression   </i>   Required. An expression that returns a phreeqc object.</p>
+<div id="ExpCol" class="collapsed" border="0"><div class="ind"></div></div>
+
+<!-- Remarks -->
+<h2>Remarks</h2>
+<p>The <b class="bterm">Run</b> method cannot be called until a database has been successfully loaded by one of the following methods: <a class="ofvbalink" href="mthLoadDatabase.htm">LoadDatabase</a> or <a class="ofvbalink" href="mthLoadDatabaseString.htm">LoadDatabaseString</a>.</p>
+
+<!-- Example -->
+<h2><a id="#example" name="#example">Example</a></h2><p>This example accumulates input and runs it through the phreeqc simulator.</p>
+<pre><code>Set Phreeqc = CreateObject("PhreeqcCOM.Phreeqc")
+Phreeqc.LoadDatabase("phreeqc.dat")
+Phreeqc.AccumulateLine("TITLE Example 2.--Temperature dependence of solubility")
+Phreeqc.AccumulateLine("                  of gypsum and anhydrite")
+Phreeqc.AccumulateLine("SOLUTION 1 Pure water")
+Phreeqc.AccumulateLine("        pH      7.0")
+Phreeqc.AccumulateLine("        temp    25.0")
+Phreeqc.AccumulateLine("EQUILIBRIUM_PHASES 1")
+Phreeqc.AccumulateLine("        Gypsum          0.0     1.0")
+Phreeqc.AccumulateLine("        Anhydrite       0.0     1.0")
+Phreeqc.AccumulateLine("REACTION_TEMPERATURE 1")
+Phreeqc.AccumulateLine("        25.0 75.0 in 51 steps")
+Phreeqc.AccumulateLine("SELECTED_OUTPUT")
+Phreeqc.AccumulateLine("        -file   ex2.sel")
+Phreeqc.AccumulateLine("        -temperature")
+Phreeqc.AccumulateLine("        -si     anhydrite  gypsum")
+Phreeqc.AccumulateLine("END")
+Phreeqc.<b class="bterm">Run</b>
+</code></pre>
+
+<!-- Script -->
+<script type="text/javascript" language="JScript" src="ofvbanl.js"></script>
+<span id="ofVBAISpan" class="ofvbaispan">
+<iframe id="ofVBAIFrame" frameborder="0" marginheight="0" marginwidth="4" scrolling="auto" width="100%" src="../links/mthRun_l.htm">
+</iframe>
+</span>
+</body>
+</html>

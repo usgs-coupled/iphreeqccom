@@ -7,31 +7,21 @@
 <script type="text/javascript" language="JavaScript" src="inline.js"></script>
 </head>
 <body>
-<p id="ExpandAllLine" class="ExpFav">
-<!--
-<a href="#" onclick="ExpandAll()" onkeypress="ExpandAll()" class="DropDown">
-<img id="picHeader" border="0" src="../img/expandtri.gif" alt="Show All">
-<span id="ExpandAll">Show All</span>
-</a>
--->
-</p>
 <h1>GetSelectedOutputArray Method</h1><DIV class="ofvbanav"><span class="ofvbanavreuse" id="seealso" onclick="toggleList()" onkeypress="toggleList()"></span><span class="ofvbanavreuse" id="appliesto" onclick="toggleList()" onkeypress="toggleList()"></span><a class="ofvbanavex" href="#example"><span class="ofvbanavreuse" id="example"></span></a><span class="ofvbanavreuse" id="specifics" onclick="toggleList()" onkeypress="toggleList()"></span></DIV><p>Loads a phreeqc database into the phreeqc object. Returns the number of errors encountered while loading the database.</p>
 			<p class="signature"><i>expression</i>.<b class="bterm">GetSelectedOutputArray</b>()</p>
 		<p><i>expression   </i>   Required. An expression that returns a phreeqc object.</p><div id="ExpCol" class="collapsed" border="0"><div class="ind">
 		<!-- -->
 		</div></div>
-		<h2><a id="#example" name="#example">Example</a></h2><p>This example runs the "ex2" input file and writes the selected output array to stdout.</p><pre>
-<code>sPath = "C:\Program Files\USGS\phreeqc-2.12.1\"
-
-Set Phreeqc = CreateObject("PhreeqcCOM.Phreeqc")
-Phreeqc.LoadDatabase sPath & "phreeqc.dat"
-Phreeqc.RunFile sPath & "examples\ex2"
+		<h2><a id="#example" name="#example">Example</a></h2><p>This example runs the <b class="bterm">"ex2"</b> input file and writes the selected output array to stdout.</p><pre>
+<code>Set Phreeqc = CreateObject("PhreeqcCOM.Phreeqc")
+Phreeqc.LoadDatabase("phreeqc.dat")
+Phreeqc.RunFile("ex2")
 
 arr = Phreeqc.<b class="bterm">GetSelectedOutputArray</b>()
 For i = 0 To Phreeqc.RowCount - 1
     For j = 0 To Phreeqc.ColumnCount - 1
         If (IsObject(WScript.Stdout)) Then
-            WScript.Stdout.Write (arr(i, j) & " ")
+            WScript.Stdout.Write(arr(i, j) & " ")
         End If
     Next
     If (IsObject(WScript.Stdout)) Then
@@ -40,4 +30,4 @@ For i = 0 To Phreeqc.RowCount - 1
 Next
 </code>
 		</pre><script type="text/javascript" language="JScript" src="ofvbanl.js"></script><span id="ofVBAISpan" class="ofvbaispan">
-<iframe id="ofVBAIFrame" frameborder="0" marginheight="0" marginwidth="4" scrolling="auto" width="100%" src="../links/mthLoadDatabase_l.htm"></iframe></span></body></html>
+<iframe id="ofVBAIFrame" frameborder="0" marginheight="0" marginwidth="4" scrolling="auto" width="100%" src="../links/mthGetSelectedOutputArray_l.htm"></iframe></span></body></html>

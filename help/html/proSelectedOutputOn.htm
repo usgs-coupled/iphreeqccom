@@ -18,11 +18,10 @@
 <!-- Example -->
 <h2><a id="#example" name="#example">Example</a></h2>
 <p>This example runs <b class="bterm">"ex2"</b> with the selected_output file turned on.</p><pre>
-<code>sPath = "C:\Program Files\USGS\phreeqc-2.12.1\"
-set Phreeqc = CreateObject("PhreeqcCOM.Phreeqc")
-Phreeqc.LoadDatabase sPath & "phreeqc.dat"
+<code>set Phreeqc = CreateObject("PhreeqcCOM.Phreeqc")
+Phreeqc.LoadDatabase("phreeqc.dat")
 Phreeqc.<b class="bterm">SelectedOutputOn</b> = True
-Phreeqc.RunFile sPath & "examples\ex2"
+Phreeqc.RunFile("ex2")
 </code>
 </pre>
 <script type="text/javascript" language="JScript" src="ofvbanl.js"></script><span id="ofVBAISpan" class="ofvbaispan"><iframe id="ofVBAIFrame" frameborder="0" marginheight="0" marginwidth="4" scrolling="auto" width="100%" src="../links/proSelectedOutputOn_l.htm"></iframe></span>

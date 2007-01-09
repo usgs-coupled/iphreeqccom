@@ -41,6 +41,22 @@
 			<param name="Name" value="LoadDatabase Method">
 			<param name="Local" value="html\mthLoadDatabase.htm">
 			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="LoadDatabaseString Method">
+			<param name="Local" value="html\mthLoadDatabaseString.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Run Method">
+			<param name="Local" value="html\mthRun.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="RunFile Method">
+			<param name="Local" value="html\mthRunFile.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="RunString Method">
+			<param name="Local" value="html\mthRunString.htm">
+			</OBJECT>
 	</UL>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="Properties">
