@@ -53,8 +53,8 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 1,0,0,1
- PRODUCTVERSION 1,0,0,1
+ FILEVERSION 2,13,2,1740
+ PRODUCTVERSION 2,13,2,1740
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -69,14 +69,14 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "TODO: <Company name>"
-            VALUE "FileDescription", "TODO: <File description>"
-            VALUE "FileVersion", "1.0.0.1"
-            VALUE "LegalCopyright", "TODO: (c) <Company name>.  All rights reserved."
+            VALUE "CompanyName", "U.S. Geological Survey"
+            VALUE "FileDescription", "PhreeqcCOM executable"
+            VALUE "FileVersion", "2.13.2.1740"
             VALUE "InternalName", "PhreeqcCOM.dll"
+            VALUE "LegalCopyright", "public domain"
             VALUE "OriginalFilename", "PhreeqcCOM.dll"
-            VALUE "ProductName", "TODO: <Product name>"
-            VALUE "ProductVersion", "1.0.0.1"
+            VALUE "ProductName", "PhreeqcCOM"
+            VALUE "ProductVersion", "2.13.2.1740"
         END
     END
     BLOCK "VarFileInfo"

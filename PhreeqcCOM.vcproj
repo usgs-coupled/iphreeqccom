@@ -175,6 +175,7 @@
 				AdditionalDependencies="gmp.lib comsuppwd.lib HtmlHelp.lib"
 				LinkIncremental="1"
 				AdditionalLibraryDirectories="$(DEV_GMP_LIB_MT);$(DEV_HTMLHELP_LIB)"
+				IgnoreDefaultLibraryNames="LIBCMT"
 				ModuleDefinitionFile=".\PhreeqcCOM.def"
 				GenerateDebugInformation="true"
 				SubSystem="2"

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Include>
+<?define Name="PhreeqcCOM"?>
+<?define ShortName=PHRQCCOM?>
+
+<?define Major=2?>
+<?define Minor=13?>
+<?define Build=2?>
+
+<?define Manufacturer="U.S. Geological Survey"?>
+<?define UpgradeGuid=C538A9C2-E470-495b-BD4D-95E5EC7FC043?>
+<?define Version=$(var.Major).$(var.Minor).$(var.Build)?>
+<?define Description="USGS $(var.Name) $(var.Major).$(var.Minor).$(var.Build) Installer"?>
+<?define DiskPrompt="USGS $(var.Name) $(var.Major).$(var.Minor).$(var.Build) Installation [1]"?>
+<?define PrgMenu="$(var.Name) $(var.Major).$(var.Minor)"?>
+<?define Shortcut="$(var.Name) Reference"?>
+<?define FeatureTitle="$(var.Name) $(var.Major).$(var.Minor).$(var.Build)"?>
+<?define Cabinet=$(var.Name).cab?>
+<?define Directory="$(var.Name) $(var.Version)"?>
+<?define FullName="$(var.Name) $(var.Version)"?>
+<?define ShortDirectory="PHRQCCOM"?>
+<?define Comments="$(var.Name) component"?>
+
+</Include>
