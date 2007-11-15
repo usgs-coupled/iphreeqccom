@@ -33,7 +33,7 @@
 
 
     <!-- install conditions -->
-    <Condition Message="You must have Admin priviledges to install [ProductName].">(Privileged)</Condition>
+    <Condition Message="An administrator must approve or install [ProductName].">Privileged</Condition>
 
     <!-- program directory -->
     <Directory Id="TARGETDIR" Name="SourceDir">

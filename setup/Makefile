@@ -1,6 +1,6 @@
 # $Id: Makefile 1452 2006-11-04 04:18:32Z charlton $
 
-PHREEQC_COM_DIR  := ../PhreeqcCOM
+PHREEQC_COM_DIR  := ..
 
 PHREEQC_COM_DLL_SRC := $(PHREEQC_COM_DIR)/Release/PhreeqcCOM.dll
 PHREEQC_COM_TLB_SRC := $(PHREEQC_COM_DIR)/Release/PhreeqcCOM.tlb
@@ -41,7 +41,6 @@ BINARIES=\
 	
 all : PhreeqcCOM.msi
 
-#PhreeqcCOM.msi : PhreeqcCOM.wixobj regsvr.wixobj  $(PHREEQC_COM_DLL) $(PHREEQC_COM_TLB) $(PHREEQC_COM_CHM) $(BINARIES)
 PhreeqcCOM.msi : PhreeqcCOM.wixobj Registry.wixobj UIFragment.wixobj $(PHREEQC_COM_DLL) $(PHREEQC_COM_TLB) $(PHREEQC_COM_CHM)
 	$(LIGHT) $(LIGHT_FLAGS) PhreeqcCOM.wixobj Registry.wixobj UIFragment.wixobj -out $@
 
@@ -63,3 +62,5 @@ uninstall :
 check : PhreeqcCOM.msi
 	$(MSIVAL2) PhreeqcCOM.msi 'C:\Program Files\MsiVal2\logo.cub' -f
 
+clean :
+	rm -f PhreeqcCOM.wixobj Registry.wixobj UIFragment.wixobj
