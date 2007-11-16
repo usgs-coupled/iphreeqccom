@@ -154,10 +154,12 @@ build() {
   make && \
 # build PhreeqcCOM.chm
 # hhc can't handle directory names that begin with a period
-  mv ${srcdir}/.build ${srcdir}/build && \
-  cd ${srcdir}/build/PhreeqcCOM/help && \
+  cd ${topdir} && \
+  mv ${srcdir}/.build ${srcdir}/_build && \
+  cd ${srcdir}/_build/PhreeqcCOM/help && \
   make && \
-  mv ${srcdir}/build ${srcdir}/.build && \
+  cd ${topdir} && \
+  mv ${srcdir}/_build ${srcdir}/.build && \
 # build PhreeqcCOM.msi
   cd ${objdir}/PhreeqcCOM/setup && \
   make )
@@ -173,10 +175,10 @@ clean() {
 install() {
   (rm -fr ${instdir}/* && \
 # logs
-  /usr/bin/install -m 644 "${objdir}/setup/AutoRelease.log" \
+  /usr/bin/install -m 644 "${objdir}/PhreeqcCOM/Release.log" \
   ${instdir}/. && \
 # MSI file
-  /usr/bin/install -m 755 "${objdir}/setup/WPhast.msi" \
+  /usr/bin/install -m 755 "${objdir}/PhreeqcCOM/setup/PhreeqcCOM.msi" \
     ${instdir}/${FULLPKG}.msi && \
   if [ -x /usr/bin/md5sum ]; then \
     cd ${instdir} && \
