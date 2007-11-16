@@ -41,4 +41,4 @@ FILES = \
 all: PhreeqcCOM.chm
 
 PhreeqcCOM.chm : PhreeqcCOM.hhp contents.hhc $(FILES)
-	hcc PhreeqcCOM.hhp
+	@hhc PhreeqcCOM.hhp || exit 0
