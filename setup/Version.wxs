@@ -12,15 +12,14 @@
 
 <?define Manufacturer="U.S. Geological Survey"?>
 <?define UpgradeGuid=C538A9C2-E470-495b-BD4D-95E5EC7FC043?>
-<?define Version=$(var.Major).$(var.Minor).$(var.Build)?>
-<?define Description="USGS $(var.Name) $(var.Major).$(var.Minor).$(var.Build) Installer"?>
-<?define DiskPrompt="USGS $(var.Name) $(var.Major).$(var.Minor).$(var.Build) Installation [1]"?>
-<?define PrgMenu="$(var.Name) $(var.Major).$(var.Minor)"?>
+<?define Description="USGS $(var.Name) $(var.Major).$(var.Minor).$(var.Patch) Installer"?>
+<?define DiskPrompt="USGS $(var.Name) $(var.Major).$(var.Minor).$(var.Patch) Installation [1]"?>
+<?define PrgMenu="$(var.Name) $(var.Major).$(var.Patch)"?>
 <?define Shortcut="$(var.Name) Reference"?>
-<?define FeatureTitle="$(var.Name) $(var.Major).$(var.Minor).$(var.Build)"?>
+<?define FeatureTitle="$(var.Name) $(var.Major).$(var.Minor).$(var.Patch)"?>
 <?define Cabinet=$(var.Name).cab?>
-<?define Directory="$(var.Name) $(var.Version)"?>
-<?define FullName="$(var.Name) $(var.Version)"?>
+<?define Directory="$(var.Name) $$(var.Major).$(var.Minor).$(var.Patch)"?>
+<?define FullName="$(var.Name) $(var.Major).$(var.Minor).$(var.Patch)"?>
 <?define ShortDirectory="PHRQCCOM"?>
 <?define Comments="$(var.Name) component"?>
 

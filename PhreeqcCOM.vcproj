@@ -76,11 +76,12 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				RegisterOutput="true"
+				RegisterOutput="false"
 				IgnoreImportLibrary="true"
 				AdditionalDependencies="gmp.lib comsuppwd.lib HtmlHelp.lib"
 				LinkIncremental="2"
 				AdditionalLibraryDirectories="$(DEV_GMP_LIB_MT);$(DEV_HTMLHELP_LIB)"
+				IgnoreDefaultLibraryNames="LIBCMT"
 				ModuleDefinitionFile=".\PhreeqcCOM.def"
 				GenerateDebugInformation="true"
 				SubSystem="2"
@@ -170,7 +171,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				RegisterOutput="true"
+				RegisterOutput="false"
 				IgnoreImportLibrary="true"
 				AdditionalDependencies="gmp.lib comsuppwd.lib HtmlHelp.lib"
 				LinkIncremental="1"
@@ -933,6 +934,26 @@
 					</File>
 					<File
 						RelativePath="..\src\phreeqcpp\SurfaceComp.cxx"
+						>
+						<FileConfiguration
+							Name="Debug|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								UsePrecompiledHeader="0"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="Release|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								UsePrecompiledHeader="0"
+							/>
+						</FileConfiguration>
+					</File>
+					<File
+						RelativePath="..\src\phreeqcpp\System.cxx"
 						>
 						<FileConfiguration
 							Name="Debug|Win32"
