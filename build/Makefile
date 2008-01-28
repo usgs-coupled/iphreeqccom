@@ -40,7 +40,6 @@ BIN_PACKAGE := $(NAME)-$(VERSION)-$(RELEASE).tar.bz2
 
 all : check_args $(BIN_PACKAGE)
 	echo $(VERSION) > VERSION
-	echo $(DATE) > DATE
 
 build_all : check_args $(BIN_PACKAGE)
 
