@@ -7,8 +7,11 @@
 <?define Minor=14?>
 <?define Patch=2?>
 <?define Build=2386?>
-<?define Version=$(var.Major).$(var.Minor).$(var.Patch).$(var.Build)?>
 
+<!-- format must be major.minor.build -->
+<!-- major and minor have a maximum value of 255 -->
+<!-- build has a maximum value of 65535 -->
+<?define Version=$(var.Major).$(var.Minor).$(var.Build)?>
 
 <?define Manufacturer="U.S. Geological Survey"?>
 <?define UpgradeGuid=C538A9C2-E470-495b-BD4D-95E5EC7FC043?>

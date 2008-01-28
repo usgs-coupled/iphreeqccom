@@ -21,7 +21,10 @@ FORCE_UPDATE := $(shell svn up ..)
 
 RELEASE ?= $(shell svn st -v dist.sh | cut -b 10- | ( read one two ; echo $$one ) )
 
-DATE_STAMP := $(shell echo $(DATE) | sed -e "y^/^-^" )
+ifneq ($(strip $(DATE)),)
+DATE_STAMP  := $(shell date -d $(DATE) "+%m-%d-%Y")
+TOUCH_STAMP :=  $(shell date -d $(DATE) "+%Y%m%d0000")
+endif
 
 TARBALL := $(NAME)-$(VERSION)-$(RELEASE).tar.gz
 
@@ -36,6 +39,8 @@ SRC_PACKAGE := $(NAME)-$(VERSION)-$(RELEASE)-src.tar.bz2
 BIN_PACKAGE := $(NAME)-$(VERSION)-$(RELEASE).tar.bz2
 
 all : check_args $(BIN_PACKAGE)
+	echo $(VERSION) > VERSION
+	echo $(DATE) > DATE
 
 build_all : check_args $(BIN_PACKAGE)
 
