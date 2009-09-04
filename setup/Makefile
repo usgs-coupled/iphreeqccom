@@ -18,9 +18,9 @@ LIGHT = light
 LIGHT_FLAGS=\
 	-nologo
 
-MERGE_DIR := "C:\Program Files\Common Files\Merge Modules"
+MERGE_DIR := "$(PROGRAMFILES)\Common Files\Merge Modules"
 
-MSIVAL2 := /cygdrive/c/Program\ Files/MsiVal2/msival2
+MSIVAL2 := /cygdrive/c/Program\ Files\ \(x86\)/MsiVal2/msival2
 
 MSIEXEC := msiexec
 
