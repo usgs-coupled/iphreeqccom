@@ -55,10 +55,39 @@
 </p>
 -->
 The following example creates a Phreeqc object, loads the <b class="bterm">"phreeqc.dat"</b> database and runs the <b class="bterm">"ex1"</b> example.
-<pre><code>Set Phreeqc = CreateObject("PhreeqcCOM.Phreeqc")
+
+<!-- JScript Example -->
+<div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
+<div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
+  JScript</div>
+var Phreeqc = new ActiveXObject("PhreeqcCOM.Phreeqc");
+Phreeqc.LoadDatabase("phreeqc.dat");
+Phreeqc.OutputOn = true;
+Phreeqc.RunFile("ex1");
+</pre></div>
+
+<!-- VBScript Example -->
+<div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
+<div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
+  VBScript</div>
+Dim Phreeqc
+Set Phreeqc = CreateObject("PhreeqcCOM.Phreeqc")
 Phreeqc.LoadDatabase("phreeqc.dat")
 Phreeqc.OutputOn = True
-Phreeqc.RunFile("ex1")</code></pre>
+Phreeqc.RunFile("ex1")
+</pre></div>
+
+<!-- Visual FoxPro Example -->
+<div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
+<div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
+  Visual FoxPro</div>
+Dim Phreeqc
+Phreeqc = CREATEOBJECT("PhreeqcCOM.Phreeqc")
+Phreeqc.LoadDatabase("phreeqc.dat")
+Phreeqc.OutputOn = .T.
+Phreeqc.RunFile("ex1")
+</pre></div>
+
 <!--
 <h2>Remarks</h2>
 <p>Many of the properties and methods that return the most common user-interface objects, such as the active cell

@@ -7,14 +7,57 @@
 <script type="text/javascript" language="JavaScript" src="inline.js"></script>
 </head>
 <body>
+
+<!-- Top Heading -->
 <h1>GetSelectedOutputValue Method</h1>
-<DIV class="ofvbanav"><span class="ofvbanavreuse" id="seealso" onclick="toggleList()" onkeypress="toggleList()"></span><span class="ofvbanavreuse" id="appliesto" onclick="toggleList()" onkeypress="toggleList()"></span><a class="ofvbanavex" href="#example"><span class="ofvbanavreuse" id="example"></span></a><span class="ofvbanavreuse" id="specifics" onclick="toggleList()" onkeypress="toggleList()"></span></DIV><p>Loads a phreeqc database into the phreeqc object. Returns the number of errors encountered while loading the database.</p>
-			<p class="signature"><i>expression</i>.<b class="bterm">GetSelectedOutputValue</b>(<b class="bterm"><i>Row</i></b>, <b class="bterm"><i>Column</i></b>)</p>
-		<p><i>expression   </i>   Required. An expression that returns a phreeqc object.</p><p><b class="runinhead"><i>Row</i></b>   Required <b class="bterm">Long</b>.  Zero-based row index.</p><p><b class="runinhead"><i>Column</i></b>   Required <b class="bterm">Long</b>.  Zero-based column index.</p><div id="ExpCol" class="collapsed" border="0"><div class="ind">
-		<!-- -->
-		</div></div>
-		<h2><a id="#example" name="#example">Example</a></h2><p>This example runs the <b class="bterm">"ex2"</b> input file and writes the selected output to stdout.</p><pre>
-<code>Set Phreeqc = CreateObject("PhreeqcCOM.Phreeqc")
+
+<!-- Links -->
+<DIV class="ofvbanav">
+<span class="ofvbanavreuse" id="seealso" onclick="toggleList()" onkeypress="toggleList()"></span>
+<span class="ofvbanavreuse" id="appliesto" onclick="toggleList()" onkeypress="toggleList()"></span>
+<a class="ofvbanavex" href="#example"><span class="ofvbanavreuse" id="example"></span></a>
+<span class="ofvbanavreuse" id="specifics" onclick="toggleList()" onkeypress="toggleList()"></span>
+</DIV>
+
+<!-- Description -->
+<p>Loads a phreeqc database into the phreeqc object. Returns the number of errors encountered while loading the database.</p>
+
+<!-- Prototype -->
+<p class="signature"><i>expression</i>.<b class="bterm">GetSelectedOutputValue</b>(<b class="bterm"><i>Row</i></b>, <b class="bterm"><i>Column</i></b>)</p>
+<p><i>expression   </i>   Required. An expression that returns a phreeqc object.</p><p><b class="runinhead"><i>Row</i></b>   Required <b class="bterm">Long</b>.  Zero-based row index.</p><p><b class="runinhead"><i>Column</i></b>   Required <b class="bterm">Long</b>.  Zero-based column index.</p>
+<div id="ExpCol" class="collapsed" border="0"><div class="ind"></div></div>
+
+<!-- Remarks -->
+
+<!-- Example -->
+<h2><a id="#example" name="#example">Example</a></h2>
+<p>This example runs the <b class="bterm">"ex2"</b> input file and writes the selected output to stdout.</p>
+
+<!-- JScript Example -->
+<div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
+<div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
+  JScript</div>
+var Phreeqc = new ActiveXObject("PhreeqcCOM.Phreeqc");
+Phreeqc.LoadDatabase("phreeqc.dat");
+Phreeqc.RunFile("ex2");
+
+for (i = 0; i < Phreeqc.RowCount; ++i)
+{
+    for (j = 0; j < Phreeqc.ColumnCount; ++j)
+    {
+        WScript.Stdout.Write(Phreeqc.GetSelectedOutputValue(i, j));
+        WScript.Stdout.Write(" ");
+    }
+    WScript.Stdout.WriteLine();
+}
+</pre></div>
+
+<!-- VBScript Example -->
+<div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
+<div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
+  VBScript</div>
+Dim Phreeqc, i, j
+Set Phreeqc = CreateObject("PhreeqcCOM.Phreeqc")
 Phreeqc.LoadDatabase("phreeqc.dat")
 Phreeqc.RunFile("ex2")
 
@@ -27,8 +70,13 @@ For i = 0 To Phreeqc.RowCount - 1
     If (IsObject(WScript.Stdout)) Then
         WScript.Stdout.WriteLine
     End If
-Next</code>
-		</pre><script type="text/javascript" language="JScript" src="ofvbanl.js"></script><span id="ofVBAISpan" class="ofvbaispan">
-<iframe id="ofVBAIFrame" frameborder="0" marginheight="0" marginwidth="4" scrolling="auto" width="100%" src="../links/mthGetSelectedOutputValue_l.htm"></iframe></span>
+Next
+</pre></div>
+
+<!-- Script -->
+<script type="text/javascript" language="JScript" src="ofvbanl.js"></script>
+<span id="ofVBAISpan" class="ofvbaispan">
+<iframe id="ofVBAIFrame" frameborder="0" marginheight="0" marginwidth="4" scrolling="auto" width="100%" src="../links/mthGetSelectedOutputValue_l.htm"></iframe>
+</span>
 </body>
 </html>

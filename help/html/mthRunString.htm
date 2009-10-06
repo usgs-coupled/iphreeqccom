@@ -8,11 +8,16 @@
 </head>
 <body>
 
-<!-- Heading -->
+<!-- Top Heading -->
 <h1>RunString Method</h1>
 
 <!-- Links -->
-<DIV class="ofvbanav"><span class="ofvbanavreuse" id="seealso" onclick="toggleList()" onkeypress="toggleList()"></span><span class="ofvbanavreuse" id="appliesto" onclick="toggleList()" onkeypress="toggleList()"></span><a class="ofvbanavex" href="#example"><span class="ofvbanavreuse" id="example"></span></a><span class="ofvbanavreuse" id="specifics" onclick="toggleList()" onkeypress="toggleList()"></span></DIV>
+<DIV class="ofvbanav">
+<span class="ofvbanavreuse" id="seealso" onclick="toggleList()" onkeypress="toggleList()"></span>
+<span class="ofvbanavreuse" id="appliesto" onclick="toggleList()" onkeypress="toggleList()"></span>
+<a class="ofvbanavex" href="#example"><span class="ofvbanavreuse" id="example"></span></a>
+<span class="ofvbanavreuse" id="specifics" onclick="toggleList()" onkeypress="toggleList()"></span>
+</DIV>
 
 <!-- Description -->
 <p>Runs phreeqc using the given string as input. Returns the number of errors encountered during the run.</p>
@@ -29,7 +34,29 @@
 
 <!-- Example -->
 <h2><a id="#example" name="#example">Example</a></h2><p>This example stores phreeqc input into a string and runs it through the phreeqc simulator.</p>
-<pre><code>Set Phreeqc = CreateObject("PhreeqcCOM.Phreeqc")
+
+<!-- JScript Example -->
+<div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
+<div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
+  JScript</div>
+var Phreeqc = new ActiveXObject("PhreeqcCOM.Phreeqc");
+Phreeqc.LoadDatabase("phreeqc.dat");
+
+var sInput = "SOLUTION 1\n";
+sInput += "temp 25.0\n";
+sInput += "pH   7.0\n";
+
+Phreeqc.OutputOn = true;
+Phreeqc.RunString(sInput);
+</pre></div>
+
+
+<!-- VBScript Example -->
+<div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
+<div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
+  VBScript</div>
+Dim Phreeqc, sInput
+Set Phreeqc = CreateObject("PhreeqcCOM.Phreeqc")
 Phreeqc.LoadDatabase("phreeqc.dat")
 
 sInput = "SOLUTION 1" & vbCrLf
@@ -38,13 +65,12 @@ sInput = sInput & "pH   7.0" & vbCrLf
 
 Phreeqc.OutputOn = True
 Phreeqc.RunString(sInput)
-</code></pre>
+</pre></div>
 
 <!-- Script -->
 <script type="text/javascript" language="JScript" src="ofvbanl.js"></script>
 <span id="ofVBAISpan" class="ofvbaispan">
-<iframe id="ofVBAIFrame" frameborder="0" marginheight="0" marginwidth="4" scrolling="auto" width="100%" src="../links/mthRunString_l.htm">
-</iframe>
+<iframe id="ofVBAIFrame" frameborder="0" marginheight="0" marginwidth="4" scrolling="auto" width="100%" src="../links/mthRunString_l.htm"></iframe>
 </span>
 </body>
 </html>

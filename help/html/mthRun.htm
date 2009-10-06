@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<!-- Heading -->
+<!-- Top Heading -->
 <h1>Run Method</h1>
 
 <!-- Links -->
@@ -28,7 +28,38 @@
 
 <!-- Example -->
 <h2><a id="#example" name="#example">Example</a></h2><p>This example accumulates input and runs it through the phreeqc simulator.</p>
-<pre><code>Set Phreeqc = CreateObject("PhreeqcCOM.Phreeqc")
+
+<!-- JScript Example -->
+<div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
+<div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
+  JScript</div>
+var Phreeqc = new ActiveXObject("PhreeqcCOM.Phreeqc");
+Phreeqc.LoadDatabase("phreeqc.dat");
+
+Phreeqc.AccumulateLine("TITLE Example 2.--Temperature dependence of solubility");
+Phreeqc.AccumulateLine("                  of gypsum and anhydrite");
+Phreeqc.AccumulateLine("SOLUTION 1 Pure water");
+Phreeqc.AccumulateLine("        pH      7.0");
+Phreeqc.AccumulateLine("        temp    25.0");
+Phreeqc.AccumulateLine("EQUILIBRIUM_PHASES 1");
+Phreeqc.AccumulateLine("        Gypsum          0.0     1.0");
+Phreeqc.AccumulateLine("        Anhydrite       0.0     1.0");
+Phreeqc.AccumulateLine("REACTION_TEMPERATURE 1");
+Phreeqc.AccumulateLine("        25.0 75.0 in 51 steps");
+Phreeqc.AccumulateLine("SELECTED_OUTPUT");
+Phreeqc.AccumulateLine("        -file   ex2.sel");
+Phreeqc.AccumulateLine("        -temperature");
+Phreeqc.AccumulateLine("        -si     anhydrite  gypsum");
+Phreeqc.AccumulateLine("END");
+Phreeqc.<b class="bterm">Run</b>();
+</pre></div>
+
+
+<!-- VBScript Example -->
+<div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
+<div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
+  VBScript</div>
+Set Phreeqc = CreateObject("PhreeqcCOM.Phreeqc")
 Phreeqc.LoadDatabase("phreeqc.dat")
 Phreeqc.AccumulateLine("TITLE Example 2.--Temperature dependence of solubility")
 Phreeqc.AccumulateLine("                  of gypsum and anhydrite")
@@ -46,7 +77,8 @@ Phreeqc.AccumulateLine("        -temperature")
 Phreeqc.AccumulateLine("        -si     anhydrite  gypsum")
 Phreeqc.AccumulateLine("END")
 Phreeqc.<b class="bterm">Run</b>
-</code></pre>
+</pre></div>
+
 
 <!-- Script -->
 <script type="text/javascript" language="JScript" src="ofvbanl.js"></script>

@@ -8,21 +8,46 @@
 </head>
 <body>
 
-<!-- Heading -->
+<!-- Top Heading -->
 <h1>Lines Property</h1>
 
 <!-- Links -->
-<DIV class="ofvbanav"><span class="ofvbanavreuse" id="seealso" onclick="toggleList()" onkeypress="toggleList()"></span><span class="ofvbanavreuse" id="appliesto" onclick="toggleList()" onkeypress="toggleList()"></span><a class="ofvbanavex" href="#example"><span class="ofvbanavreuse" id="example"></span></a><span class="ofvbanavreuse" id="specifics" onclick="toggleList()" onkeypress="toggleList()"></span></DIV><p>Returns the accumlated text contained within the phreeqc objects input buffer. Read-only <b class="bterm">String</b>.</p>
+<DIV class="ofvbanav">
+<span class="ofvbanavreuse" id="seealso" onclick="toggleList()" onkeypress="toggleList()"></span>
+<span class="ofvbanavreuse" id="appliesto" onclick="toggleList()" onkeypress="toggleList()"></span>
+<a class="ofvbanavex" href="#example"><span class="ofvbanavreuse" id="example"></span></a>
+<span class="ofvbanavreuse" id="specifics" onclick="toggleList()" onkeypress="toggleList()"></span>
+</DIV>
+
+<!-- Description -->
+<p>Returns the accumlated text contained within the phreeqc objects input buffer. Read-only <b class="bterm">String</b>.</p>
 
 <!-- Remarks -->
 
 <!-- Example -->
-<h2><a id="#example" name="#example">Example</a></h2><p>This example loads some keyword input into the phreeqc object and displays the result.</p><pre>
-<code>set Phreeqc = CreateObject("PhreeqcCOM.Phreeqc")
+<h2><a id="#example" name="#example">Example</a></h2><p>This example loads some keyword input into the phreeqc object and displays the result.</p>
+
+<!-- JScript Example -->
+<div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
+<div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
+  JScript</div>
+var Phreeqc = new ActiveXObject("PhreeqcCOM.Phreeqc");
+Phreeqc.AccumulateLine("SOLUTION 1");
+Phreeqc.AccumulateLine("END");
+var shell = new ActiveXObject("wscript.shell");
+shell.Popup("The input to run is:\n" + Phreeqc.lines);
+</pre></div>
+
+<!-- VBScript Example -->
+<div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
+<div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
+  VBScript</div>
+Dim Phreeqc
+Set Phreeqc = CreateObject("PhreeqcCOM.Phreeqc")
 Phreeqc.AccumulateLine("SOLUTION 1")
 Phreeqc.AccumulateLine("END")
-MsgBox("The input to run is:" & Phreeqc.<b class="bterm">Lines</b>)
-</code></pre>
+MsgBox("The input to run is:" & vbCRLF & Phreeqc.<b class="bterm">Lines</b>)
+</pre></div>
 
 <!-- Script -->
 <script type="text/javascript" language="JScript" src="ofvbanl.js"></script><span id="ofVBAISpan" class="ofvbaispan"><iframe id="ofVBAIFrame" frameborder="0" marginheight="0" marginwidth="4" scrolling="auto" width="100%" src="../links/proLines_l.htm"></iframe></span>
