@@ -413,9 +413,11 @@ STDMETHODIMP CPhreeqc::GetSelectedOutputValue(LONG row, LONG col, VARIANT* retva
 	switch(vr)
 	{
 	case VR_INVALIDROW: case VR_INVALIDCOL:
+		::VariantChangeType(retval, retval, 0, VT_EMPTY);
 		hr = E_INVALIDARG;
 		break;
 	case VR_OUTOFMEMORY:
+		::VariantChangeType(retval, retval, 0, VT_EMPTY);
 		hr = E_OUTOFMEMORY;
 		break;
 	}
@@ -424,7 +426,6 @@ STDMETHODIMP CPhreeqc::GetSelectedOutputValue(LONG row, LONG col, VARIANT* retva
 	{
 	case TT_EMPTY:
 		::VariantChangeType(retval, retval, 0, VT_EMPTY);
-		retval->lVal = v.lVal;
 		break;
 
 	case TT_LONG:
@@ -520,7 +521,7 @@ STDMETHODIMP CPhreeqc::RunOpt(VARIANT* OutputOn, VARIANT* ErrorOn, VARIANT* LogO
 
 STDMETHODIMP CPhreeqc::ShowHelp(LONG* id)
 {
-	::HtmlHelp(NULL, _T("C:\\cygwin\\home\\charlton\\programs\\IPhreeqcMMS-Trunk\\IPhreeqc\\PhreeqcCOM\\Debug\\PhreeqcCOM.chm"),
+	::HtmlHelp(NULL, _T("PhreeqcCOM.chm"),
 		HH_HELP_CONTEXT,
 		*id);
 
