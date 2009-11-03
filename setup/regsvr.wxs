@@ -1,4 +1,4 @@
-<Wix xmlns="http://schemas.microsoft.com/wix/2003/01/wi">
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
   <Fragment>
     <DirectoryRef Id="INSTALLDIR">
       <Component Id="C_PhreeqcCOM_DLL" DiskId="1" Guid="CAE6A602-D87C-4822-9659-573D130C8407">

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<Wix xmlns="http://schemas.microsoft.com/wix/2003/01/wi">
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
   <Fragment Id="UIFragment">
-    <UI>
+    <UI Id="StandardDialogUI">
       <Property Id="DefaultUIFont">DlgFont8</Property>
       <Property Id="ErrorDialog">ErrorDlg</Property>
 

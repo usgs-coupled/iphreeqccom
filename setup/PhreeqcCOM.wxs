@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?include Version.wxs?>
+<?include Version.wxi?>
 
-<Wix xmlns="http://schemas.microsoft.com/wix/2003/01/wi">
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
 
   <!-- product -->
   <Product UpgradeCode="$(var.UpgradeGuid)"
            Manufacturer="$(var.Manufacturer)"
-           Id="????????-????-????-????-????????????"
+           Id="*"
            Language="1033"
            Name="$(var.FullName)"
            Version="$(var.Version)">
 
     <!-- package -->
-    <Package Id="????????-????-????-????-????????????"
+    <Package Id="*"
              Keywords="Installer"
              Description="$(var.Description)"
              Comments="$(var.Comments)"
              Manufacturer="$(var.Manufacturer)"
-             InstallerVersion="150"
+             InstallerVersion="300"
              Languages="1033"
              Compressed="yes" />
 
@@ -39,7 +39,7 @@
     <Directory Id="TARGETDIR" Name="SourceDir">
       <Directory Id="ProgramFilesFolder" Name="PFiles">
         <Directory Id="USGS" Name="USGS">
-          <Directory Id="INSTALLDIR" Name="PHREEQC.COM" LongName="$(var.Directory)">
+          <Directory Id="INSTALLDIR" Name="$(var.Directory)">
 
             <!-- merge modules -->
             <Merge Id="CRT" Language="1033" SourceFile="$(var.MergeDir)\microsoft_vc80_crt_x86.msm" DiskId="1" />
@@ -51,14 +51,14 @@
 
             <!-- chm file -->
             <Component Id="C_PhreeqcCOM.chm" Guid="6A1290CA-3AB5-4F69-A3D4-13AA514EC0B6">
-              <File Id="F_PhreeqcCOM.chm" Name="PHREEQC_.CHM" LongName="PhreeqcCOM.chm" KeyPath="yes" DiskId="1" Source="$(var.PhreeqcCOM_CHM_SRC)" />
-              <Shortcut Id="startmenuReference" Directory="ProgramMenuDir" Name="Help" LongName="$(var.Shortcut)" Target="Complete" />
+              <File Id="F_PhreeqcCOM.chm" Name="PhreeqcCOM.chm" KeyPath="yes" DiskId="1" Source="$(var.PhreeqcCOM_CHM_SRC)" />
+              <Shortcut Id="startmenuReference" Directory="ProgramMenuDir" Name="$(var.Shortcut)" ShortName="Help" Target="Complete" />
               <RemoveFolder Id="ProgramMenuDir" Directory="ProgramMenuDir" On="uninstall" />
             </Component>
 
             <!-- tlb file -->
             <Component Id="C_PhreeqcCOM.tlb" Guid="84EF1646-6814-4D12-8AFC-A702DD4192E9">
-              <File Id="F_PhreeqcCOM.tlb" Name="PHREEQC_.TLB" LongName="PhreeqcCOM.tlb" Vital="yes" KeyPath="yes" DiskId="1" Source="$(var.PhreeqcCOM_TLB_SRC)" />
+              <File Id="F_PhreeqcCOM.tlb" Name="PhreeqcCOM.tlb" Vital="yes" KeyPath="yes" DiskId="1" Source="$(var.PhreeqcCOM_TLB_SRC)" />
             </Component>
 
           </Directory>
@@ -66,8 +66,8 @@
       </Directory>
 
       <!-- start-menu directory -->
-      <Directory Id="ProgramMenuFolder" Name="PMenu" LongName="Programs">
-        <Directory Id="ProgramMenuDir" Name="Phreeqc" LongName="$(var.FullName)" />
+      <Directory Id="ProgramMenuFolder" Name="Programs">
+        <Directory Id="ProgramMenuDir" Name="$(var.FullName)" />
       </Directory>
 
     </Directory>
@@ -94,7 +94,7 @@
     <Property Id="ARPNOMODIFY"><![CDATA[1]]></Property>
 
     <!-- ui -->
-    <FragmentRef Id="UIFragment" />
+    <UIRef Id="StandardDialogUI" />
 
     <!-- properties -->
     <Property Id="ALLUSERS"><![CDATA[2]]></Property>
@@ -112,7 +112,7 @@
     <Property Id="RemoveIcon">removico</Property>
     <Property Id="ExclamationIcon">exclamic</Property>
     <Property Id="ShowUserRegistrationDlg">0</Property>
-    <Property Id="ProductID">none</Property>
+    <!-- Property Id="ProductID">none</Property -->
     <Property Id="ButtonText_Reset">&amp;Reset</Property>
     <Property Id="ButtonText_Remove">&amp;Remove</Property>
     <Property Id="CompleteSetupIcon">completi</Property>

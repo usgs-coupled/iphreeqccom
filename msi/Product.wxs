@@ -1,24 +1,117 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?include Version.wxi?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-	<Product Id="3b79cb9b-149f-4df2-9ddf-a2b9ecf60cd7" Name="msi" Language="1033" Version="1.0.0.0" Manufacturer="msi" UpgradeCode="7712c5c2-9f11-478c-a437-3881c41a4c21">
-		<Package InstallerVersion="200" Compressed="yes" />
 
-		<Media Id="1" Cabinet="media1.cab" EmbedCab="yes" />
+  <!-- product -->
+  <Product Id="*"
+           Name="$(var.FullName)"
+           Language="1033"
+           Version="$(var.Version)"
+           Manufacturer="$(var.Manufacturer)"
+           UpgradeCode="$(var.UpgradeGuid)">
 
-		<Directory Id="TARGETDIR" Name="SourceDir">
-			<Directory Id="ProgramFilesFolder">
-				<Directory Id="INSTALLLOCATION" Name="msi">
-					<!-- TODO: Remove the comments around this Component element and the ComponentRef below in order to add resources to this installer. -->
-					<!-- <Component Id="ProductComponent" Guid="d1ffe50f-5c14-4a0d-889d-f7ab053b52f3"> -->
-						<!-- TODO: Insert files, registry keys, and other resources here. -->
-					<!-- </Component> -->
-				</Directory>
-			</Directory>
-		</Directory>
+    <!-- package -->
+    <Package InstallerVersion="300" Compressed="yes" Platform="x86"/>
 
-		<Feature Id="ProductFeature" Title="msi" Level="1">
-			<!-- TODO: Remove the comments around this ComponentRef element and the Component above in order to add resources to this installer. -->
-			<!-- <ComponentRef Id="ProductComponent" /> -->
-		</Feature>
-	</Product>
+    <Upgrade Id="$(var.UpgradeGuid)" >
+      <!-- upgrade is flagged if current-install is newer than or equal to package - TODO: should make a dialog appear asking user to confirm downgrade.  -->
+      <UpgradeVersion Property="NEWERVERSIONDETECTED" Minimum="$(var.Version)" />
+
+      <!-- flag is set if the install will trigger an upgrade of an existing install -->
+      <UpgradeVersion Property="PREVIOUSVERSIONSINSTALLED" Maximum="$(var.Version)" IncludeMaximum="no" />
+    </Upgrade>
+
+    <Media Id="1" Cabinet="$(var.Cabinet)" EmbedCab="yes" />
+
+    <!-- directory structure -->
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <!-- program files -->
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="USGS" Name="USGS">
+          <Directory Id="INSTALLLOCATION" Name="$(var.Directory)">
+          </Directory>
+        </Directory>
+      </Directory>
+      <!-- start menu -->
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="ProgramMenuDir" Name="$(var.FullName)" />
+      </Directory>
+    </Directory>
+
+    <!-- dll file -->
+    <DirectoryRef Id="INSTALLLOCATION">
+      <Component Id="PhreeqcCOM.dll" Guid="CAE6A602-D87C-4822-9659-573D130C8407">
+        <File Id="PhreeqcCOM.dll" Source="..\Release\PhreeqcCOM.dll" KeyPath="yes">
+          <TypeLib Id="{0B8469C4-8F3E-4FC4-B8F6-FA782292735A}" Description="PhreeqcCOM 1.0 Type Library" HelpDirectory="INSTALLLOCATION" Language="0" MajorVersion="1" MinorVersion="0">
+            <AppId Description="PhreeqcCOM" Id="{5EA2A828-7EAB-4E8A-9FEA-96D9DE684A9E}">
+              <Class Id="{6F59EA62-F726-4008-A61C-039ACB860F44}" Context="InprocServer32" Description="Phreeqc Class" ThreadingModel="apartment" Programmable="yes">
+                <ProgId Id="PhreeqcCOM.Phreeqc.1" Description="Phreeqc Class">
+                  <ProgId Id="PhreeqcCOM.Phreeqc" Description="Phreeqc Class" />
+                </ProgId>
+              </Class>
+            </AppId>
+            <Interface Id="{9EFD3E9C-EF32-4F9F-BFE7-6880B5E168C2}" Name="IPhreeqc" ProxyStubClassId="{00020424-0000-0000-C000-000000000046}" ProxyStubClassId32="{00020424-0000-0000-C000-000000000046}" />
+          </TypeLib>
+        </File>
+      </Component>
+    </DirectoryRef>
+
+    <!-- tlb file -->
+    <DirectoryRef Id="INSTALLLOCATION">
+      <Component Id="PhreeqcCOM.tlb" Guid="84EF1646-6814-4D12-8AFC-A702DD4192E9">
+        <File Id="PhreeqcCOM.tlb" Source="..\Release\PhreeqcCOM.tlb" KeyPath="yes"/>
+      </Component>
+    </DirectoryRef>
+
+    <!-- chm file -->
+    <DirectoryRef Id="INSTALLLOCATION">
+      <Component Id="PhreeqcCOM.chm" Guid="6A1290CA-3AB5-4F69-A3D4-13AA514EC0B6">
+        <File Id="PhreeqcCOM.chm" Source="..\help\PhreeqcCOM.chm" KeyPath="yes"/>
+      </Component>
+    </DirectoryRef>
+
+    <!-- chm shortcut -->
+    <DirectoryRef Id="ProgramMenuDir">
+      <Component Id="PhreeqcCOM.chm.lnk" Guid="D6833593-5749-4ef2-ABCE-29AC29E51467">
+        <Shortcut Id="PhreeqcCOM.chm" Name="$(var.Shortcut)" Target="[INSTALLLOCATION]PhreeqcCOM.chm"/>
+        <RemoveFolder Id="ProgramMenuDir" On="uninstall"/>
+        <RegistryValue Root="HKCU" Key="Software\USGS\$(var.Name)" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+      </Component>
+    </DirectoryRef>
+
+    <!-- merge modules -->
+    <DirectoryRef Id="INSTALLLOCATION">
+      <Merge Id="CRT" Language="1033" SourceFile="$(var.MergeDir)\microsoft_vc80_crt_x86.msm" DiskId="1" />
+      <Merge Id="CRT Policy" Language="1033" SourceFile="$(var.MergeDir)\policy_8_0_Microsoft_VC80_CRT_x86.msm" DiskId="1" />
+      <Merge Id="ATL" Language="1033" SourceFile="$(var.MergeDir)\Microsoft_VC80_ATL_x86.msm" DiskId="1" />
+      <Merge Id="ATL Policy" Language="1033" SourceFile="$(var.MergeDir)\policy_8_0_Microsoft_VC80_ATL_x86.msm" DiskId="1" />
+    </DirectoryRef>
+
+    <!-- features -->
+    <Feature Id="ProductFeature" Title="msi" Level="1">
+      <ComponentRef Id="PhreeqcCOM.dll" />
+      <ComponentRef Id="PhreeqcCOM.tlb" />
+      <ComponentRef Id="PhreeqcCOM.chm" />
+      <ComponentRef Id="PhreeqcCOM.chm.lnk" />
+      <MergeRef Id="CRT" />
+      <MergeRef Id="CRT Policy" />
+      <MergeRef Id="ATL" />
+      <MergeRef Id="ATL Policy" />
+    </Feature>
+
+    <!-- gui -->
+    <!--
+    <UIRef Id="WixUI_Minimal"/>
+    -->
+    <WixVariable Id="WixUILicenseRtf" Value="License.rtf" />
+    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLLOCATION" />
+    <Property Id="PREVIOUSVERSIONSINSTALLED" Secure="yes" />
+    <UIRef Id="WixUI_InstallDir"/>
+
+    
+    <InstallExecuteSequence>
+      <RemoveExistingProducts Before="InstallInitialize" />
+    </InstallExecuteSequence>
+    
+  </Product>
 </Wix>

@@ -793,6 +793,26 @@
 						</FileConfiguration>
 					</File>
 					<File
+						RelativePath="..\src\phreeqcpp\runner.cpp"
+						>
+						<FileConfiguration
+							Name="Debug|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								UsePrecompiledHeader="0"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="Release|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								UsePrecompiledHeader="0"
+							/>
+						</FileConfiguration>
+					</File>
+					<File
 						RelativePath="..\src\phreeqcpp\Solution.cxx"
 						>
 						<FileConfiguration
@@ -894,6 +914,26 @@
 					</File>
 					<File
 						RelativePath="..\src\phreeqcpp\StorageBin.cxx"
+						>
+						<FileConfiguration
+							Name="Debug|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								UsePrecompiledHeader="0"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="Release|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								UsePrecompiledHeader="0"
+							/>
+						</FileConfiguration>
+					</File>
+					<File
+						RelativePath="..\src\phreeqcpp\StorageBinList.cpp"
 						>
 						<FileConfiguration
 							Name="Debug|Win32"
