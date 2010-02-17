@@ -175,7 +175,7 @@ clean() {
 install() {
   (rm -fr ${instdir}/* && \
 # MSI file
-  /usr/bin/install -m 755 "${objdir}/PhreeqcCOM/setup/PhreeqcCOM.msi" \
+  /usr/bin/install -m 755 "${objdir}/PhreeqcCOM/msi/bin/Release/PhreeqcCOM.msi" \
     ${instdir}/${FULLPKG}.msi && \
   if [ -x /usr/bin/md5sum ]; then \
     cd ${instdir} && \
