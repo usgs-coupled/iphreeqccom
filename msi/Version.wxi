@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Include>
-  
+<Include>  
   <?define Name="PhreeqcCOM"?>
-  
-  <?define Major=2?>
-  <?define Minor=16?>
-  <!-- <?define Patch=3?> -->
-  <?define Build=3749?>
+
+  <!-- Note Major Minor and Build are set on the command line -->
+  <!-- ie MSBuild.exe phreeqc.sln /p:Major=2 /p:Minor=17 /p:Build=3976 -->
 
   <!-- format must be major.minor.build -->
   <!-- major and minor have a maximum value of 255 -->
@@ -23,7 +20,6 @@
   <?define Cabinet=$(var.Name).cab?>
   <?define Directory="$(var.Name) $(var.Major).$(var.Minor).$(var.Build)"?>
   <?define FullName="$(var.Name) $(var.Major).$(var.Minor).$(var.Build)"?>
-  <!-- <?define ShortDirectory="PHRQCCOM"?> -->
   <?define Comments="$(var.Name) component"?>
   <?define MergeDir="C:\Program Files (x86)\Common Files\Merge Modules"?>
 

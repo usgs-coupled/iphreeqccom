@@ -37,6 +37,8 @@ tscriptname=`basename $0 .sh`
 export PKG=`echo $tscriptname | sed -e 's/\-[^\-]*\-[^\-]*$//'`
 export VER=`echo $tscriptname | sed -e "s/${PKG}\-//" -e 's/\-[^\-]*$//'`
 export REL=`echo $tscriptname | sed -e "s/${PKG}\-${VER}\-//"`
+export MAJOR=`echo $VER | sed -e 's/\.[^.]*//g'`
+export MINOR=`echo $VER | sed -e 's/[^\.]*\.//' -e 's/\.[^\.]*//'`
 export BASEPKG=${PKG}-${VER}-${REL}
 export FULLPKG=${BASEPKG}
 export DIFF_IGNORE="-x *.aps -x *.ncb -x *.opt -x *.dep -x *.mak -x *.chm"
@@ -162,7 +164,7 @@ build() {
   cd ${objdir}/PhreeqcCOM && \
   make && \
 # build PhreeqcCOM.msi
-  MsBuild.exe PhreeqcCOM.sln /t:msi /p:Configuration=Release )
+  MsBuild.exe PhreeqcCOM.sln /t:msi /p:Configuration=Release /p:TargetName=${FULLPKG} /p:Major=${MAJOR} /p:Minor=${MINOR} /p:Build=${REL} )
 }
 check() {
   (cd ${objdir} && \
@@ -175,8 +177,9 @@ clean() {
 install() {
   (rm -fr ${instdir}/* && \
 # MSI file
-  /usr/bin/install -m 755 "${objdir}/PhreeqcCOM/msi/bin/Release/PhreeqcCOM.msi" \
-    ${instdir}/${FULLPKG}.msi && \
+  /usr/bin/install -m 755 "${objdir}/PhreeqcCOM/msi/bin/Release/${FULLPKG}.msi" ${instdir}/${FULLPKG}.msi && \
+# Build log  
+  /usr/bin/install -m 755 "${topdir}/all-${REL}" ${instdir}/all-${REL} && \
   if [ -x /usr/bin/md5sum ]; then \
     cd ${instdir} && \
     find . -type f ! -name md5sum | sed 's/^/\"/' | sed 's/$/\"/' | xargs md5sum > md5sum ; \
