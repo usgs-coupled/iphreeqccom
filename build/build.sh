@@ -148,10 +148,7 @@ reconf() {
   conf )
 }
 build() {
-  (cd ${topdir} && \
-# build PhreeqcCOM.dll
-  cd ${objdir}/PhreeqcCOM && \
-  make && \
+  (
 # build PhreeqcCOM.chm
 # hhc can't handle directory names that begin with a period
   cd ${topdir} && \
@@ -160,9 +157,12 @@ build() {
   make && \
   cd ${topdir} && \
   mv ${srcdir}/_build ${srcdir}/.build && \
+# build PhreeqcCOM.dll
+  cd ${topdir} && \
+  cd ${objdir}/PhreeqcCOM && \
+  make && \
 # build PhreeqcCOM.msi
-  cd ${objdir}/PhreeqcCOM/setup && \
-  make )
+  MsBuild.exe PhreeqcCOM.sln /t:msi /p:Configuration=Release )
 }
 check() {
   (cd ${objdir} && \
@@ -174,9 +174,6 @@ clean() {
 }
 install() {
   (rm -fr ${instdir}/* && \
-# logs
-  /usr/bin/install -m 644 "${objdir}/PhreeqcCOM/Release.log" \
-  ${instdir}/. && \
 # MSI file
   /usr/bin/install -m 755 "${objdir}/PhreeqcCOM/setup/PhreeqcCOM.msi" \
     ${instdir}/${FULLPKG}.msi && \
