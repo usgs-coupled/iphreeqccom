@@ -179,7 +179,9 @@ install() {
 # MSI file
   /usr/bin/install -m 755 "${objdir}/PhreeqcCOM/msi/bin/Release/${FULLPKG}.msi" ${instdir}/${FULLPKG}.msi && \
 # Build log  
-  /usr/bin/install -m 755 "${topdir}/all-${REL}" ${instdir}/all-${REL} && \
+  if [ -f "${topdir}/all-${REL}.log" ] ; then \
+    /usr/bin/install -m 755 "${topdir}/all-${REL}.log" ${instdir}/all-${REL}.log ;\
+  fi && \
   if [ -x /usr/bin/md5sum ]; then \
     cd ${instdir} && \
     find . -type f ! -name md5sum | sed 's/^/\"/' | sed 's/$/\"/' | xargs md5sum > md5sum ; \
