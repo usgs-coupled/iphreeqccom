@@ -2,7 +2,7 @@
 #
 # PhreeqcCOM package build script
 #
-# $Id: build.sh 628 2005-11-04 07:28:55Z charlton $
+# $Id$
 #
 # Package maintainers: if the original source is not distributed as a
 # (possibly compressed) tarball, set the value of ${src_orig_pkg_name},
