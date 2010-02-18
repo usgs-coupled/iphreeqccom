@@ -178,7 +178,7 @@ fi
 ##           $DISTPATH/packages/win32-is/phreeqc.ipr \
 ##           $DISTPATH/packages/win32-is/STRING~1/0009-English/value.shl"
 
-SED_FILES="$DISTPATH/build/version.h"
+SED_FILES="$DISTPATH/PhreeqcCOM/build/version.h"
 
 for vsn_file in $SED_FILES
 do
@@ -186,21 +186,8 @@ do
    -e "/#define *VER_MAJOR/s/[0-9]\+/$ver_major/" \
    -e "/#define *VER_MINOR/s/[0-9]\+/$ver_minor/" \
    -e "/#define *VER_PATCH/s/[0-9]\+/$ver_patch/" \
-   -e "/#define *VER_TAG/s/\".*\"/\" ($VER_TAG)\"/" \
-   -e "/#define *VER_NUMTAG/s/\".*\"/\"$VER_NUMTAG\"/" \
    -e "/#define *VER_REVISION/s/[0-9]\+/$REVISION_SVN/" \
-   -e "/define *Major=/s/[0-9]\+/$ver_major/" \
-   -e "/define *Minor=/s/[0-9]\+/$ver_minor/" \
-   -e "/define *Patch=/s/[0-9]\+/$ver_patch/" \
-   -e "/define *Build=/s/[0-9]\+/$REVISION_SVN/" \
    -e "s/@RELEASE_DATE@/$RELEASE_DATE/g" \
-   -e "s/@VER_DATE@/$RELEASE_DATE/g" \
-   -e "s/@VER@/$VER/g" \
-   -e "s/@VERSION@/$VER/g" \
-   -e "s/@V_FIXDATE@/$V_FIXDATE/g" \
-   -e "s/@VER_UC@/$VER_UC/g" \
-   -e "s/@REVISION@/$REL/g" \
-   -e "s/@REL@/$REL/g" \
     < "$vsn_file" > "$vsn_file.tmp"
   unix2dos "$vsn_file.tmp" 2> /dev/null
   mv -f "$vsn_file.tmp" "$vsn_file"
