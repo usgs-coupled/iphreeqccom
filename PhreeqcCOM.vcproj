@@ -1914,6 +1914,10 @@
 				RelativePath=".\stdafx.h"
 				>
 			</File>
+			<File
+				RelativePath=".\build\version.h"
+				>
+			</File>
 		</Filter>
 		<Filter
 			Name="Resource Files"
@@ -1930,6 +1934,10 @@
 			</File>
 			<File
 				RelativePath=".\PhreeqcCOM.rgs"
+				>
+			</File>
+			<File
+				RelativePath=".\Version.rc2"
 				>
 			</File>
 		</Filter>

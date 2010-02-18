@@ -160,8 +160,6 @@ echo "Exporting revision $REVISION of PhreeqcCOM into sandbox..."
 	     "http://internalbrr.cr.usgs.gov/svn_GW/phreeqc/trunk/src" \
 	     "$DISTNAME/src/phreeqcpp/phreeqc")
 
-##	     "http://internalbrr.cr.usgs.gov/svn_GW/IPhreeqcMMS/$REPOS_PATH/IPhreeqc/PhreeqcCOM" \
-	     
 ver_major=`echo $VERSION | cut -d '.' -f 1`
 ver_minor=`echo $VERSION | cut -d '.' -f 2`
 ver_patch=`echo $VERSION | cut -d '.' -f 3`
@@ -170,7 +168,7 @@ if [ -z "$ver_patch" ]; then
   ver_patch="0"
 fi
 
-SED_FILES="$DISTPATH/PhreeqcCOM/setup/Version.wxs"
+##SED_FILES="$DISTPATH/PhreeqcCOM/setup/Version.wxs"
 
 ##SED_FILES="$DISTPATH/build/phreeqc_version.h \
 ##           $DISTPATH/src/main.c \
@@ -180,15 +178,17 @@ SED_FILES="$DISTPATH/PhreeqcCOM/setup/Version.wxs"
 ##           $DISTPATH/packages/win32-is/phreeqc.ipr \
 ##           $DISTPATH/packages/win32-is/STRING~1/0009-English/value.shl"
 
+SED_FILES="$DISTPATH/build/version.h"
+
 for vsn_file in $SED_FILES
 do
   sed \
-   -e "/#define *PHREEQC_VER_MAJOR/s/[0-9]\+/$ver_major/" \
-   -e "/#define *PHREEQC_VER_MINOR/s/[0-9]\+/$ver_minor/" \
-   -e "/#define *PHREEQC_VER_PATCH/s/[0-9]\+/$ver_patch/" \
-   -e "/#define *PHREEQC_VER_TAG/s/\".*\"/\" ($VER_TAG)\"/" \
-   -e "/#define *PHREEQC_VER_NUMTAG/s/\".*\"/\"$VER_NUMTAG\"/" \
-   -e "/#define *PHREEQC_VER_REVISION/s/[0-9]\+/$REVISION_SVN/" \
+   -e "/#define *VER_MAJOR/s/[0-9]\+/$ver_major/" \
+   -e "/#define *VER_MINOR/s/[0-9]\+/$ver_minor/" \
+   -e "/#define *VER_PATCH/s/[0-9]\+/$ver_patch/" \
+   -e "/#define *VER_TAG/s/\".*\"/\" ($VER_TAG)\"/" \
+   -e "/#define *VER_NUMTAG/s/\".*\"/\"$VER_NUMTAG\"/" \
+   -e "/#define *VER_REVISION/s/[0-9]\+/$REVISION_SVN/" \
    -e "/define *Major=/s/[0-9]\+/$ver_major/" \
    -e "/define *Minor=/s/[0-9]\+/$ver_minor/" \
    -e "/define *Patch=/s/[0-9]\+/$ver_patch/" \
@@ -206,10 +206,6 @@ do
   mv -f "$vsn_file.tmp" "$vsn_file"
   cp "$vsn_file" "$vsn_file.dist"
 done
-
-##mv $DISTPATH/src/revisions $DISTPATH/RELEASE.TXT
-##mv $DISTPATH/win/README.TXT $DISTPATH/README.TXT
-##mv $DISTPATH/doc/NOTICE.TXT $DISTPATH/NOTICE.TXT
 
 if [ -z "$ZIP" ]; then
   echo "Rolling $DISTNAME.tar ..."
