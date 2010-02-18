@@ -4,6 +4,7 @@
 	Version="8.00"
 	Name="PhreeqcCOMPS"
 	ProjectGUID="{03D8A390-33E3-46F2-9A71-EBDFF1FE2BF1}"
+	RootNamespace="PhreeqcCOMPS"
 	Keyword="AtlPSProj"
 	>
 	<Platforms>
@@ -124,7 +125,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				RegisterOutput="true"
+				RegisterOutput="false"
 				AdditionalDependencies="kernel32.lib rpcndr.lib rpcns4.lib rpcrt4.lib oleaut32.lib uuid.lib"
 				ModuleDefinitionFile="PhreeqcCOMPS.def"
 				OptimizeReferences="2"

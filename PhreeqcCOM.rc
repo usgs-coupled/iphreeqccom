@@ -69,14 +69,15 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
+            VALUE "Comments", "Released:"
             VALUE "CompanyName", "U.S. Geological Survey"
             VALUE "FileDescription", "PhreeqcCOM executable"
-            VALUE "FileVersion", "2.16. 0.3704"
+            VALUE "FileVersion", "2.16.0.3704"
             VALUE "InternalName", "PhreeqcCOM.dll"
             VALUE "LegalCopyright", "public domain"
             VALUE "OriginalFilename", "PhreeqcCOM.dll"
             VALUE "ProductName", "PhreeqcCOM"
-            VALUE "ProductVersion", "2.16. 0.3704"
+            VALUE "ProductVersion", "2.16.0.3704"
         END
     END
     BLOCK "VarFileInfo"
