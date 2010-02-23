@@ -1,0 +1,47 @@
+//
+// VERSION.RC2 - resources Microsoft Visual C++ does not edit directly
+//
+
+#ifdef APSTUDIO_INVOKED
+	#error this file is not editable by Microsoft Visual C++
+#endif //APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION VER_MAJOR,VER_MINOR,VER_PATCH,VER_REVISION
+ PRODUCTVERSION VER_MAJOR,VER_MINOR,VER_PATCH,VER_REVISION
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "Comments", "Released: " RELEASE_DATE "\0"
+            VALUE "CompanyName", "U.S. Geological Survey\0"
+            VALUE "FileDescription", "PhreeqcCOM executable\0"
+            VALUE "FileVersion", VER_NUM "\0"
+            VALUE "InternalName", "PhreeqcCOM.dll\0"
+            VALUE "LegalCopyright", "public domain\0"
+            VALUE "OriginalFilename", "PhreeqcCOM.dll\0"
+            VALUE "ProductName", PRODUCT_NAME "\0"
+            VALUE "ProductVersion", VER_NUM "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
