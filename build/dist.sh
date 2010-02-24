@@ -147,18 +147,29 @@ echo "Removed and recreated $DIST_SANDBOX"
 echo "Exporting revision $REVISION of PhreeqcCOM into sandbox..."
 (cd "$DIST_SANDBOX" && \
  	${SVN:-svn} export -q $EXTRA_EXPORT_OPTIONS --ignore-externals -r "$REVISION" \
-	     "http://internalbrr.cr.usgs.gov/svn_GW/IPhreeqcMMS/$REPOS_PATH/IPhreeqc" \
+	     "http://internalbrr.cr.usgs.gov/svn_GW/IPhreeqcCOM/$REPOS_PATH" \
 	     "$DISTNAME")
 	     
 (cd "$DIST_SANDBOX" && \
  	${SVN:-svn} export -q $EXTRA_EXPORT_OPTIONS --ignore-externals -r "$REVISION" \
+	     "http://internalbrr.cr.usgs.gov/svn_GW/IPhreeqc/trunk/include" \
+	     "$DISTNAME/src/include")
+	     
+(cd "$DIST_SANDBOX" && \
+ 	${SVN:-svn} export -q $EXTRA_EXPORT_OPTIONS --ignore-externals -r "$REVISION" \
+	     "http://internalbrr.cr.usgs.gov/svn_GW/IPhreeqc/trunk/src" \
+	     "$DISTNAME/src/IPhreeqc")
+	     
+(cd "$DIST_SANDBOX" && \
+ 	${SVN:-svn} export -q $EXTRA_EXPORT_OPTIONS --ignore-externals -r "$REVISION" \
 	     "http://internalbrr.cr.usgs.gov/svn_GW/phreeqcpp/trunk/src" \
-	     "$DISTNAME/src/phreeqcpp")
+	     "$DISTNAME/src/IPhreeqc/phreeqcpp")
 	     
 (cd "$DIST_SANDBOX" && \
  	${SVN:-svn} export -q $EXTRA_EXPORT_OPTIONS --ignore-externals -r "$REVISION" \
 	     "http://internalbrr.cr.usgs.gov/svn_GW/phreeqc/trunk/src" \
-	     "$DISTNAME/src/phreeqcpp/phreeqc")
+	     "$DISTNAME/src/IPhreeqc/phreeqcpp/phreeqc")
+	     
 
 ver_major=`echo $VERSION | cut -d '.' -f 1`
 ver_minor=`echo $VERSION | cut -d '.' -f 2`
@@ -168,17 +179,7 @@ if [ -z "$ver_patch" ]; then
   ver_patch="0"
 fi
 
-##SED_FILES="$DISTPATH/PhreeqcCOM/setup/Version.wxs"
-
-##SED_FILES="$DISTPATH/build/phreeqc_version.h \
-##           $DISTPATH/src/main.c \
-##           $DISTPATH/src/revisions \
-##           $DISTPATH/win/README.TXT \
-##           $DISTPATH/doc/README.TXT \
-##           $DISTPATH/packages/win32-is/phreeqc.ipr \
-##           $DISTPATH/packages/win32-is/STRING~1/0009-English/value.shl"
-
-SED_FILES="$DISTPATH/PhreeqcCOM/build/version.h"
+SED_FILES="$DISTPATH/build/version.h"
 
 for vsn_file in $SED_FILES
 do
