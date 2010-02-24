@@ -155,13 +155,13 @@ build() {
 # hhc can't handle directory names that begin with a period
   cd ${topdir} && \
   mv ${srcdir}/.build ${srcdir}/_build && \
-  cd ${srcdir}/_build/PhreeqcCOM/help && \
+  cd ${srcdir}/_build/help && \
   make && \
   cd ${topdir} && \
   mv ${srcdir}/_build ${srcdir}/.build && \
 # build PhreeqcCOM.dll
   cd ${topdir} && \
-  cd ${objdir}/PhreeqcCOM && \
+  cd ${objdir} && \
   make && \
 # build PhreeqcCOM.msi
   MsBuild.exe PhreeqcCOM.sln /t:msi /p:Configuration=Release /p:TargetName=${FULLPKG} /p:Major=${MAJOR} /p:Minor=${MINOR} /p:Build=${REL} )
@@ -177,7 +177,7 @@ clean() {
 install() {
   (rm -fr ${instdir}/* && \
 # MSI file
-  /usr/bin/install -m 755 "${objdir}/PhreeqcCOM/msi/bin/Release/${FULLPKG}.msi" ${instdir}/${FULLPKG}.msi && \
+  /usr/bin/install -m 755 "${objdir}/msi/bin/Release/${FULLPKG}.msi" ${instdir}/${FULLPKG}.msi && \
 # Build log  
   if [ -f "${topdir}/all-${REL}.log" ] ; then \
     /usr/bin/install -m 755 "${topdir}/all-${REL}.log" ${instdir}/all-${REL}.log ;\
