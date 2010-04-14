@@ -1,0 +1,27 @@
+HKCR
+{
+	IPhreeqcCOM.Object.1 = s 'IPhreeqcCOM Object Class'
+	{
+		CLSID = s '{C74CB8AF-C939-42B7-A88D-9594041A0CAF}'
+	}
+	IPhreeqcCOM.Object = s 'IPhreeqcCOM Object Class'
+	{
+		CLSID = s '{C74CB8AF-C939-42B7-A88D-9594041A0CAF}'
+		CurVer = s 'IPhreeqcCOM.Object.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {C74CB8AF-C939-42B7-A88D-9594041A0CAF} = s 'IPhreeqcCOM Object Class'
+		{
+			ProgID = s 'IPhreeqcCOM.Object.1'
+			VersionIndependentProgID = s 'IPhreeqcCOM.Object'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{EDB4905E-CA79-4C56-BE59-575C71219AEA}'
+		}
+	}
+}

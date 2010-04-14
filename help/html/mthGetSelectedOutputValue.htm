@@ -1,0 +1,220 @@
+<html dir="ltr" xmlns:msxsl="urn:schemas-microsoft-com:xslt"><head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<META HTTP-EQUIV="assetid" CONTENT="HV05199071">
+<META NAME="lcid" CONTENT="1033">
+<title>GetSelectedOutputValue Method</title><link rel="stylesheet" type="text/css" href="office10.css">
+<script type="text/javascript" language="Javascript" src="sExpCollapse.js"></script>
+<script type="text/javascript" language="JavaScript" src="inline.js"></script>
+</head>
+<body>
+
+<!-- Top Heading -->
+<h1>GetSelectedOutputValue Method</h1>
+
+<!-- Links -->
+<DIV class="ofvbanav">
+<span class="ofvbanavreuse" id="seealso" onclick="toggleList()" onkeypress="toggleList()"></span>
+<span class="ofvbanavreuse" id="appliesto" onclick="toggleList()" onkeypress="toggleList()"></span>
+<a class="ofvbanavex" href="#example"><span class="ofvbanavreuse" id="example"></span></a>
+<span class="ofvbanavreuse" id="specifics" onclick="toggleList()" onkeypress="toggleList()"></span>
+</DIV>
+
+<!-- Description -->
+<p>Returns the value associated with the specified row and column within a SELECTED_OUTPUT definition.  The first row (Row = 0) contains the heading for the given column.</p>
+
+<!-- Prototype -->
+<p class="signature"><i>expression</i>.<b class="bterm">GetSelectedOutputValue</b>(<b class="bterm"><i>Row</i></b>, <b class="bterm"><i>Column</i></b>)</p>
+<p><i>expression   </i>   Required. An expression that returns an IPhreeqc object.</p><p><b class="runinhead"><i>Row</i></b>   Required <b class="bterm">Long</b>.  Zero-based row index.</p><p><b class="runinhead"><i>Column</i></b>   Required <b class="bterm">Long</b>.  Zero-based column index.</p>
+<div id="ExpCol" class="collapsed" border="0"><div class="ind"></div></div>
+
+<!-- Remarks -->
+<h2>Remarks</h2>
+The selected output may be retrieved after a successful call to any of the run methods: <a class="ofvbalink" href="mthRunAccumulated.htm">RunAccumulated</a>, <a class="ofvbalink" href="mthRunFile.htm">RunFile</a> and <a class="ofvbalink" href="mthRunString.htm">RunString</a>.</p>
+<p>The headings will contain a prefix and/or suffix in order to differentiate the columns.  The following table shows the headings resulting from the given SELECTED_OUTPUT.</p>
+
+<table border=1>
+
+<TR VALIGN="top">
+<TH width=65%>
+Input
+</TH>
+<TH width=35%>
+Headings
+</TH>
+</TR>
+
+<TR VALIGN="top">
+<TD width=65%>
+<PRE>
+  SELECTED_OUTPUT
+    -reset false
+    -totals Ca Na
+</PRE>
+</TD>
+<TD width=35%>
+<PRE>
+  Ca(mol/kgw)  Na(mol/kgw)
+</PRE>
+</TD>
+</TR>
+
+<TR VALIGN="top">
+<TD width=65%>
+<PRE>
+  SELECTED_OUTPUT
+    -reset false
+    -molalities Fe+2 Hfo_sOZn+
+</PRE>
+</TD>
+<TD width=35%>
+<PRE>
+  m_Fe+2(mol/kgw)  m_Hfo_sOZn+(mol/kgw)
+</PRE>
+</TD>
+</TR>
+
+<TR VALIGN="top">
+<TD width=65%>
+<PRE>
+  SELECTED_OUTPUT
+    -reset false
+    -activities H+ Ca+2
+</PRE>
+</TD>
+<TD width=35%>
+<PRE>
+  la_H+  la_Ca+2
+</PRE>
+</TD>
+</TR>
+
+<TR VALIGN="top">
+<TD width=65%>
+<PRE>
+  SELECTED_OUTPUT
+    -reset false
+    -equilibrium_phases Calcite Dolomite
+</PRE>
+</TD>
+<TD width=35%>
+<PRE>
+  Calcite  d_Calcite  Dolomite  d_Dolomite
+</PRE>
+</TD>
+</TR>
+
+<TR VALIGN="top">
+<TD width=65%>
+<PRE>
+  SELECTED_OUTPUT
+    -reset false
+    -saturation_indices CO2(g) Siderite
+</PRE>
+</TD>
+<TD width=35%>
+<PRE>
+  si_CO2(g)  si_Siderite
+</PRE>
+</TD>
+</TR>
+
+<TR VALIGN="top">
+<TD width=65%>
+<PRE>
+  SELECTED_OUTPUT
+    -reset false
+    -gases CO2(g) N2(g)
+</PRE>
+</TD>
+<TD width=35%>
+<PRE>
+  pressure "total mol" volume g_CO2(g) g_N2(g)
+</PRE>
+</TD>
+</TR>
+
+<TR VALIGN="top">
+<TD width=65%>
+<PRE>
+  SELECTED_OUTPUT
+    -reset false
+    -kinetic_reactants CH2O Pyrite
+</PRE>
+</TD>
+<TD width=35%>
+<PRE>
+  k_CH2O dk_CH2O k_Pyrite dk_Pyrite
+</PRE>
+</TD>
+</TR>
+
+<TR VALIGN="top">
+<TD width=65%>
+<PRE>
+  SELECTED_OUTPUT
+    -reset false
+    -solid_solutions CaSO4 SrSO4
+</PRE>
+
+</TD>
+<TD width=35%>
+<PRE>
+  s_CaSO4 s_SrSO4
+</PRE>
+</TD>
+</TR>
+
+</table>
+
+
+<!-- Example -->
+<h2><a id="#example" name="#example">Example</a></h2>
+<p>This example runs the <b class="bterm">"ex2"</b> input file and writes the selected outpu to stdout.</p>
+
+<!-- JScript Example -->
+<div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
+<div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
+  JScript</div>
+var IPhreeqc = new ActiveXObject("IPhreeqcCOM.Object");
+IPhreeqc.LoadDatabase("phreeqc.dat");
+IPhreeqc.RunFile("ex2");
+
+for (i = 0; i < IPhreeqc.RowCount; ++i)
+{
+    for (j = 0; j < IPhreeqc.ColumnCount; ++j)
+    {
+        WScript.Stdout.Write(IPhreeqc.<b class="bterm">GetSelectedOutputValue</b>(i, j));
+        WScript.Stdout.Write(" ");
+    }
+    WScript.Stdout.WriteLine();
+}
+</pre></div>
+
+<!-- VBScript Example -->
+<div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
+<div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
+  VBScript</div>
+Dim IPhreeqc, i, j
+Set IPhreeqc = CreateObject("IPhreeqcCOM.Object")
+IPhreeqc.LoadDatabase("phreeqc.dat")
+IPhreeqc.RunFile("ex2")
+
+For i = 0 To IPhreeqc.RowCount - 1
+    For j = 0 To IPhreeqc.ColumnCount - 1
+        If (IsObject(WScript.Stdout)) Then
+            WScript.Stdout.Write(IPhreeqc.<b class="bterm">GetSelectedOutputValue</b>(i, j) & " ")
+        End If
+    Next
+    If (IsObject(WScript.Stdout)) Then
+        WScript.Stdout.WriteLine
+    End If
+Next
+</pre></div>
+
+<!-- Script -->
+<script type="text/javascript" language="JScript" src="ofvbanl.js"></script>
+<span id="ofVBAISpan" class="ofvbaispan">
+<iframe id="ofVBAIFrame" frameborder="0" marginheight="0" marginwidth="4" scrolling="auto" width="100%" src="../links/mthGetSelectedOutputValue_l.htm"></iframe>
+</span>
+</body>
+</html>
