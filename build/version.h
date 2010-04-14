@@ -20,7 +20,3 @@
 #define PRODUCT_NAME   NAME \
                        "-" APR_STRINGIFY(VER_MAJOR) \
                        "." APR_STRINGIFY(VER_MINOR)
-
-
-#define PHREEQCI_VER_NUM_REG        APR_STRINGIFY(VER_MAJOR) \
-                                "." APR_STRINGIFY(VER_MINOR)

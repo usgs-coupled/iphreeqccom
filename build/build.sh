@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# PhreeqcCOM package build script
+# IPhreeqcCOM package build script
 #
 # $Id: build.sh 4133 2010-02-24 05:50:31Z charlton $
 #

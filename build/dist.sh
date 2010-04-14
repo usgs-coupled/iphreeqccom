@@ -130,7 +130,7 @@ else
   REPOS_PATH="`echo $REPOS_PATH | sed 's/^\/*//'`"
 fi
 
-DISTNAME="PhreeqcCOM-${VERSION}${VER_NUMTAG}"
+DISTNAME="IPhreeqcCOM-${VERSION}${VER_NUMTAG}"
 DIST_SANDBOX=.dist_sandbox
 DISTPATH="$DIST_SANDBOX/$DISTNAME"
 
@@ -144,7 +144,7 @@ rm -rf "$DIST_SANDBOX"
 mkdir "$DIST_SANDBOX"
 echo "Removed and recreated $DIST_SANDBOX"
 
-echo "Exporting revision $REVISION of PhreeqcCOM into sandbox..."
+echo "Exporting revision $REVISION of IPhreeqcCOM into sandbox..."
 (cd "$DIST_SANDBOX" && \
  	${SVN:-svn} export -q $EXTRA_EXPORT_OPTIONS --ignore-externals -r "$REVISION" \
 	     "http://internalbrr.cr.usgs.gov/svn_GW/IPhreeqcCOM/$REPOS_PATH" \
@@ -152,23 +152,23 @@ echo "Exporting revision $REVISION of PhreeqcCOM into sandbox..."
 	     
 (cd "$DIST_SANDBOX" && \
  	${SVN:-svn} export -q $EXTRA_EXPORT_OPTIONS --ignore-externals -r "$REVISION" \
-	     "http://internalbrr.cr.usgs.gov/svn_GW/IPhreeqc/trunk/include" \
-	     "$DISTNAME/src/include")
+	     "http://internalbrr.cr.usgs.gov/svn_GW/IPhreeqc/$REPOS_PATH/include" \
+	     "$DISTNAME/IPhreeqcCOM/include")
 	     
 (cd "$DIST_SANDBOX" && \
  	${SVN:-svn} export -q $EXTRA_EXPORT_OPTIONS --ignore-externals -r "$REVISION" \
-	     "http://internalbrr.cr.usgs.gov/svn_GW/IPhreeqc/trunk/src" \
-	     "$DISTNAME/src/IPhreeqc")
+	     "http://internalbrr.cr.usgs.gov/svn_GW/IPhreeqc/$REPOS_PATH/src" \
+	     "$DISTNAME/IPhreeqcCOM/IPhreeqc")
 	     
 (cd "$DIST_SANDBOX" && \
  	${SVN:-svn} export -q $EXTRA_EXPORT_OPTIONS --ignore-externals -r "$REVISION" \
-	     "http://internalbrr.cr.usgs.gov/svn_GW/phreeqcpp/trunk/src" \
-	     "$DISTNAME/src/IPhreeqc/phreeqcpp")
+	     "http://internalbrr.cr.usgs.gov/svn_GW/phreeqcpp/$REPOS_PATH/src" \
+	     "$DISTNAME/IPhreeqcCOM/IPhreeqc/phreeqcpp")
 	     
 (cd "$DIST_SANDBOX" && \
  	${SVN:-svn} export -q $EXTRA_EXPORT_OPTIONS --ignore-externals -r "$REVISION" \
-	     "http://internalbrr.cr.usgs.gov/svn_GW/phreeqc/trunk/src" \
-	     "$DISTNAME/src/IPhreeqc/phreeqcpp/phreeqc")
+	     "http://internalbrr.cr.usgs.gov/svn_GW/phreeqc/$REPOS_PATH/src" \
+	     "$DISTNAME/IPhreeqcCOM/IPhreeqc/phreeqcpp/phreeqc")
 	     
 
 ver_major=`echo $VERSION | cut -d '.' -f 1`
@@ -194,6 +194,7 @@ do
   mv -f "$vsn_file.tmp" "$vsn_file"
   cp "$vsn_file" "$vsn_file.dist"
 done
+
 
 if [ -z "$ZIP" ]; then
   echo "Rolling $DISTNAME.tar ..."

@@ -15,7 +15,7 @@
 # 3g. make finish
 #
 
-NAME := PhreeqcCOM
+NAME := IPhreeqcCOM
 
 FORCE_UPDATE := $(shell svn up ..)
 
