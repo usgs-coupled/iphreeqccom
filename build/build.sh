@@ -177,18 +177,18 @@ clean() {
 install() {
   (rm -fr ${instdir}/* && \
 # MSI file
-  /usr/bin/install -m 755 "${objdir}/msi/bin/Release/${FULLPKG}.msi" ${instdir}/${FULLPKG}.msi && \
+  /usr/bin/install -m 755 "${objdir}/msi/bin/Release/${FULLPKG}.msi" "${instdir}/${FULLPKG}.msi" && \
 # Build log  
   if [ -f "${topdir}/all-${REL}.log" ] ; then \
-    /usr/bin/install -m 755 "${topdir}/all-${REL}.log" ${instdir}/all-${REL}.log ;\
+    /usr/bin/install -m 755 "${topdir}/all-${REL}.log" "${instdir}/all-${REL}.log" ;\
   fi && \
   if [ -x /usr/bin/md5sum ]; then \
-    cd ${instdir} && \
+    cd "${instdir}" && \
     find . -type f ! -name md5sum | sed 's/^/\"/' | sed 's/$/\"/' | xargs md5sum > md5sum ; \
   fi )
 }
 strip() {
-  (cd ${instdir} && \
+  (cd "${instdir}" && \
   echo 'SKIPPING find . -name "*.dll" -or -name "*.exe" | xargs strip 2>&1' ; \
   true )
 }
@@ -205,16 +205,16 @@ depend() {
   true )
 }
 pkg() {
-  (cd ${instdir} && \
-  tar cvjf ${bin_pkg} * )
+  (cd "${instdir}" && \
+  tar cvjf "${bin_pkg}" * )
 }
 mkpatch() {
-  (cd ${srcdir} && \
+  (cd "${srcdir}" && \
   find . -name "autom4te.cache" | xargs rm -rf ; \
-  unpack ${src_orig_pkg} && \
-  cd ${srcdir} && \
-  mv ${BASEPKG} ../${BASEPKG}-orig && \
-  cd ${topdir} && \
+  unpack "${src_orig_pkg}" && \
+  cd "${srcdir}" && \
+  mv "${BASEPKG}" ../${BASEPKG}-orig && \
+  cd "${topdir}" && \
   diff -urN -x '.build' -x '.inst' -x '.sinst' \
     ${DIFF_IGNORE} \
     ${BASEPKG}-orig ${BASEPKG} > \
@@ -230,26 +230,26 @@ spkg() {
   if [ "${SIG}" -eq 1 ] ; then \
     name=${srcinstdir}/${src_patch_name} text="PATCH" sigfile ; \
   fi && \
-  cp ${src_orig_pkg} ${srcinstdir}/${src_orig_pkg_name} && \
+  cp "${src_orig_pkg}" "${srcinstdir}/${src_orig_pkg_name}" && \
   if [ "${SIG}" -eq 1 ] ; then \
     name=${src_orig_pkg} text="ORIG_PKG" sigfile ; \
   fi && \
-  cp dist.sh ${srcinstdir}/ && \
-  cp Makefile ${srcinstdir}/ && \
+  cp dist.sh "${srcinstdir}/" && \
+  cp Makefile "${srcinstdir}/" && \
   if [ -e ${src_orig_pkg}.sig ] ; then \
     cp ${src_orig_pkg}.sig ${srcinstdir}/ ; \
   fi && \
-  cp $0 ${srcinstdir}/`basename $0` && \
+  cp $0 "${srcinstdir}/`basename $0`" && \
   name=$0 text="SCRIPT" sigfile && \
   if [ "${SIG}" -eq 1 ] ; then \
-    cp $0.sig ${srcinstdir}/ ; \
+    cp $0.sig "${srcinstdir}/" ; \
   fi && \
-  cd ${srcinstdir} && \
-  tar cvjf ${src_pkg} * )
+  cd "${srcinstdir}" && \
+  tar cvjf "${src_pkg}" * )
 }
 finish() {
   rm -rf `echo $phast_ser | sed "s^/.*^^"` && \
-  rm -rf ${srcdir}
+  rm -rf "${srcdir}"
 }
 sigfile() {
   if [ \( "${SIG}" -eq 1 \) -a \( -e $name \) -a \( \( ! -e $name.sig \) -o \( $name -nt $name.sig \) \) ]; then \
