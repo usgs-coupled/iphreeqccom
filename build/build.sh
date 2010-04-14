@@ -122,26 +122,26 @@ unpack() {
 }
 
 mkdirs() {
-  (cd ${topdir} && \
-  rm -fr ${objdir} ${instdir} ${srcinstdir} && \
-  mkdir -p ${objdir} && \
-  mkdir -p ${instdir} && \
-  mkdir -p ${srcinstdir} )
+  (cd "${topdir}" && \
+  rm -fr "${objdir}" "${instdir}" "${srcinstdir}" && \
+  mkdir -p "${objdir}" && \
+  mkdir -p "${instdir}" && \
+  mkdir -p "${srcinstdir}" )
 }
 prep() {
-  (cd ${topdir} && \
-  unpack ${src_orig_pkg} && \
-  cd ${topdir} && \
-  if [ -f ${src_patch} ] ; then \
-    patch -p0 --binary < ${src_patch} ;\
+  (cd "${topdir}" && \
+  unpack "${src_orig_pkg}" && \
+  cd "${topdir}" && \
+  if [ -f "${src_patch}" ] ; then \
+    patch -p0 --binary < "${src_patch}" ;\
   fi && \
   mkdirs )
 }
 conf() {
-  (cd ${objdir} && \
+  (cd "${objdir}" && \
   CFLAGS="${MY_CFLAGS}" LDFLAGS="${MY_LDFLAGS}" \
 # copy links to ${objdir} for building
-  find ${srcdir} -mindepth 1 -maxdepth 1 ! -name .build ! -name .inst ! -name .sinst -exec cp -al {} . \; )
+  find "${srcdir}" -mindepth 1 -maxdepth 1 ! -name .build ! -name .inst ! -name .sinst -exec cp -al {} . \; )
 }
 reconf() {
   (cd ${topdir} && \
@@ -153,18 +153,18 @@ build() {
   (
 # build PhreeqcCOM.chm
 # hhc can't handle directory names that begin with a period
-  cd ${topdir} && \
-  mv ${srcdir}/.build ${srcdir}/_build && \
-  cd ${srcdir}/_build/help && \
+  cd "${topdir}" && \
+  mv "${srcdir}/.build" "${srcdir}/_build" && \
+  cd "${srcdir}/_build/help" && \
   make && \
-  cd ${topdir} && \
-  mv ${srcdir}/_build ${srcdir}/.build && \
-# build PhreeqcCOM.dll
-  cd ${topdir} && \
-  cd ${objdir} && \
-  make && \
-# build PhreeqcCOM.msi
-  MsBuild.exe PhreeqcCOM.sln /t:msi /p:Configuration=Release /p:TargetName=${FULLPKG} /p:Major=${MAJOR} /p:Minor=${MINOR} /p:Build=${REL} )
+  cd "${topdir}" && \
+  mv "${srcdir}/_build" "${srcdir}/.build" && \
+# build IPhreeqcCOM.dll
+  cd "${topdir}" && \
+  cd "${objdir}" && \
+  MsBuild.exe IPhreeqcCOM.sln /t:IPhreeqcCOM /p:Configuration=Release && \
+# build IPhreeqcCOM.msi
+  MsBuild.exe IPhreeqcCOM.sln /t:msi /p:Configuration=Release /p:TargetName=${FULLPKG} /p:Major=${MAJOR} /p:Minor=${MINOR} /p:Build=${REL} )
 }
 check() {
   (cd ${objdir} && \
