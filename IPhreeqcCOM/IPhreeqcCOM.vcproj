@@ -2013,6 +2013,10 @@
 				RelativePath=".\IPhreeqcCOM.rgs"
 				>
 			</File>
+			<File
+				RelativePath=".\Version.rc2"
+				>
+			</File>
 		</Filter>
 		<Filter
 			Name="Generated Files"
