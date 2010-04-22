@@ -151,7 +151,7 @@ reconf() {
 }
 build() {
   (
-# build PhreeqcCOM.chm
+# build IPhreeqcCOM.chm
 # hhc can't handle directory names that begin with a period
   cd "${topdir}" && \
   mv "${srcdir}/.build" "${srcdir}/_build" && \
@@ -162,9 +162,15 @@ build() {
 # build IPhreeqcCOM.dll
   cd "${topdir}" && \
   cd "${objdir}" && \
-  MsBuild.exe IPhreeqcCOM.sln /t:IPhreeqcCOM /p:Configuration=Release && \
+  MsBuild.exe IPhreeqcCOM.sln /t:IPhreeqcCOM /p:Configuration=Release /p:Platform=Win32 && \
+# build IPhreeqcCOM.dll
+  cd "${topdir}" && \
+  cd "${objdir}" && \
+  MsBuild.exe IPhreeqcCOM.sln /t:IPhreeqcCOM /p:Configuration=Release /p:Platform=x64 && \  
 # build IPhreeqcCOM.msi
-  MsBuild.exe IPhreeqcCOM.sln /t:msi /p:Configuration=Release /p:TargetName=${FULLPKG} /p:Major=${MAJOR} /p:Minor=${MINOR} /p:Build=${REL} )
+  MsBuild.exe IPhreeqcCOM.sln /t:msi /p:Configuration=Release /p:Platform=Win32 /p:TargetName=${FULLPKG} /p:Major=${MAJOR} /p:Minor=${MINOR} /p:Build=${REL} && \
+# build IPhreeqcCOMx64.msi
+  MsBuild.exe IPhreeqcCOM.sln /t:msi /p:Configuration=Release /p:Platform=x64 /p:TargetName=${FULLPKG}-x64 /p:Major=${MAJOR} /p:Minor=${MINOR} /p:Build=${REL} )
 }
 check() {
   (cd ${objdir} && \
@@ -178,6 +184,8 @@ install() {
   (rm -fr ${instdir}/* && \
 # MSI file
   /usr/bin/install -m 755 "${objdir}/msi/bin/Release/${FULLPKG}.msi" "${instdir}/${FULLPKG}.msi" && \
+# x64 MSI file
+  /usr/bin/install -m 755 "${objdir}/msi/bin/x64/Release/${FULLPKG}-x64.msi" "${instdir}/${FULLPKG}-x64.msi" && \
 # Build log  
   if [ -f "${topdir}/all-${REL}.log" ] ; then \
     /usr/bin/install -m 755 "${topdir}/all-${REL}.log" "${instdir}/all-${REL}.log" ;\

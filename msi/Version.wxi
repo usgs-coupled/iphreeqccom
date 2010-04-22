@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Include>  
+<Include>
   <?define Name="IPhreeqcCOM"?>
 
   <!-- Note Major Minor and Build are set on the command line -->
@@ -11,16 +11,29 @@
   <?define Version=$(var.Major).$(var.Minor).$(var.Build)?>
 
   <?define Manufacturer="U.S. Geological Survey"?>
+<?if $(sys.BUILDARCH)=x64 ?>
+  <?define UpgradeGuid=2FAB9604-812A-4b1b-9E7B-76744FE69EA1?>
+  <?define Description="USGS $(var.Name) x64 $(var.Major).$(var.Minor).$(var.Build) Installer"?>
+  <?define FeatureTitle="$(var.Name) x64 $(var.Major).$(var.Minor).$(var.Build)"?>
+  <?define FullName="$(var.Name) x64 $(var.Major).$(var.Minor).$(var.Build)"?>
+  <?define Comments="$(var.Name) x64 component"?>
+  <?define PrgMenu="$(var.Name) x64 $(var.Major).$(var.Build)"?>
+  <?define Cabinet=$(var.Name)x64.cab?>
+  <?define SrcPath="..\IPhreeqcCOM\x64\$(var.Configuration)\"?>
+  <?define Win64="yes"?>
+<?else?>
   <?define UpgradeGuid=A9DFCAEA-D23A-44a2-AC9B-A471A723E8E7?>
   <?define Description="USGS $(var.Name) $(var.Major).$(var.Minor).$(var.Build) Installer"?>
-  <?define DiskPrompt="USGS $(var.Name) $(var.Major).$(var.Minor).$(var.Build) Installation [1]"?>
-  <?define PrgMenu="$(var.Name) $(var.Major).$(var.Build)"?>
-  <?define Shortcut="$(var.Name) Reference"?>
   <?define FeatureTitle="$(var.Name) $(var.Major).$(var.Minor).$(var.Build)"?>
-  <?define Cabinet=$(var.Name).cab?>
-  <?define Directory="$(var.Name) $(var.Major).$(var.Minor).$(var.Build)"?>
   <?define FullName="$(var.Name) $(var.Major).$(var.Minor).$(var.Build)"?>
   <?define Comments="$(var.Name) component"?>
+  <?define PrgMenu="$(var.Name) $(var.Major).$(var.Build)"?>
+  <?define Cabinet=$(var.Name).cab?>
+  <?define SrcPath="..\IPhreeqcCOM\$(var.Configuration)\"?>
+  <?define Win64="no"?>
+<?endif?>
+  <?define DiskPrompt="USGS $(var.Name) $(var.Major).$(var.Minor).$(var.Build) Installation [1]"?>
+  <?define Shortcut="$(var.Name) Reference"?>
+  <?define Directory="$(var.Name) $(var.Major).$(var.Minor).$(var.Build)"?>
   <?define MergeDir="C:\Program Files (x86)\Common Files\Merge Modules"?>
-
 </Include>

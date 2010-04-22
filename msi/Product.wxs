@@ -11,7 +11,11 @@
            UpgradeCode="$(var.UpgradeGuid)">
 
     <!-- package -->
+<?if $(sys.BUILDARCH)=x64 ?>
+    <Package InstallerVersion="300" Compressed="yes" Platform="x64"/>
+<?else?>
     <Package InstallerVersion="300" Compressed="yes" Platform="x86"/>
+<?endif?>
 
     <Upgrade Id="$(var.UpgradeGuid)" >
       <!-- upgrade is flagged if current-install is newer than or equal to package - TODO: should make a dialog appear asking user to confirm downgrade.  -->
@@ -26,12 +30,21 @@
     <!-- directory structure -->
     <Directory Id="TARGETDIR" Name="SourceDir">
       <!-- program files -->
+<?if $(sys.BUILDARCH)=x64 ?>
+      <Directory Id="ProgramFiles64Folder">
+        <Directory Id="USGS" Name="USGS">
+          <Directory Id="INSTALLLOCATION" Name="$(var.Directory)">
+          </Directory>
+        </Directory>
+      </Directory>
+<?else?>
       <Directory Id="ProgramFilesFolder">
         <Directory Id="USGS" Name="USGS">
           <Directory Id="INSTALLLOCATION" Name="$(var.Directory)">
           </Directory>
         </Directory>
       </Directory>
+<?endif?>
       <!-- start menu -->
       <Directory Id="ProgramMenuFolder">
         <Directory Id="ProgramMenuDir" Name="$(var.FullName)" />
@@ -40,8 +53,8 @@
 
     <!-- dll file -->
     <DirectoryRef Id="INSTALLLOCATION">
-      <Component Id="IPhreeqcCOM.dll" Guid="{D0752165-89A5-4131-8142-5D2B831D8810}">
-        <File Id="PhreeqcCOM.dll" Source="..\IPhreeqcCOM\Release\IPhreeqcCOM.dll" KeyPath="yes">
+      <Component Id="IPhreeqcCOM.dll" Guid="{D0752165-89A5-4131-8142-5D2B831D8810}" Win64="$(var.Win64)">
+        <File Id="PhreeqcCOM.dll" Source="$(var.SrcPath)\IPhreeqcCOM.dll" KeyPath="yes">
           <TypeLib Id="{EDB4905E-CA79-4C56-BE59-575C71219AEA}" Description="IPhreeqcCOM 1.0 Type Library" HelpDirectory="INSTALLLOCATION" Language="0" MajorVersion="1" MinorVersion="0">
             <AppId Description="IPhreeqcCOM" Id="{9D82F65C-3B0F-4A65-A18C-95A231A04089}">
               <Class Id="{C74CB8AF-C939-42B7-A88D-9594041A0CAF}" Context="InprocServer32" Description="IPhreeqcCOM Object Class" ThreadingModel="apartment" Programmable="yes">
@@ -59,8 +72,8 @@
 
     <!-- tlb file -->
     <DirectoryRef Id="INSTALLLOCATION">
-      <Component Id="IPhreeqcCOM.tlb" Guid="40EF2861-54DE-49e7-8E0F-9ADE5EF0150B">
-        <File Id="IPhreeqcCOM.tlb" Source="..\IPhreeqcCOM\Release\IPhreeqcCOM.tlb" KeyPath="yes">
+      <Component Id="IPhreeqcCOM.tlb" Guid="40EF2861-54DE-49e7-8E0F-9ADE5EF0150B" Win64="$(var.Win64)">
+        <File Id="IPhreeqcCOM.tlb" Source="$(var.SrcPath)\IPhreeqcCOM.tlb" KeyPath="yes">
           <TypeLib Id="{EDB4905E-CA79-4C56-BE59-575C71219AEA}" Description="IPhreeqcCOM 1.0 Type Library" HelpDirectory="INSTALLLOCATION" Language="0" MajorVersion="1" MinorVersion="0">
             <Interface Id="{38C710BB-E052-4A85-BABE-F22F8FD48ADB}" Name="IPhreeqcCOM" ProxyStubClassId="{00020424-0000-0000-C000-000000000046}" ProxyStubClassId32="{00020424-0000-0000-C000-000000000046}" />
           </TypeLib>
@@ -70,14 +83,14 @@
 
     <!-- chm file -->
     <DirectoryRef Id="INSTALLLOCATION">
-      <Component Id="IPhreeqcCOM.chm" Guid="D257D09C-916F-42fb-829F-52E52BFD04FD">
+      <Component Id="IPhreeqcCOM.chm" Guid="D257D09C-916F-42fb-829F-52E52BFD04FD" Win64="$(var.Win64)">
         <File Id="IPhreeqcCOM.chm" Source="..\help\IPhreeqcCOM.chm" KeyPath="yes"/>
       </Component>
     </DirectoryRef>
 
     <!-- chm shortcut -->
     <DirectoryRef Id="ProgramMenuDir">
-      <Component Id="IPhreeqcCOM.chm.lnk" Guid="93612291-9919-4d7f-8B4C-901E8CE876D8">
+      <Component Id="IPhreeqcCOM.chm.lnk" Guid="93612291-9919-4d7f-8B4C-901E8CE876D8" Win64="$(var.Win64)">
         <Shortcut Id="IPhreeqcCOM.chm" Name="$(var.Shortcut)" Target="[INSTALLLOCATION]IPhreeqcCOM.chm"/>
         <RemoveFolder Id="ProgramMenuDir" On="uninstall"/>
         <RegistryValue Root="HKCU" Key="Software\USGS\$(var.Name)" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
@@ -86,10 +99,17 @@
 
     <!-- merge modules -->
     <DirectoryRef Id="INSTALLLOCATION">
-      <Merge Id="CRT" Language="1033" SourceFile="$(var.MergeDir)\microsoft_vc80_crt_x86.msm" DiskId="1" />
+      <?if $(sys.BUILDARCH)=x64 ?>
+      <Merge Id="CRT" Language="1033" SourceFile="$(var.MergeDir)\Microsoft_VC80_CRT_x86_x64.msm" DiskId="1" />
+      <Merge Id="CRT Policy" Language="1033" SourceFile="$(var.MergeDir)\policy_8_0_Microsoft_VC80_CRT_x86_x64.msm" DiskId="1" />
+      <Merge Id="ATL" Language="1033" SourceFile="$(var.MergeDir)\Microsoft_VC80_ATL_x86_x64.msm" DiskId="1" />
+      <Merge Id="ATL Policy" Language="1033" SourceFile="$(var.MergeDir)\policy_8_0_Microsoft_VC80_ATL_x86_x64.msm" DiskId="1" />
+      <?else?>
+      <Merge Id="CRT" Language="1033" SourceFile="$(var.MergeDir)\Microsoft_VC80_CRT_x86.msm" DiskId="1" />
       <Merge Id="CRT Policy" Language="1033" SourceFile="$(var.MergeDir)\policy_8_0_Microsoft_VC80_CRT_x86.msm" DiskId="1" />
       <Merge Id="ATL" Language="1033" SourceFile="$(var.MergeDir)\Microsoft_VC80_ATL_x86.msm" DiskId="1" />
       <Merge Id="ATL Policy" Language="1033" SourceFile="$(var.MergeDir)\policy_8_0_Microsoft_VC80_ATL_x86.msm" DiskId="1" />
+      <?endif?>
     </DirectoryRef>
 
     <!-- features -->
