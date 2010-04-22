@@ -166,7 +166,7 @@ build() {
 # build IPhreeqcCOM.dll
   cd "${topdir}" && \
   cd "${objdir}" && \
-  MsBuild.exe IPhreeqcCOM.sln /t:IPhreeqcCOM /p:Configuration=Release /p:Platform=x64 && \  
+  MsBuild.exe IPhreeqcCOM.sln /t:IPhreeqcCOM /p:Configuration=Release /p:Platform=x64 && \
 # build IPhreeqcCOM.msi
   MsBuild.exe IPhreeqcCOM.sln /t:msi /p:Configuration=Release /p:Platform=Win32 /p:TargetName=${FULLPKG} /p:Major=${MAJOR} /p:Minor=${MINOR} /p:Build=${REL} && \
 # build IPhreeqcCOMx64.msi
