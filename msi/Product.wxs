@@ -53,7 +53,7 @@
 
     <!-- dll file -->
     <DirectoryRef Id="INSTALLLOCATION">
-      <Component Id="IPhreeqcCOM.dll" Guid="{D0752165-89A5-4131-8142-5D2B831D8810}" Win64="$(var.Win64)">
+      <Component Id="IPhreeqcCOM.dll" Guid="$(var.IPhreeqcCOMDllGuid)" Win64="$(var.Win64)">
         <File Id="PhreeqcCOM.dll" Source="$(var.SrcPath)\IPhreeqcCOM.dll" KeyPath="yes">
           <TypeLib Id="{EDB4905E-CA79-4C56-BE59-575C71219AEA}" Description="IPhreeqcCOM 1.0 Type Library" HelpDirectory="INSTALLLOCATION" Language="0" MajorVersion="1" MinorVersion="0">
             <AppId Description="IPhreeqcCOM" Id="{9D82F65C-3B0F-4A65-A18C-95A231A04089}">
@@ -72,7 +72,7 @@
 
     <!-- tlb file -->
     <DirectoryRef Id="INSTALLLOCATION">
-      <Component Id="IPhreeqcCOM.tlb" Guid="40EF2861-54DE-49e7-8E0F-9ADE5EF0150B" Win64="$(var.Win64)">
+      <Component Id="IPhreeqcCOM.tlb" Guid="$(var.IPhreeqcCOMTlbGuid)" Win64="$(var.Win64)">
         <File Id="IPhreeqcCOM.tlb" Source="$(var.SrcPath)\IPhreeqcCOM.tlb" KeyPath="yes">
           <TypeLib Id="{EDB4905E-CA79-4C56-BE59-575C71219AEA}" Description="IPhreeqcCOM 1.0 Type Library" HelpDirectory="INSTALLLOCATION" Language="0" MajorVersion="1" MinorVersion="0">
             <Interface Id="{38C710BB-E052-4A85-BABE-F22F8FD48ADB}" Name="IPhreeqcCOM" ProxyStubClassId="{00020424-0000-0000-C000-000000000046}" ProxyStubClassId32="{00020424-0000-0000-C000-000000000046}" />
@@ -83,14 +83,14 @@
 
     <!-- chm file -->
     <DirectoryRef Id="INSTALLLOCATION">
-      <Component Id="IPhreeqcCOM.chm" Guid="D257D09C-916F-42fb-829F-52E52BFD04FD" Win64="$(var.Win64)">
+      <Component Id="IPhreeqcCOM.chm" Guid="$(var.IPhreeqcCOMChmGuid)" Win64="$(var.Win64)">
         <File Id="IPhreeqcCOM.chm" Source="..\help\IPhreeqcCOM.chm" KeyPath="yes"/>
       </Component>
     </DirectoryRef>
 
     <!-- chm shortcut -->
     <DirectoryRef Id="ProgramMenuDir">
-      <Component Id="IPhreeqcCOM.chm.lnk" Guid="93612291-9919-4d7f-8B4C-901E8CE876D8" Win64="$(var.Win64)">
+      <Component Id="IPhreeqcCOM.chm.lnk" Guid="$(var.IPhreeqcCOMLnkGuid)" Win64="$(var.Win64)">
         <Shortcut Id="IPhreeqcCOM.chm" Name="$(var.Shortcut)" Target="[INSTALLLOCATION]IPhreeqcCOM.chm"/>
         <RemoveFolder Id="ProgramMenuDir" On="uninstall"/>
         <RegistryValue Root="HKCU" Key="Software\USGS\$(var.Name)" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
