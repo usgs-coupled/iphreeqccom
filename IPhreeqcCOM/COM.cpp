@@ -41,7 +41,7 @@ STDMETHODIMP CCOM::LoadDatabase(BSTR* filename, LONG* retval)
 	if ((*retval = this->IPhreeqcPtr->LoadDatabase(f)))
 	{
 #if defined(SUPPORT_ERROR_INFO)
-		return AtlReportError(GetObjectCLSID(), this->IPhreeqcPtr->GetLastErrorString());
+		return AtlReportError(GetObjectCLSID(), this->IPhreeqcPtr->GetErrorString());
 #endif
 	}
 
@@ -148,7 +148,7 @@ STDMETHODIMP CCOM::RunFile(BSTR* filename, LONG* retval)
 	if (*retval = this->IPhreeqcPtr->RunFile(f))
 	{
 #if defined(SUPPORT_ERROR_INFO)
-		return AtlReportError(GetObjectCLSID(), this->IPhreeqcPtr->GetLastErrorString());
+		return AtlReportError(GetObjectCLSID(), this->IPhreeqcPtr->GetErrorString());
 #endif
 	}
 
@@ -166,7 +166,7 @@ STDMETHODIMP CCOM::RunAccumulated(LONG* retval)
 	if (*retval = this->IPhreeqcPtr->RunAccumulated())
 	{
 #if defined(SUPPORT_ERROR_INFO)
-		return AtlReportError(GetObjectCLSID(), this->IPhreeqcPtr->GetLastErrorString());
+		return AtlReportError(GetObjectCLSID(), this->IPhreeqcPtr->GetErrorString());
 #endif
 	}
 
@@ -215,7 +215,7 @@ STDMETHODIMP CCOM::RunString(BSTR* input, LONG* retval)
 	if (*retval = this->IPhreeqcPtr->RunString(in))
 	{
 #if defined(SUPPORT_ERROR_INFO)
-		return AtlReportError(GetObjectCLSID(), this->IPhreeqcPtr->GetLastErrorString());
+		return AtlReportError(GetObjectCLSID(), this->IPhreeqcPtr->GetErrorString());
 #endif
 	}
 
@@ -373,7 +373,7 @@ STDMETHODIMP CCOM::GetSelectedOutputArray(VARIANT* retval)
 	return S_OK;
 }
 
-STDMETHODIMP CCOM::GetLastErrorString(BSTR* retval)
+STDMETHODIMP CCOM::GetErrorString(BSTR* retval)
 {
 	if( !retval )
 	{
@@ -381,7 +381,7 @@ STDMETHODIMP CCOM::GetLastErrorString(BSTR* retval)
 	}
 	MACRO_CHECK_IPHREEQC_PTR();
 
-	CComBSTR bstrVal(this->IPhreeqcPtr->GetLastErrorString());
+	CComBSTR bstrVal(this->IPhreeqcPtr->GetErrorString());
 	*retval = ::SysAllocString(bstrVal.m_str);
 
 	return S_OK;
@@ -453,7 +453,7 @@ STDMETHODIMP CCOM::LoadDatabaseString(BSTR* input, LONG* retval)
 	if (*retval = this->IPhreeqcPtr->LoadDatabaseString(in))
 	{
 #if defined(SUPPORT_ERROR_INFO)
-		return AtlReportError(GetObjectCLSID(), this->IPhreeqcPtr->GetLastErrorString());
+		return AtlReportError(GetObjectCLSID(), this->IPhreeqcPtr->GetErrorString());
 #endif
 	}
 
@@ -568,7 +568,7 @@ STDMETHODIMP CCOM::GetComponentList(VARIANT* retval)
 	return S_OK;
 }
 
-STDMETHODIMP CCOM::GetLastWarningString(BSTR* retval)
+STDMETHODIMP CCOM::GetWarningString(BSTR* retval)
 {
 	if( !retval )
 	{
@@ -576,7 +576,7 @@ STDMETHODIMP CCOM::GetLastWarningString(BSTR* retval)
 	}
 	MACRO_CHECK_IPHREEQC_PTR();
 
-	CComBSTR bstrVal(this->IPhreeqcPtr->GetLastWarningString());
+	CComBSTR bstrVal(this->IPhreeqcPtr->GetWarningString());
 	*retval = ::SysAllocString(bstrVal.m_str);
 
 	return S_OK;

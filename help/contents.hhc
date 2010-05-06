@@ -34,8 +34,8 @@
 			<param name="Local" value="html\mthGetDumpString.htm">
 			</OBJECT>
 		<LI> <OBJECT type="text/sitemap">
-			<param name="Name" value="GetLastErrorString Method">
-			<param name="Local" value="html\mthGetLastErrorString.htm">
+			<param name="Name" value="GetErrorString Method">
+			<param name="Local" value="html\mthGetErrorString.htm">
 			</OBJECT>
 		<LI> <OBJECT type="text/sitemap">
 			<param name="Name" value="GetSelectedOutputArray Method">
@@ -44,6 +44,10 @@
 		<LI> <OBJECT type="text/sitemap">
 			<param name="Name" value="GetSelectedOutputValue Method">
 			<param name="Local" value="html\mthGetSelectedOutputValue.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="GetWarningString Method">
+			<param name="Local" value="html\mthGetWarningString.htm">
 			</OBJECT>
 		<LI> <OBJECT type="text/sitemap">
 			<param name="Name" value="LoadDatabase Method">

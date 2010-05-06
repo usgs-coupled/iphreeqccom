@@ -91,7 +91,7 @@ public:
 	STDMETHOD(get_RowCount)(LONG* pVal);
 	STDMETHOD(get_Lines)(BSTR* pVal);
 	STDMETHOD(GetSelectedOutputArray)(VARIANT* retval);
-	STDMETHOD(GetLastErrorString)(BSTR* retval);
+	STDMETHOD(GetErrorString)(BSTR* retval);
 	STDMETHOD(GetSelectedOutputValue)(LONG row, LONG col, VARIANT* retval);
 	STDMETHOD(LoadDatabaseString)(BSTR* input, LONG* retval);
 	STDMETHOD(get_DumpOn)(VARIANT_BOOL* pVal);
@@ -99,7 +99,7 @@ public:
 	STDMETHOD(get_DumpStringOn)(VARIANT_BOOL* pVal);
 	STDMETHOD(put_DumpStringOn)(VARIANT_BOOL newVal);
 	STDMETHOD(GetComponentList)(VARIANT* retval);
-	STDMETHOD(GetLastWarningString)(BSTR* retval);
+	STDMETHOD(GetWarningString)(BSTR* retval);
 	STDMETHOD(GetDumpString)(BSTR* retval);
 };
 

@@ -33,7 +33,7 @@ interface IPhreeqcCOM : IDispatch{
 	[propget, id(11), helpstring("property RowCount")] HRESULT RowCount([out, retval] LONG* pVal);
 	[propget, id(12), helpstring("property Lines")] HRESULT Lines([out, retval] BSTR* pVal);
 	[id(13), helpstring("method GetSelectedOutputArray")] HRESULT GetSelectedOutputArray([out,retval] VARIANT* retval);
-	[id(14), helpstring("method GetLastErrorString")] HRESULT GetLastErrorString([out,retval] BSTR* retval);
+	[id(14), helpstring("method GetErrorString")] HRESULT GetErrorString([out,retval] BSTR* retval);
 	[id(15), helpstring("method GetSelectedOutputValue")] HRESULT GetSelectedOutputValue([in] LONG row, [in] LONG col, [out,retval] VARIANT* retval);
 	[id(16), helpstring("method LoadDatabaseString")] HRESULT LoadDatabaseString([in] BSTR* input, [out,retval] LONG* retval);
 	[propget, id(17), helpstring("property DumpOn")] HRESULT DumpOn([out, retval] VARIANT_BOOL* pVal);
@@ -41,7 +41,7 @@ interface IPhreeqcCOM : IDispatch{
 	[propget, id(18), helpstring("property DumpStringOn")] HRESULT DumpStringOn([out, retval] VARIANT_BOOL* pVal);
 	[propput, id(18), helpstring("property DumpStringOn")] HRESULT DumpStringOn([in] VARIANT_BOOL newVal);
 	[id(19), helpstring("method GetComponentList")] HRESULT GetComponentList([out,retval] VARIANT* retval);
-	[id(20), helpstring("method GetLastWarningString")] HRESULT GetLastWarningString([out,retval] BSTR* retval);
+	[id(20), helpstring("method GetWarningString")] HRESULT GetWarningString([out,retval] BSTR* retval);
 	[id(21), helpstring("method GetDumpString")] HRESULT GetDumpString([out,retval] BSTR* retval);
 };
 [
