@@ -20,7 +20,7 @@
 </DIV>
 
 <!-- Description -->
-<p>Returns a string containing any possible error messages that occured during the last invokation of the following methods: <a class="ofvbalink" href="mthAccumulateLine.htm">AccumulateLine</a>, <a class="ofvbalink" href="mthGetSelectedOutputValue.htm">GetSelectedOutputValue</a>, <a class="ofvbalink" href="mthLoadDatabase.htm">LoadDatabase</a>, <a class="ofvbalink" href="mthLoadDatabaseString.htm">LoadDatabaseString</a>, <a class="ofvbalink" href="mthRunAccumulated.htm">RunAccumulated</a>, <a class="ofvbalink" href="mthRunFile.htm">RunFile</a>, <a class="ofvbalink" href="mthRunString.htm">RunString</a>.</p>
+<p>Returns a string containing any possible warning messages that occured during the last invokation of the following methods: <a class="ofvbalink" href="mthLoadDatabase.htm">LoadDatabase</a>, <a class="ofvbalink" href="mthLoadDatabaseString.htm">LoadDatabaseString</a>, <a class="ofvbalink" href="mthRunAccumulated.htm">RunAccumulated</a>, <a class="ofvbalink" href="mthRunFile.htm">RunFile</a>, <a class="ofvbalink" href="mthRunString.htm">RunString</a>.</p>
 
 <!-- Prototype -->
 <p class="signature"><i>expression</i>.<b class="bterm">GetWarningString</b></p>
@@ -31,21 +31,20 @@
 
 <!-- Example -->
 <h2><a id="#example" name="#example">Example</a></h2>
-<p>The example attempts to run the <b class="bterm">"ex1"</b> input file, fails, and displays the reason for failure (no database is loaded).</p>
+<p>The example loads the phreeqc.dat database and attempts to use the DATABASE keyword to set the database to wateq4f.dat. A warning is displayed stating that the DATABASE keyword is ignored by IPhreeqc.</p>
 
 <!-- JScript Example -->
 <div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
 <div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
   JScript</div>
-try
+var IPhreeqc = new ActiveXObject("IPhreeqcCOM.Object");
+IPhreeqc.LoadDatabase("phreeqc.dat");
+IPhreeqc.AccumulateLine("DATABASE wateq4f.dat");
+IPhreeqc.AccumulateLine("SOLUTION 1");
+IPhreeqc.RunAccumulated();
+if (IPhreeqc.GetWarningString().length != 0)
 {
-    var shell = new ActiveXObject("wscript.shell");
-    var IPhreeqc = new ActiveXObject("IPhreeqcCOM.Object");
-    IPhreeqc.RunFile("ex1");
-}
-catch(e)
-{
-    shell.Popup(IPhreeqc.<b class="bterm">GetWarningString</b>());  // could also use e.message
+    WScript.Echo(IPhreeqc.<b class="bterm">GetWarningString</b>());
 }
 </pre></div>
 
@@ -54,10 +53,13 @@ catch(e)
 <div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
   VBScript</div>
 Dim IPhreeqc
-On Error Resume Next
 Set IPhreeqc = CreateObject("IPhreeqcCOM.Object")
-If (IPhreeqc.RunFile("ex1") &lt;&gt; 0) Then
-    MsgBox(IPhreeqc.<b class="bterm">GetWarningString</b>)
+IPhreeqc.LoadDatabase("phreeqc.dat")
+IPhreeqc.AccumulateLine("DATABASE wateq4f.dat")
+IPhreeqc.AccumulateLine("SOLUTION 1")
+IPhreeqc.RunAccumulated()
+If (Len(IPhreeqc.GetWarningString()) <> 0) Then
+    WScript.Echo(IPhreeqc.<b class="bterm">GetWarningString</b>())
 End If
 </pre></div>
 

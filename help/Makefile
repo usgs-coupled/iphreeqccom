@@ -57,3 +57,6 @@ all: IPhreeqcCOM.chm
 
 IPhreeqcCOM.chm : IPhreeqcCOM.hhp contents.hhc $(FILES)
 	@hhc IPhreeqcCOM.hhp || exit 0
+
+view: IPhreeqcCOM.chm
+	cygstart IPhreeqcCOM.chm

@@ -13,6 +13,7 @@
   <?define Manufacturer="U.S. Geological Survey"?>
 <?if $(sys.BUILDARCH)=x64 ?>
   <?define UpgradeGuid="{42FC55D6-2BAA-4b1e-A6F0-F580D60549AF}"?>
+  <?define DatabaseGuid="{6455A60F-D78E-4032-8657-9B5B01BE6D84}"?>
   <?define IPhreeqcCOMDllGuid="{C16C5FFE-120F-4971-AD6D-01C7939DBAE6}"?>
   <?define IPhreeqcCOMTlbGuid="{8F21B29A-B3C6-4504-A3B4-E73236053F29}"?>
   <?define IPhreeqcCOMChmGuid="{DCDB92E8-8CC4-4350-BA36-DFCFA316D61B}"?>
@@ -27,6 +28,7 @@
   <?define Win64="yes"?>
 <?else?>
   <?define UpgradeGuid="{A9DFCAEA-D23A-44a2-AC9B-A471A723E8E7}"?>
+  <?define DatabaseGuid="{FFF59392-CE2F-440d-A2FA-2C98B00D0A16}"?>
   <?define IPhreeqcCOMDllGuid="{60A5C1D7-B076-4b7e-8CC3-18813C2A3FF6}"?>
   <?define IPhreeqcCOMTlbGuid="{2ABD1E66-C307-486e-8D05-C7CA9DBC1AD7}"?>
   <?define IPhreeqcCOMChmGuid="{D0570496-BB73-4402-9D8C-32282A690568}"?>
@@ -44,4 +46,5 @@
   <?define Shortcut="$(var.Name) Reference"?>
   <?define Directory="$(var.Name) $(var.Major).$(var.Minor).$(var.Build)"?>
   <?define MergeDir="C:\Program Files (x86)\Common Files\Merge Modules"?>
+  <?define DatabaseDir="..\IPhreeqcCOM\database"?>
 </Include>

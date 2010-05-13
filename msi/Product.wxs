@@ -34,6 +34,8 @@
       <Directory Id="ProgramFiles64Folder">
         <Directory Id="USGS" Name="USGS">
           <Directory Id="INSTALLLOCATION" Name="$(var.Directory)">
+            <Directory Id="database" Name="database">              
+            </Directory>
           </Directory>
         </Directory>
       </Directory>
@@ -41,6 +43,8 @@
       <Directory Id="ProgramFilesFolder">
         <Directory Id="USGS" Name="USGS">
           <Directory Id="INSTALLLOCATION" Name="$(var.Directory)">
+            <Directory Id="database" Name="database">
+            </Directory>
           </Directory>
         </Directory>
       </Directory>
@@ -54,7 +58,7 @@
     <!-- dll file -->
     <DirectoryRef Id="INSTALLLOCATION">
       <Component Id="IPhreeqcCOM.dll" Guid="$(var.IPhreeqcCOMDllGuid)" Win64="$(var.Win64)">
-        <File Id="PhreeqcCOM.dll" Source="$(var.SrcPath)\IPhreeqcCOM.dll" KeyPath="yes">
+        <File Id="IPhreeqcCOM.dll" Source="$(var.SrcPath)\IPhreeqcCOM.dll" KeyPath="yes">
           <TypeLib Id="{EDB4905E-CA79-4C56-BE59-575C71219AEA}" Description="IPhreeqcCOM 1.0 Type Library" HelpDirectory="INSTALLLOCATION" Language="0" MajorVersion="1" MinorVersion="0">
             <AppId Description="IPhreeqcCOM" Id="{9D82F65C-3B0F-4A65-A18C-95A231A04089}">
               <Class Id="{C74CB8AF-C939-42B7-A88D-9594041A0CAF}" Context="InprocServer32" Description="IPhreeqcCOM Object Class" ThreadingModel="apartment" Programmable="yes">
@@ -80,7 +84,7 @@
         </File>
       </Component>
     </DirectoryRef>
-
+    
     <!-- chm file -->
     <DirectoryRef Id="INSTALLLOCATION">
       <Component Id="IPhreeqcCOM.chm" Guid="$(var.IPhreeqcCOMChmGuid)" Win64="$(var.Win64)">
@@ -94,6 +98,21 @@
         <Shortcut Id="IPhreeqcCOM.chm" Name="$(var.Shortcut)" Target="[INSTALLLOCATION]IPhreeqcCOM.chm"/>
         <RemoveFolder Id="ProgramMenuDir" On="uninstall"/>
         <RegistryValue Root="HKCU" Key="Software\USGS\$(var.Name)" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+      </Component>
+    </DirectoryRef>
+
+    <!-- database -->
+    <DirectoryRef Id="database">
+      <Component Id="database" Guid="$(var.DatabaseGuid)" Win64="$(var.Win64)">
+        <File Id="Amm.dat"       Name="Amm.dat"       Source="$(var.DatabaseDir)\Amm.dat" />
+        <File Id="iso.dat"       Name="iso.dat"       Source="$(var.DatabaseDir)\iso.dat" />
+        <File Id="llnl.dat"      Name="llnl.dat"      Source="$(var.DatabaseDir)\llnl.dat" />
+        <File Id="minteq.dat"    Name="minteq.dat"    Source="$(var.DatabaseDir)\minteq.dat" />
+        <File Id="minteq.v4.dat" Name="minteq.v4.dat" Source="$(var.DatabaseDir)\minteq.v4.dat" />
+        <File Id="phreeqc.dat"   Name="phreeqc.dat"   Source="$(var.DatabaseDir)\phreeqc.dat" />
+        <File Id="pitzer.dat"    Name="pitzer.dat"    Source="$(var.DatabaseDir)\pitzer.dat" />
+        <File Id="sit.dat"       Name="sit.dat"       Source="$(var.DatabaseDir)\sit.dat" />
+        <File Id="wateq4f.dat"   Name="wateq4f.dat"   Source="$(var.DatabaseDir)\wateq4f.dat" />
       </Component>
     </DirectoryRef>
 
@@ -118,6 +137,7 @@
       <ComponentRef Id="IPhreeqcCOM.tlb" />
       <ComponentRef Id="IPhreeqcCOM.chm" />
       <ComponentRef Id="IPhreeqcCOM.chm.lnk" />
+      <ComponentRef Id="database" />      
       <MergeRef Id="CRT" />
       <MergeRef Id="CRT Policy" />
       <MergeRef Id="ATL" />
