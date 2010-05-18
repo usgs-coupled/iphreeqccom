@@ -18,14 +18,14 @@ FILES = \
 	html/office10.css \
 	html/ofvbanl.js \
 	html/proColumnCount.htm \
-	html/proDumpOn.htm \
+	html/proDumpFileOn.htm \
 	html/proDumpStringOn.htm \
-	html/proErrorOn.htm \
+	html/proErrorFileOn.htm \
 	html/proLines.htm \
-	html/proLogOn.htm \
-	html/proOutputOn.htm \
+	html/proLogFileOn.htm \
+	html/proOutputFileOn.htm \
 	html/proRowCount.htm \
-	html/proSelectedOutputOn.htm \
+	html/proSelectedOutputFileOn.htm \
 	html/sExpCollapse.js \
 	links/mthAccumulateLine_l.htm \
 	links/mthGetComponentList_l.htm \
@@ -43,14 +43,14 @@ FILES = \
 	links/ofvbanli.js \
 	links/ofvbareuse.txt \
 	links/proColumnCount_l.htm \
-	links/proDumpOn_l.htm \
+	links/proDumpFileOn_l.htm \
 	links/proDumpStringOn_l.htm \
-	links/proErrorOn_l.htm \
+	links/proErrorFileOn_l.htm \
 	links/proLines_l.htm \
-	links/proLogOn_l.htm \
-	links/proOutputOn_l.htm \
+	links/proLogFileOn_l.htm \
+	links/proOutputFileOn_l.htm \
 	links/proRowCount_l.htm \
-	links/proSelectedOutputOn_l.htm
+	links/proSelectedOutputFileOn_l.htm
 
 
 all: IPhreeqcCOM.chm
