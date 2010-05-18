@@ -79,36 +79,36 @@
 			<param name="Local" value="html\proColumnCount.htm">
 			</OBJECT>
 		<LI> <OBJECT type="text/sitemap">
-			<param name="Name" value="DumpOn Property">
-			<param name="Local" value="html\proDumpOn.htm">
+			<param name="Name" value="DumpFileOn Property">
+			<param name="Local" value="html\proDumpFileOn.htm">
 			</OBJECT>
 		<LI> <OBJECT type="text/sitemap">
 			<param name="Name" value="DumpStringOn Property">
 			<param name="Local" value="html\proDumpStringOn.htm">
 			</OBJECT>
 		<LI> <OBJECT type="text/sitemap">
-			<param name="Name" value="ErrorOn Property">
-			<param name="Local" value="html\proErrorOn.htm">
+			<param name="Name" value="ErrorFileOn Property">
+			<param name="Local" value="html\proErrorFileOn.htm">
 			</OBJECT>
 		<LI> <OBJECT type="text/sitemap">
 			<param name="Name" value="Lines Property">
 			<param name="Local" value="html\proLines.htm">
 			</OBJECT>
 		<LI> <OBJECT type="text/sitemap">
-			<param name="Name" value="LogOn Property">
-			<param name="Local" value="html\proLogOn.htm">
+			<param name="Name" value="LogFileOn Property">
+			<param name="Local" value="html\proLogFileOn.htm">
 			</OBJECT>
 		<LI> <OBJECT type="text/sitemap">
-			<param name="Name" value="OutputOn Property">
-			<param name="Local" value="html\proOutputOn.htm">
+			<param name="Name" value="OutputFileOn Property">
+			<param name="Local" value="html\proOutputFileOn.htm">
 			</OBJECT>
 		<LI> <OBJECT type="text/sitemap">
 			<param name="Name" value="RowCount Property">
 			<param name="Local" value="html\proRowCount.htm">
 			</OBJECT>
 		<LI> <OBJECT type="text/sitemap">
-			<param name="Name" value="SelectedOutputOn Property">
-			<param name="Local" value="html\proSelectedOutputOn.htm">
+			<param name="Name" value="SelectedOutputFileOn Property">
+			<param name="Local" value="html\proSelectedOutputFileOn.htm">
 			</OBJECT>
 	</UL>
 </UL>

@@ -24,14 +24,14 @@ html\mthRunFile.htm
 html\mthRunString.htm
 html\objIPhreeqc.htm
 html\proColumnCount.htm
-html\proDumpOn.htm
+html\proDumpFileOn.htm
 html\proDumpStringOn.htm
-html\proErrorOn.htm
+html\proErrorFileOn.htm
 html\proLines.htm
-html\proLogOn.htm
-html\proOutputOn.htm
+html\proLogFileOn.htm
+html\proOutputFileOn.htm
 html\proRowCount.htm
-html\proSelectedOutputOn.htm
+html\proSelectedOutputFileOn.htm
 html\sExpCollapse.js
 links\mthAccumulateLine_l.htm
 links\mthGetComponentList_l.htm
@@ -48,19 +48,19 @@ links\mthRunString_l.htm
 links\objIPhreeqc_l.htm
 links\ofvbareuse.txt
 links\proColumnCount_l.htm
-links\proDumpOn_l.htm
+links\proDumpFileOn_l.htm
 links\proDumpStringOn_l.htm
-links\proErrorOn_l.htm
+links\proErrorFileOn_l.htm
 links\proLines_l.htm
-links\proLogOn_l.htm
-links\proOutputOn_l.htm
+links\proLogFileOn_l.htm
+links\proOutputFileOn_l.htm
 links\proRowCount_l.htm
-links\proSelectedOutputOn_l.htm
+links\proSelectedOutputFileOn_l.htm
 
 [ALIAS]
 HID_ACCUMULATELINE = html\mthAccumulateLine.htm
 HID_COLUMNCOUNT = html\proColumnCount.htm
-HID_ERRORON = html\proErrorOn.htm
+HID_ERRORON = html\proErrorFileOn.htm
 HID_GETLASTERRORSTRING=html\mthGetLastErrorString.htm
 HID_GETSELECTEDOUTPUTARRAY=html\mthGetSelectedOutputArray.htm
 HID_GETSELECTEDOUTPUTCOLUMNCOUNT = html\objPhreeqc.htm
@@ -69,14 +69,14 @@ HID_GETSELECTEDOUTPUTVALUE=html\mthGetSelectedOutputValue.htm
 HID_LINES = html\proLines.htm
 HID_LOADDATABASE = html\mthLoadDatabase.htm
 HID_LOADDATABASESTRING = html\mthLoadDatabaseString.htm
-HID_LOGON = html\proLogOn.htm
-HID_OUTPUTON = html\proOutputOn.htm
+HID_LOGON = html\proLogFileOn.htm
+HID_OUTPUTON = html\proOutputFileOn.htm
 HID_PHREEQCCOM = html\objPhreeqc.htm
 HID_ROWCOUNT = html\proRowCount.htm
 HID_RUN = html\mthRun.htm
 HID_RUNFILE = html\mthRunFile.htm
 HID_RUNSTRING = html\mthRunString.htm
-HID_SELECTEDOUTPUTON = html\proSelectedOutputOn.htm
+HID_SELECTEDOUTPUTON = html\proSelectedOutputFileOn.htm
 
 [MAP]
 #include "..\HelpID.h"
