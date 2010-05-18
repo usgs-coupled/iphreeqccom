@@ -75,16 +75,16 @@ private:
 
 	IPhreeqc* IPhreeqcPtr;
 public:
-	STDMETHOD(get_OutputOn)(VARIANT_BOOL* pVal);
-	STDMETHOD(put_OutputOn)(VARIANT_BOOL newVal);
-	STDMETHOD(get_ErrorOn)(VARIANT_BOOL* pVal);
-	STDMETHOD(put_ErrorOn)(VARIANT_BOOL newVal);
-	STDMETHOD(get_LogOn)(VARIANT_BOOL* pVal);
-	STDMETHOD(put_LogOn)(VARIANT_BOOL newVal);
+	STDMETHOD(get_OutputFileOn)(VARIANT_BOOL* pVal);
+	STDMETHOD(put_OutputFileOn)(VARIANT_BOOL newVal);
+	STDMETHOD(get_ErrorFileOn)(VARIANT_BOOL* pVal);
+	STDMETHOD(put_ErrorFileOn)(VARIANT_BOOL newVal);
+	STDMETHOD(get_LogFileOn)(VARIANT_BOOL* pVal);
+	STDMETHOD(put_LogFileOn)(VARIANT_BOOL newVal);
 	STDMETHOD(RunFile)(BSTR* filename, LONG* retval);
 	STDMETHOD(RunAccumulated)(LONG* retval);
-	STDMETHOD(get_SelectedOutputOn)(VARIANT_BOOL* pVal);
-	STDMETHOD(put_SelectedOutputOn)(VARIANT_BOOL newVal);
+	STDMETHOD(get_SelectedOutputFileOn)(VARIANT_BOOL* pVal);
+	STDMETHOD(put_SelectedOutputFileOn)(VARIANT_BOOL newVal);
 	STDMETHOD(RunString)(BSTR* input, LONG* retval);
 	STDMETHOD(AccumulateLine)(BSTR* line);
 	STDMETHOD(get_ColumnCount)(LONG* pVal);
@@ -94,8 +94,8 @@ public:
 	STDMETHOD(GetErrorString)(BSTR* retval);
 	STDMETHOD(GetSelectedOutputValue)(LONG row, LONG col, VARIANT* retval);
 	STDMETHOD(LoadDatabaseString)(BSTR* input, LONG* retval);
-	STDMETHOD(get_DumpOn)(VARIANT_BOOL* pVal);
-	STDMETHOD(put_DumpOn)(VARIANT_BOOL newVal);
+	STDMETHOD(get_DumpFileOn)(VARIANT_BOOL* pVal);
+	STDMETHOD(put_DumpFileOn)(VARIANT_BOOL newVal);
 	STDMETHOD(get_DumpStringOn)(VARIANT_BOOL* pVal);
 	STDMETHOD(put_DumpStringOn)(VARIANT_BOOL newVal);
 	STDMETHOD(GetComponentList)(VARIANT* retval);

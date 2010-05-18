@@ -48,7 +48,7 @@ STDMETHODIMP CCOM::LoadDatabase(BSTR* filename, LONG* retval)
 	return S_OK;
 }
 
-STDMETHODIMP CCOM::get_OutputOn(VARIANT_BOOL* pVal)
+STDMETHODIMP CCOM::get_OutputFileOn(VARIANT_BOOL* pVal)
 {
 	if( !pVal )
 	{
@@ -68,7 +68,7 @@ STDMETHODIMP CCOM::get_OutputOn(VARIANT_BOOL* pVal)
 	return S_OK;
 }
 
-STDMETHODIMP CCOM::put_OutputOn(VARIANT_BOOL newVal)
+STDMETHODIMP CCOM::put_OutputFileOn(VARIANT_BOOL newVal)
 {
 	MACRO_CHECK_IPHREEQC_PTR();
 
@@ -77,7 +77,7 @@ STDMETHODIMP CCOM::put_OutputOn(VARIANT_BOOL newVal)
 	return S_OK;
 }
 
-STDMETHODIMP CCOM::get_ErrorOn(VARIANT_BOOL* pVal)
+STDMETHODIMP CCOM::get_ErrorFileOn(VARIANT_BOOL* pVal)
 {
 	if( !pVal )
 	{
@@ -97,7 +97,7 @@ STDMETHODIMP CCOM::get_ErrorOn(VARIANT_BOOL* pVal)
 	return S_OK;
 }
 
-STDMETHODIMP CCOM::put_ErrorOn(VARIANT_BOOL newVal)
+STDMETHODIMP CCOM::put_ErrorFileOn(VARIANT_BOOL newVal)
 {
 	MACRO_CHECK_IPHREEQC_PTR();
 
@@ -106,7 +106,7 @@ STDMETHODIMP CCOM::put_ErrorOn(VARIANT_BOOL newVal)
 	return S_OK;
 }
 
-STDMETHODIMP CCOM::get_LogOn(VARIANT_BOOL* pVal)
+STDMETHODIMP CCOM::get_LogFileOn(VARIANT_BOOL* pVal)
 {
 	if( !pVal )
 	{
@@ -126,7 +126,7 @@ STDMETHODIMP CCOM::get_LogOn(VARIANT_BOOL* pVal)
 	return S_OK;
 }
 
-STDMETHODIMP CCOM::put_LogOn(VARIANT_BOOL newVal)
+STDMETHODIMP CCOM::put_LogFileOn(VARIANT_BOOL newVal)
 {
 	MACRO_CHECK_IPHREEQC_PTR();
 
@@ -173,7 +173,7 @@ STDMETHODIMP CCOM::RunAccumulated(LONG* retval)
 	return S_OK;
 }
 
-STDMETHODIMP CCOM::get_SelectedOutputOn(VARIANT_BOOL* pVal)
+STDMETHODIMP CCOM::get_SelectedOutputFileOn(VARIANT_BOOL* pVal)
 {
 	if( !pVal )
 	{
@@ -193,7 +193,7 @@ STDMETHODIMP CCOM::get_SelectedOutputOn(VARIANT_BOOL* pVal)
 	return S_OK;
 }
 
-STDMETHODIMP CCOM::put_SelectedOutputOn(VARIANT_BOOL newVal)
+STDMETHODIMP CCOM::put_SelectedOutputFileOn(VARIANT_BOOL newVal)
 {
 	MACRO_CHECK_IPHREEQC_PTR();
 
@@ -460,7 +460,7 @@ STDMETHODIMP CCOM::LoadDatabaseString(BSTR* input, LONG* retval)
 	return S_OK;
 }
 
-STDMETHODIMP CCOM::get_DumpOn(VARIANT_BOOL* pVal)
+STDMETHODIMP CCOM::get_DumpFileOn(VARIANT_BOOL* pVal)
 {
 	if( !pVal )
 	{
@@ -480,7 +480,7 @@ STDMETHODIMP CCOM::get_DumpOn(VARIANT_BOOL* pVal)
 	return S_OK;
 }
 
-STDMETHODIMP CCOM::put_DumpOn(VARIANT_BOOL newVal)
+STDMETHODIMP CCOM::put_DumpFileOn(VARIANT_BOOL newVal)
 {
 	MACRO_CHECK_IPHREEQC_PTR();
 

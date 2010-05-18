@@ -17,16 +17,16 @@ import "ocidl.idl";
 ]
 interface IPhreeqcCOM : IDispatch{
 	[id(1), helpstring("method LoadDatabase")] HRESULT LoadDatabase([in] BSTR* FileName, [out,retval] LONG* RHS);
-	[propget, id(2), helpstring("property OutputOn")] HRESULT OutputOn([out, retval] VARIANT_BOOL* pVal);
-	[propput, id(2), helpstring("property OutputOn")] HRESULT OutputOn([in] VARIANT_BOOL newVal);
-	[propget, id(3), helpstring("property ErrorOn")] HRESULT ErrorOn([out, retval] VARIANT_BOOL* pVal);
-	[propput, id(3), helpstring("property ErrorOn")] HRESULT ErrorOn([in] VARIANT_BOOL newVal);
-	[propget, id(4), helpstring("property LogOn")] HRESULT LogOn([out, retval] VARIANT_BOOL* pVal);
-	[propput, id(4), helpstring("property LogOn")] HRESULT LogOn([in] VARIANT_BOOL newVal);
+	[propget, id(2), helpstring("property OutputFileOn")] HRESULT OutputFileOn([out, retval] VARIANT_BOOL* pVal);
+	[propput, id(2), helpstring("property OutputFileOn")] HRESULT OutputFileOn([in] VARIANT_BOOL newVal);
+	[propget, id(3), helpstring("property ErrorFileOn")] HRESULT ErrorFileOn([out, retval] VARIANT_BOOL* pVal);
+	[propput, id(3), helpstring("property ErrorFileOn")] HRESULT ErrorFileOn([in] VARIANT_BOOL newVal);
+	[propget, id(4), helpstring("property LogFileOn")] HRESULT LogFileOn([out, retval] VARIANT_BOOL* pVal);
+	[propput, id(4), helpstring("property LogFileOn")] HRESULT LogFileOn([in] VARIANT_BOOL newVal);
 	[id(5), helpstring("method RunFile")] HRESULT RunFile([in] BSTR* filename, [out,retval] LONG* retval);
 	[id(6), helpstring("method RunAccumulated")] HRESULT RunAccumulated([out,retval] LONG* retval);
-	[propget, id(7), helpstring("property SelectedOutputOn")] HRESULT SelectedOutputOn([out, retval] VARIANT_BOOL* pVal);
-	[propput, id(7), helpstring("property SelectedOutputOn")] HRESULT SelectedOutputOn([in] VARIANT_BOOL newVal);
+	[propget, id(7), helpstring("property SelectedOutputFileOn")] HRESULT SelectedOutputFileOn([out, retval] VARIANT_BOOL* pVal);
+	[propput, id(7), helpstring("property SelectedOutputFileOn")] HRESULT SelectedOutputFileOn([in] VARIANT_BOOL newVal);
 	[id(8), helpstring("method RunString")] HRESULT RunString([in] BSTR* input, [out,retval] LONG* retval);
 	[id(9), helpstring("method AccumulateLine")] HRESULT AccumulateLine([in] BSTR* line);
 	[propget, id(10), helpstring("property ColumnCount")] HRESULT ColumnCount([out, retval] LONG* pVal);
@@ -36,8 +36,8 @@ interface IPhreeqcCOM : IDispatch{
 	[id(14), helpstring("method GetErrorString")] HRESULT GetErrorString([out,retval] BSTR* retval);
 	[id(15), helpstring("method GetSelectedOutputValue")] HRESULT GetSelectedOutputValue([in] LONG row, [in] LONG col, [out,retval] VARIANT* retval);
 	[id(16), helpstring("method LoadDatabaseString")] HRESULT LoadDatabaseString([in] BSTR* input, [out,retval] LONG* retval);
-	[propget, id(17), helpstring("property DumpOn")] HRESULT DumpOn([out, retval] VARIANT_BOOL* pVal);
-	[propput, id(17), helpstring("property DumpOn")] HRESULT DumpOn([in] VARIANT_BOOL newVal);
+	[propget, id(17), helpstring("property DumpFileOn")] HRESULT DumpFileOn([out, retval] VARIANT_BOOL* pVal);
+	[propput, id(17), helpstring("property DumpFileOn")] HRESULT DumpFileOn([in] VARIANT_BOOL newVal);
 	[propget, id(18), helpstring("property DumpStringOn")] HRESULT DumpStringOn([out, retval] VARIANT_BOOL* pVal);
 	[propput, id(18), helpstring("property DumpStringOn")] HRESULT DumpStringOn([in] VARIANT_BOOL newVal);
 	[id(19), helpstring("method GetComponentList")] HRESULT GetComponentList([out,retval] VARIANT* retval);
