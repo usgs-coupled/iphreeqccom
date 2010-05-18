@@ -62,7 +62,7 @@ The following example creates an IPhreeqc object, loads the <b class="bterm">"ph
   JScript</div>
 var IPhreeqc = new ActiveXObject("IPhreeqcCOM.Object");
 IPhreeqc.LoadDatabase("phreeqc.dat");
-IPhreeqc.OutputOn = true;
+IPhreeqc.OutputFileOn = true;
 IPhreeqc.RunFile("ex1");
 </pre></div>
 
@@ -73,7 +73,7 @@ IPhreeqc.RunFile("ex1");
 Dim IPhreeqc
 Set IPhreeqc = CreateObject("IPhreeqcCOM.Object")
 IPhreeqc.LoadDatabase("phreeqc.dat")
-IPhreeqc.OutputOn = True
+IPhreeqc.OutputFileOn = True
 IPhreeqc.RunFile("ex1")
 </pre></div>
 
@@ -84,12 +84,12 @@ IPhreeqc.RunFile("ex1")
 Dim IPhreeqc
 IPhreeqc = CREATEOBJECT("IPhreeqcCOM.Object")
 IPhreeqc.LoadDatabase("phreeqc.dat")
-IPhreeqc.OutputOn = .T.
+IPhreeqc.OutputFileOn = .T.
 IPhreeqc.RunFile("ex1")
 </pre></div>
 
 <h2>Remarks</h2>
-Unlike the batch version of phreeqc, the output will be created in the file <b class="bterm">"phreeqc.out"</b>.  If the <b class="bterm">OutputOn</b> property were not set to <b class="bterm">True</b> no output files would have been created.
+Unlike the batch version of phreeqc, the output will be created in the file <b class="bterm">"phreeqc.out"</b>.  If the <b class="bterm">OutputFileOn</b> property were not set to <b class="bterm">True</b> no output files would have been created.
 
 <script type="text/javascript" language="JScript" src="ofvbanl.js">
 </script>

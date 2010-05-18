@@ -1,7 +1,7 @@
 <html dir="ltr" xmlns:msxsl="urn:schemas-microsoft-com:xslt"><head>
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <META HTTP-EQUIV="assetid" CONTENT="HV05200484"><META NAME="lcid" CONTENT="1033">
-<title>ErrorOn Property</title>
+<title>ErrorFileOn Property</title>
 <link rel="stylesheet" type="text/css" href="office10.css">
 <script type="text/javascript" language="Javascript" src="sExpCollapse.js"></script>
 <script type="text/javascript" language="JavaScript" src="inline.js"></script>
@@ -9,7 +9,7 @@
 <body>
 
 <!-- Top Heading -->
-<h1>ErrorOn Property</h1>
+<h1>ErrorFileOn Property</h1>
 
 <!-- Links -->
 <DIV class="ofvbanav">
@@ -24,7 +24,7 @@
 
 <!-- Remarks -->
 <h2>Remarks</h2>
-<p>The <b class="bterm">ErrorOn</b> property is used only by the Run methods: <a class="ofvbalink" href="mthRunAccumulated.htm">RunAccumulated</a>, <a class="ofvbalink" href="mthRunFile.htm">RunFile</a> and <a class="ofvbalink" href="mthRunString.htm">RunString</a>.</p>
+<p>The <b class="bterm">ErrorFileOn</b> property is used only by the Run methods: <a class="ofvbalink" href="mthRunAccumulated.htm">RunAccumulated</a>, <a class="ofvbalink" href="mthRunFile.htm">RunFile</a> and <a class="ofvbalink" href="mthRunString.htm">RunString</a>.</p>
 
 <!-- Example -->
 <h2><a id="#example" name="#example">Example</a></h2>
@@ -36,7 +36,7 @@
   JScript</div>
 set IPhreeqc = CreateObject("IPhreeqcCOM.Object")
 IPhreeqc.LoadDatabase("phreeqc.dat")
-IPhreeqc.<b class="bterm">ErrorOn</b> = True
+IPhreeqc.<b class="bterm">ErrorFileOn</b> = True
 IPhreeqc.RunFile("ex2")
 </pre></div>
 
@@ -47,7 +47,7 @@ IPhreeqc.RunFile("ex2")
 Dim IPhreeqc
 Set IPhreeqc = CreateObject("IPhreeqcCOM.Object")
 IPhreeqc.LoadDatabase("phreeqc.dat")
-IPhreeqc.<b class="bterm">ErrorOn</b> = True
+IPhreeqc.<b class="bterm">ErrorFileOn</b> = True
 IPhreeqc.RunFile("ex2")
 </pre></div>
 
@@ -57,11 +57,11 @@ IPhreeqc.RunFile("ex2")
   Visual FoxPro</div>
 IPhreeqc = CREATEOBJECT("IPhreeqcCOM.Object")
 IPhreeqc.LoadDatabase("phreeqc.dat")
-IPhreeqc.<b class="bterm">ErrorOn</b> = .T.
+IPhreeqc.<b class="bterm">ErrorFileOn</b> = .T.
 IPhreeqc.RunFile("ex2")
 </pre></div>
 
 <!-- Script -->
-<script type="text/javascript" language="JScript" src="ofvbanl.js"></script><span id="ofVBAISpan" class="ofvbaispan"><iframe id="ofVBAIFrame" frameborder="0" marginheight="0" marginwidth="4" scrolling="auto" width="100%" src="../links/proErrorOn_l.htm"></iframe></span>
+<script type="text/javascript" language="JScript" src="ofvbanl.js"></script><span id="ofVBAISpan" class="ofvbaispan"><iframe id="ofVBAIFrame" frameborder="0" marginheight="0" marginwidth="4" scrolling="auto" width="100%" src="../links/proErrorFileOn_l.htm"></iframe></span>
 </body>
 </html>
