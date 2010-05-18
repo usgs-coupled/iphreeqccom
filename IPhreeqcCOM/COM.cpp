@@ -56,7 +56,7 @@ STDMETHODIMP CCOM::get_OutputOn(VARIANT_BOOL* pVal)
 	}
 	MACRO_CHECK_IPHREEQC_PTR();
 
-	if (this->IPhreeqcPtr->GetOutputOn())
+	if (this->IPhreeqcPtr->GetOutputFileOn())
 	{
 		*pVal = VARIANT_TRUE;
 	}
@@ -72,7 +72,7 @@ STDMETHODIMP CCOM::put_OutputOn(VARIANT_BOOL newVal)
 {
 	MACRO_CHECK_IPHREEQC_PTR();
 
-	this->IPhreeqcPtr->SetOutputOn(newVal == VARIANT_TRUE);
+	this->IPhreeqcPtr->SetOutputFileOn(newVal == VARIANT_TRUE);
 
 	return S_OK;
 }
@@ -85,7 +85,7 @@ STDMETHODIMP CCOM::get_ErrorOn(VARIANT_BOOL* pVal)
 	}
 	MACRO_CHECK_IPHREEQC_PTR();
 
-	if (this->IPhreeqcPtr->GetErrorOn())
+	if (this->IPhreeqcPtr->GetErrorFileOn())
 	{
 		*pVal = VARIANT_TRUE;
 	}
@@ -101,7 +101,7 @@ STDMETHODIMP CCOM::put_ErrorOn(VARIANT_BOOL newVal)
 {
 	MACRO_CHECK_IPHREEQC_PTR();
 
-	this->IPhreeqcPtr->SetErrorOn(newVal == VARIANT_TRUE);
+	this->IPhreeqcPtr->SetErrorFileOn(newVal == VARIANT_TRUE);
 
 	return S_OK;
 }
@@ -114,7 +114,7 @@ STDMETHODIMP CCOM::get_LogOn(VARIANT_BOOL* pVal)
 	}
 	MACRO_CHECK_IPHREEQC_PTR();
 
-	if (this->IPhreeqcPtr->GetLogOn())
+	if (this->IPhreeqcPtr->GetLogFileOn())
 	{
 		*pVal = VARIANT_TRUE;
 	}
@@ -130,7 +130,7 @@ STDMETHODIMP CCOM::put_LogOn(VARIANT_BOOL newVal)
 {
 	MACRO_CHECK_IPHREEQC_PTR();
 
-	this->IPhreeqcPtr->SetLogOn(newVal == VARIANT_TRUE);
+	this->IPhreeqcPtr->SetLogFileOn(newVal == VARIANT_TRUE);
 
 	return S_OK;
 }
@@ -181,7 +181,7 @@ STDMETHODIMP CCOM::get_SelectedOutputOn(VARIANT_BOOL* pVal)
 	}
 	MACRO_CHECK_IPHREEQC_PTR();
 
-	if (this->IPhreeqcPtr->GetSelectedOutputOn())
+	if (this->IPhreeqcPtr->GetSelectedOutputFileOn())
 	{
 		*pVal = VARIANT_TRUE;
 	}
@@ -197,7 +197,7 @@ STDMETHODIMP CCOM::put_SelectedOutputOn(VARIANT_BOOL newVal)
 {
 	MACRO_CHECK_IPHREEQC_PTR();
 
-	this->IPhreeqcPtr->SetSelectedOutputOn(newVal == VARIANT_TRUE);
+	this->IPhreeqcPtr->SetSelectedOutputFileOn(newVal == VARIANT_TRUE);
 
 	return S_OK;
 }
@@ -468,7 +468,7 @@ STDMETHODIMP CCOM::get_DumpOn(VARIANT_BOOL* pVal)
 	}
 	MACRO_CHECK_IPHREEQC_PTR();
 
-	if (this->IPhreeqcPtr->GetDumpOn())
+	if (this->IPhreeqcPtr->GetDumpFileOn())
 	{
 		*pVal = VARIANT_TRUE;
 	}
@@ -484,7 +484,7 @@ STDMETHODIMP CCOM::put_DumpOn(VARIANT_BOOL newVal)
 {
 	MACRO_CHECK_IPHREEQC_PTR();
 
-	this->IPhreeqcPtr->SetDumpOn(newVal == VARIANT_TRUE);
+	this->IPhreeqcPtr->SetDumpFileOn(newVal == VARIANT_TRUE);
 
 	return S_OK;
 }
