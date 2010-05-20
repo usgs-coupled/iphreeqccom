@@ -13,46 +13,46 @@
 <DIV class="ofvbanav"><span class="ofvbanavreuse" id="seealso" onclick="toggleList()" onkeypress="toggleList()"></span><span class="ofvbanavreuse" id="appliesto" onclick="toggleList()" onkeypress="toggleList()"></span><a class="ofvbanavex" href="#example"><span class="ofvbanavreuse" id="example"></span></a><span class="ofvbanavreuse" id="specifics" onclick="toggleList()" onkeypress="toggleList()"></span></DIV>
 
 <!-- Description -->
-<p><b class="bterm">True</b> to turn on output to the <b class="bterm">"phreeqc.log"</b> file . The default value is <b class="bterm">False</b>. Read/write <b class="bterm">Boolean</b>.</p>
+<p><b class="bterm">True</b> to turn on output to the <b class="bterm"><I>phreeqc.log</I></b> &nbsp;file . The initial setting is <b class="bterm">False</b>. Read/write <b class="bterm">Boolean</b>.</p>
 
 <!-- Remarks -->
 <h2>Remarks</h2>
-<p>The <b class="bterm">LogFileOn</b> property is used only by the Run methods: <a class="ofvbalink" href="mthRunAccumulated.htm">RunAccumulated</a>, <a class="ofvbalink" href="mthRunFile.htm">RunFile</a> and <a class="ofvbalink" href="mthRunString.htm">RunString</a>.</p>
+<p>The <b class="bterm">LogFileOn</b> property is used only by the Run methods: <a class="ofvbalink" href="mthRunAccumulated.htm">RunAccumulated</a>, <a class="ofvbalink" href="mthRunFile.htm">RunFile</a> and <a class="ofvbalink" href="mthRunString.htm">RunString</a>.  Logging must be enabled through the use of the KNOBS -logfile option in order to receive any log output.</p>
 
 <!-- Example -->
 <h2><a id="#example" name="#example">Example</a></h2>
-<p>This example runs <b class="bterm">"ex2"</b> with the <b class="bterm">"phreeqc.log"</b> file turned on.</p>
+<p>This example runs <b class="bterm"><I>ex2</I></b> &nbsp;with the <b class="bterm"><I>phreeqc.log</I></b> &nbsp;file turned on.</p>
 
 <!-- JScript Example -->
 <div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
 <div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
   JScript</div>
-var IPhreeqc = new ActiveXObject("IPhreeqcCOM.Object");
-IPhreeqc.LoadDatabase("phreeqc.dat");
-IPhreeqc.<b class="bterm">LogFileOn</b> = true;
-IPhreeqc.RunFile("ex2");
-</pre></div>
+var iphreeqc = new ActiveXObject("IPhreeqcCOM.Object");
+iphreeqc.LoadDatabase("phreeqc.dat");
+
+// turn logging on
+iphreeqc.AccumulateLine("KNOBS; -logfile true");
+iphreeqc.RunAccumulated();
+
+iphreeqc.<b class="bterm">LogFileOn</b> = true;
+iphreeqc.RunFile("ex2");
+WScript.Echo("see phreeqc.log");</pre></div>
 
 <!-- VBScript Example -->
 <div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
 <div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
   VBScript</div>
-Dim IPhreeqc
-Set IPhreeqc = CreateObject("IPhreeqcCOM.Object")
-IPhreeqc.LoadDatabase("phreeqc.dat")
-IPhreeqc.<b class="bterm">LogFileOn</b> = True
-IPhreeqc.RunFile("ex2")
-</pre></div>
+Dim iphreeqc
+Set iphreeqc = CreateObject("IPhreeqcCOM.Object")
+iphreeqc.LoadDatabase("phreeqc.dat")
 
-<!-- Visual FoxPro Example -->
-<div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
-<div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
-  Visual FoxPro</div>
-IPhreeqc = CREATEOBJECT("IPhreeqcCOM.Object")
-IPhreeqc.LoadDatabase("phreeqc.dat")
-IPhreeqc.<b class="bterm">LogFileOn</b> = .T.
-IPhreeqc.RunFile("ex2")
-</pre></div>
+' turn logging on
+iphreeqc.AccumulateLine("KNOBS; -logfile true")
+iphreeqc.RunAccumulated()
+
+iphreeqc.<b class="bterm">LogFileOn</b> = True
+iphreeqc.RunFile("ex2")
+WScript.Echo("see phreeqc.log")</pre></div>
 
 <!-- Script -->
 <script type="text/javascript" language="JScript" src="ofvbanl.js"></script><span id="ofVBAISpan" class="ofvbaispan"><iframe id="ofVBAIFrame" frameborder="0" marginheight="0" marginwidth="4" scrolling="auto" width="100%" src="../links/proLogFileOn_l.htm"></iframe></span>

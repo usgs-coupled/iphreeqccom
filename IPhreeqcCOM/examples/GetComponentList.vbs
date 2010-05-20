@@ -8,4 +8,3 @@ For Each comp in comps
     str = str & comp & vbNewLine
 Next
 WScript.Echo(str)
-

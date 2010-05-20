@@ -31,23 +31,20 @@
 <div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
 <div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
   JScript</div>
-var IPhreeqc = new ActiveXObject("IPhreeqcCOM.Object");
-IPhreeqc.AccumulateLine("SOLUTION 1");
-IPhreeqc.AccumulateLine("END");
-var shell = new ActiveXObject("wscript.shell");
-shell.Popup("The input to run is:\n" + Phreeqc.<b class="bterm">Lines</b>);
-</pre></div>
+var iphreeqc = new ActiveXObject("IPhreeqcCOM.Object");
+iphreeqc.AccumulateLine("SOLUTION 1");
+iphreeqc.AccumulateLine("END");
+WScript.Echo("The accumulated input is:\n" + iphreeqc.<b class="bterm">Lines</b>);</pre></div>
 
 <!-- VBScript Example -->
 <div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
 <div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
   VBScript</div>
-Dim IPhreeqc
-Set IPhreeqc = CreateObject("IPhreeqcCOM.Object")
-IPhreeqc.AccumulateLine("SOLUTION 1")
-IPhreeqc.AccumulateLine("END")
-MsgBox("The input to run is:" & vbCRLF & IPhreeqc.<b class="bterm">Lines</b>)
-</pre></div>
+Dim iphreeqc
+Set iphreeqc = CreateObject("IPhreeqcCOM.Object")
+iphreeqc.AccumulateLine("SOLUTION 1")
+iphreeqc.AccumulateLine("END")
+WScript.Echo("The accumulated input is:" & vbNewLine & iphreeqc.<b class="bterm">Lines</b>)</pre></div>
 
 <!-- Script -->
 <script type="text/javascript" language="JScript" src="ofvbanl.js"></script><span id="ofVBAISpan" class="ofvbaispan"><iframe id="ofVBAIFrame" frameborder="0" marginheight="0" marginwidth="4" scrolling="auto" width="100%" src="../links/proLines_l.htm"></iframe></span>

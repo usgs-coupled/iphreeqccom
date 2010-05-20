@@ -39,33 +39,33 @@
 <div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
 <div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
   JScript</div>
-var IPhreeqc = new ActiveXObject("IPhreeqcCOM.Object");
-IPhreeqc.LoadDatabase("phreeqc.dat");
+var iphreeqc = new ActiveXObject("IPhreeqcCOM.Object");
+iphreeqc.LoadDatabase("phreeqc.dat");
 
 var sInput = "SOLUTION 1\n";
 sInput += "temp 25.0\n";
 sInput += "pH   7.0\n";
 
-IPhreeqc.OutputFileOn = true;
-IPhreeqc.<b class="bterm">RunString</b>(sInput);
-</pre></div>
+iphreeqc.OutputFileOn = true;
+iphreeqc.<b class="bterm">RunString</b>(sInput);
+WScript.Echo("see phreeqc.out");</pre></div>
 
 
 <!-- VBScript Example -->
 <div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
 <div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
   VBScript</div>
-Dim IPhreeqc, sInput
-Set IPhreeqc = CreateObject("IPhreeqcCOM.Object")
-IPhreeqc.LoadDatabase("phreeqc.dat")
+Dim iphreeqc, sInput
+Set iphreeqc = CreateObject("IPhreeqcCOM.Object")
+iphreeqc.LoadDatabase("phreeqc.dat")
 
 sInput = "SOLUTION 1" & vbNewLine
 sInput = sInput & "temp 25.0" & vbNewLine
 sInput = sInput & "pH   7.0" & vbNewLine
 
-IPhreeqc.OutputFileOn = True
-IPhreeqc.<b class="bterm">RunString</b>(sInput)
-</pre></div>
+iphreeqc.OutputFileOn = True
+iphreeqc.<b class="bterm">RunString</b>(sInput)
+WScript.Echo("see phreeqc.out")</pre></div>
 
 <!-- Script -->
 <script type="text/javascript" language="JScript" src="ofvbanl.js"></script>

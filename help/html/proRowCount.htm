@@ -26,30 +26,29 @@
 
 <!-- Example -->
 <h2><a id="#example" name="#example">Example</a></h2>
-<p>This example runs <b class="bterm">"ex2"</b> and displays the number of columns contained within the selected output array.</p>
+<p>This example runs <b class="bterm"><I>ex2</I></b> &nbsp;and displays the number of columns contained within the selected output array.</p>
 
 <!-- JScript Example -->
 <div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
 <div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
   JScript</div>
-var IPhreeqc = new ActiveXObject("IPhreeqcCOM.Object");
-IPhreeqc.LoadDatabase("phreeqc.dat");
-IPhreeqc.RunFile("ex2");
-var shell = new ActiveXObject("wscript.shell")
-shell.Popup("The current selected output array contains " +
-    IPhreeqc.<b class="bterm">RowCount</b> + " rows.");
+var iphreeqc = new ActiveXObject("IPhreeqcCOM.Object");
+iphreeqc.LoadDatabase("phreeqc.dat");
+iphreeqc.RunFile("ex2");
+WScript.Echo("The current selected-output array contains " +
+    iphreeqc.<b class="bterm">RowCount</b> + " rows.");
 </pre></div>
 
 <!-- VBScript Example -->
 <div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
 <div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
   VBScript</div>
-Dim IPhreeqc
-Set IPhreeqc = CreateObject("IPhreeqcCOM.Object")
-IPhreeqc.LoadDatabase("phreeqc.dat")
-IPhreeqc.RunFile("ex2")
-MsgBox "The current selected output array contains " &amp; _
-    IPhreeqc.<b class="bterm">RowCount</b> &amp; " rows."
+Dim iphreeqc
+Set iphreeqc = CreateObject("IPhreeqcCOM.Object")
+iphreeqc.LoadDatabase("phreeqc.dat")
+iphreeqc.RunFile("ex2")
+WScript.Echo("The current selected-output array contains " &amp; _
+    iphreeqc.<b class="bterm">RowCount</b> &amp; " rows.")
 </pre></div>
 
 <!-- Script -->

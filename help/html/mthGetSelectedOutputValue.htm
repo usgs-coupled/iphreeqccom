@@ -169,46 +169,42 @@ Headings
 
 <!-- Example -->
 <h2><a id="#example" name="#example">Example</a></h2>
-<p>This example runs the <b class="bterm"><I>ex2</I></b> &nbsp;input file and writes the selected output to stdout.</p>
+<p>This example runs the <b class="bterm"><I>ex2</I></b> &nbsp;input file and echos the selected-output.</p>
 
 <!-- JScript Example -->
 <div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
 <div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
   JScript</div>
-var IPhreeqc = new ActiveXObject("IPhreeqcCOM.Object");
-IPhreeqc.LoadDatabase("phreeqc.dat");
-IPhreeqc.RunFile("ex2");
+var iphreeqc = new ActiveXObject("IPhreeqcCOM.Object");
+iphreeqc.LoadDatabase("phreeqc.dat");
+iphreeqc.RunFile("ex2");
 
-for (i = 0; i < IPhreeqc.RowCount; ++i)
-{
-    for (j = 0; j < IPhreeqc.ColumnCount; ++j)
-    {
-        WScript.Stdout.Write(IPhreeqc.<b class="bterm">GetSelectedOutputValue</b>(i, j));
-        WScript.Stdout.Write(" ");
+var selout = "selected-output:\n";
+for (i = 0; i < iphreeqc.RowCount; ++i) {
+    for (j = 0; j < iphreeqc.ColumnCount; ++j) {
+        selout += iphreeqc.<b class="bterm">GetSelectedOutputValue</b>(i, j) + " ";
     }
-    WScript.Stdout.WriteLine();
+    selout += "\n"
 }
-</pre></div>
+WScript.Echo(selout);</pre></div>
 
 <!-- VBScript Example -->
 <div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
 <div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
   VBScript</div>
-Dim IPhreeqc, i, j
-Set IPhreeqc = CreateObject("IPhreeqcCOM.Object")
-IPhreeqc.LoadDatabase("phreeqc.dat")
-IPhreeqc.RunFile("ex2")
+Dim iphreeqc, i, j
+Set iphreeqc = CreateObject("IPhreeqcCOM.Object")
+iphreeqc.LoadDatabase("phreeqc.dat")
+iphreeqc.RunFile("ex2")
 
-For i = 0 To IPhreeqc.RowCount - 1
-    For j = 0 To IPhreeqc.ColumnCount - 1
-        If (IsObject(WScript.Stdout)) Then
-            WScript.Stdout.Write(IPhreeqc.<b class="bterm">GetSelectedOutputValue</b>(i, j) & " ")
-        End If
+selout = "selected-output:" & vbNewLine
+For i = 0 To iphreeqc.RowCount - 1
+    For j = 0 To iphreeqc.ColumnCount - 1
+        selout = selout & iphreeqc.<b class="bterm">GetSelectedOutputValue</b>(i, j) & " "
     Next
-    If (IsObject(WScript.Stdout)) Then
-        WScript.Stdout.WriteLine
-    End If
+    selout = selout & vbNewLine
 Next
+WScript.Echo(selout)
 </pre></div>
 
 <!-- Script -->

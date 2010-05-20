@@ -20,7 +20,7 @@
 </DIV>
 
 <!-- Description -->
-<p><b class="bterm">True</b> to turn on the DUMP file. The file will be named <b class="bterm"><I>"dump.out"</I></b> unless it was specified within the DUMP keyword block. The default value is <b class="bterm">False</b>. Read/write <b class="bterm">Boolean</b>.</p>
+<p><b class="bterm">True</b> to turn on the DUMP file. The file will be named <b class="bterm"><I>dump.out</I></b> &nbsp;unless it was specified within the DUMP keyword block. The initial setting is <b class="bterm">False</b>. Read/write <b class="bterm">Boolean</b>.</p>
 
 <!-- Remarks -->
 <h2>Remarks</h2>
@@ -28,38 +28,55 @@
 
 <!-- Example -->
 <h2><a id="#example" name="#example">Example</a></h2>
-<p>This example runs <b class="bterm">"XXX_TODO_XXX ex2"</b> with the <b class="bterm"><I>"dump.out"</I></b> file turned on.</p>
+<p>This example equilibrates pure water with calcite and writes the dump results to <b class="bterm"><I>dump.out</I></b>.</p>
 
 <!-- JScript Example -->
 <div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
 <div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
   JScript</div>
-var IPhreeqc = new ActiveXObject("IPhreeqcCOM.Object");
-IPhreeqc.LoadDatabase("phreeqc.dat");
-IPhreeqc.<b class="bterm">DumpFileOn</b> = true;
-'XXX_TODO_XXX IPhreeqc.RunFile("ex2");
-</pre></div>
+var iphreeqc = new ActiveXObject("IPhreeqcCOM.Object");
+iphreeqc.LoadDatabase("phreeqc.dat");
+iphreeqc.<b class="bterm">DumpFileOn</b> = true;
+
+var input = new String("");
+input += "SOLUTION 1 Pure water     \n";
+input += "EQUILIBRIUM_PHASES 1      \n";
+input += "    Calcite 0 10          \n";
+input += "SAVE solution 1           \n";
+input += "SAVE equilibrium_phases 1 \n";
+input += "DUMP                      \n";
+input += "    -solution 1           \n";
+input += "    -equilibrium_phases  1\n";
+
+if (iphreeqc.RunString(input) != 0) {
+    WScript.Echo(iphreeqc.GetErrorString());
+}
+WScript.Echo("see dump.out");</pre></div>
 
 <!-- VBScript Example -->
 <div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
 <div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
   VBScript</div>
-Dim IPhreeqc
-Set IPhreeqc = CreateObject("IPhreeqcCOM.Object")
-IPhreeqc.LoadDatabase("phreeqc.dat")
-IPhreeqc.<b class="bterm">DumpFileOn</b> = True
-'XXX_TODO_XXX IPhreeqc.RunFile("ex2")
-</pre></div>
+Dim iphreeqc, sInput, sDump
 
-<!-- Visual FoxPro Example -->
-<div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
-<div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
-  Visual FoxPro</div>
-IPhreeqc = CREATEOBJECT("IPhreeqcCOM.Object")
-IPhreeqc.LoadDatabase("phreeqc.dat")
-IPhreeqc.<b class="bterm">DumpFileOn</b> = .T.
-'XXX_TODO_XXX IPhreeqc.RunFile("ex2")
-</pre></div>
+Set iphreeqc = CreateObject("IPhreeqcCOM.Object")
+iphreeqc.LoadDatabase("phreeqc.dat")
+iphreeqc.<b class="bterm">DumpFileOn</b> = True
+
+sInput = ""
+sInput = sInput & "SOLUTION 1 Pure water     " & vbNewLine
+sInput = sInput & "EQUILIBRIUM_PHASES 1      " & vbNewLine
+sInput = sInput & "    Calcite 0 10          " & vbNewLine
+sInput = sInput & "SAVE solution 1           " & vbNewLine
+sInput = sInput & "SAVE equilibrium_phases 1 " & vbNewLine
+sInput = sInput & "DUMP                      " & vbNewLine
+sInput = sInput & "    -solution 1           " & vbNewLine
+sInput = sInput & "    -equilibrium_phases  1" & vbNewLine
+
+If (iphreeqc.RunString(sInput) &lt;&gt; 0) Then
+    WScript.Echo(iphreeqc.GetErrorString())
+End If
+WScript.Echo("see dump.out")</pre></div>
 
 <!-- Script -->
 <script type="text/javascript" language="JScript" src="ofvbanl.js"></script>

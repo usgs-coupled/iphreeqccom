@@ -20,7 +20,7 @@
 </DIV>
 
 <!-- Description -->
-<p><b class="bterm">True</b> to turn on output to the <b class="bterm">"phreeqc.err"</b> file . The default value is <b class="bterm">False</b>. Read/write <b class="bterm">Boolean</b>.</p>
+<p><b class="bterm">True</b> to turn on output to the <b class="bterm"><I>phreeqc.err</I></b> &nbsp;file . The initial setting is <b class="bterm">False</b>. Read/write <b class="bterm">Boolean</b>.</p>
 
 <!-- Remarks -->
 <h2>Remarks</h2>
@@ -28,38 +28,34 @@
 
 <!-- Example -->
 <h2><a id="#example" name="#example">Example</a></h2>
-<p>This example runs <b class="bterm">"ex2"</b> with the <b class="bterm">"phreeqc.err"</b> file turned on.</p>
+<p>This example runs <b class="bterm"><I>ex2</I></b> &nbsp;with the <b class="bterm"><I>phreeqc.err</I></b> &nbsp;file turned on.</p>
+<p>The example attempts to run the <b class="bterm"><I>ex1</I></b> &nbspinput file, fails, and writes the to the error file <b class="bterm"><I>phreeqc.err</I></b> &nbsp;(no database is loaded).</p>
 
 <!-- JScript Example -->
 <div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
 <div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
   JScript</div>
-set IPhreeqc = CreateObject("IPhreeqcCOM.Object")
-IPhreeqc.LoadDatabase("phreeqc.dat")
-IPhreeqc.<b class="bterm">ErrorFileOn</b> = True
-IPhreeqc.RunFile("ex2")
-</pre></div>
+try {
+    var iphreeqc = new ActiveXObject("IPhreeqcCOM.Object");
+    iphreeqc.<b class="bterm">ErrorFileOn</b> = true;
+    iphreeqc.RunFile("ex1");
+}
+catch(e) {
+    WScript.Echo("See phreeqc.err");
+}</pre></div>
+
 
 <!-- VBScript Example -->
 <div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
 <div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
   VBScript</div>
-Dim IPhreeqc
-Set IPhreeqc = CreateObject("IPhreeqcCOM.Object")
-IPhreeqc.LoadDatabase("phreeqc.dat")
-IPhreeqc.<b class="bterm">ErrorFileOn</b> = True
-IPhreeqc.RunFile("ex2")
-</pre></div>
-
-<!-- Visual FoxPro Example -->
-<div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
-<div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
-  Visual FoxPro</div>
-IPhreeqc = CREATEOBJECT("IPhreeqcCOM.Object")
-IPhreeqc.LoadDatabase("phreeqc.dat")
-IPhreeqc.<b class="bterm">ErrorFileOn</b> = .T.
-IPhreeqc.RunFile("ex2")
-</pre></div>
+Dim iphreeqc
+On Error Resume Next
+Set iphreeqc = CreateObject("IPhreeqcCOM.Object")
+iphreeqc.<b class="bterm">ErrorFileOn</b> = True
+If (iphreeqc.RunFile("ex1") &lt;&gt; 0) Then
+    WScript.Echo("See phreeqc.err")
+End If</pre></div>
 
 <!-- Script -->
 <script type="text/javascript" language="JScript" src="ofvbanl.js"></script><span id="ofVBAISpan" class="ofvbaispan"><iframe id="ofVBAIFrame" frameborder="0" marginheight="0" marginwidth="4" scrolling="auto" width="100%" src="../links/proErrorFileOn_l.htm"></iframe></span>

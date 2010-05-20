@@ -36,18 +36,25 @@
 <div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
 <div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
   JScript</div>
-var IPhreeqc = new ActiveXObject("IPhreeqcCOM.Object");
-IPhreeqc.<b class="bterm">LoadDatabase</b>("phreeqc.dat");
+var iphreeqc = new ActiveXObject("IPhreeqcCOM.Object");
+if (iphreeqc.<b class="bterm">LoadDatabase</b>("phreeqc.dat") == 0) {
+    WScript.Echo("database ok");
+} else {
+    WScript.Echo("database contains errors");
+}
 </pre></div>
 
 <!-- VBScript Example -->
 <div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
 <div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
   VBScript</div>
-Dim IPhreeqc
-Set IPhreeqc = CreateObject("IPhreeqcCOM.Object")
-IPhreeqc.<b class="bterm">LoadDatabase</b>("phreeqc.dat")
-</pre></div>
+Dim iphreeqc
+Set iphreeqc = CreateObject("IPhreeqcCOM.Object")
+If (iphreeqc.<b class="bterm">LoadDatabase</b>("phreeqc.dat") = 0) Then
+    WScript.Echo("database ok")
+Else
+    WScript.Echo("database contains errors")
+End If</pre></div>
 
 <!-- Script -->
 <script type="text/javascript" language="JScript" src="ofvbanl.js"></script>

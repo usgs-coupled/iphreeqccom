@@ -37,29 +37,24 @@
 <div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
 <div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
   JScript</div>
-try
-{
-    var shell = new ActiveXObject("wscript.shell");
-    var IPhreeqc = new ActiveXObject("IPhreeqcCOM.Object");
-    IPhreeqc.RunFile("ex1");
+try {
+    var iphreeqc = new ActiveXObject("IPhreeqcCOM.Object");
+    iphreeqc.RunFile("ex1");
 }
-catch(e)
-{
-    shell.Popup(IPhreeqc.<b class="bterm">GetErrorString</b>());  // could also use e.message
-}
-</pre></div>
+catch(e) {
+    WScript.Echo(iphreeqc.<b class="bterm">GetErrorString</b>());  // could also use e.message
+}</pre></div>
 
 <!-- VBScript Example -->
 <div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
 <div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
   VBScript</div>
-Dim IPhreeqc
+Dim iphreeqc
 On Error Resume Next
-Set IPhreeqc = CreateObject("IPhreeqcCOM.Object")
-If (IPhreeqc.RunFile("ex1") &lt;&gt; 0) Then
-    MsgBox(IPhreeqc.<b class="bterm">GetErrorString</b>)
-End If
-</pre></div>
+Set iphreeqc = CreateObject("IPhreeqcCOM.Object")
+If (iphreeqc.RunFile("ex1") &lt;&gt; 0) Then
+    WScript.Echo(iphreeqc.<b class="bterm">GetErrorString</b>())
+End If</pre></div>
 
 <!-- Script -->
 <script type="text/javascript" language="JScript" src="ofvbanl.js"></script>

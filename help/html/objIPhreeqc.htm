@@ -60,33 +60,24 @@ The following example creates an IPhreeqc object, loads the <b class="bterm"><I>
 <div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
 <div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
   JScript</div>
-var IPhreeqc = new ActiveXObject("IPhreeqcCOM.Object");
-IPhreeqc.LoadDatabase("phreeqc.dat");
-IPhreeqc.OutputFileOn = true;
-IPhreeqc.RunFile("ex1");
-</pre></div>
+var iphreeqc = new ActiveXObject("IPhreeqcCOM.Object");
+iphreeqc.LoadDatabase("phreeqc.dat");
+iphreeqc.OutputFileOn = true;
+if (iphreeqc.RunFile("ex1") == 0) {
+    WScript.Echo("see phreeqc.out");
+}</pre></div>
 
 <!-- VBScript Example -->
 <div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
 <div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
   VBScript</div>
-Dim IPhreeqc
-Set IPhreeqc = CreateObject("IPhreeqcCOM.Object")
-IPhreeqc.LoadDatabase("phreeqc.dat")
-IPhreeqc.OutputFileOn = True
-IPhreeqc.RunFile("ex1")
-</pre></div>
-
-<!-- Visual FoxPro Example -->
-<div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
-<div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
-  Visual FoxPro</div>
-Dim IPhreeqc
-IPhreeqc = CREATEOBJECT("IPhreeqcCOM.Object")
-IPhreeqc.LoadDatabase("phreeqc.dat")
-IPhreeqc.OutputFileOn = .T.
-IPhreeqc.RunFile("ex1")
-</pre></div>
+Dim iphreeqc
+Set iphreeqc = CreateObject("IPhreeqcCOM.Object")
+iphreeqc.LoadDatabase("phreeqc.dat")
+iphreeqc.OutputFileOn = True
+If (iphreeqc.<b class="bterm">RunFile</b>("ex1") = 0) Then
+    WScript.Echo("see phreeqc.out")
+End If</pre></div>
 
 <h2>Remarks</h2>
 Unlike the batch version of phreeqc, the output will be created in the file <b class="bterm"><I>phreeqc.out</I></b>.  If the <b class="bterm">OutputFileOn</b> property were not set to <b class="bterm">True</b> no output files would have been created.

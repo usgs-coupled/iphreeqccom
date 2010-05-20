@@ -36,45 +36,39 @@
 <div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
 <div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
   JScript</div>
-var IPhreeqc = new ActiveXObject("IPhreeqcCOM.Object");
-IPhreeqc.LoadDatabase("phreeqc.dat");
-IPhreeqc.RunFile("ex2");
+var iphreeqc = new ActiveXObject("IPhreeqcCOM.Object");
+iphreeqc.LoadDatabase("phreeqc.dat");
+iphreeqc.RunFile("ex2");
 
 // Note: JScript doesn't support multi-dimensional arrays
-var arr = IPhreeqc.<b class="bterm">GetSelectedOutputArray</b>().toArray();
-
-for (var i = 0; i < IPhreeqc.RowCount; ++i)
-{
-    for (var j = 0; j < IPhreeqc.ColumnCount; ++j)
-    {
-        WScript.Stdout.Write(arr[i + j*IPhreeqc.RowCount]);
-        WScript.Stdout.Write(" ");
+var arr = iphreeqc.<b class="bterm">GetSelectedOutputArray</b>().toArray();
+var selout = "selected-output:\n";
+for (var i = 0; i < iphreeqc.RowCount; ++i) {
+    for (var j = 0; j < iphreeqc.ColumnCount; ++j) {
+        selout += arr[i + j*iphreeqc.RowCount] + " ";
     }
-    WScript.Stdout.WriteLine();
+    selout += "\n";
 }
-</pre></div>
+WScript.Echo(selout);</pre></div>
 
 <!-- VBScript Example -->
 <div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
 <div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
   VBScript</div>
-Dim IPhreeqc, arr, i, j
-Set IPhreeqc = CreateObject("IPhreeqcCOM.Object")
-IPhreeqc.LoadDatabase("phreeqc.dat")
-IPhreeqc.RunFile("ex2")
+Dim iphreeqc, arr, selout, i, j
+Set iphreeqc = CreateObject("IPhreeqcCOM.Object")
+iphreeqc.LoadDatabase("phreeqc.dat")
+iphreeqc.RunFile("ex2")
 
-arr = IPhreeqc.<b class="bterm">GetSelectedOutputArray</b>()
+arr = iphreeqc.<b class="bterm">GetSelectedOutputArray</b>()
+selout = "selected-output:" & vbNewLine
 For i = LBound(arr, 1) To UBound(arr, 1)
     For j = LBound(arr, 2) To UBound(arr, 2)
-        If (IsObject(WScript.Stdout)) Then
-            WScript.Stdout.Write(arr(i, j) & " ")
-        End If
+        selout = selout & arr(i, j) & " "
     Next
-    If (IsObject(WScript.Stdout)) Then
-        WScript.Stdout.WriteLine
-    End If
+    selout = selout & vbNewLine
 Next
-</pre></div>
+WScript.Echo(selout)</pre></div>
 
 <!-- Script -->
 <script type="text/javascript" language="JScript" src="ofvbanl.js"></script>
