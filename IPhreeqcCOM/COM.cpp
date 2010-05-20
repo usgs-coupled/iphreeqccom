@@ -27,16 +27,16 @@ STDMETHODIMP CCOM::InterfaceSupportsErrorInfo(REFIID riid)
 	return S_FALSE;
 }
 
-STDMETHODIMP CCOM::LoadDatabase(BSTR* filename, LONG* retval)
+STDMETHODIMP CCOM::LoadDatabase(BSTR filename, LONG* retval)
 {
-	if( !filename || !retval )
+	if( !retval )
 	{
 		return E_POINTER;
 	}
 
 	MACRO_CHECK_IPHREEQC_PTR();
 
-	_bstr_t f(*filename, true);
+	_bstr_t f(filename, true);
 
 	if ((*retval = this->IPhreeqcPtr->LoadDatabase(f)))
 	{
@@ -135,15 +135,15 @@ STDMETHODIMP CCOM::put_LogFileOn(VARIANT_BOOL newVal)
 	return S_OK;
 }
 
-STDMETHODIMP CCOM::RunFile(BSTR* filename, LONG* retval)
+STDMETHODIMP CCOM::RunFile(BSTR filename, LONG* retval)
 {
-	if( !filename || !retval )
+	if(!retval )
 	{
 		return E_POINTER;
 	}
 	MACRO_CHECK_IPHREEQC_PTR();
 
-	_bstr_t f(*filename, true);
+	_bstr_t f(filename, true);
 
 	if (*retval = this->IPhreeqcPtr->RunFile(f))
 	{
@@ -202,15 +202,15 @@ STDMETHODIMP CCOM::put_SelectedOutputFileOn(VARIANT_BOOL newVal)
 	return S_OK;
 }
 
-STDMETHODIMP CCOM::RunString(BSTR* input, LONG* retval)
+STDMETHODIMP CCOM::RunString(BSTR input, LONG* retval)
 {
-	if( !input || !retval )
+	if( !retval )
 	{
 		return E_POINTER;
 	}
 	MACRO_CHECK_IPHREEQC_PTR();
 
-	_bstr_t in(*input, true);
+	_bstr_t in(input, true);
 
 	if (*retval = this->IPhreeqcPtr->RunString(in))
 	{
@@ -222,15 +222,11 @@ STDMETHODIMP CCOM::RunString(BSTR* input, LONG* retval)
 	return S_OK;
 }
 
-STDMETHODIMP CCOM::AccumulateLine(BSTR* line)
+STDMETHODIMP CCOM::AccumulateLine(BSTR line)
 {
-	if( !line )
-	{
-		return E_POINTER;
-	}
 	MACRO_CHECK_IPHREEQC_PTR();
 
-	_bstr_t in(*line, true);
+	_bstr_t in(line, true);
 
 	VRESULT vr = this->IPhreeqcPtr->AccumulateLine(in);
 
@@ -440,15 +436,15 @@ STDMETHODIMP CCOM::GetSelectedOutputValue(LONG row, LONG col, VARIANT* retval)
 	return hr;
 }
 
-STDMETHODIMP CCOM::LoadDatabaseString(BSTR* input, LONG* retval)
+STDMETHODIMP CCOM::LoadDatabaseString(BSTR input, LONG* retval)
 {
-	if( !input || !retval )
+	if( !retval )
 	{
 		return E_POINTER;
 	}
 	MACRO_CHECK_IPHREEQC_PTR();
 
-	_bstr_t in(*input, true);
+	_bstr_t in(input, true);
 
 	if (*retval = this->IPhreeqcPtr->LoadDatabaseString(in))
 	{

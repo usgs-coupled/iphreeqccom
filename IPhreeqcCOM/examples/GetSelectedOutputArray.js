@@ -1,18 +1,14 @@
-// JScript source code
-var IPhreeqc = new ActiveXObject("IPhreeqcCOM.Object");
-IPhreeqc.LoadDatabase("phreeqc.dat");
-IPhreeqc.RunFile("ex2");
+var iphreeqc = new ActiveXObject("IPhreeqcCOM.Object");
+iphreeqc.LoadDatabase("phreeqc.dat");
+iphreeqc.RunFile("ex2");
 
 // Note: JScript doesn't support multi-dimensional arrays
-var arr = IPhreeqc.GetSelectedOutputArray().toArray();
-
-for (var i = 0; i < IPhreeqc.RowCount; ++i)
-{
-    for (var j = 0; j < IPhreeqc.ColumnCount; ++j)
-    {
-        WScript.Stdout.Write(arr[i + j*IPhreeqc.RowCount]);
-        WScript.Stdout.Write(" ");
+var arr = iphreeqc.GetSelectedOutputArray().toArray();
+var selout = "selected-output:\n";
+for (var i = 0; i < iphreeqc.RowCount; ++i) {
+    for (var j = 0; j < iphreeqc.ColumnCount; ++j) {
+        selout += arr[i + j*iphreeqc.RowCount] + " ";
     }
-    WScript.Stdout.WriteLine();
+    selout += "\n";
 }
-
+WScript.Echo(selout);

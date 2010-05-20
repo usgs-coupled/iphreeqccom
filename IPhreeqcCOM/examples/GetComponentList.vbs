@@ -1,9 +1,9 @@
-Dim IPhreeqc, comp, comps, str
-Set IPhreeqc = CreateObject("IPhreeqcCOM.Object")
-IPhreeqc.LoadDatabase("phreeqc.dat")
-IPhreeqc.RunFile("ex2")
-str = ""
-comps = IPhreeqc.GetComponentList()
+Dim iphreeqc, comp, comps, str
+Set iphreeqc = CreateObject("IPhreeqcCOM.Object")
+iphreeqc.LoadDatabase("phreeqc.dat")
+iphreeqc.RunFile("ex2")
+str = "components:" & vbNewLine
+comps = iphreeqc.GetComponentList()
 For Each comp in comps
     str = str & comp & vbNewLine
 Next

@@ -48,7 +48,6 @@ END_COM_MAP()
 		try
 		{
 			this->IPhreeqcPtr = new IPhreeqc;
-			//this->IPhreeqcPtr->malloc_error();
 		}
 		catch (std::bad_alloc)
 		{
@@ -68,32 +67,32 @@ END_COM_MAP()
 		delete this->IPhreeqcPtr;
 	}
 
-public:
-
-	STDMETHOD(LoadDatabase)(BSTR* filename, LONG* retval);
 private:
 
 	IPhreeqc* IPhreeqcPtr;
+
 public:
+
+	STDMETHOD(LoadDatabase)(BSTR filename, LONG* retval);
 	STDMETHOD(get_OutputFileOn)(VARIANT_BOOL* pVal);
 	STDMETHOD(put_OutputFileOn)(VARIANT_BOOL newVal);
 	STDMETHOD(get_ErrorFileOn)(VARIANT_BOOL* pVal);
 	STDMETHOD(put_ErrorFileOn)(VARIANT_BOOL newVal);
 	STDMETHOD(get_LogFileOn)(VARIANT_BOOL* pVal);
 	STDMETHOD(put_LogFileOn)(VARIANT_BOOL newVal);
-	STDMETHOD(RunFile)(BSTR* filename, LONG* retval);
+	STDMETHOD(RunFile)(BSTR filename, LONG* retval);
 	STDMETHOD(RunAccumulated)(LONG* retval);
 	STDMETHOD(get_SelectedOutputFileOn)(VARIANT_BOOL* pVal);
 	STDMETHOD(put_SelectedOutputFileOn)(VARIANT_BOOL newVal);
-	STDMETHOD(RunString)(BSTR* input, LONG* retval);
-	STDMETHOD(AccumulateLine)(BSTR* line);
+	STDMETHOD(RunString)(BSTR input, LONG* retval);
+	STDMETHOD(AccumulateLine)(BSTR line);
 	STDMETHOD(get_ColumnCount)(LONG* pVal);
 	STDMETHOD(get_RowCount)(LONG* pVal);
 	STDMETHOD(get_Lines)(BSTR* pVal);
 	STDMETHOD(GetSelectedOutputArray)(VARIANT* retval);
 	STDMETHOD(GetErrorString)(BSTR* retval);
 	STDMETHOD(GetSelectedOutputValue)(LONG row, LONG col, VARIANT* retval);
-	STDMETHOD(LoadDatabaseString)(BSTR* input, LONG* retval);
+	STDMETHOD(LoadDatabaseString)(BSTR input, LONG* retval);
 	STDMETHOD(get_DumpFileOn)(VARIANT_BOOL* pVal);
 	STDMETHOD(put_DumpFileOn)(VARIANT_BOOL newVal);
 	STDMETHOD(get_DumpStringOn)(VARIANT_BOOL* pVal);
