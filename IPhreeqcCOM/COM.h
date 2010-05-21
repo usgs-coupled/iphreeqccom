@@ -100,6 +100,7 @@ public:
 	STDMETHOD(GetComponentList)(VARIANT* retval);
 	STDMETHOD(GetWarningString)(BSTR* retval);
 	STDMETHOD(GetDumpString)(BSTR* retval);
+	STDMETHOD(ClearAccumulatedLines)(void);
 };
 
 OBJECT_ENTRY_AUTO(__uuidof(IPhreeqcCOMObject), CCOM)

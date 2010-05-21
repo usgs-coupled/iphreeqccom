@@ -26,6 +26,10 @@
 			<param name="Local" value="html\mthAccumulateLine.htm">
 			</OBJECT>
 		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="ClearAccumulatedLines">
+			<param name="Local" value="html\mthClearAccumulatedLines.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
 			<param name="Name" value="GetComponentList Method">
 			<param name="Local" value="html\mthGetComponentList.htm">
 			</OBJECT>

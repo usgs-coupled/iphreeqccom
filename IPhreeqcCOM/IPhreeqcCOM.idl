@@ -43,6 +43,7 @@ interface IPhreeqcCOM : IDispatch{
 	[id(19), helpstring("method GetComponentList")] HRESULT GetComponentList([out,retval] VARIANT* RHS);
 	[id(20), helpstring("method GetWarningString")] HRESULT GetWarningString([out,retval] BSTR* RHS);
 	[id(21), helpstring("method GetDumpString")] HRESULT GetDumpString([out,retval] BSTR* RHS);
+	[id(22), helpstring("method ClearAccumulatedLines")] HRESULT ClearAccumulatedLines(void);
 };
 [
 	uuid(EDB4905E-CA79-4C56-BE59-575C71219AEA),

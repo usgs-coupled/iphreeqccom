@@ -56,6 +56,8 @@ links\proLogFileOn_l.htm
 links\proOutputFileOn_l.htm
 links\proRowCount_l.htm
 links\proSelectedOutputFileOn_l.htm
+html\mthClearAccumulatedLines.htm
+links\mthClearAccumulatedLines_l.htm
 
 [ALIAS]
 HID_ACCUMULATELINE = html\mthAccumulateLine.htm

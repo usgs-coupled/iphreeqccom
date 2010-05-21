@@ -1,6 +1,7 @@
 FILES = \
 	html/inline.js \
 	html/mthAccumulateLine.htm \
+	html/mthClearAccumulatedLines.htm \
 	html/mthGetComponentList.htm \
 	html/mthGetDumpString.htm \
 	html/mthGetErrorString.htm \
@@ -28,6 +29,7 @@ FILES = \
 	html/proSelectedOutputFileOn.htm \
 	html/sExpCollapse.js \
 	links/mthAccumulateLine_l.htm \
+	links/mthClearAccumulatedLines_l.htm \
 	links/mthGetComponentList_l.htm \
 	links/mthGetDumpString_l.htm \
 	links/mthGetErrorString_l.htm \

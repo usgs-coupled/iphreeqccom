@@ -591,3 +591,12 @@ STDMETHODIMP CCOM::GetDumpString(BSTR* retval)
 
 	return S_OK;
 }
+
+STDMETHODIMP CCOM::ClearAccumulatedLines(void)
+{
+	MACRO_CHECK_IPHREEQC_PTR();
+
+	this->IPhreeqcPtr->ClearAccumulatedLines();
+
+	return S_OK;
+}
