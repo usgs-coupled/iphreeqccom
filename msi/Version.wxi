@@ -45,6 +45,10 @@
   <?define DiskPrompt="USGS $(var.Name) $(var.Major).$(var.Minor).$(var.Build) Installation [1]"?>
   <?define Shortcut="$(var.Name) Reference"?>
   <?define Directory="$(var.Name) $(var.Major).$(var.Minor).$(var.Build)"?>
-  <?define MergeDir="C:\Program Files (x86)\Common Files\Merge Modules"?>
+<?if $(env.PROCESSOR_ARCHITECTURE)=x86 ?>
+  <?define MergeDir="$(env.CommonProgramFiles)\Merge Modules"?>
+<?else?>
+  <?define MergeDir="$(env.CommonProgramFiles(x86))\Merge Modules"?>
+<?endif?>
   <?define DatabaseDir="..\IPhreeqcCOM\database"?>
 </Include>
