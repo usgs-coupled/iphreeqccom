@@ -116,6 +116,9 @@
       </Component>
     </DirectoryRef>
 
+    <!-- examples -->
+    <!-- see Examples.wxs -->
+
     <!-- merge modules -->
     <DirectoryRef Id="INSTALLLOCATION">
       <?if $(sys.BUILDARCH)=x64 ?>
@@ -137,7 +140,8 @@
       <ComponentRef Id="IPhreeqcCOM.tlb" />
       <ComponentRef Id="IPhreeqcCOM.chm" />
       <ComponentRef Id="IPhreeqcCOM.chm.lnk" />
-      <ComponentRef Id="database" />      
+      <ComponentRef Id="database" />
+      <ComponentGroupRef Id="Examples" />
       <MergeRef Id="CRT" />
       <MergeRef Id="CRT Policy" />
       <MergeRef Id="ATL" />
