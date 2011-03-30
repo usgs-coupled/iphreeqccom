@@ -21,7 +21,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <OutputPath>bin\$(Configuration)\</OutputPath>
     <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
-    <DefineConstants>Major=$(Major);Minor=$(Minor);Build=$(Build);ExampleDir=C:\Users\charlton\Documents\Visual Studio 2005\Projects\IPhreeqc-trunk\examples</DefineConstants>
+    <DefineConstants>Major=$(Major);Minor=$(Minor);Build=$(Build);ExampleDir=examples</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
     <DefineConstants>Debug;Major=$(Major);Minor=$(Minor);Build=$(Build)</DefineConstants>
