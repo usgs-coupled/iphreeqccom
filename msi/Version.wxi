@@ -18,6 +18,7 @@
   <?define IPhreeqcCOMTlbGuid="{8F21B29A-B3C6-4504-A3B4-E73236053F29}"?>
   <?define IPhreeqcCOMChmGuid="{DCDB92E8-8CC4-4350-BA36-DFCFA316D61B}"?>
   <?define IPhreeqcCOMLnkGuid="{906E9A27-5341-432b-9AAA-343CE97710F7}"?>
+  <?define AcceptedPdfLnkGuid="{E625EE47-D6F7-489a-94D6-822301AABCC5}"?>
   <?define Description="USGS $(var.Name) x64 $(var.Major).$(var.Minor).$(var.Build) Installer"?>
   <?define FeatureTitle="$(var.Name) x64 $(var.Major).$(var.Minor).$(var.Build)"?>
   <?define FullName="$(var.Name) x64 $(var.Major).$(var.Minor).$(var.Build)"?>
@@ -33,6 +34,7 @@
   <?define IPhreeqcCOMTlbGuid="{2ABD1E66-C307-486e-8D05-C7CA9DBC1AD7}"?>
   <?define IPhreeqcCOMChmGuid="{D0570496-BB73-4402-9D8C-32282A690568}"?>
   <?define IPhreeqcCOMLnkGuid="{E1AB560C-6417-4fdf-BA0A-36EC73ECB063}"?>
+  <?define AcceptedPdfLnkGuid="{151CA9CD-A8FA-4289-A5C2-DCB2CFC1B269}"?>
   <?define Description="USGS $(var.Name) $(var.Major).$(var.Minor).$(var.Build) Installer"?>
   <?define FeatureTitle="$(var.Name) $(var.Major).$(var.Minor).$(var.Build)"?>
   <?define FullName="$(var.Name) $(var.Major).$(var.Minor).$(var.Build)"?>
@@ -44,6 +46,7 @@
 <?endif?>
   <?define DiskPrompt="USGS $(var.Name) $(var.Major).$(var.Minor).$(var.Build) Installation [1]"?>
   <?define Shortcut="$(var.Name) Reference"?>
+  <?define PDFShortcut="IPhreeqc Manuscript"?>
   <?define Directory="$(var.Name) $(var.Major).$(var.Minor).$(var.Build)"?>
 <?if $(env.PROCESSOR_ARCHITECTURE)=x86 ?>
   <?define MergeDir="$(env.CommonProgramFiles)\Merge Modules"?>

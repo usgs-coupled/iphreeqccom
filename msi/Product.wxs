@@ -101,6 +101,21 @@
       </Component>
     </DirectoryRef>
 
+    <!-- pdf file -->
+    <DirectoryRef Id="INSTALLLOCATION">
+      <Component Id="Accepted.pdf" Guid="*" Win64="$(var.Win64)">
+        <File Id="Accepted.pdf" Source="..\help\Accepted.pdf" KeyPath="yes"/>
+      </Component>
+    </DirectoryRef>
+
+    <!-- pdf shortcut -->
+    <DirectoryRef Id="ProgramMenuDir">
+      <Component Id="Accepted.pdf.lnk" Guid="$(var.AcceptedPdfLnkGuid)" Win64="$(var.Win64)">
+        <Shortcut Id="Accepted.pdf" Name="$(var.PDFShortcut)" Target="[INSTALLLOCATION]Accepted.pdf"/>
+        <RegistryValue Root="HKCU" Key="Software\USGS\$(var.Name)" Name="pdf" Type="integer" Value="1" KeyPath="yes"/>
+      </Component>
+    </DirectoryRef>
+
     <!-- database -->
     <DirectoryRef Id="database">
       <Component Id="database" Guid="$(var.DatabaseGuid)" Win64="$(var.Win64)">
@@ -140,6 +155,8 @@
       <ComponentRef Id="IPhreeqcCOM.tlb" />
       <ComponentRef Id="IPhreeqcCOM.chm" />
       <ComponentRef Id="IPhreeqcCOM.chm.lnk" />
+      <ComponentRef Id="Accepted.pdf" />
+      <ComponentRef Id="Accepted.pdf.lnk" />
       <ComponentRef Id="database" />
       <ComponentGroupRef Id="Examples" />
       <MergeRef Id="CRT" />

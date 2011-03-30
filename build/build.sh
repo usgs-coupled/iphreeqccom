@@ -168,9 +168,9 @@ build() {
   cd "${objdir}" && \
   MsBuild.exe IPhreeqcCOM.sln /t:IPhreeqcCOM /p:Configuration=Release /p:Platform=x64 && \
 # build IPhreeqcCOM.msi
-  MsBuild.exe IPhreeqcCOM.sln /t:msi /p:Configuration=Release /p:Platform=Win32 /p:TargetName=${FULLPKG} /p:Major=${MAJOR} /p:Minor=${MINOR} /p:Build=${REL} && \
+  MsBuild.exe IPhreeqcCOM.sln /t:msi /p:Configuration=Release /p:Platform=Win32 /p:TargetName=${FULLPKG} /p:Major=${MAJOR} /p:Minor=${MINOR} /p:Build=${REL} /p:ExampleDir=examples && \
 # build IPhreeqcCOMx64.msi
-  MsBuild.exe IPhreeqcCOM.sln /t:msi /p:Configuration=Release /p:Platform=x64 /p:TargetName=${FULLPKG}-x64 /p:Major=${MAJOR} /p:Minor=${MINOR} /p:Build=${REL} )
+  MsBuild.exe IPhreeqcCOM.sln /t:msi /p:Configuration=Release /p:Platform=x64 /p:TargetName=${FULLPKG}-x64 /p:Major=${MAJOR} /p:Minor=${MINOR} /p:Build=${REL} /p:ExampleDir=examples )
 }
 check() {
   (cd ${objdir} && \
