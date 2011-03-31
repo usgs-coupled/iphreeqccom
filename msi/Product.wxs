@@ -106,6 +106,15 @@
       </Component>
     </DirectoryRef>
 
+    <!-- revisions -->
+    <DirectoryRef Id="DocDir">
+      <Component Id="REVISIONS.txt" Guid="*" Win64="$(var.Win64)">
+        <File Id="REVISIONS.txt" Name="REVISIONS.txt" Source="..\IPhreeqcCOM\IPhreeqc\phreeqcpp\revisions" KeyPath="yes">
+          <Shortcut Id="REVISIONS.txt" Name="REVISIONS" Directory="ProgramMenuDir" Advertise="yes"/>
+        </File>
+      </Component>
+    </DirectoryRef>
+
     <!-- database -->
     <DirectoryRef Id="DatabaseDir">
       <Component Id="Databases" Guid="$(var.DatabaseGuid)" Win64="$(var.Win64)">
@@ -145,6 +154,7 @@
       <ComponentRef Id="IPhreeqcCOM.tlb" />
       <ComponentRef Id="IPhreeqcCOM.chm" />
       <ComponentRef Id="CharltonParkhurst.pdf" />
+      <ComponentRef Id="REVISIONS.txt" />
       <ComponentRef Id="Databases" />
       <ComponentGroupRef Id="Examples" />
       <MergeRef Id="CRT" />
