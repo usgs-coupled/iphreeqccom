@@ -34,8 +34,9 @@
       <Directory Id="ProgramFiles64Folder">
         <Directory Id="USGS" Name="USGS">
           <Directory Id="INSTALLLOCATION" Name="$(var.Directory)">
-            <Directory Id="database" Name="database">              
-            </Directory>
+            <Directory Id="BinDir" Name="bin" />
+            <Directory Id="DatabaseDir" Name="database" />
+            <Directory Id="DocDir" Name="doc" />
           </Directory>
         </Directory>
       </Directory>
@@ -43,8 +44,9 @@
       <Directory Id="ProgramFilesFolder">
         <Directory Id="USGS" Name="USGS">
           <Directory Id="INSTALLLOCATION" Name="$(var.Directory)">
-            <Directory Id="database" Name="database">
-            </Directory>
+            <Directory Id="BinDir" Name="bin" />
+            <Directory Id="DatabaseDir" Name="database" />
+            <Directory Id="DocDir" Name="doc" />
           </Directory>
         </Directory>
       </Directory>
@@ -56,10 +58,10 @@
     </Directory>
 
     <!-- dll file -->
-    <DirectoryRef Id="INSTALLLOCATION">
-      <Component Id="IPhreeqcCOM.dll" Guid="$(var.IPhreeqcCOMDllGuid)" Win64="$(var.Win64)">
+    <DirectoryRef Id="BinDir">
+      <Component Id="IPhreeqcCOM.dll" Guid="*" Win64="$(var.Win64)">
         <File Id="IPhreeqcCOM.dll" Source="$(var.SrcPath)\IPhreeqcCOM.dll" KeyPath="yes">
-          <TypeLib Id="{EDB4905E-CA79-4C56-BE59-575C71219AEA}" Description="IPhreeqcCOM 1.0 Type Library" HelpDirectory="INSTALLLOCATION" Language="0" MajorVersion="1" MinorVersion="0">
+          <TypeLib Id="{EDB4905E-CA79-4C56-BE59-575C71219AEA}" Description="IPhreeqcCOM 1.0 Type Library" HelpDirectory="DocDir" Language="0" MajorVersion="1" MinorVersion="0">
             <AppId Description="IPhreeqcCOM" Id="{9D82F65C-3B0F-4A65-A18C-95A231A04089}">
               <Class Id="{C74CB8AF-C939-42B7-A88D-9594041A0CAF}" Context="InprocServer32" Description="IPhreeqcCOM Object Class" ThreadingModel="apartment" Programmable="yes">
                 <ProgId Id="IPhreeqcCOM.Object.1" Description="IPhreeqcCOM Object Class">
@@ -75,50 +77,38 @@
     </DirectoryRef>
 
     <!-- tlb file -->
-    <DirectoryRef Id="INSTALLLOCATION">
-      <Component Id="IPhreeqcCOM.tlb" Guid="$(var.IPhreeqcCOMTlbGuid)" Win64="$(var.Win64)">
+    <DirectoryRef Id="BinDir">
+      <Component Id="IPhreeqcCOM.tlb" Guid="*" Win64="$(var.Win64)">
         <File Id="IPhreeqcCOM.tlb" Source="$(var.SrcPath)\IPhreeqcCOM.tlb" KeyPath="yes">
-          <TypeLib Id="{EDB4905E-CA79-4C56-BE59-575C71219AEA}" Description="IPhreeqcCOM 1.0 Type Library" HelpDirectory="INSTALLLOCATION" Language="0" MajorVersion="1" MinorVersion="0">
+          <TypeLib Id="{EDB4905E-CA79-4C56-BE59-575C71219AEA}" Description="IPhreeqcCOM 1.0 Type Library" HelpDirectory="DocDir" Language="0" MajorVersion="1" MinorVersion="0">
             <Interface Id="{38C710BB-E052-4A85-BABE-F22F8FD48ADB}" Name="IPhreeqcCOM" ProxyStubClassId="{00020424-0000-0000-C000-000000000046}" ProxyStubClassId32="{00020424-0000-0000-C000-000000000046}" />
           </TypeLib>
         </File>
       </Component>
     </DirectoryRef>
-    
-    <!-- chm file -->
-    <DirectoryRef Id="INSTALLLOCATION">
-      <Component Id="IPhreeqcCOM.chm" Guid="$(var.IPhreeqcCOMChmGuid)" Win64="$(var.Win64)">
-        <File Id="IPhreeqcCOM.chm" Source="..\help\IPhreeqcCOM.chm" KeyPath="yes"/>
-      </Component>
-    </DirectoryRef>
 
-    <!-- chm shortcut -->
-    <DirectoryRef Id="ProgramMenuDir">
-      <Component Id="IPhreeqcCOM.chm.lnk" Guid="$(var.IPhreeqcCOMLnkGuid)" Win64="$(var.Win64)">
-        <Shortcut Id="IPhreeqcCOM.chm" Name="$(var.Shortcut)" Target="[INSTALLLOCATION]IPhreeqcCOM.chm"/>
-        <RemoveFolder Id="ProgramMenuDir" On="uninstall"/>
-        <RegistryValue Root="HKCU" Key="Software\USGS\$(var.Name)" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+    <!-- chm file -->
+    <DirectoryRef Id="DocDir">
+      <Component Id="IPhreeqcCOM.chm" Guid="*" Win64="$(var.Win64)">
+        <File Id="IPhreeqcCOM.chm" Source="..\help\IPhreeqcCOM.chm" KeyPath="yes">
+          <Shortcut Id="IPhreeqcCOM.chm" Name="$(var.Shortcut)" Directory="ProgramMenuDir" Advertise="yes"/>
+        </File>
+        <RemoveFolder Id="RemoveShortCutFolder" Directory="ProgramMenuDir" On="uninstall"/>
       </Component>
     </DirectoryRef>
 
     <!-- pdf file -->
-    <DirectoryRef Id="INSTALLLOCATION">
-      <Component Id="Accepted.pdf" Guid="*" Win64="$(var.Win64)">
-        <File Id="Accepted.pdf" Source="..\help\Accepted.pdf" KeyPath="yes"/>
-      </Component>
-    </DirectoryRef>
-
-    <!-- pdf shortcut -->
-    <DirectoryRef Id="ProgramMenuDir">
-      <Component Id="Accepted.pdf.lnk" Guid="$(var.AcceptedPdfLnkGuid)" Win64="$(var.Win64)">
-        <Shortcut Id="Accepted.pdf" Name="$(var.PDFShortcut)" Target="[INSTALLLOCATION]Accepted.pdf"/>
-        <RegistryValue Root="HKCU" Key="Software\USGS\$(var.Name)" Name="pdf" Type="integer" Value="1" KeyPath="yes"/>
+    <DirectoryRef Id="DocDir">
+      <Component Id="CharltonParkhurst.pdf" Guid="*" Win64="$(var.Win64)">
+        <File Id="CharltonParkhurst.pdf" Source="..\help\CharltonParkhurst.pdf" KeyPath="yes">
+          <Shortcut Id="CharltonParkhurst.pdf" Name="$(var.PDFShortcut)" Directory="ProgramMenuDir" Advertise="yes"/>
+        </File>
       </Component>
     </DirectoryRef>
 
     <!-- database -->
-    <DirectoryRef Id="database">
-      <Component Id="database" Guid="$(var.DatabaseGuid)" Win64="$(var.Win64)">
+    <DirectoryRef Id="DatabaseDir">
+      <Component Id="Databases" Guid="$(var.DatabaseGuid)" Win64="$(var.Win64)">
         <File Id="Amm.dat"       Name="Amm.dat"       Source="$(var.DatabaseDir)\Amm.dat" />
         <File Id="iso.dat"       Name="iso.dat"       Source="$(var.DatabaseDir)\iso.dat" />
         <File Id="llnl.dat"      Name="llnl.dat"      Source="$(var.DatabaseDir)\llnl.dat" />
@@ -136,17 +126,17 @@
 
     <!-- merge modules -->
     <DirectoryRef Id="INSTALLLOCATION">
-      <?if $(sys.BUILDARCH)=x64 ?>
+<?if $(sys.BUILDARCH)=x64 ?>
       <Merge Id="CRT" Language="1033" SourceFile="$(var.MergeDir)\Microsoft_VC80_CRT_x86_x64.msm" DiskId="1" />
       <Merge Id="CRT Policy" Language="1033" SourceFile="$(var.MergeDir)\policy_8_0_Microsoft_VC80_CRT_x86_x64.msm" DiskId="1" />
       <Merge Id="ATL" Language="1033" SourceFile="$(var.MergeDir)\Microsoft_VC80_ATL_x86_x64.msm" DiskId="1" />
       <Merge Id="ATL Policy" Language="1033" SourceFile="$(var.MergeDir)\policy_8_0_Microsoft_VC80_ATL_x86_x64.msm" DiskId="1" />
-      <?else?>
+<?else?>
       <Merge Id="CRT" Language="1033" SourceFile="$(var.MergeDir)\Microsoft_VC80_CRT_x86.msm" DiskId="1" />
       <Merge Id="CRT Policy" Language="1033" SourceFile="$(var.MergeDir)\policy_8_0_Microsoft_VC80_CRT_x86.msm" DiskId="1" />
       <Merge Id="ATL" Language="1033" SourceFile="$(var.MergeDir)\Microsoft_VC80_ATL_x86.msm" DiskId="1" />
       <Merge Id="ATL Policy" Language="1033" SourceFile="$(var.MergeDir)\policy_8_0_Microsoft_VC80_ATL_x86.msm" DiskId="1" />
-      <?endif?>
+<?endif?>
     </DirectoryRef>
 
     <!-- features -->
@@ -154,10 +144,8 @@
       <ComponentRef Id="IPhreeqcCOM.dll" />
       <ComponentRef Id="IPhreeqcCOM.tlb" />
       <ComponentRef Id="IPhreeqcCOM.chm" />
-      <ComponentRef Id="IPhreeqcCOM.chm.lnk" />
-      <ComponentRef Id="Accepted.pdf" />
-      <ComponentRef Id="Accepted.pdf.lnk" />
-      <ComponentRef Id="database" />
+      <ComponentRef Id="CharltonParkhurst.pdf" />
+      <ComponentRef Id="Databases" />
       <ComponentGroupRef Id="Examples" />
       <MergeRef Id="CRT" />
       <MergeRef Id="CRT Policy" />
@@ -172,8 +160,8 @@
     <WixVariable Id="WixUILicenseRtf" Value="License.rtf" />
     <Property Id="WIXUI_INSTALLDIR" Value="INSTALLLOCATION" />
     <Property Id="PREVIOUSVERSIONSINSTALLED" Secure="yes" />
+    <Property Id="DISABLEADVTSHORTCUTS" Value="1" /> <!-- Fixes icons for shortcuts -->
     <UIRef Id="WixUI_InstallDir"/>
-
     
     <InstallExecuteSequence>
       <RemoveExistingProducts Before="InstallInitialize" />
