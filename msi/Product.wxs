@@ -106,11 +106,20 @@
       </Component>
     </DirectoryRef>
 
+    <!-- phreeqcpp revisions -->
+    <DirectoryRef Id="DocDir">
+      <Component Id="PHREEQCPP.RELEASE.txt" Guid="*" Win64="$(var.Win64)">
+        <File Id="PHREEQCPP.RELEASE.txt" Name="PHREEQCPP-RELEASE.txt" Source="..\IPhreeqcCOM\IPhreeqc\phreeqcpp\PHREEQCPP-RELEASE.txt" KeyPath="yes">
+          <Shortcut Id="PHREEQCPP.RELEASE.txt" Name="PHREEQCPP-RELEASE" Directory="ProgramMenuDir" Advertise="yes"/>
+        </File>
+      </Component>
+    </DirectoryRef>
+
     <!-- revisions -->
     <DirectoryRef Id="DocDir">
-      <Component Id="REVISIONS.txt" Guid="*" Win64="$(var.Win64)">
-        <File Id="REVISIONS.txt" Name="REVISIONS.txt" Source="..\IPhreeqcCOM\IPhreeqc\phreeqcpp\revisions" KeyPath="yes">
-          <Shortcut Id="REVISIONS.txt" Name="REVISIONS" Directory="ProgramMenuDir" Advertise="yes"/>
+      <Component Id="RELEASE.txt" Guid="*" Win64="$(var.Win64)">
+        <File Id="RELEASE.txt" Name="RELEASE.txt" Source="..\IPhreeqcCOM\IPhreeqc\phreeqcpp\phreeqc\revisions" KeyPath="yes">
+          <Shortcut Id="RELEASE.txt" Name="RELEASE" Directory="ProgramMenuDir" Advertise="yes"/>
         </File>
       </Component>
     </DirectoryRef>
@@ -154,7 +163,8 @@
       <ComponentRef Id="IPhreeqcCOM.tlb" />
       <ComponentRef Id="IPhreeqcCOM.chm" />
       <ComponentRef Id="CharltonParkhurst.pdf" />
-      <ComponentRef Id="REVISIONS.txt" />
+      <ComponentRef Id="PHREEQCPP.RELEASE.txt" />
+      <ComponentRef Id="RELEASE.txt" />
       <ComponentRef Id="Databases" />
       <ComponentGroupRef Id="Examples" />
       <MergeRef Id="CRT" />
