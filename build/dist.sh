@@ -199,7 +199,10 @@ if [ -z "$ver_patch" ]; then
   ver_patch="0"
 fi
 
-SED_FILES="$DISTPATH/build/version.h"
+SED_FILES="$DISTPATH/build/version.h \
+           $DISTPATH/IPhreeqcCOM/IPhreeqc/phreeqcpp/PHREEQCPP-RELEASE.txt \
+           $DISTPATH/IPhreeqcCOM/IPhreeqc/phreeqcpp/phreeqc/revisions"
+
 
 for vsn_file in $SED_FILES
 do
