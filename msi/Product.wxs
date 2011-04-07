@@ -99,9 +99,9 @@
 
     <!-- pdf file -->
     <DirectoryRef Id="DocDir">
-      <Component Id="CharltonParkhurst.pdf" Guid="*" Win64="$(var.Win64)">
-        <File Id="CharltonParkhurst.pdf" Source="..\help\CharltonParkhurst.pdf" KeyPath="yes">
-          <Shortcut Id="CharltonParkhurst.pdf" Name="$(var.PDFShortcut)" Directory="ProgramMenuDir" Advertise="yes"/>
+      <Component Id="IPhreeqc.pdf" Guid="*" Win64="$(var.Win64)">
+        <File Id="IPhreeqc.pdf" Source="..\help\IPhreeqc.pdf" KeyPath="yes">
+          <Shortcut Id="IPhreeqc.pdf" Name="$(var.PDFShortcut)" Directory="ProgramMenuDir" Advertise="yes"/>
         </File>
       </Component>
     </DirectoryRef>
@@ -162,7 +162,7 @@
       <ComponentRef Id="IPhreeqcCOM.dll" />
       <ComponentRef Id="IPhreeqcCOM.tlb" />
       <ComponentRef Id="IPhreeqcCOM.chm" />
-      <ComponentRef Id="CharltonParkhurst.pdf" />
+      <ComponentRef Id="IPhreeqc.pdf" />
       <ComponentRef Id="PHREEQCPP.RELEASE.txt" />
       <ComponentRef Id="RELEASE.txt" />
       <ComponentRef Id="Databases" />
