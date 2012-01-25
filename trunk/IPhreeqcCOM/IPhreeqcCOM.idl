@@ -1,0 +1,64 @@
+// IPhreeqcCOM.idl : IDL source for IPhreeqcCOM
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (IPhreeqcCOM.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(38C710BB-E052-4A85-BABE-F22F8FD48ADB),
+	dual,
+	nonextensible,
+	helpstring("IPhreeqcCOM Interface"),
+	pointer_default(unique)
+]
+interface IPhreeqcCOM : IDispatch{
+	[id(1), helpstring("method LoadDatabase")] HRESULT LoadDatabase([in] BSTR FileName, [out,retval] LONG* RHS);
+	[propget, id(2), helpstring("property OutputFileOn")] HRESULT OutputFileOn([out, retval] VARIANT_BOOL* pVal);
+	[propput, id(2), helpstring("property OutputFileOn")] HRESULT OutputFileOn([in] VARIANT_BOOL newVal);
+	[propget, id(3), helpstring("property ErrorFileOn")] HRESULT ErrorFileOn([out, retval] VARIANT_BOOL* pVal);
+	[propput, id(3), helpstring("property ErrorFileOn")] HRESULT ErrorFileOn([in] VARIANT_BOOL newVal);
+	[propget, id(4), helpstring("property LogFileOn")] HRESULT LogFileOn([out, retval] VARIANT_BOOL* pVal);
+	[propput, id(4), helpstring("property LogFileOn")] HRESULT LogFileOn([in] VARIANT_BOOL newVal);
+	[id(5), helpstring("method RunFile")] HRESULT RunFile([in] BSTR filename, [out,retval] LONG* RHS);
+	[id(6), helpstring("method RunAccumulated")] HRESULT RunAccumulated([out,retval] LONG* RHS);
+	[propget, id(7), helpstring("property SelectedOutputFileOn")] HRESULT SelectedOutputFileOn([out, retval] VARIANT_BOOL* pVal);
+	[propput, id(7), helpstring("property SelectedOutputFileOn")] HRESULT SelectedOutputFileOn([in] VARIANT_BOOL newVal);
+	[id(8), helpstring("method RunString")] HRESULT RunString([in] BSTR input, [out,retval] LONG* RHS);
+	[id(9), helpstring("method AccumulateLine")] HRESULT AccumulateLine([in] BSTR line);
+	[propget, id(10), helpstring("property ColumnCount")] HRESULT ColumnCount([out, retval] LONG* pVal);
+	[propget, id(11), helpstring("property RowCount")] HRESULT RowCount([out, retval] LONG* pVal);
+	[propget, id(12), helpstring("property Lines")] HRESULT Lines([out, retval] BSTR* pVal);
+	[id(13), helpstring("method GetSelectedOutputArray")] HRESULT GetSelectedOutputArray([out,retval] VARIANT* RHS);
+	[id(14), helpstring("method GetErrorString")] HRESULT GetErrorString([out,retval] BSTR* RHS);
+	[id(15), helpstring("method GetSelectedOutputValue")] HRESULT GetSelectedOutputValue([in] LONG row, [in] LONG col, [out,retval] VARIANT* RHS);
+	[id(16), helpstring("method LoadDatabaseString")] HRESULT LoadDatabaseString([in] BSTR input, [out,retval] LONG* RHS);
+	[propget, id(17), helpstring("property DumpFileOn")] HRESULT DumpFileOn([out, retval] VARIANT_BOOL* pVal);
+	[propput, id(17), helpstring("property DumpFileOn")] HRESULT DumpFileOn([in] VARIANT_BOOL newVal);
+	[propget, id(18), helpstring("property DumpStringOn")] HRESULT DumpStringOn([out, retval] VARIANT_BOOL* pVal);
+	[propput, id(18), helpstring("property DumpStringOn")] HRESULT DumpStringOn([in] VARIANT_BOOL newVal);
+	[id(19), helpstring("method GetComponentList")] HRESULT GetComponentList([out,retval] VARIANT* RHS);
+	[id(20), helpstring("method GetWarningString")] HRESULT GetWarningString([out,retval] BSTR* RHS);
+	[id(21), helpstring("method GetDumpString")] HRESULT GetDumpString([out,retval] BSTR* RHS);
+	[id(22), helpstring("method ClearAccumulatedLines")] HRESULT ClearAccumulatedLines(void);
+};
+[
+	uuid(EDB4905E-CA79-4C56-BE59-575C71219AEA),
+	version(1.0),
+	helpstring("IPhreeqcCOM 1.0 Type Library")
+]
+library IPhreeqcCOMLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(C74CB8AF-C939-42B7-A88D-9594041A0CAF),
+		helpstring("IPhreeqcCOM Object Class")
+	]
+	coclass IPhreeqcCOMObject
+	{
+		[default] interface IPhreeqcCOM;
+	};
+};

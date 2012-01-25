@@ -1,0 +1,113 @@
+<html dir="ltr" xmlns:msxsl="urn:schemas-microsoft-com:xslt"><head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<META HTTP-EQUIV="assetid" CONTENT="HV05199071">
+<META NAME="lcid" CONTENT="1033">
+<title>AccumulateLine Method</title><link rel="stylesheet" type="text/css" href="office10.css">
+<script type="text/javascript" language="Javascript" src="sExpCollapse.js"></script>
+<script type="text/javascript" language="JavaScript" src="inline.js"></script>
+</head>
+<body>
+
+<!-- Top Heading -->
+<h1>AccumulateLine Method</h1>
+
+<!-- Links -->
+<DIV class="ofvbanav">
+<span class="ofvbanavreuse" id="seealso" onclick="toggleList()" onkeypress="toggleList()"></span>
+<span class="ofvbanavreuse" id="appliesto" onclick="toggleList()" onkeypress="toggleList()"></span>
+<a class="ofvbanavex" href="#example"><span class="ofvbanavreuse" id="example"></span></a>
+<span class="ofvbanavreuse" id="specifics" onclick="toggleList()" onkeypress="toggleList()"></span>
+</DIV>
+
+<!-- Description -->
+<p>Appends a line of text to the input buffer of the IPhreeqcCOM object.</p>
+
+<!-- Prototype -->
+<p class="signature"><i>expression</i>.<b class="bterm">AccumulateLine</b>( <b class="bterm"><i>Line</i></b> )</p>
+<p><i>expression   </i>   Required. An expression that returns an IPhreeqcCOM object.</p>
+<p><b class="runinhead"><i>Line</i></b>   Required <b class="bterm">String</b>.  The line of input to be added to the input buffer of the IPhreeqcCOM object.</p>
+<div id="ExpCol" class="collapsed" border="0"><div class="ind"></div></div>
+
+<!-- Remarks -->
+
+<!-- Example -->
+<h2><a id="#example" name="#example">Example</a></h2>
+<p>This example loads the <b class="bterm"><I>phreeqc.dat</I></b> &nbsp;database into the IPhreeqcCOM object. Next, Phreeqc input is accumulated and run by the IPhreeqcCOM object.</p>
+
+<!-- JScript Example -->
+<div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
+<div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
+  JScript</div>
+var iphreeqc = new ActiveXObject("IPhreeqcCOM.Object");
+iphreeqc.LoadDatabase("phreeqc.dat");
+iphreeqc.<b class="bterm">AccumulateLine</b>("TITLE Example 2.--Temperature dependence of solubility");
+iphreeqc.<b class="bterm">AccumulateLine</b>("                  of gypsum and anhydrite");
+iphreeqc.<b class="bterm">AccumulateLine</b>("SOLUTION 1 Pure water");
+iphreeqc.<b class="bterm">AccumulateLine</b>("        pH      7.0");
+iphreeqc.<b class="bterm">AccumulateLine</b>("        temp    25.0");
+iphreeqc.<b class="bterm">AccumulateLine</b>("EQUILIBRIUM_PHASES 1");
+iphreeqc.<b class="bterm">AccumulateLine</b>("        Gypsum          0.0     1.0");
+iphreeqc.<b class="bterm">AccumulateLine</b>("        Anhydrite       0.0     1.0");
+iphreeqc.<b class="bterm">AccumulateLine</b>("REACTION_TEMPERATURE 1");
+iphreeqc.<b class="bterm">AccumulateLine</b>("        25.0 75.0 in 51 steps");
+iphreeqc.<b class="bterm">AccumulateLine</b>("SELECTED_OUTPUT");
+iphreeqc.<b class="bterm">AccumulateLine</b>("        -file   ex2.sel");
+iphreeqc.<b class="bterm">AccumulateLine</b>("        -temperature");
+iphreeqc.<b class="bterm">AccumulateLine</b>("        -si     anhydrite  gypsum");
+iphreeqc.<b class="bterm">AccumulateLine</b>("END");
+iphreeqc.OutputFileOn = true;
+if (iphreeqc.RunAccumulated() == 0) {
+    WScript.Echo("see phreeqc.out");
+};</pre></div>
+
+<!-- VBScript Example -->
+<div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
+<div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
+  VBScript</div>
+Dim iphreeqc
+Set iphreeqc = CreateObject("IPhreeqcCOM.Object")
+iphreeqc.LoadDatabase("phreeqc.dat")
+iphreeqc.<b class="bterm">AccumulateLine</b>("TITLE Example 2.--Temperature dependence of solubility")
+iphreeqc.<b class="bterm">AccumulateLine</b>("                  of gypsum and anhydrite")
+iphreeqc.<b class="bterm">AccumulateLine</b>("SOLUTION 1 Pure water")
+iphreeqc.<b class="bterm">AccumulateLine</b>("        pH      7.0")
+iphreeqc.<b class="bterm">AccumulateLine</b>("        temp    25.0")
+iphreeqc.<b class="bterm">AccumulateLine</b>("EQUILIBRIUM_PHASES 1")
+iphreeqc.<b class="bterm">AccumulateLine</b>("        Gypsum          0.0     1.0")
+iphreeqc.<b class="bterm">AccumulateLine</b>("        Anhydrite       0.0     1.0")
+iphreeqc.<b class="bterm">AccumulateLine</b>("REACTION_TEMPERATURE 1")
+iphreeqc.<b class="bterm">AccumulateLine</b>("        25.0 75.0 in 51 steps")
+iphreeqc.<b class="bterm">AccumulateLine</b>("SELECTED_OUTPUT")
+iphreeqc.<b class="bterm">AccumulateLine</b>("        -file   ex2.sel")
+iphreeqc.<b class="bterm">AccumulateLine</b>("        -temperature")
+iphreeqc.<b class="bterm">AccumulateLine</b>("        -si     anhydrite  gypsum")
+iphreeqc.<b class="bterm">AccumulateLine</b>("END")
+iphreeqc.OutputFileOn = True
+If (iphreeqc.RunAccumulated() = 0) Then
+    WScript.Echo("see phreeqc.out")
+End If</pre></div>
+
+<!-- Script -->
+<script type="text/javascript" language="JScript" src="ofvbanl.js"></script>
+<span id="ofVBAISpan" class="ofvbaispan">
+<iframe id="ofVBAIFrame" frameborder="0" marginheight="0" marginwidth="4" scrolling="auto" width="100%" src="../links/mthAccumulateLine_l.htm"></iframe>
+</span>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

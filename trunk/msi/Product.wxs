@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?include Version.wxi?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+  <!-- product -->
+  <Product Id="*"
+           Name="$(var.FullName)"
+           Language="1033"
+           Version="$(var.Version)"
+           Manufacturer="$(var.Manufacturer)"
+           UpgradeCode="$(var.UpgradeGuid)">
+
+    <!-- package -->
+<?if $(sys.BUILDARCH)=x64 ?>
+    <Package InstallerVersion="300" Compressed="yes" Platform="x64"/>
+<?else?>
+    <Package InstallerVersion="300" Compressed="yes" Platform="x86"/>
+<?endif?>
+
+    <Upgrade Id="$(var.UpgradeGuid)" >
+      <!-- upgrade is flagged if current-install is newer than or equal to package - TODO: should make a dialog appear asking user to confirm downgrade.  -->
+      <UpgradeVersion Property="NEWERVERSIONDETECTED" Minimum="$(var.Version)" />
+
+      <!-- flag is set if the install will trigger an upgrade of an existing install -->
+      <UpgradeVersion Property="PREVIOUSVERSIONSINSTALLED" Maximum="$(var.Version)" IncludeMaximum="no" />
+    </Upgrade>
+
+    <Media Id="1" Cabinet="$(var.Cabinet)" EmbedCab="yes" />
+
+    <!-- directory structure -->
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <!-- program files -->
+<?if $(sys.BUILDARCH)=x64 ?>
+      <Directory Id="ProgramFiles64Folder">
+        <Directory Id="USGS" Name="USGS">
+          <Directory Id="INSTALLLOCATION" Name="$(var.Directory)">
+            <Directory Id="BinDir" Name="bin" />
+            <Directory Id="DatabaseDir" Name="database" />
+            <Directory Id="DocDir" Name="doc" />
+          </Directory>
+        </Directory>
+      </Directory>
+<?else?>
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="USGS" Name="USGS">
+          <Directory Id="INSTALLLOCATION" Name="$(var.Directory)">
+            <Directory Id="BinDir" Name="bin" />
+            <Directory Id="DatabaseDir" Name="database" />
+            <Directory Id="DocDir" Name="doc" />
+          </Directory>
+        </Directory>
+      </Directory>
+<?endif?>
+      <!-- start menu -->
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="ProgramMenuDir" Name="$(var.FullName)" />
+      </Directory>
+    </Directory>
+
+    <!-- dll file -->
+    <DirectoryRef Id="BinDir">
+      <Component Id="IPhreeqcCOM.dll" Guid="*" Win64="$(var.Win64)">
+        <File Id="IPhreeqcCOM.dll" Source="$(var.SrcPath)\IPhreeqcCOM.dll" KeyPath="yes">
+          <TypeLib Id="{EDB4905E-CA79-4C56-BE59-575C71219AEA}" Description="IPhreeqcCOM 1.0 Type Library" HelpDirectory="DocDir" Language="0" MajorVersion="1" MinorVersion="0">
+            <AppId Description="IPhreeqcCOM" Id="{9D82F65C-3B0F-4A65-A18C-95A231A04089}">
+              <Class Id="{C74CB8AF-C939-42B7-A88D-9594041A0CAF}" Context="InprocServer32" Description="IPhreeqcCOM Object Class" ThreadingModel="apartment" Programmable="yes">
+                <ProgId Id="IPhreeqcCOM.Object.1" Description="IPhreeqcCOM Object Class">
+                  <ProgId Id="IPhreeqcCOM.Object" Description="IPhreeqcCOM Object Class" />
+                </ProgId>
+              </Class>
+            </AppId>
+            <Interface Id="{38C710BB-E052-4A85-BABE-F22F8FD48ADB}" Name="IPhreeqcCOM" ProxyStubClassId="{00020424-0000-0000-C000-000000000046}" ProxyStubClassId32="{00020424-0000-0000-C000-000000000046}" />
+          </TypeLib>
+        </File>
+        <RegistryValue Root="HKCR" Key="AppID\IPhreeqcCOM.DLL" Name="AppID" Value="{9D82F65C-3B0F-4A65-A18C-95A231A04089}" Type="string" Action="write" />
+      </Component>
+    </DirectoryRef>
+
+    <!-- tlb file -->
+    <DirectoryRef Id="BinDir">
+      <Component Id="IPhreeqcCOM.tlb" Guid="*" Win64="$(var.Win64)">
+        <File Id="IPhreeqcCOM.tlb" Source="$(var.SrcPath)\IPhreeqcCOM.tlb" KeyPath="yes">
+          <TypeLib Id="{EDB4905E-CA79-4C56-BE59-575C71219AEA}" Description="IPhreeqcCOM 1.0 Type Library" HelpDirectory="DocDir" Language="0" MajorVersion="1" MinorVersion="0">
+            <Interface Id="{38C710BB-E052-4A85-BABE-F22F8FD48ADB}" Name="IPhreeqcCOM" ProxyStubClassId="{00020424-0000-0000-C000-000000000046}" ProxyStubClassId32="{00020424-0000-0000-C000-000000000046}" />
+          </TypeLib>
+        </File>
+      </Component>
+    </DirectoryRef>
+
+    <!-- chm file -->
+    <DirectoryRef Id="DocDir">
+      <Component Id="IPhreeqcCOM.chm" Guid="*" Win64="$(var.Win64)">
+        <File Id="IPhreeqcCOM.chm" Source="..\help\IPhreeqcCOM.chm" KeyPath="yes">
+          <Shortcut Id="IPhreeqcCOM.chm" Name="$(var.Shortcut)" Directory="ProgramMenuDir" Advertise="yes"/>
+        </File>
+        <RemoveFolder Id="RemoveShortCutFolder" Directory="ProgramMenuDir" On="uninstall"/>
+      </Component>
+    </DirectoryRef>
+
+    <!-- pdf file -->
+    <DirectoryRef Id="DocDir">
+      <Component Id="IPhreeqc.pdf" Guid="*" Win64="$(var.Win64)">
+        <File Id="IPhreeqc.pdf" Source="..\help\IPhreeqc.pdf" KeyPath="yes">
+          <Shortcut Id="IPhreeqc.pdf" Name="$(var.PDFShortcut)" Directory="ProgramMenuDir" Advertise="yes"/>
+        </File>
+      </Component>
+    </DirectoryRef>
+
+    <!-- phreeqcpp revisions -->
+    <DirectoryRef Id="DocDir">
+      <Component Id="PHREEQCPP.RELEASE.txt" Guid="*" Win64="$(var.Win64)">
+        <File Id="PHREEQCPP.RELEASE.txt" Name="PHREEQCPP-RELEASE.txt" Source="..\IPhreeqcCOM\IPhreeqc\phreeqcpp\PHREEQCPP-RELEASE.txt" KeyPath="yes">
+          <Shortcut Id="PHREEQCPP.RELEASE.txt" Name="PHREEQCPP-RELEASE" Directory="ProgramMenuDir" Advertise="yes"/>
+        </File>
+      </Component>
+    </DirectoryRef>
+
+    <!-- revisions -->
+    <DirectoryRef Id="DocDir">
+      <Component Id="RELEASE.txt" Guid="*" Win64="$(var.Win64)">
+        <File Id="RELEASE.txt" Name="RELEASE.txt" Source="..\IPhreeqcCOM\IPhreeqc\phreeqcpp\phreeqc\revisions" KeyPath="yes">
+          <Shortcut Id="RELEASE.txt" Name="RELEASE" Directory="ProgramMenuDir" Advertise="yes"/>
+        </File>
+      </Component>
+    </DirectoryRef>
+
+    <!-- database -->
+    <DirectoryRef Id="DatabaseDir">
+      <Component Id="Databases" Guid="$(var.DatabaseGuid)" Win64="$(var.Win64)">
+        <File Id="Amm.dat"       Name="Amm.dat"       Source="$(var.DatabaseDir)\Amm.dat" />
+        <File Id="iso.dat"       Name="iso.dat"       Source="$(var.DatabaseDir)\iso.dat" />
+        <File Id="llnl.dat"      Name="llnl.dat"      Source="$(var.DatabaseDir)\llnl.dat" />
+        <File Id="minteq.dat"    Name="minteq.dat"    Source="$(var.DatabaseDir)\minteq.dat" />
+        <File Id="minteq.v4.dat" Name="minteq.v4.dat" Source="$(var.DatabaseDir)\minteq.v4.dat" />
+        <File Id="phreeqc.dat"   Name="phreeqc.dat"   Source="$(var.DatabaseDir)\phreeqc.dat" />
+        <File Id="pitzer.dat"    Name="pitzer.dat"    Source="$(var.DatabaseDir)\pitzer.dat" />
+        <File Id="sit.dat"       Name="sit.dat"       Source="$(var.DatabaseDir)\sit.dat" />
+        <File Id="wateq4f.dat"   Name="wateq4f.dat"   Source="$(var.DatabaseDir)\wateq4f.dat" />
+      </Component>
+    </DirectoryRef>
+
+    <!-- examples -->
+    <!-- see Examples.wxs -->
+
+    <!-- merge modules -->
+    <DirectoryRef Id="INSTALLLOCATION">
+<?if $(sys.BUILDARCH)=x64 ?>
+      <Merge Id="CRT" Language="1033" SourceFile="$(var.MergeDir)\Microsoft_VC80_CRT_x86_x64.msm" DiskId="1" />
+      <Merge Id="CRT Policy" Language="1033" SourceFile="$(var.MergeDir)\policy_8_0_Microsoft_VC80_CRT_x86_x64.msm" DiskId="1" />
+      <Merge Id="ATL" Language="1033" SourceFile="$(var.MergeDir)\Microsoft_VC80_ATL_x86_x64.msm" DiskId="1" />
+      <Merge Id="ATL Policy" Language="1033" SourceFile="$(var.MergeDir)\policy_8_0_Microsoft_VC80_ATL_x86_x64.msm" DiskId="1" />
+<?else?>
+      <Merge Id="CRT" Language="1033" SourceFile="$(var.MergeDir)\Microsoft_VC80_CRT_x86.msm" DiskId="1" />
+      <Merge Id="CRT Policy" Language="1033" SourceFile="$(var.MergeDir)\policy_8_0_Microsoft_VC80_CRT_x86.msm" DiskId="1" />
+      <Merge Id="ATL" Language="1033" SourceFile="$(var.MergeDir)\Microsoft_VC80_ATL_x86.msm" DiskId="1" />
+      <Merge Id="ATL Policy" Language="1033" SourceFile="$(var.MergeDir)\policy_8_0_Microsoft_VC80_ATL_x86.msm" DiskId="1" />
+<?endif?>
+    </DirectoryRef>
+
+    <!-- features -->
+    <Feature Id="ProductFeature" Title="msi" Level="1">
+      <ComponentRef Id="IPhreeqcCOM.dll" />
+      <ComponentRef Id="IPhreeqcCOM.tlb" />
+      <ComponentRef Id="IPhreeqcCOM.chm" />
+      <ComponentRef Id="IPhreeqc.pdf" />
+      <ComponentRef Id="PHREEQCPP.RELEASE.txt" />
+      <ComponentRef Id="RELEASE.txt" />
+      <ComponentRef Id="Databases" />
+      <ComponentGroupRef Id="Examples" />
+      <MergeRef Id="CRT" />
+      <MergeRef Id="CRT Policy" />
+      <MergeRef Id="ATL" />
+      <MergeRef Id="ATL Policy" />
+    </Feature>
+
+    <!-- gui -->
+    <!--
+    <UIRef Id="WixUI_Minimal"/>
+    -->
+    <WixVariable Id="WixUILicenseRtf" Value="License.rtf" />
+    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLLOCATION" />
+    <Property Id="PREVIOUSVERSIONSINSTALLED" Secure="yes" />
+    <Property Id="DISABLEADVTSHORTCUTS" Value="1" /> <!-- Fixes icons for shortcuts -->
+    <UIRef Id="WixUI_InstallDir"/>
+    
+    <InstallExecuteSequence>
+      <RemoveExistingProducts Before="InstallInitialize" />
+    </InstallExecuteSequence>
+    
+  </Product>
+</Wix>

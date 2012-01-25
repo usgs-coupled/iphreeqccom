@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <Fragment>
+        <ComponentGroup Id="Examples">
+            <ComponentRef Id="advect.c" />
+            <ComponentRef Id="advect_c.sln" />
+            <ComponentRef Id="advect_c.vcproj" />
+            <ComponentRef Id="ic" />
+            <ComponentRef Id="phreeqc.dat_1" />
+            <ComponentRef Id="phreeqc.dat_2" />
+            <ComponentRef Id="runphreeqc.xls" />
+            <ComponentRef Id="Gypsum.py" />
+            <ComponentRef Id="parallel_advect.py" />
+            <ComponentRef Id="phreeqc.dat_3" />
+            <ComponentRef Id="pitzer.dat_1" />
+            <ComponentRef Id="wateq4f.dat_1" />
+            <ComponentRef Id="advect.f90" />
+            <ComponentRef Id="advect.sln" />
+            <ComponentRef Id="advect.vfproj" />
+            <ComponentRef Id="ic_1" />
+            <ComponentRef Id="phreeqc.dat_4" />
+        </ComponentGroup>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="INSTALLLOCATION">
+            <Directory Id="examples" Name="examples">
+                <Directory Id="c" Name="c">
+                    <Directory Id="advect" Name="advect">
+                        <Component Id="advect.c" Guid="*">
+                            <File Id="advect.c" KeyPath="yes" Source="$(var.ExampleDir)\c\advect\advect.c" />
+                        </Component>
+                        <Component Id="advect_c.sln" Guid="*">
+                            <File Id="advect_c.sln" KeyPath="yes" Source="$(var.ExampleDir)\c\advect\advect_c.sln" />
+                        </Component>
+                        <Component Id="advect_c.vcproj" Guid="*">
+                            <File Id="advect_c.vcproj" KeyPath="yes" Source="$(var.ExampleDir)\c\advect\advect_c.vcproj" />
+                        </Component>
+                        <Component Id="ic" Guid="*">
+                            <File Id="ic" KeyPath="yes" Source="$(var.ExampleDir)\c\advect\ic" />
+                        </Component>
+                        <Component Id="phreeqc.dat_1" Guid="*">
+                            <File Id="phreeqc.dat_1" KeyPath="yes" Source="$(var.ExampleDir)\c\advect\phreeqc.dat" />
+                        </Component>
+                    </Directory>
+                </Directory>
+                <Directory Id="com" Name="com">
+                    <Directory Id="excel" Name="excel">
+                        <Component Id="phreeqc.dat_2" Guid="*">
+                            <File Id="phreeqc.dat_2" KeyPath="yes" Source="$(var.ExampleDir)\com\excel\phreeqc.dat" />
+                        </Component>
+                        <Component Id="runphreeqc.xls" Guid="*">
+                            <File Id="runphreeqc.xls" KeyPath="yes" Source="$(var.ExampleDir)\com\excel\runphreeqc.xls" />
+                        </Component>
+                    </Directory>
+                    <Directory Id="python" Name="python">
+                        <Component Id="Gypsum.py" Guid="*">
+                            <File Id="Gypsum.py" KeyPath="yes" Source="$(var.ExampleDir)\com\python\Gypsum.py" />
+                        </Component>
+                        <Component Id="parallel_advect.py" Guid="*">
+                            <File Id="parallel_advect.py" KeyPath="yes" Source="$(var.ExampleDir)\com\python\parallel_advect.py" />
+                        </Component>
+                        <Component Id="phreeqc.dat_3" Guid="*">
+                            <File Id="phreeqc.dat_3" KeyPath="yes" Source="$(var.ExampleDir)\com\python\phreeqc.dat" />
+                        </Component>
+                        <Component Id="pitzer.dat_1" Guid="*">
+                            <File Id="pitzer.dat_1" KeyPath="yes" Source="$(var.ExampleDir)\com\python\pitzer.dat" />
+                        </Component>
+                        <Component Id="wateq4f.dat_1" Guid="*">
+                            <File Id="wateq4f.dat_1" KeyPath="yes" Source="$(var.ExampleDir)\com\python\wateq4f.dat" />
+                        </Component>
+                    </Directory>
+                </Directory>
+                <Directory Id="fortran" Name="fortran">
+                    <Directory Id="advect_1" Name="advect">
+                        <Component Id="advect.f90" Guid="*">
+                            <File Id="advect.f90" KeyPath="yes" Source="$(var.ExampleDir)\fortran\advect\advect.f90" />
+                        </Component>
+                        <Component Id="advect.sln" Guid="*">
+                            <File Id="advect.sln" KeyPath="yes" Source="$(var.ExampleDir)\fortran\advect\advect.sln" />
+                        </Component>
+                        <Component Id="advect.vfproj" Guid="*">
+                            <File Id="advect.vfproj" KeyPath="yes" Source="$(var.ExampleDir)\fortran\advect\advect.vfproj" />
+                        </Component>
+                        <Component Id="ic_1" Guid="*">
+                            <File Id="ic_1" KeyPath="yes" Source="$(var.ExampleDir)\fortran\advect\ic" />
+                        </Component>
+                        <Component Id="phreeqc.dat_4" Guid="*">
+                            <File Id="phreeqc.dat_4" KeyPath="yes" Source="$(var.ExampleDir)\fortran\advect\phreeqc.dat" />
+                        </Component>
+                    </Directory>
+                </Directory>
+            </Directory>
+        </DirectoryRef>
+    </Fragment>
+</Wix>

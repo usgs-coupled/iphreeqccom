@@ -1,0 +1,95 @@
+<html dir="ltr" xmlns:msxsl="urn:schemas-microsoft-com:xslt"><head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<META HTTP-EQUIV="assetid" CONTENT="HV05199071">
+<META NAME="lcid" CONTENT="1033">
+<title>GetDumpString Method</title><link rel="stylesheet" type="text/css" href="office10.css">
+<script type="text/javascript" language="Javascript" src="sExpCollapse.js"></script>
+<script type="text/javascript" language="JavaScript" src="inline.js"></script>
+</head>
+<body>
+
+<!-- Top Heading -->
+<h1>GetDumpString Method</h1>
+
+<!-- Links -->
+<DIV class="ofvbanav">
+<span class="ofvbanavreuse" id="seealso" onclick="toggleList()" onkeypress="toggleList()"></span>
+<span class="ofvbanavreuse" id="appliesto" onclick="toggleList()" onkeypress="toggleList()"></span>
+<a class="ofvbanavex" href="#example"><span class="ofvbanavreuse" id="example"></span></a>
+<span class="ofvbanavreuse" id="specifics" onclick="toggleList()" onkeypress="toggleList()"></span>
+</DIV>
+
+<!-- Description -->
+<p>Retrieves the string buffer containing <b>DUMP</b> output.</p>
+
+<!-- Prototype -->
+<p class="signature"><i>expression</i>.<b class="bterm">GetDumpString</b>()</p>
+<p><i>expression   </i>   Required. An expression that returns an IPhreeqcCOM object.</p>
+<div id="ExpCol" class="collapsed" border="0"><div class="ind"></div></div>
+
+<!-- Remarks -->
+<h2>Remarks</h2>
+<p>The <b class="bterm">GetDumpString</b> method requires the <a class="ofvbalink" href="proDumpStringOn.htm">DumpStringOn</a> property be set to True before calling a Run method in order to return a dump string.</p>
+
+<!-- Example -->
+<h2><a id="#example" name="#example">Example</a></h2><p>This example equilibrates pure water with calcite and echos the dump string.</p>
+
+<!-- JScript Example -->
+<div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
+<div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
+  JScript</div>
+var iphreeqc = new ActiveXObject("IPhreeqcCOM.Object");
+iphreeqc.LoadDatabase("phreeqc.dat");
+iphreeqc.DumpStringOn = true;
+
+var input = new String("");
+input += "SOLUTION 1 Pure water     \n";
+input += "EQUILIBRIUM_PHASES 1      \n";
+input += "    Calcite 0 10          \n";
+input += "SAVE solution 1           \n";
+input += "SAVE equilibrium_phases 1 \n";
+input += "DUMP                      \n";
+input += "    -solution 1           \n";
+input += "    -equilibrium_phases  1\n";
+
+if (iphreeqc.RunString(input) != 0) {
+    WScript.Echo(iphreeqc.GetErrorString());
+}
+var dump = iphreeqc.<b class="bterm">GetDumpString</b>();
+WScript.Echo(dump);</pre></div>
+
+<!-- VBScript Example -->
+<div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
+<div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
+  VBScript</div>
+Dim iphreeqc, sInput, sDump
+
+Set iphreeqc = CreateObject("IPhreeqcCOM.Object")
+iphreeqc.LoadDatabase("phreeqc.dat")
+iphreeqc.DumpStringOn = True
+
+sInput = ""
+sInput = sInput & "SOLUTION 1 Pure water     " & vbNewLine
+sInput = sInput & "EQUILIBRIUM_PHASES 1      " & vbNewLine
+sInput = sInput & "    Calcite 0 10          " & vbNewLine
+sInput = sInput & "SAVE solution 1           " & vbNewLine
+sInput = sInput & "SAVE equilibrium_phases 1 " & vbNewLine
+sInput = sInput & "DUMP                      " & vbNewLine
+sInput = sInput & "    -solution 1           " & vbNewLine
+sInput = sInput & "    -equilibrium_phases  1" & vbNewLine
+
+If (iphreeqc.RunString(sInput) &lt;&gt; 0) Then
+    WScript.Echo(iphreeqc.GetErrorString())
+End If
+
+sDump = "Dump:" & vbNewLine
+sDump = sDump & iphreeqc.<b class="bterm">GetDumpString</b>()
+WScript.Echo(sDump)</pre></div>
+
+<!-- Script -->
+<script type="text/javascript" language="JScript" src="ofvbanl.js"></script>
+<span id="ofVBAISpan" class="ofvbaispan">
+<iframe id="ofVBAIFrame" frameborder="0" marginheight="0" marginwidth="4" scrolling="auto" width="100%" src="../links/mthGetDumpString_l.htm"></iframe>
+</span>
+</body>
+</html>
