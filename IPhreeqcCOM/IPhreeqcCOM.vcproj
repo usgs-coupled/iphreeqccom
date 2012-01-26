@@ -4,6 +4,7 @@
 	Version="8.00"
 	Name="IPhreeqcCOM"
 	ProjectGUID="{DA1D9651-B0CE-4FA2-A0E7-82C8E59A4743}"
+	RootNamespace="IPhreeqcCOM"
 	Keyword="AtlProj"
 	>
 	<Platforms>
@@ -241,7 +242,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="2"
-				AdditionalIncludeDirectories="include;IPhreeqc/phreeqcpp;IPhreeqc/phreeqcpp/phreeqc"
+				AdditionalIncludeDirectories="IPhreeqc;IPhreeqc/phreeqcpp;IPhreeqc/phreeqcpp/phreeqc"
 				PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG;_USRDLL;_CRT_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_DEPRECATE;SWIG_SHARED_OBJ;SUPPORT_ERROR_INFO;PHREEQC_CPP;PHREEQC_CLASS;USE_PHRQ_ALLOC"
 				RuntimeLibrary="2"
 				UsePrecompiledHeader="2"
@@ -987,6 +988,26 @@
 						</FileConfiguration>
 					</File>
 					<File
+						RelativePath=".\IPhreeqc\phreeqcpp\GasComp.cxx"
+						>
+						<FileConfiguration
+							Name="Debug|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								UsePrecompiledHeader="0"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="Release|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								UsePrecompiledHeader="0"
+							/>
+						</FileConfiguration>
+					</File>
+					<File
 						RelativePath=".\IPhreeqc\phreeqcpp\GasPhase.cxx"
 						>
 						<FileConfiguration
@@ -1087,6 +1108,26 @@
 						</FileConfiguration>
 						<FileConfiguration
 							Name="Release|x64"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								UsePrecompiledHeader="0"
+							/>
+						</FileConfiguration>
+					</File>
+					<File
+						RelativePath=".\IPhreeqc\phreeqcpp\Keywords.cpp"
+						>
+						<FileConfiguration
+							Name="Debug|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								UsePrecompiledHeader="0"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="Release|Win32"
 							>
 							<Tool
 								Name="VCCLCompilerTool"
@@ -1239,6 +1280,26 @@
 						</FileConfiguration>
 					</File>
 					<File
+						RelativePath=".\IPhreeqc\phreeqcpp\PBasic.cpp"
+						>
+						<FileConfiguration
+							Name="Debug|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								UsePrecompiledHeader="0"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="Release|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								UsePrecompiledHeader="0"
+							/>
+						</FileConfiguration>
+					</File>
+					<File
 						RelativePath=".\IPhreeqc\phreeqcpp\Phreeqc.cpp"
 						>
 						<FileConfiguration
@@ -1267,6 +1328,46 @@
 						</FileConfiguration>
 						<FileConfiguration
 							Name="Release|x64"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								UsePrecompiledHeader="0"
+							/>
+						</FileConfiguration>
+					</File>
+					<File
+						RelativePath=".\IPhreeqc\phreeqcpp\PHRQ_base.cxx"
+						>
+						<FileConfiguration
+							Name="Debug|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								UsePrecompiledHeader="0"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="Release|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								UsePrecompiledHeader="0"
+							/>
+						</FileConfiguration>
+					</File>
+					<File
+						RelativePath=".\IPhreeqc\phreeqcpp\PHRQ_io.cpp"
+						>
+						<FileConfiguration
+							Name="Debug|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								UsePrecompiledHeader="0"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="Release|Win32"
 							>
 							<Tool
 								Name="VCCLCompilerTool"
@@ -1339,6 +1440,26 @@
 						</FileConfiguration>
 						<FileConfiguration
 							Name="Release|x64"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								UsePrecompiledHeader="0"
+							/>
+						</FileConfiguration>
+					</File>
+					<File
+						RelativePath=".\IPhreeqc\phreeqcpp\Pressure.cxx"
+						>
+						<FileConfiguration
+							Name="Debug|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								UsePrecompiledHeader="0"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="Release|Win32"
 							>
 							<Tool
 								Name="VCCLCompilerTool"
@@ -1603,6 +1724,26 @@
 						</FileConfiguration>
 					</File>
 					<File
+						RelativePath=".\IPhreeqc\phreeqcpp\SS.cxx"
+						>
+						<FileConfiguration
+							Name="Debug|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								UsePrecompiledHeader="0"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="Release|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								UsePrecompiledHeader="0"
+							/>
+						</FileConfiguration>
+					</File>
+					<File
 						RelativePath=".\IPhreeqc\phreeqcpp\SSassemblage.cxx"
 						>
 						<FileConfiguration
@@ -1639,7 +1780,7 @@
 						</FileConfiguration>
 					</File>
 					<File
-						RelativePath=".\IPhreeqc\phreeqcpp\SSassemblageSS.cxx"
+						RelativePath=".\IPhreeqc\phreeqcpp\SScomp.cxx"
 						>
 						<FileConfiguration
 							Name="Debug|Win32"
@@ -1650,23 +1791,7 @@
 							/>
 						</FileConfiguration>
 						<FileConfiguration
-							Name="Debug|x64"
-							>
-							<Tool
-								Name="VCCLCompilerTool"
-								UsePrecompiledHeader="0"
-							/>
-						</FileConfiguration>
-						<FileConfiguration
 							Name="Release|Win32"
-							>
-							<Tool
-								Name="VCCLCompilerTool"
-								UsePrecompiledHeader="0"
-							/>
-						</FileConfiguration>
-						<FileConfiguration
-							Name="Release|x64"
 							>
 							<Tool
 								Name="VCCLCompilerTool"
@@ -1927,6 +2052,26 @@
 						</FileConfiguration>
 					</File>
 					<File
+						RelativePath=".\IPhreeqc\phreeqcpp\Use.cpp"
+						>
+						<FileConfiguration
+							Name="Debug|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								UsePrecompiledHeader="0"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="Release|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								UsePrecompiledHeader="0"
+							/>
+						</FileConfiguration>
+					</File>
+					<File
 						RelativePath=".\IPhreeqc\phreeqcpp\Utils.cxx"
 						>
 						<FileConfiguration
@@ -1966,167 +2111,43 @@
 						Name="phreeqc"
 						>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\advection.c"
+							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\advection.cpp"
 							>
-							<FileConfiguration
-								Name="Debug|Win32"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Debug|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
 							<FileConfiguration
 								Name="Release|Win32"
 								>
 								<Tool
 									Name="VCCLCompilerTool"
 									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Release|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
 								/>
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\basic.c"
+							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\basicsubs.cpp"
 							>
-							<FileConfiguration
-								Name="Debug|Win32"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Debug|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
 							<FileConfiguration
 								Name="Release|Win32"
 								>
 								<Tool
 									Name="VCCLCompilerTool"
 									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Release|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
 								/>
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\basicsubs.c"
+							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\cl1.cpp"
 							>
-							<FileConfiguration
-								Name="Debug|Win32"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Debug|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
 							<FileConfiguration
 								Name="Release|Win32"
 								>
 								<Tool
 									Name="VCCLCompilerTool"
 									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Release|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
 								/>
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\cl1.c"
-							>
-							<FileConfiguration
-								Name="Debug|Win32"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Debug|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Release|Win32"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Release|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-						</File>
-						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\cl1mp.c"
+							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\cl1mp.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -2134,18 +2155,6 @@
 								>
 								<Tool
 									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Debug|x64"
-								ExcludedFromBuild="true"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
 								/>
 							</FileConfiguration>
 							<FileConfiguration
@@ -2155,1421 +2164,402 @@
 								<Tool
 									Name="VCCLCompilerTool"
 									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Release|x64"
-								ExcludedFromBuild="true"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
 								/>
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\cvdense.c"
+							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\cvdense.cpp"
 							>
-							<FileConfiguration
-								Name="Debug|Win32"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Debug|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
 							<FileConfiguration
 								Name="Release|Win32"
 								>
 								<Tool
 									Name="VCCLCompilerTool"
 									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Release|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
 								/>
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\cvode.c"
+							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\cvode.cpp"
 							>
-							<FileConfiguration
-								Name="Debug|Win32"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Debug|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
 							<FileConfiguration
 								Name="Release|Win32"
 								>
 								<Tool
 									Name="VCCLCompilerTool"
 									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Release|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
 								/>
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\dense.c"
+							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\dense.cpp"
 							>
-							<FileConfiguration
-								Name="Debug|Win32"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Debug|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
 							<FileConfiguration
 								Name="Release|Win32"
 								>
 								<Tool
 									Name="VCCLCompilerTool"
 									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Release|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
 								/>
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\dw.c"
+							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\dw.cpp"
 							>
-							<FileConfiguration
-								Name="Debug|Win32"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Debug|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
 							<FileConfiguration
 								Name="Release|Win32"
 								>
 								<Tool
 									Name="VCCLCompilerTool"
 									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Release|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
 								/>
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\input.c"
+							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\gases.cpp"
 							>
-							<FileConfiguration
-								Name="Debug|Win32"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Debug|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
 							<FileConfiguration
 								Name="Release|Win32"
 								>
 								<Tool
 									Name="VCCLCompilerTool"
 									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Release|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
 								/>
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\integrate.c"
+							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\input.cpp"
 							>
-							<FileConfiguration
-								Name="Debug|Win32"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Debug|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
 							<FileConfiguration
 								Name="Release|Win32"
 								>
 								<Tool
 									Name="VCCLCompilerTool"
 									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Release|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
 								/>
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\inverse.c"
+							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\integrate.cpp"
 							>
-							<FileConfiguration
-								Name="Debug|Win32"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Debug|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
 							<FileConfiguration
 								Name="Release|Win32"
 								>
 								<Tool
 									Name="VCCLCompilerTool"
 									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Release|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
 								/>
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\isotopes.c"
+							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\inverse.cpp"
 							>
-							<FileConfiguration
-								Name="Debug|Win32"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Debug|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
 							<FileConfiguration
 								Name="Release|Win32"
 								>
 								<Tool
 									Name="VCCLCompilerTool"
 									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Release|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
 								/>
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\kinetics.c"
+							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\isotopes.cpp"
 							>
-							<FileConfiguration
-								Name="Debug|Win32"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Debug|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
 							<FileConfiguration
 								Name="Release|Win32"
 								>
 								<Tool
 									Name="VCCLCompilerTool"
 									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Release|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
 								/>
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\main.c"
+							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\kinetics.cpp"
 							>
-							<FileConfiguration
-								Name="Debug|Win32"
-								ExcludedFromBuild="true"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Debug|x64"
-								ExcludedFromBuild="true"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Release|Win32"
-								ExcludedFromBuild="true"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Release|x64"
-								ExcludedFromBuild="true"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-						</File>
-						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\mainsubs.c"
-							>
-							<FileConfiguration
-								Name="Debug|Win32"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Debug|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
 							<FileConfiguration
 								Name="Release|Win32"
 								>
 								<Tool
 									Name="VCCLCompilerTool"
 									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Release|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
 								/>
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\model.c"
+							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\mainsubs.cpp"
 							>
-							<FileConfiguration
-								Name="Debug|Win32"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Debug|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
 							<FileConfiguration
 								Name="Release|Win32"
 								>
 								<Tool
 									Name="VCCLCompilerTool"
 									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Release|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
 								/>
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\nvector.c"
+							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\model.cpp"
 							>
-							<FileConfiguration
-								Name="Debug|Win32"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Debug|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
 							<FileConfiguration
 								Name="Release|Win32"
 								>
 								<Tool
 									Name="VCCLCompilerTool"
 									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Release|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
 								/>
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\nvector_serial.c"
+							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\nvector.cpp"
 							>
-							<FileConfiguration
-								Name="Debug|Win32"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Debug|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
 							<FileConfiguration
 								Name="Release|Win32"
 								>
 								<Tool
 									Name="VCCLCompilerTool"
 									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Release|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
 								/>
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\output.c"
+							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\nvector_serial.cpp"
 							>
-							<FileConfiguration
-								Name="Debug|Win32"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Debug|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
 							<FileConfiguration
 								Name="Release|Win32"
 								>
 								<Tool
 									Name="VCCLCompilerTool"
 									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Release|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
 								/>
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\p2clib.c"
+							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\parse.cpp"
 							>
-							<FileConfiguration
-								Name="Debug|Win32"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Debug|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
 							<FileConfiguration
 								Name="Release|Win32"
 								>
 								<Tool
 									Name="VCCLCompilerTool"
 									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Release|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
 								/>
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\parse.c"
+							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\phqalloc.cpp"
 							>
-							<FileConfiguration
-								Name="Debug|Win32"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Debug|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
 							<FileConfiguration
 								Name="Release|Win32"
 								>
 								<Tool
 									Name="VCCLCompilerTool"
 									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Release|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
 								/>
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\phqalloc.c"
+							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\PHRQ_io_output.cpp"
 							>
-							<FileConfiguration
-								Name="Debug|Win32"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Debug|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
 							<FileConfiguration
 								Name="Release|Win32"
 								>
 								<Tool
 									Name="VCCLCompilerTool"
 									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Release|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
 								/>
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\phreeqc_files.c"
+							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\pitzer.cpp"
 							>
-							<FileConfiguration
-								Name="Debug|Win32"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Debug|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
 							<FileConfiguration
 								Name="Release|Win32"
 								>
 								<Tool
 									Name="VCCLCompilerTool"
 									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Release|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
 								/>
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\pitzer.c"
+							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\pitzer_structures.cpp"
 							>
-							<FileConfiguration
-								Name="Debug|Win32"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Debug|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
 							<FileConfiguration
 								Name="Release|Win32"
 								>
 								<Tool
 									Name="VCCLCompilerTool"
 									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Release|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
 								/>
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\pitzer_structures.c"
+							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\prep.cpp"
 							>
-							<FileConfiguration
-								Name="Debug|Win32"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Debug|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
 							<FileConfiguration
 								Name="Release|Win32"
 								>
 								<Tool
 									Name="VCCLCompilerTool"
 									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Release|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
 								/>
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\prep.c"
+							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\print.cpp"
 							>
-							<FileConfiguration
-								Name="Debug|Win32"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Debug|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
 							<FileConfiguration
 								Name="Release|Win32"
 								>
 								<Tool
 									Name="VCCLCompilerTool"
 									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Release|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
 								/>
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\print.c"
+							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\read.cpp"
 							>
-							<FileConfiguration
-								Name="Debug|Win32"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Debug|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
 							<FileConfiguration
 								Name="Release|Win32"
 								>
 								<Tool
 									Name="VCCLCompilerTool"
 									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Release|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
 								/>
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\read.c"
+							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\readtr.cpp"
 							>
-							<FileConfiguration
-								Name="Debug|Win32"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Debug|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
 							<FileConfiguration
 								Name="Release|Win32"
 								>
 								<Tool
 									Name="VCCLCompilerTool"
 									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Release|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
 								/>
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\readtr.c"
+							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\sit.cpp"
 							>
-							<FileConfiguration
-								Name="Debug|Win32"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Debug|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
 							<FileConfiguration
 								Name="Release|Win32"
 								>
 								<Tool
 									Name="VCCLCompilerTool"
 									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Release|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
 								/>
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\sit.c"
+							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\smalldense.cpp"
 							>
-							<FileConfiguration
-								Name="Debug|Win32"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Debug|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
 							<FileConfiguration
 								Name="Release|Win32"
 								>
 								<Tool
 									Name="VCCLCompilerTool"
 									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Release|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
 								/>
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\smalldense.c"
+							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\spread.cpp"
 							>
-							<FileConfiguration
-								Name="Debug|Win32"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Debug|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
 							<FileConfiguration
 								Name="Release|Win32"
 								>
 								<Tool
 									Name="VCCLCompilerTool"
 									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Release|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
 								/>
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\spread.c"
+							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\step.cpp"
 							>
-							<FileConfiguration
-								Name="Debug|Win32"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Debug|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
 							<FileConfiguration
 								Name="Release|Win32"
 								>
 								<Tool
 									Name="VCCLCompilerTool"
 									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Release|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
 								/>
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\step.c"
+							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\structures.cpp"
 							>
-							<FileConfiguration
-								Name="Debug|Win32"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Debug|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
 							<FileConfiguration
 								Name="Release|Win32"
 								>
 								<Tool
 									Name="VCCLCompilerTool"
 									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Release|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
 								/>
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\structures.c"
+							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\sundialsmath.cpp"
 							>
-							<FileConfiguration
-								Name="Debug|Win32"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Debug|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
 							<FileConfiguration
 								Name="Release|Win32"
 								>
 								<Tool
 									Name="VCCLCompilerTool"
 									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Release|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
 								/>
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\sundialsmath.c"
+							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\tally.cpp"
 							>
-							<FileConfiguration
-								Name="Debug|Win32"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Debug|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
 							<FileConfiguration
 								Name="Release|Win32"
 								>
 								<Tool
 									Name="VCCLCompilerTool"
 									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Release|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
 								/>
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\tally.c"
+							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\tidy.cpp"
 							>
-							<FileConfiguration
-								Name="Debug|Win32"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Debug|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
 							<FileConfiguration
 								Name="Release|Win32"
 								>
 								<Tool
 									Name="VCCLCompilerTool"
 									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Release|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
 								/>
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\tidy.c"
+							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\transport.cpp"
 							>
-							<FileConfiguration
-								Name="Debug|Win32"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Debug|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
 							<FileConfiguration
 								Name="Release|Win32"
 								>
 								<Tool
 									Name="VCCLCompilerTool"
 									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Release|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
 								/>
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\transport.c"
+							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\utilities.cpp"
 							>
-							<FileConfiguration
-								Name="Debug|Win32"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Debug|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
 							<FileConfiguration
 								Name="Release|Win32"
 								>
 								<Tool
 									Name="VCCLCompilerTool"
 									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Release|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-						</File>
-						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\utilities.c"
-							>
-							<FileConfiguration
-								Name="Debug|Win32"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Debug|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Release|Win32"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
-								/>
-							</FileConfiguration>
-							<FileConfiguration
-								Name="Release|x64"
-								>
-								<Tool
-									Name="VCCLCompilerTool"
-									UsePrecompiledHeader="0"
-									CompileAs="2"
 								/>
 							</FileConfiguration>
 						</File>
