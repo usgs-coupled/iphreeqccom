@@ -54,6 +54,7 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
+				AdditionalOptions="/MP"
 				Optimization="0"
 				AdditionalIncludeDirectories="include;IPhreeqc/phreeqcpp;IPhreeqc/phreeqcpp/phreeqc"
 				PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG;_USRDLL;_CRT_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_DEPRECATE;SWIG_SHARED_OBJ;SUPPORT_ERROR_INFO;PHREEQC_CPP;PHREEQC_CLASS;USE_PHRQ_ALLOC"
@@ -241,6 +242,7 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
+				AdditionalOptions="/MP"
 				Optimization="2"
 				AdditionalIncludeDirectories="IPhreeqc;IPhreeqc/phreeqcpp;IPhreeqc/phreeqcpp/phreeqc"
 				PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG;_USRDLL;_CRT_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_DEPRECATE;SWIG_SHARED_OBJ;SUPPORT_ERROR_INFO;PHREEQC_CPP;PHREEQC_CLASS;USE_PHRQ_ALLOC"
