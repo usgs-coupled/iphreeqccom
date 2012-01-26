@@ -61,7 +61,7 @@
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
-				UsePrecompiledHeader="2"
+				UsePrecompiledHeader="0"
 				WarningLevel="3"
 				Detect64BitPortabilityProblems="true"
 				DebugInformationFormat="4"
@@ -148,13 +148,14 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
+				AdditionalOptions="/MP"
 				Optimization="0"
-				AdditionalIncludeDirectories="include;IPhreeqc/phreeqcpp;IPhreeqc/phreeqcpp/phreeqc"
+				AdditionalIncludeDirectories="IPhreeqc;IPhreeqc/phreeqcpp;IPhreeqc/phreeqcpp/phreeqc"
 				PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG;_USRDLL;_CRT_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_DEPRECATE;SWIG_SHARED_OBJ;SUPPORT_ERROR_INFO;PHREEQC_CPP;PHREEQC_CLASS;USE_PHRQ_ALLOC"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
-				UsePrecompiledHeader="2"
+				UsePrecompiledHeader="0"
 				WarningLevel="3"
 				Detect64BitPortabilityProblems="true"
 				DebugInformationFormat="3"
@@ -247,7 +248,7 @@
 				AdditionalIncludeDirectories="IPhreeqc;IPhreeqc/phreeqcpp;IPhreeqc/phreeqcpp/phreeqc"
 				PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG;_USRDLL;_CRT_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_DEPRECATE;SWIG_SHARED_OBJ;SUPPORT_ERROR_INFO;PHREEQC_CPP;PHREEQC_CLASS;USE_PHRQ_ALLOC"
 				RuntimeLibrary="2"
-				UsePrecompiledHeader="2"
+				UsePrecompiledHeader="0"
 				WarningLevel="3"
 				Detect64BitPortabilityProblems="true"
 				DebugInformationFormat="3"
@@ -336,11 +337,12 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
+				AdditionalOptions="/MP"
 				Optimization="2"
-				AdditionalIncludeDirectories="include;IPhreeqc/phreeqcpp;IPhreeqc/phreeqcpp/phreeqc"
+				AdditionalIncludeDirectories="IPhreeqc;IPhreeqc/phreeqcpp;IPhreeqc/phreeqcpp/phreeqc"
 				PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG;_USRDLL;_CRT_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_DEPRECATE;SWIG_SHARED_OBJ;SUPPORT_ERROR_INFO;PHREEQC_CPP;PHREEQC_CLASS;USE_PHRQ_ALLOC"
 				RuntimeLibrary="2"
-				UsePrecompiledHeader="2"
+				UsePrecompiledHeader="0"
 				WarningLevel="3"
 				Detect64BitPortabilityProblems="true"
 				DebugInformationFormat="3"
@@ -2185,12 +2187,28 @@
 								/>
 							</FileConfiguration>
 							<FileConfiguration
+								Name="Debug|x64"
+								ExcludedFromBuild="true"
+								>
+								<Tool
+									Name="VCCLCompilerTool"
+								/>
+							</FileConfiguration>
+							<FileConfiguration
 								Name="Release|Win32"
 								ExcludedFromBuild="true"
 								>
 								<Tool
 									Name="VCCLCompilerTool"
 									UsePrecompiledHeader="0"
+								/>
+							</FileConfiguration>
+							<FileConfiguration
+								Name="Release|x64"
+								ExcludedFromBuild="true"
+								>
+								<Tool
+									Name="VCCLCompilerTool"
 								/>
 							</FileConfiguration>
 						</File>
