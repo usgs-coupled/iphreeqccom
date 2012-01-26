@@ -80,7 +80,7 @@
     <DirectoryRef Id="BinDir">
       <Component Id="IPhreeqcCOM.tlb" Guid="*" Win64="$(var.Win64)">
         <File Id="IPhreeqcCOM.tlb" Source="$(var.SrcPath)\IPhreeqcCOM.tlb" KeyPath="yes">
-          <TypeLib Id="{EDB4905E-CA79-4C56-BE59-575C71219AEA}" Description="IPhreeqcCOM 2.0 Type Library" HelpDirectory="DocDir" Language="0" MajorVersion="1" MinorVersion="0">
+          <TypeLib Id="{EDB4905E-CA79-4C56-BE59-575C71219AEA}" Description="IPhreeqcCOM 2.0 Type Library" HelpDirectory="DocDir" Language="0" MajorVersion="2" MinorVersion="0">
             <Interface Id="{38C710BB-E052-4A85-BABE-F22F8FD48ADB}" Name="IPhreeqcCOM" ProxyStubClassId="{00020424-0000-0000-C000-000000000046}" ProxyStubClassId32="{00020424-0000-0000-C000-000000000046}" />
           </TypeLib>
         </File>
