@@ -56,7 +56,7 @@
 				Name="VCCLCompilerTool"
 				AdditionalOptions="/MP"
 				Optimization="0"
-				AdditionalIncludeDirectories="include;IPhreeqc/phreeqcpp;IPhreeqc/phreeqcpp/phreeqc"
+				AdditionalIncludeDirectories="IPhreeqc;IPhreeqc/phreeqcpp;IPhreeqc/phreeqcpp/phreeqc"
 				PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG;_USRDLL;_CRT_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_DEPRECATE;SWIG_SHARED_OBJ;SUPPORT_ERROR_INFO;PHREEQC_CPP;PHREEQC_CLASS;USE_PHRQ_ALLOC"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -2116,6 +2116,14 @@
 							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\advection.cpp"
 							>
 							<FileConfiguration
+								Name="Debug|Win32"
+								>
+								<Tool
+									Name="VCCLCompilerTool"
+									UsePrecompiledHeader="0"
+								/>
+							</FileConfiguration>
+							<FileConfiguration
 								Name="Release|Win32"
 								>
 								<Tool
@@ -2128,6 +2136,14 @@
 							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\basicsubs.cpp"
 							>
 							<FileConfiguration
+								Name="Debug|Win32"
+								>
+								<Tool
+									Name="VCCLCompilerTool"
+									UsePrecompiledHeader="0"
+								/>
+							</FileConfiguration>
+							<FileConfiguration
 								Name="Release|Win32"
 								>
 								<Tool
@@ -2139,6 +2155,14 @@
 						<File
 							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\cl1.cpp"
 							>
+							<FileConfiguration
+								Name="Debug|Win32"
+								>
+								<Tool
+									Name="VCCLCompilerTool"
+									UsePrecompiledHeader="0"
+								/>
+							</FileConfiguration>
 							<FileConfiguration
 								Name="Release|Win32"
 								>
@@ -2157,6 +2181,7 @@
 								>
 								<Tool
 									Name="VCCLCompilerTool"
+									UsePrecompiledHeader="0"
 								/>
 							</FileConfiguration>
 							<FileConfiguration
@@ -2173,6 +2198,14 @@
 							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\cvdense.cpp"
 							>
 							<FileConfiguration
+								Name="Debug|Win32"
+								>
+								<Tool
+									Name="VCCLCompilerTool"
+									UsePrecompiledHeader="0"
+								/>
+							</FileConfiguration>
+							<FileConfiguration
 								Name="Release|Win32"
 								>
 								<Tool
@@ -2184,6 +2217,14 @@
 						<File
 							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\cvode.cpp"
 							>
+							<FileConfiguration
+								Name="Debug|Win32"
+								>
+								<Tool
+									Name="VCCLCompilerTool"
+									UsePrecompiledHeader="0"
+								/>
+							</FileConfiguration>
 							<FileConfiguration
 								Name="Release|Win32"
 								>
@@ -2197,6 +2238,14 @@
 							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\dense.cpp"
 							>
 							<FileConfiguration
+								Name="Debug|Win32"
+								>
+								<Tool
+									Name="VCCLCompilerTool"
+									UsePrecompiledHeader="0"
+								/>
+							</FileConfiguration>
+							<FileConfiguration
 								Name="Release|Win32"
 								>
 								<Tool
@@ -2208,6 +2257,14 @@
 						<File
 							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\dw.cpp"
 							>
+							<FileConfiguration
+								Name="Debug|Win32"
+								>
+								<Tool
+									Name="VCCLCompilerTool"
+									UsePrecompiledHeader="0"
+								/>
+							</FileConfiguration>
 							<FileConfiguration
 								Name="Release|Win32"
 								>
@@ -2221,6 +2278,14 @@
 							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\gases.cpp"
 							>
 							<FileConfiguration
+								Name="Debug|Win32"
+								>
+								<Tool
+									Name="VCCLCompilerTool"
+									UsePrecompiledHeader="0"
+								/>
+							</FileConfiguration>
+							<FileConfiguration
 								Name="Release|Win32"
 								>
 								<Tool
@@ -2232,6 +2297,14 @@
 						<File
 							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\input.cpp"
 							>
+							<FileConfiguration
+								Name="Debug|Win32"
+								>
+								<Tool
+									Name="VCCLCompilerTool"
+									UsePrecompiledHeader="0"
+								/>
+							</FileConfiguration>
 							<FileConfiguration
 								Name="Release|Win32"
 								>
@@ -2245,6 +2318,14 @@
 							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\integrate.cpp"
 							>
 							<FileConfiguration
+								Name="Debug|Win32"
+								>
+								<Tool
+									Name="VCCLCompilerTool"
+									UsePrecompiledHeader="0"
+								/>
+							</FileConfiguration>
+							<FileConfiguration
 								Name="Release|Win32"
 								>
 								<Tool
@@ -2256,6 +2337,14 @@
 						<File
 							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\inverse.cpp"
 							>
+							<FileConfiguration
+								Name="Debug|Win32"
+								>
+								<Tool
+									Name="VCCLCompilerTool"
+									UsePrecompiledHeader="0"
+								/>
+							</FileConfiguration>
 							<FileConfiguration
 								Name="Release|Win32"
 								>
@@ -2269,6 +2358,14 @@
 							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\isotopes.cpp"
 							>
 							<FileConfiguration
+								Name="Debug|Win32"
+								>
+								<Tool
+									Name="VCCLCompilerTool"
+									UsePrecompiledHeader="0"
+								/>
+							</FileConfiguration>
+							<FileConfiguration
 								Name="Release|Win32"
 								>
 								<Tool
@@ -2280,6 +2377,14 @@
 						<File
 							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\kinetics.cpp"
 							>
+							<FileConfiguration
+								Name="Debug|Win32"
+								>
+								<Tool
+									Name="VCCLCompilerTool"
+									UsePrecompiledHeader="0"
+								/>
+							</FileConfiguration>
 							<FileConfiguration
 								Name="Release|Win32"
 								>
@@ -2293,6 +2398,14 @@
 							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\mainsubs.cpp"
 							>
 							<FileConfiguration
+								Name="Debug|Win32"
+								>
+								<Tool
+									Name="VCCLCompilerTool"
+									UsePrecompiledHeader="0"
+								/>
+							</FileConfiguration>
+							<FileConfiguration
 								Name="Release|Win32"
 								>
 								<Tool
@@ -2304,6 +2417,14 @@
 						<File
 							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\model.cpp"
 							>
+							<FileConfiguration
+								Name="Debug|Win32"
+								>
+								<Tool
+									Name="VCCLCompilerTool"
+									UsePrecompiledHeader="0"
+								/>
+							</FileConfiguration>
 							<FileConfiguration
 								Name="Release|Win32"
 								>
@@ -2317,6 +2438,14 @@
 							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\nvector.cpp"
 							>
 							<FileConfiguration
+								Name="Debug|Win32"
+								>
+								<Tool
+									Name="VCCLCompilerTool"
+									UsePrecompiledHeader="0"
+								/>
+							</FileConfiguration>
+							<FileConfiguration
 								Name="Release|Win32"
 								>
 								<Tool
@@ -2328,6 +2457,14 @@
 						<File
 							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\nvector_serial.cpp"
 							>
+							<FileConfiguration
+								Name="Debug|Win32"
+								>
+								<Tool
+									Name="VCCLCompilerTool"
+									UsePrecompiledHeader="0"
+								/>
+							</FileConfiguration>
 							<FileConfiguration
 								Name="Release|Win32"
 								>
@@ -2341,6 +2478,14 @@
 							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\parse.cpp"
 							>
 							<FileConfiguration
+								Name="Debug|Win32"
+								>
+								<Tool
+									Name="VCCLCompilerTool"
+									UsePrecompiledHeader="0"
+								/>
+							</FileConfiguration>
+							<FileConfiguration
 								Name="Release|Win32"
 								>
 								<Tool
@@ -2352,6 +2497,14 @@
 						<File
 							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\phqalloc.cpp"
 							>
+							<FileConfiguration
+								Name="Debug|Win32"
+								>
+								<Tool
+									Name="VCCLCompilerTool"
+									UsePrecompiledHeader="0"
+								/>
+							</FileConfiguration>
 							<FileConfiguration
 								Name="Release|Win32"
 								>
@@ -2365,6 +2518,14 @@
 							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\PHRQ_io_output.cpp"
 							>
 							<FileConfiguration
+								Name="Debug|Win32"
+								>
+								<Tool
+									Name="VCCLCompilerTool"
+									UsePrecompiledHeader="0"
+								/>
+							</FileConfiguration>
+							<FileConfiguration
 								Name="Release|Win32"
 								>
 								<Tool
@@ -2376,6 +2537,14 @@
 						<File
 							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\pitzer.cpp"
 							>
+							<FileConfiguration
+								Name="Debug|Win32"
+								>
+								<Tool
+									Name="VCCLCompilerTool"
+									UsePrecompiledHeader="0"
+								/>
+							</FileConfiguration>
 							<FileConfiguration
 								Name="Release|Win32"
 								>
@@ -2389,6 +2558,14 @@
 							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\pitzer_structures.cpp"
 							>
 							<FileConfiguration
+								Name="Debug|Win32"
+								>
+								<Tool
+									Name="VCCLCompilerTool"
+									UsePrecompiledHeader="0"
+								/>
+							</FileConfiguration>
+							<FileConfiguration
 								Name="Release|Win32"
 								>
 								<Tool
@@ -2400,6 +2577,14 @@
 						<File
 							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\prep.cpp"
 							>
+							<FileConfiguration
+								Name="Debug|Win32"
+								>
+								<Tool
+									Name="VCCLCompilerTool"
+									UsePrecompiledHeader="0"
+								/>
+							</FileConfiguration>
 							<FileConfiguration
 								Name="Release|Win32"
 								>
@@ -2413,6 +2598,14 @@
 							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\print.cpp"
 							>
 							<FileConfiguration
+								Name="Debug|Win32"
+								>
+								<Tool
+									Name="VCCLCompilerTool"
+									UsePrecompiledHeader="0"
+								/>
+							</FileConfiguration>
+							<FileConfiguration
 								Name="Release|Win32"
 								>
 								<Tool
@@ -2424,6 +2617,14 @@
 						<File
 							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\read.cpp"
 							>
+							<FileConfiguration
+								Name="Debug|Win32"
+								>
+								<Tool
+									Name="VCCLCompilerTool"
+									UsePrecompiledHeader="0"
+								/>
+							</FileConfiguration>
 							<FileConfiguration
 								Name="Release|Win32"
 								>
@@ -2437,6 +2638,14 @@
 							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\readtr.cpp"
 							>
 							<FileConfiguration
+								Name="Debug|Win32"
+								>
+								<Tool
+									Name="VCCLCompilerTool"
+									UsePrecompiledHeader="0"
+								/>
+							</FileConfiguration>
+							<FileConfiguration
 								Name="Release|Win32"
 								>
 								<Tool
@@ -2448,6 +2657,14 @@
 						<File
 							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\sit.cpp"
 							>
+							<FileConfiguration
+								Name="Debug|Win32"
+								>
+								<Tool
+									Name="VCCLCompilerTool"
+									UsePrecompiledHeader="0"
+								/>
+							</FileConfiguration>
 							<FileConfiguration
 								Name="Release|Win32"
 								>
@@ -2461,6 +2678,14 @@
 							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\smalldense.cpp"
 							>
 							<FileConfiguration
+								Name="Debug|Win32"
+								>
+								<Tool
+									Name="VCCLCompilerTool"
+									UsePrecompiledHeader="0"
+								/>
+							</FileConfiguration>
+							<FileConfiguration
 								Name="Release|Win32"
 								>
 								<Tool
@@ -2472,6 +2697,14 @@
 						<File
 							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\spread.cpp"
 							>
+							<FileConfiguration
+								Name="Debug|Win32"
+								>
+								<Tool
+									Name="VCCLCompilerTool"
+									UsePrecompiledHeader="0"
+								/>
+							</FileConfiguration>
 							<FileConfiguration
 								Name="Release|Win32"
 								>
@@ -2485,6 +2718,14 @@
 							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\step.cpp"
 							>
 							<FileConfiguration
+								Name="Debug|Win32"
+								>
+								<Tool
+									Name="VCCLCompilerTool"
+									UsePrecompiledHeader="0"
+								/>
+							</FileConfiguration>
+							<FileConfiguration
 								Name="Release|Win32"
 								>
 								<Tool
@@ -2496,6 +2737,14 @@
 						<File
 							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\structures.cpp"
 							>
+							<FileConfiguration
+								Name="Debug|Win32"
+								>
+								<Tool
+									Name="VCCLCompilerTool"
+									UsePrecompiledHeader="0"
+								/>
+							</FileConfiguration>
 							<FileConfiguration
 								Name="Release|Win32"
 								>
@@ -2509,6 +2758,14 @@
 							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\sundialsmath.cpp"
 							>
 							<FileConfiguration
+								Name="Debug|Win32"
+								>
+								<Tool
+									Name="VCCLCompilerTool"
+									UsePrecompiledHeader="0"
+								/>
+							</FileConfiguration>
+							<FileConfiguration
 								Name="Release|Win32"
 								>
 								<Tool
@@ -2520,6 +2777,14 @@
 						<File
 							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\tally.cpp"
 							>
+							<FileConfiguration
+								Name="Debug|Win32"
+								>
+								<Tool
+									Name="VCCLCompilerTool"
+									UsePrecompiledHeader="0"
+								/>
+							</FileConfiguration>
 							<FileConfiguration
 								Name="Release|Win32"
 								>
@@ -2533,6 +2798,14 @@
 							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\tidy.cpp"
 							>
 							<FileConfiguration
+								Name="Debug|Win32"
+								>
+								<Tool
+									Name="VCCLCompilerTool"
+									UsePrecompiledHeader="0"
+								/>
+							</FileConfiguration>
+							<FileConfiguration
 								Name="Release|Win32"
 								>
 								<Tool
@@ -2545,6 +2818,14 @@
 							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\transport.cpp"
 							>
 							<FileConfiguration
+								Name="Debug|Win32"
+								>
+								<Tool
+									Name="VCCLCompilerTool"
+									UsePrecompiledHeader="0"
+								/>
+							</FileConfiguration>
+							<FileConfiguration
 								Name="Release|Win32"
 								>
 								<Tool
@@ -2556,6 +2837,14 @@
 						<File
 							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\utilities.cpp"
 							>
+							<FileConfiguration
+								Name="Debug|Win32"
+								>
+								<Tool
+									Name="VCCLCompilerTool"
+									UsePrecompiledHeader="0"
+								/>
+							</FileConfiguration>
 							<FileConfiguration
 								Name="Release|Win32"
 								>

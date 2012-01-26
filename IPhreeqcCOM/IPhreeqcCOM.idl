@@ -47,8 +47,8 @@ interface IPhreeqcCOM : IDispatch{
 };
 [
 	uuid(EDB4905E-CA79-4C56-BE59-575C71219AEA),
-	version(1.0),
-	helpstring("IPhreeqcCOM 1.0 Type Library")
+	version(2.0),
+	helpstring("IPhreeqcCOM 2.0 Type Library")
 ]
 library IPhreeqcCOMLib
 {
