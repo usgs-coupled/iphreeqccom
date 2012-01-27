@@ -1,0 +1,365 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files\IPhreeqc">
+      <UniqueIdentifier>{b41cd515-0382-4ae8-bde4-5ebf279cfd78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\IPhreeqc\phreeqcpp">
+      <UniqueIdentifier>{925e414b-e1ea-47f2-8d38-7018a0b8df2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\IPhreeqc\phreeqcpp\phreeqc">
+      <UniqueIdentifier>{c25e5288-d9d6-49ce-8c96-14c0aef7b426}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{fc5d44d4-f918-4cd5-b205-a33c8c7d8f58}</UniqueIdentifier>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="Examples">
+      <UniqueIdentifier>{f3a1a063-3aab-4831-aa9b-b6a9f30268fc}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="COM.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqcCOM.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\fwrap.cpp">
+      <Filter>Source Files\IPhreeqc</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\fwrap2.cpp">
+      <Filter>Source Files\IPhreeqc</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\fwrap3.cpp">
+      <Filter>Source Files\IPhreeqc</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\IPhreeqc.cpp">
+      <Filter>Source Files\IPhreeqc</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\pp_sys.cpp">
+      <Filter>Source Files\IPhreeqc</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\SelectedOutput.cpp">
+      <Filter>Source Files\IPhreeqc</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\Var.c">
+      <Filter>Source Files\IPhreeqc</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\class_main.cpp">
+      <Filter>Source Files\IPhreeqc\phreeqcpp</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\cxxKinetics.cxx">
+      <Filter>Source Files\IPhreeqc\phreeqcpp</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\cxxMix.cxx">
+      <Filter>Source Files\IPhreeqc\phreeqcpp</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\Dictionary.cxx">
+      <Filter>Source Files\IPhreeqc\phreeqcpp</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\dumper.cpp">
+      <Filter>Source Files\IPhreeqc\phreeqcpp</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\Exchange.cxx">
+      <Filter>Source Files\IPhreeqc\phreeqcpp</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\ExchComp.cxx">
+      <Filter>Source Files\IPhreeqc\phreeqcpp</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\GasComp.cxx">
+      <Filter>Source Files\IPhreeqc\phreeqcpp</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\GasPhase.cxx">
+      <Filter>Source Files\IPhreeqc\phreeqcpp</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\ISolution.cxx">
+      <Filter>Source Files\IPhreeqc\phreeqcpp</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\ISolutionComp.cxx">
+      <Filter>Source Files\IPhreeqc\phreeqcpp</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\Keywords.cpp">
+      <Filter>Source Files\IPhreeqc\phreeqcpp</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\KineticsComp.cxx">
+      <Filter>Source Files\IPhreeqc\phreeqcpp</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\NameDouble.cxx">
+      <Filter>Source Files\IPhreeqc\phreeqcpp</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\NumKeyword.cxx">
+      <Filter>Source Files\IPhreeqc\phreeqcpp</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\Parser.cxx">
+      <Filter>Source Files\IPhreeqc\phreeqcpp</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\PBasic.cpp">
+      <Filter>Source Files\IPhreeqc\phreeqcpp</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\Phreeqc.cpp">
+      <Filter>Source Files\IPhreeqc\phreeqcpp</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\PHRQ_base.cxx">
+      <Filter>Source Files\IPhreeqc\phreeqcpp</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\PHRQ_io.cpp">
+      <Filter>Source Files\IPhreeqc\phreeqcpp</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\PPassemblage.cxx">
+      <Filter>Source Files\IPhreeqc\phreeqcpp</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\PPassemblageComp.cxx">
+      <Filter>Source Files\IPhreeqc\phreeqcpp</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\Pressure.cxx">
+      <Filter>Source Files\IPhreeqc\phreeqcpp</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\Reaction.cxx">
+      <Filter>Source Files\IPhreeqc\phreeqcpp</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\ReadClass.cxx">
+      <Filter>Source Files\IPhreeqc\phreeqcpp</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\runner.cpp">
+      <Filter>Source Files\IPhreeqc\phreeqcpp</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\SAXPhreeqc.cxx">
+      <Filter>Source Files\IPhreeqc\phreeqcpp</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\Solution.cxx">
+      <Filter>Source Files\IPhreeqc\phreeqcpp</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\SolutionIsotope.cxx">
+      <Filter>Source Files\IPhreeqc\phreeqcpp</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\SolutionIsotopeList.cxx">
+      <Filter>Source Files\IPhreeqc\phreeqcpp</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\SS.cxx">
+      <Filter>Source Files\IPhreeqc\phreeqcpp</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\SSassemblage.cxx">
+      <Filter>Source Files\IPhreeqc\phreeqcpp</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\SScomp.cxx">
+      <Filter>Source Files\IPhreeqc\phreeqcpp</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\StorageBin.cxx">
+      <Filter>Source Files\IPhreeqc\phreeqcpp</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\StorageBinList.cpp">
+      <Filter>Source Files\IPhreeqc\phreeqcpp</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\Surface.cxx">
+      <Filter>Source Files\IPhreeqc\phreeqcpp</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\SurfaceCharge.cxx">
+      <Filter>Source Files\IPhreeqc\phreeqcpp</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\SurfaceComp.cxx">
+      <Filter>Source Files\IPhreeqc\phreeqcpp</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\System.cxx">
+      <Filter>Source Files\IPhreeqc\phreeqcpp</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\Temperature.cxx">
+      <Filter>Source Files\IPhreeqc\phreeqcpp</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\Use.cpp">
+      <Filter>Source Files\IPhreeqc\phreeqcpp</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\Utils.cxx">
+      <Filter>Source Files\IPhreeqc\phreeqcpp</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\phreeqc\advection.cpp">
+      <Filter>Source Files\IPhreeqc\phreeqcpp\phreeqc</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\phreeqc\basicsubs.cpp">
+      <Filter>Source Files\IPhreeqc\phreeqcpp\phreeqc</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\phreeqc\cl1.cpp">
+      <Filter>Source Files\IPhreeqc\phreeqcpp\phreeqc</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\phreeqc\cl1mp.cpp">
+      <Filter>Source Files\IPhreeqc\phreeqcpp\phreeqc</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\phreeqc\cvdense.cpp">
+      <Filter>Source Files\IPhreeqc\phreeqcpp\phreeqc</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\phreeqc\cvode.cpp">
+      <Filter>Source Files\IPhreeqc\phreeqcpp\phreeqc</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\phreeqc\dense.cpp">
+      <Filter>Source Files\IPhreeqc\phreeqcpp\phreeqc</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\phreeqc\dw.cpp">
+      <Filter>Source Files\IPhreeqc\phreeqcpp\phreeqc</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\phreeqc\gases.cpp">
+      <Filter>Source Files\IPhreeqc\phreeqcpp\phreeqc</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\phreeqc\input.cpp">
+      <Filter>Source Files\IPhreeqc\phreeqcpp\phreeqc</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\phreeqc\integrate.cpp">
+      <Filter>Source Files\IPhreeqc\phreeqcpp\phreeqc</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\phreeqc\inverse.cpp">
+      <Filter>Source Files\IPhreeqc\phreeqcpp\phreeqc</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\phreeqc\isotopes.cpp">
+      <Filter>Source Files\IPhreeqc\phreeqcpp\phreeqc</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\phreeqc\kinetics.cpp">
+      <Filter>Source Files\IPhreeqc\phreeqcpp\phreeqc</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\phreeqc\mainsubs.cpp">
+      <Filter>Source Files\IPhreeqc\phreeqcpp\phreeqc</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\phreeqc\model.cpp">
+      <Filter>Source Files\IPhreeqc\phreeqcpp\phreeqc</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\phreeqc\nvector.cpp">
+      <Filter>Source Files\IPhreeqc\phreeqcpp\phreeqc</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\phreeqc\nvector_serial.cpp">
+      <Filter>Source Files\IPhreeqc\phreeqcpp\phreeqc</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\phreeqc\parse.cpp">
+      <Filter>Source Files\IPhreeqc\phreeqcpp\phreeqc</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\phreeqc\phqalloc.cpp">
+      <Filter>Source Files\IPhreeqc\phreeqcpp\phreeqc</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\phreeqc\PHRQ_io_output.cpp">
+      <Filter>Source Files\IPhreeqc\phreeqcpp\phreeqc</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\phreeqc\pitzer.cpp">
+      <Filter>Source Files\IPhreeqc\phreeqcpp\phreeqc</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\phreeqc\pitzer_structures.cpp">
+      <Filter>Source Files\IPhreeqc\phreeqcpp\phreeqc</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\phreeqc\prep.cpp">
+      <Filter>Source Files\IPhreeqc\phreeqcpp\phreeqc</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\phreeqc\print.cpp">
+      <Filter>Source Files\IPhreeqc\phreeqcpp\phreeqc</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\phreeqc\read.cpp">
+      <Filter>Source Files\IPhreeqc\phreeqcpp\phreeqc</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\phreeqc\readtr.cpp">
+      <Filter>Source Files\IPhreeqc\phreeqcpp\phreeqc</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\phreeqc\sit.cpp">
+      <Filter>Source Files\IPhreeqc\phreeqcpp\phreeqc</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\phreeqc\smalldense.cpp">
+      <Filter>Source Files\IPhreeqc\phreeqcpp\phreeqc</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\phreeqc\spread.cpp">
+      <Filter>Source Files\IPhreeqc\phreeqcpp\phreeqc</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\phreeqc\step.cpp">
+      <Filter>Source Files\IPhreeqc\phreeqcpp\phreeqc</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\phreeqc\structures.cpp">
+      <Filter>Source Files\IPhreeqc\phreeqcpp\phreeqc</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\phreeqc\sundialsmath.cpp">
+      <Filter>Source Files\IPhreeqc\phreeqcpp\phreeqc</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\phreeqc\tally.cpp">
+      <Filter>Source Files\IPhreeqc\phreeqcpp\phreeqc</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\phreeqc\tidy.cpp">
+      <Filter>Source Files\IPhreeqc\phreeqcpp\phreeqc</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\phreeqc\transport.cpp">
+      <Filter>Source Files\IPhreeqc\phreeqcpp\phreeqc</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqc\phreeqcpp\phreeqc\utilities.cpp">
+      <Filter>Source Files\IPhreeqc\phreeqcpp\phreeqc</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhreeqcCOM_i.c">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="IPhreeqcCOM.def">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="COM.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="IPhreeqcCOM.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Version.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="examples\GetComponentList.js">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\GetComponentList.vbs">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\GetSelectedOutputArray.js">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\GetSelectedOutputArray.vbs">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\GetWarningString.vbs">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="Examples\LoadDatabase.vbs">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\MultipleInstances.vbs">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="IPhreeqcCOM.idl">
+      <Filter>Source Files</Filter>
+    </Midl>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="COM.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IPhreeqcCOM.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="IPhreeqcCOM.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
