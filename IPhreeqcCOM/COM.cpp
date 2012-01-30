@@ -27,6 +27,7 @@ STDMETHODIMP CCOM::InterfaceSupportsErrorInfo(REFIID riid)
 	return S_FALSE;
 }
 
+
 STDMETHODIMP CCOM::LoadDatabase(BSTR filename, LONG* retval)
 {
 	if( !retval )
@@ -48,6 +49,7 @@ STDMETHODIMP CCOM::LoadDatabase(BSTR filename, LONG* retval)
 	return S_OK;
 }
 
+
 STDMETHODIMP CCOM::get_OutputFileOn(VARIANT_BOOL* pVal)
 {
 	if( !pVal )
@@ -68,6 +70,7 @@ STDMETHODIMP CCOM::get_OutputFileOn(VARIANT_BOOL* pVal)
 	return S_OK;
 }
 
+
 STDMETHODIMP CCOM::put_OutputFileOn(VARIANT_BOOL newVal)
 {
 	MACRO_CHECK_IPHREEQC_PTR();
@@ -76,6 +79,7 @@ STDMETHODIMP CCOM::put_OutputFileOn(VARIANT_BOOL newVal)
 
 	return S_OK;
 }
+
 
 STDMETHODIMP CCOM::get_ErrorFileOn(VARIANT_BOOL* pVal)
 {
@@ -97,6 +101,7 @@ STDMETHODIMP CCOM::get_ErrorFileOn(VARIANT_BOOL* pVal)
 	return S_OK;
 }
 
+
 STDMETHODIMP CCOM::put_ErrorFileOn(VARIANT_BOOL newVal)
 {
 	MACRO_CHECK_IPHREEQC_PTR();
@@ -105,6 +110,7 @@ STDMETHODIMP CCOM::put_ErrorFileOn(VARIANT_BOOL newVal)
 
 	return S_OK;
 }
+
 
 STDMETHODIMP CCOM::get_LogFileOn(VARIANT_BOOL* pVal)
 {
@@ -126,6 +132,7 @@ STDMETHODIMP CCOM::get_LogFileOn(VARIANT_BOOL* pVal)
 	return S_OK;
 }
 
+
 STDMETHODIMP CCOM::put_LogFileOn(VARIANT_BOOL newVal)
 {
 	MACRO_CHECK_IPHREEQC_PTR();
@@ -134,6 +141,7 @@ STDMETHODIMP CCOM::put_LogFileOn(VARIANT_BOOL newVal)
 
 	return S_OK;
 }
+
 
 STDMETHODIMP CCOM::RunFile(BSTR filename, LONG* retval)
 {
@@ -155,6 +163,7 @@ STDMETHODIMP CCOM::RunFile(BSTR filename, LONG* retval)
 	return S_OK;
 }
 
+
 STDMETHODIMP CCOM::RunAccumulated(LONG* retval)
 {
 	if( !retval )
@@ -172,6 +181,7 @@ STDMETHODIMP CCOM::RunAccumulated(LONG* retval)
 
 	return S_OK;
 }
+
 
 STDMETHODIMP CCOM::get_SelectedOutputFileOn(VARIANT_BOOL* pVal)
 {
@@ -193,6 +203,7 @@ STDMETHODIMP CCOM::get_SelectedOutputFileOn(VARIANT_BOOL* pVal)
 	return S_OK;
 }
 
+
 STDMETHODIMP CCOM::put_SelectedOutputFileOn(VARIANT_BOOL newVal)
 {
 	MACRO_CHECK_IPHREEQC_PTR();
@@ -201,6 +212,7 @@ STDMETHODIMP CCOM::put_SelectedOutputFileOn(VARIANT_BOOL newVal)
 
 	return S_OK;
 }
+
 
 STDMETHODIMP CCOM::RunString(BSTR input, LONG* retval)
 {
@@ -222,6 +234,7 @@ STDMETHODIMP CCOM::RunString(BSTR input, LONG* retval)
 	return S_OK;
 }
 
+
 STDMETHODIMP CCOM::AccumulateLine(BSTR line)
 {
 	MACRO_CHECK_IPHREEQC_PTR();
@@ -238,6 +251,7 @@ STDMETHODIMP CCOM::AccumulateLine(BSTR line)
 	return S_OK;
 }
 
+
 STDMETHODIMP CCOM::get_ColumnCount(LONG* pVal)
 {
 	if( !pVal )
@@ -250,6 +264,7 @@ STDMETHODIMP CCOM::get_ColumnCount(LONG* pVal)
 
 	return S_OK;
 }
+
 
 STDMETHODIMP CCOM::get_RowCount(LONG* pVal)
 {
@@ -264,6 +279,7 @@ STDMETHODIMP CCOM::get_RowCount(LONG* pVal)
 	return S_OK;
 }
 
+
 STDMETHODIMP CCOM::get_Lines(BSTR* pVal)
 {
 	if( !pVal )
@@ -277,6 +293,7 @@ STDMETHODIMP CCOM::get_Lines(BSTR* pVal)
 
 	return S_OK;
 }
+
 
 STDMETHODIMP CCOM::GetSelectedOutputArray(VARIANT* retval)
 {
@@ -369,6 +386,7 @@ STDMETHODIMP CCOM::GetSelectedOutputArray(VARIANT* retval)
 	return S_OK;
 }
 
+
 STDMETHODIMP CCOM::GetErrorString(BSTR* retval)
 {
 	if( !retval )
@@ -382,6 +400,7 @@ STDMETHODIMP CCOM::GetErrorString(BSTR* retval)
 
 	return S_OK;
 }
+
 
 STDMETHODIMP CCOM::GetSelectedOutputValue(LONG row, LONG col, VARIANT* retval)
 {
@@ -436,6 +455,7 @@ STDMETHODIMP CCOM::GetSelectedOutputValue(LONG row, LONG col, VARIANT* retval)
 	return hr;
 }
 
+
 STDMETHODIMP CCOM::LoadDatabaseString(BSTR input, LONG* retval)
 {
 	if( !retval )
@@ -455,6 +475,7 @@ STDMETHODIMP CCOM::LoadDatabaseString(BSTR input, LONG* retval)
 
 	return S_OK;
 }
+
 
 STDMETHODIMP CCOM::get_DumpFileOn(VARIANT_BOOL* pVal)
 {
@@ -476,6 +497,7 @@ STDMETHODIMP CCOM::get_DumpFileOn(VARIANT_BOOL* pVal)
 	return S_OK;
 }
 
+
 STDMETHODIMP CCOM::put_DumpFileOn(VARIANT_BOOL newVal)
 {
 	MACRO_CHECK_IPHREEQC_PTR();
@@ -484,6 +506,7 @@ STDMETHODIMP CCOM::put_DumpFileOn(VARIANT_BOOL newVal)
 
 	return S_OK;
 }
+
 
 STDMETHODIMP CCOM::get_DumpStringOn(VARIANT_BOOL* pVal)
 {
@@ -505,6 +528,7 @@ STDMETHODIMP CCOM::get_DumpStringOn(VARIANT_BOOL* pVal)
 	return S_OK;
 }
 
+
 STDMETHODIMP CCOM::put_DumpStringOn(VARIANT_BOOL newVal)
 {
 	MACRO_CHECK_IPHREEQC_PTR();
@@ -513,6 +537,7 @@ STDMETHODIMP CCOM::put_DumpStringOn(VARIANT_BOOL newVal)
 
 	return S_OK;
 }
+
 
 STDMETHODIMP CCOM::GetComponentList(VARIANT* retval)
 {
@@ -564,6 +589,7 @@ STDMETHODIMP CCOM::GetComponentList(VARIANT* retval)
 	return S_OK;
 }
 
+
 STDMETHODIMP CCOM::GetWarningString(BSTR* retval)
 {
 	if( !retval )
@@ -577,6 +603,7 @@ STDMETHODIMP CCOM::GetWarningString(BSTR* retval)
 
 	return S_OK;
 }
+
 
 STDMETHODIMP CCOM::GetDumpString(BSTR* retval)
 {
@@ -592,11 +619,317 @@ STDMETHODIMP CCOM::GetDumpString(BSTR* retval)
 	return S_OK;
 }
 
+
 STDMETHODIMP CCOM::ClearAccumulatedLines(void)
 {
 	MACRO_CHECK_IPHREEQC_PTR();
 
 	this->IPhreeqcPtr->ClearAccumulatedLines();
+
+	return S_OK;
+}
+
+
+STDMETHODIMP CCOM::get_DumpFileName(BSTR* pVal)
+{
+	if( !pVal )
+	{
+		return E_POINTER;
+	}
+	MACRO_CHECK_IPHREEQC_PTR();
+
+	CComBSTR bstrVal(this->IPhreeqcPtr->GetDumpFileName());
+	*pVal = ::SysAllocString(bstrVal.m_str);
+
+	return S_OK;
+}
+
+
+STDMETHODIMP CCOM::put_DumpFileName(BSTR newVal)
+{
+	MACRO_CHECK_IPHREEQC_PTR();
+
+	_bstr_t in(newVal, true);
+
+	this->IPhreeqcPtr->SetDumpFileName(in);
+
+	return S_OK;
+}
+
+
+STDMETHODIMP CCOM::get_OutputFileName(BSTR* pVal)
+{
+	if( !pVal )
+	{
+		return E_POINTER;
+	}
+	MACRO_CHECK_IPHREEQC_PTR();
+
+	CComBSTR bstrVal(this->IPhreeqcPtr->GetOutputFileName());
+	*pVal = ::SysAllocString(bstrVal.m_str);
+
+	return S_OK;
+
+}
+
+
+STDMETHODIMP CCOM::put_OutputFileName(BSTR newVal)
+{
+	MACRO_CHECK_IPHREEQC_PTR();
+
+	_bstr_t in(newVal, true);
+
+	this->IPhreeqcPtr->SetOutputFileName(in);
+
+	return S_OK;
+}
+
+
+STDMETHODIMP CCOM::get_OutputStringOn(VARIANT_BOOL* pVal)
+{
+	if( !pVal )
+	{
+		return E_POINTER;
+	}
+	MACRO_CHECK_IPHREEQC_PTR();
+
+	if (this->IPhreeqcPtr->GetOutputStringOn())
+	{
+		*pVal = VARIANT_TRUE;
+	}
+	else
+	{
+		*pVal = VARIANT_FALSE;
+	}
+
+	return S_OK;
+}
+
+
+STDMETHODIMP CCOM::put_OutputStringOn(VARIANT_BOOL newVal)
+{
+	MACRO_CHECK_IPHREEQC_PTR();
+
+	this->IPhreeqcPtr->SetOutputStringOn(newVal == VARIANT_TRUE);
+
+	return S_OK;
+}
+
+
+STDMETHODIMP CCOM::GetOutputString(BSTR* retval)
+{
+	if( !retval )
+	{
+		return E_POINTER;
+	}
+	MACRO_CHECK_IPHREEQC_PTR();
+
+	CComBSTR bstrVal(this->IPhreeqcPtr->GetOutputString());
+	*retval = ::SysAllocString(bstrVal.m_str);
+
+	return S_OK;
+}
+
+
+STDMETHODIMP CCOM::get_LogFileName(BSTR* pVal)
+{
+	if( !pVal )
+	{
+		return E_POINTER;
+	}
+	MACRO_CHECK_IPHREEQC_PTR();
+
+	CComBSTR bstrVal(this->IPhreeqcPtr->GetLogFileName());
+	*pVal = ::SysAllocString(bstrVal.m_str);
+
+	return S_OK;
+}
+
+
+STDMETHODIMP CCOM::put_LogFileName(BSTR newVal)
+{
+	MACRO_CHECK_IPHREEQC_PTR();
+
+	_bstr_t in(newVal, true);
+
+	this->IPhreeqcPtr->SetLogFileName(in);
+
+	return S_OK;
+}
+
+
+STDMETHODIMP CCOM::get_LogStringOn(VARIANT_BOOL* pVal)
+{
+	if( !pVal )
+	{
+		return E_POINTER;
+	}
+	MACRO_CHECK_IPHREEQC_PTR();
+
+	if (this->IPhreeqcPtr->GetLogStringOn())
+	{
+		*pVal = VARIANT_TRUE;
+	}
+	else
+	{
+		*pVal = VARIANT_FALSE;
+	}
+
+	return S_OK;
+}
+
+
+STDMETHODIMP CCOM::put_LogStringOn(VARIANT_BOOL newVal)
+{
+	MACRO_CHECK_IPHREEQC_PTR();
+
+	this->IPhreeqcPtr->SetLogStringOn(newVal == VARIANT_TRUE);
+
+	return S_OK;
+}
+
+
+STDMETHODIMP CCOM::GetLogString(BSTR* retval)
+{
+	if( !retval )
+	{
+		return E_POINTER;
+	}
+	MACRO_CHECK_IPHREEQC_PTR();
+
+	CComBSTR bstrVal(this->IPhreeqcPtr->GetLogString());
+	*retval = ::SysAllocString(bstrVal.m_str);
+
+	return S_OK;
+}
+
+
+STDMETHODIMP CCOM::get_ErrorFileName(BSTR* pVal)
+{
+	if( !pVal )
+	{
+		return E_POINTER;
+	}
+	MACRO_CHECK_IPHREEQC_PTR();
+
+	CComBSTR bstrVal(this->IPhreeqcPtr->GetErrorFileName());
+	*pVal = ::SysAllocString(bstrVal.m_str);
+
+	return S_OK;
+}
+
+
+STDMETHODIMP CCOM::put_ErrorFileName(BSTR newVal)
+{
+	MACRO_CHECK_IPHREEQC_PTR();
+
+	_bstr_t in(newVal, true);
+
+	this->IPhreeqcPtr->SetErrorFileName(in);
+
+	return S_OK;
+}
+
+
+STDMETHODIMP CCOM::get_ErrorStringOn(VARIANT_BOOL* pVal)
+{
+	if( !pVal )
+	{
+		return E_POINTER;
+	}
+	MACRO_CHECK_IPHREEQC_PTR();
+
+	if (this->IPhreeqcPtr->GetErrorStringOn())
+	{
+		*pVal = VARIANT_TRUE;
+	}
+	else
+	{
+		*pVal = VARIANT_FALSE;
+	}
+
+	return S_OK;
+}
+
+
+STDMETHODIMP CCOM::put_ErrorStringOn(VARIANT_BOOL newVal)
+{
+	MACRO_CHECK_IPHREEQC_PTR();
+
+	this->IPhreeqcPtr->SetErrorStringOn(newVal == VARIANT_TRUE);
+
+	return S_OK;
+}
+
+
+STDMETHODIMP CCOM::get_SelectedOutputFileName(BSTR* pVal)
+{
+	if( !pVal )
+	{
+		return E_POINTER;
+	}
+	MACRO_CHECK_IPHREEQC_PTR();
+
+	CComBSTR bstrVal(this->IPhreeqcPtr->GetSelectedOutputFileName());
+	*pVal = ::SysAllocString(bstrVal.m_str);
+
+	return S_OK;
+}
+
+
+STDMETHODIMP CCOM::put_SelectedOutputFileName(BSTR newVal)
+{
+	MACRO_CHECK_IPHREEQC_PTR();
+
+	_bstr_t in(newVal, true);
+
+	this->IPhreeqcPtr->SetSelectedOutputFileName(in);
+
+	return S_OK;
+}
+
+
+STDMETHODIMP CCOM::get_SelectedOutputStringOn(VARIANT_BOOL* pVal)
+{
+	if( !pVal )
+	{
+		return E_POINTER;
+	}
+	MACRO_CHECK_IPHREEQC_PTR();
+
+	if (this->IPhreeqcPtr->GetSelectedOutputStringOn())
+	{
+		*pVal = VARIANT_TRUE;
+	}
+	else
+	{
+		*pVal = VARIANT_FALSE;
+	}
+
+	return S_OK;
+}
+
+
+STDMETHODIMP CCOM::put_SelectedOutputStringOn(VARIANT_BOOL newVal)
+{
+	MACRO_CHECK_IPHREEQC_PTR();
+
+	this->IPhreeqcPtr->SetSelectedOutputStringOn(newVal == VARIANT_TRUE);
+
+	return S_OK;
+}
+
+
+STDMETHODIMP CCOM::GetSelectedOutputString(BSTR* retval)
+{
+	if( !retval )
+	{
+		return E_POINTER;
+	}
+	MACRO_CHECK_IPHREEQC_PTR();
+
+	CComBSTR bstrVal(this->IPhreeqcPtr->GetSelectedOutputString());
+	*retval = ::SysAllocString(bstrVal.m_str);
 
 	return S_OK;
 }

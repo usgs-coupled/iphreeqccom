@@ -101,6 +101,27 @@ public:
 	STDMETHOD(GetWarningString)(BSTR* retval);
 	STDMETHOD(GetDumpString)(BSTR* retval);
 	STDMETHOD(ClearAccumulatedLines)(void);
+	STDMETHOD(get_DumpFileName)(BSTR* pVal);
+	STDMETHOD(put_DumpFileName)(BSTR newVal);
+	STDMETHOD(get_OutputFileName)(BSTR* pVal);
+	STDMETHOD(put_OutputFileName)(BSTR newVal);
+	STDMETHOD(get_OutputStringOn)(VARIANT_BOOL* pVal);
+	STDMETHOD(put_OutputStringOn)(VARIANT_BOOL newVal);
+	STDMETHOD(GetOutputString)(BSTR* retval);
+	STDMETHOD(get_LogFileName)(BSTR* pVal);
+	STDMETHOD(put_LogFileName)(BSTR newVal);
+	STDMETHOD(get_LogStringOn)(VARIANT_BOOL* pVal);
+	STDMETHOD(put_LogStringOn)(VARIANT_BOOL newVal);
+	STDMETHOD(GetLogString)(BSTR* retval);
+	STDMETHOD(get_ErrorFileName)(BSTR* pVal);
+	STDMETHOD(put_ErrorFileName)(BSTR newVal);
+	STDMETHOD(get_ErrorStringOn)(VARIANT_BOOL* pVal);
+	STDMETHOD(put_ErrorStringOn)(VARIANT_BOOL newVal);
+	STDMETHOD(get_SelectedOutputFileName)(BSTR* pVal);
+	STDMETHOD(put_SelectedOutputFileName)(BSTR newVal);
+	STDMETHOD(get_SelectedOutputStringOn)(VARIANT_BOOL* pVal);
+	STDMETHOD(put_SelectedOutputStringOn)(VARIANT_BOOL newVal);
+	STDMETHOD(GetSelectedOutputString)(BSTR* retval);
 };
 
 OBJECT_ENTRY_AUTO(__uuidof(IPhreeqcCOMObject), CCOM)
