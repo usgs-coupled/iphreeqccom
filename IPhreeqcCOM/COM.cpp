@@ -933,3 +933,17 @@ STDMETHODIMP CCOM::GetSelectedOutputString(BSTR* retval)
 
 	return S_OK;
 }
+
+
+STDMETHODIMP CCOM::get_Id(LONG* pVal)
+{
+	if( !pVal )
+	{
+		return E_POINTER;
+	}
+	MACRO_CHECK_IPHREEQC_PTR();
+
+	*pVal = this->IPhreeqcPtr->GetId();
+
+	return S_OK;
+}
