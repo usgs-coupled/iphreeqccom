@@ -26,7 +26,7 @@
 			<param name="Local" value="html\mthAccumulateLine.htm">
 			</OBJECT>
 		<LI> <OBJECT type="text/sitemap">
-			<param name="Name" value="ClearAccumulatedLines">
+			<param name="Name" value="ClearAccumulatedLines Method">
 			<param name="Local" value="html\mthClearAccumulatedLines.htm">
 			</OBJECT>
 		<LI> <OBJECT type="text/sitemap">
@@ -42,8 +42,20 @@
 			<param name="Local" value="html\mthGetErrorString.htm">
 			</OBJECT>
 		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="GetLogString Method">
+			<param name="Local" value="html\mthGetLogString.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="GetOutputString Method">
+			<param name="Local" value="html\mthGetOutputString.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
 			<param name="Name" value="GetSelectedOutputArray Method">
 			<param name="Local" value="html\mthGetSelectedOutputArray.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="GetSelectedOutputString Method">
+			<param name="Local" value="html\mthGetSelectedOutputString.htm">
 			</OBJECT>
 		<LI> <OBJECT type="text/sitemap">
 			<param name="Name" value="GetSelectedOutputValue Method">
@@ -83,6 +95,10 @@
 			<param name="Local" value="html\proColumnCount.htm">
 			</OBJECT>
 		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="DumpFileName Property">
+			<param name="Local" value="html\proDumpFileName.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
 			<param name="Name" value="DumpFileOn Property">
 			<param name="Local" value="html\proDumpFileOn.htm">
 			</OBJECT>
@@ -91,28 +107,64 @@
 			<param name="Local" value="html\proDumpStringOn.htm">
 			</OBJECT>
 		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="ErrorFileName Property">
+			<param name="Local" value="html\proErrorFileName.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
 			<param name="Name" value="ErrorFileOn Property">
 			<param name="Local" value="html\proErrorFileOn.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="ErrorStringOn Property">
+			<param name="Local" value="html\proErrorStringOn.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Id Property">
+			<param name="Local" value="html\proId.htm">
 			</OBJECT>
 		<LI> <OBJECT type="text/sitemap">
 			<param name="Name" value="Lines Property">
 			<param name="Local" value="html\proLines.htm">
 			</OBJECT>
 		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="LogFileName Property">
+			<param name="Local" value="html\proLogFileName.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
 			<param name="Name" value="LogFileOn Property">
 			<param name="Local" value="html\proLogFileOn.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="LogStringOn Property">
+			<param name="Local" value="html\proLogStringOn.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="OutputFileName Property">
+			<param name="Local" value="html\proOutputFileName.htm">
 			</OBJECT>
 		<LI> <OBJECT type="text/sitemap">
 			<param name="Name" value="OutputFileOn Property">
 			<param name="Local" value="html\proOutputFileOn.htm">
 			</OBJECT>
 		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="OutputStringOn Property">
+			<param name="Local" value="html\proOutputStringOn.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
 			<param name="Name" value="RowCount Property">
 			<param name="Local" value="html\proRowCount.htm">
 			</OBJECT>
 		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="SelectedOutputFileName Property">
+			<param name="Local" value="html\proSelectedOutputFileName.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
 			<param name="Name" value="SelectedOutputFileOn Property">
 			<param name="Local" value="html\proSelectedOutputFileOn.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="SelectedOutputStringOn Property">
+			<param name="Local" value="html\proSelectedOutputStringOn.htm">
 			</OBJECT>
 	</UL>
 </UL>

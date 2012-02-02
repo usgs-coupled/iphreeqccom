@@ -1,4 +1,4 @@
-<html dir="ltr" xmlns:msxsl="urn:schemas-microsoft-com:xslt"><head>
+﻿<html dir="ltr" xmlns:msxsl="urn:schemas-microsoft-com:xslt"><head>
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <META HTTP-EQUIV="assetid" CONTENT="HV05200484"><META NAME="lcid" CONTENT="1033">
 <title>SelectedOutputFileOn Property</title>
@@ -36,8 +36,9 @@
 var iphreeqc = new ActiveXObject("IPhreeqcCOM.Object");
 iphreeqc.LoadDatabase("phreeqc.dat");
 iphreeqc.<b class="bterm">SelectedOutputFileOn</b> = true;
-iphreeqc.RunFile("ex2");
-WScript.Echo("see ex2.sel");
+if (iphreeqc.RunFile("ex2") == 0) {
+    WScript.Echo("See " + iphreeqc.SelectedOutputFileName + ".");
+}
 </pre></div>
 
 <!-- VBScript Example -->
@@ -48,8 +49,9 @@ Dim iphreeqc
 Set iphreeqc = CreateObject("IPhreeqcCOM.Object")
 iphreeqc.LoadDatabase("phreeqc.dat")
 iphreeqc.<b class="bterm">SelectedOutputFileOn</b> = True
-iphreeqc.RunFile("ex2")
-WScript.Echo("see ex2.sel")
+If (iphreeqc.RunFile("ex2") = 0) Then
+    WScript.Echo("See " & iphreeqc.SelectedOutputFileName & ".")
+End If
 </pre></div>
 
 <!-- Script -->

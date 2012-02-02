@@ -57,7 +57,7 @@ iphreeqc.<b class="bterm">AccumulateLine</b>("        -si     anhydrite  gypsum"
 iphreeqc.<b class="bterm">AccumulateLine</b>("END");
 iphreeqc.OutputFileOn = true;
 if (iphreeqc.RunAccumulated() == 0) {
-    WScript.Echo("see phreeqc.out");
+    WScript.Echo("see " + iphreeqc.OutputFileName + ".");
 };</pre></div>
 
 <!-- VBScript Example -->
@@ -84,7 +84,7 @@ iphreeqc.<b class="bterm">AccumulateLine</b>("        -si     anhydrite  gypsum"
 iphreeqc.<b class="bterm">AccumulateLine</b>("END")
 iphreeqc.OutputFileOn = True
 If (iphreeqc.RunAccumulated() = 0) Then
-    WScript.Echo("see phreeqc.out")
+    WScript.Echo("see " & iphreeqc.OutputFileName & ".")
 End If</pre></div>
 
 <!-- Script -->

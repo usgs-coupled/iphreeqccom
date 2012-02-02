@@ -1,4 +1,4 @@
-<html dir="ltr" xmlns:msxsl="urn:schemas-microsoft-com:xslt"><head>
+﻿<html dir="ltr" xmlns:msxsl="urn:schemas-microsoft-com:xslt"><head>
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <META HTTP-EQUIV="assetid" CONTENT="HV05199071">
 <META NAME="lcid" CONTENT="1033">
@@ -43,7 +43,7 @@ var iphreeqc = new ActiveXObject("IPhreeqcCOM.Object");
 iphreeqc.LoadDatabase("phreeqc.dat");
 iphreeqc.OutputFileOn = true;
 if (iphreeqc.<b class="bterm">RunFile</b>("ex1") == 0) {
-    WScript.Echo("see phreeqc.out");
+    WScript.Echo("see " + iphreeqc.OutputFileName + ".");
 }</pre></div>
 
 <!-- VBScript Example -->
@@ -54,7 +54,7 @@ Set iphreeqc = CreateObject("IPhreeqcCOM.Object")
 iphreeqc.LoadDatabase("phreeqc.dat")
 iphreeqc.OutputFileOn = True
 If (iphreeqc.<b class="bterm">RunFile</b>("ex1") = 0) Then
-    WScript.Echo("see phreeqc.out")
+    WScript.Echo("see " & iphreeqc.OutputFileName & ".")
 End If</pre></div>
 
 <!-- Script -->

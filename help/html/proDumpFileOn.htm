@@ -1,4 +1,4 @@
-<html dir="ltr" xmlns:msxsl="urn:schemas-microsoft-com:xslt"><head>
+﻿<html dir="ltr" xmlns:msxsl="urn:schemas-microsoft-com:xslt"><head>
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <META HTTP-EQUIV="assetid" CONTENT="HV05200484"><META NAME="lcid" CONTENT="1033">
 <title>DumpFileOn Property</title>
@@ -20,7 +20,7 @@
 </DIV>
 
 <!-- Description -->
-<p><b class="bterm">True</b> to turn on the DUMP file. The file will be named <b class="bterm"><I>dump.out</I></b> &nbsp;unless it was specified within the DUMP keyword data block. The initial setting is <b class="bterm">False</b>. Read/write <b class="bterm">Boolean</b>.</p>
+<p><b class="bterm">True</b> to turn on the dump file. The file will be named <a class="ofvbalink" href="proDumpFileName.htm">DumpFileName</a> &nbsp;unless it was specified within the DUMP keyword data block. The initial setting is <b class="bterm">False</b>. Read/write <b class="bterm">Boolean</b>.</p>
 
 <!-- Remarks -->
 <h2>Remarks</h2>
@@ -28,7 +28,7 @@
 
 <!-- Example -->
 <h2><a id="#example" name="#example">Example</a></h2>
-<p>This example equilibrates pure water with calcite and writes the dump results to <b class="bterm"><I>dump.out</I></b>.</p>
+<p>This example equilibrates pure water with calcite and writes the dump results to <a class="ofvbalink" href="proDumpFileName.htm">DumpFileName</a>.</p>
 
 <!-- JScript Example -->
 <div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
@@ -51,7 +51,7 @@ input += "    -equilibrium_phases  1\n";
 if (iphreeqc.RunString(input) != 0) {
     WScript.Echo(iphreeqc.GetErrorString());
 }
-WScript.Echo("see dump.out");</pre></div>
+WScript.Echo("see " + iphreeqc.DumpFileName + ".");</pre></div>
 
 <!-- VBScript Example -->
 <div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
@@ -76,7 +76,7 @@ sInput = sInput & "    -equilibrium_phases  1" & vbNewLine
 If (iphreeqc.RunString(sInput) &lt;&gt; 0) Then
     WScript.Echo(iphreeqc.GetErrorString())
 End If
-WScript.Echo("see dump.out")</pre></div>
+WScript.Echo("see " & iphreeqc.DumpFileName & ".")</pre></div>
 
 <!-- Script -->
 <script type="text/javascript" language="JScript" src="ofvbanl.js"></script>

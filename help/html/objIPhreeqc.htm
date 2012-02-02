@@ -51,7 +51,7 @@ var iphreeqc = new ActiveXObject("IPhreeqcCOM.Object");
 iphreeqc.LoadDatabase("phreeqc.dat");
 iphreeqc.OutputFileOn = true;
 if (iphreeqc.RunFile("ex1") == 0) {
-    WScript.Echo("see phreeqc.out");
+    WScript.Echo("see " + iphreeqc.OutputFileName + ".");
 }</pre></div>
 
 <!-- VBScript Example -->
@@ -63,11 +63,11 @@ Set iphreeqc = CreateObject("IPhreeqcCOM.Object")
 iphreeqc.LoadDatabase("phreeqc.dat")
 iphreeqc.OutputFileOn = True
 If (iphreeqc.<b class="bterm">RunFile</b>("ex1") = 0) Then
-    WScript.Echo("see phreeqc.out")
+    WScript.Echo("see " & iphreeqc.OutputFileName & ".")
 End If</pre></div>
 
 <h2>Remarks</h2>
-Unlike the batch version of phreeqc, the output will be created in the file <b class="bterm"><I>phreeqc.out</I></b>.  If the <b class="bterm">OutputFileOn</b> property were not set to <b class="bterm">True</b> no output files would have been created.
+Unlike the batch version of phreeqc, the output will be created in the file <a class="ofvbalink" href="proOutputFileName.htm">OutputFileName</a>.  If the <a class="ofvbalink" href="proOutputFileOn.htm">OutputFileOn</a> property were not set to <b class="bterm">True</b> no output files would have been created.
 
 <script type="text/javascript" language="JScript" src="ofvbanl.js">
 </script>

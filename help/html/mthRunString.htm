@@ -1,4 +1,4 @@
-<html dir="ltr" xmlns:msxsl="urn:schemas-microsoft-com:xslt"><head>
+﻿<html dir="ltr" xmlns:msxsl="urn:schemas-microsoft-com:xslt"><head>
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <META HTTP-EQUIV="assetid" CONTENT="HV05199071">
 <META NAME="lcid" CONTENT="1033">
@@ -48,7 +48,7 @@ sInput += "pH   7.0\n";
 
 iphreeqc.OutputFileOn = true;
 iphreeqc.<b class="bterm">RunString</b>(sInput);
-WScript.Echo("see phreeqc.out");</pre></div>
+WScript.Echo("see " + iphreeqc.OutputFileName + ".");</pre></div>
 
 
 <!-- VBScript Example -->
@@ -65,7 +65,7 @@ sInput = sInput & "pH   7.0" & vbNewLine
 
 iphreeqc.OutputFileOn = True
 iphreeqc.<b class="bterm">RunString</b>(sInput)
-WScript.Echo("see phreeqc.out")</pre></div>
+WScript.Echo("see " & iphreeqc.OutputFileName & ".")</pre></div>
 
 <!-- Script -->
 <script type="text/javascript" language="JScript" src="ofvbanl.js"></script>

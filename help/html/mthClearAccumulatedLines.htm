@@ -35,7 +35,7 @@ var iphreeqc = new ActiveXObject("IPhreeqcCOM.Object");
 iphreeqc.AccumulateLine("SOLUTION 1");
 iphreeqc.AccumulateLine("END");
 WScript.Echo("The accumulated input is:\n" + iphreeqc.<b class="bterm">Lines</b>);
-iphreeqc.ClearAccumulatedLines();
+iphreeqc.<b class="bterm">ClearAccumulatedLines</b>();
 WScript.Echo("The accumulated input now is:\n" + iphreeqc.<b class="bterm">Lines</b>);</pre></div>
 
 
@@ -48,7 +48,7 @@ Set iphreeqc = CreateObject("IPhreeqcCOM.Object")
 iphreeqc.AccumulateLine("SOLUTION 1")
 iphreeqc.AccumulateLine("END")
 WScript.Echo("The accumulated input is:" & vbNewLine & iphreeqc.<b class="bterm">Lines</b>)
-iphreeqc.ClearAccumulatedLines()
+iphreeqc.<b class="bterm">ClearAccumulatedLines</b>()
 WScript.Echo("The accumulated input is:" & vbNewLine & iphreeqc.<b class="bterm">Lines</b>)</pre></div>
 
 

@@ -1,7 +1,7 @@
 ﻿<html dir="ltr" xmlns:msxsl="urn:schemas-microsoft-com:xslt"><head>
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <META HTTP-EQUIV="assetid" CONTENT="HV05200484"><META NAME="lcid" CONTENT="1033">
-<title>ErrorFileOn Property</title>
+<title>OutputFileName Property</title>
 <link rel="stylesheet" type="text/css" href="office10.css">
 <script type="text/javascript" language="Javascript" src="sExpCollapse.js"></script>
 <script type="text/javascript" language="JavaScript" src="inline.js"></script>
@@ -9,7 +9,7 @@
 <body>
 
 <!-- Top Heading -->
-<h1>ErrorFileOn Property</h1>
+<h1>OutputFileName Property</h1>
 
 <!-- Links -->
 <DIV class="ofvbanav">
@@ -20,44 +20,56 @@
 </DIV>
 
 <!-- Description -->
-<p><b class="bterm">True</b> to turn on output to the phreeqc error file <a class="ofvbalink" href="proErrorFileName.htm">ErrorFileName</a>. The initial setting is <b class="bterm">False</b>. Read/write <b class="bterm">Boolean</b>.</p>
+<p>Returns or sets the name of the output file. The initial setting is <b class="bterm"><i>phreeqc.id.out</i></b>, where id is obtained from <a class="ofvbalink" href="proId.htm">Id</a>. Read/write <b class="bterm">String</b>.</p>
 
 <!-- Remarks -->
 <h2>Remarks</h2>
-<p>The <b class="bterm">ErrorFileOn</b> property is used only by the Run methods: <a class="ofvbalink" href="mthRunAccumulated.htm">RunAccumulated</a>, <a class="ofvbalink" href="mthRunFile.htm">RunFile</a> and <a class="ofvbalink" href="mthRunString.htm">RunString</a>.</p>
+<p>The <a class="ofvbalink" href="proOutputFileOn.htm">OutputFileOn</a> property must be set to <b class="bterm">True</b> before calling a Run method.</p>
 
 <!-- Example -->
-<h2><a id="#example" name="#example">Example</a></h2>
-<p>The example attempts to run the <b class="bterm"><I>ex1</I></b> &nbspinput file, fails, and writes the error messages to the error file <a class="ofvbalink" href="proErrorFileName.htm">ErrorFileName</a> (no database is loaded).</p>
+<h2><a id="A1" name="#example">Example</a></h2>
+<p>This example equilibrates pure water with calcite and displays the name of the output file.</p>
 
 <!-- JScript Example -->
 <div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
 <div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
   JScript</div>
-try {
-    var iphreeqc = new ActiveXObject("IPhreeqcCOM.Object");
-    iphreeqc.<b class="bterm">ErrorFileOn</b> = true;
-    iphreeqc.RunFile("ex1");
-}
-catch(e) {
-    WScript.Echo("See " & iphreeqc.ErrorFileName & ".");
-}</pre></div>
+var iphreeqc = new ActiveXObject("IPhreeqcCOM.Object");
+iphreeqc.LoadDatabase("phreeqc.dat");
+iphreeqc.OutputFileOn = true;
 
+var input = new String("");
+input += "SOLUTION 1 Pure water     \n";
+input += "EQUILIBRIUM_PHASES 1      \n";
+input += "    Calcite 0 10          \n";
+
+if (iphreeqc.RunString(input) == 0) {
+    WScript.Echo("See " + iphreeqc.<b class="bterm">OutputFileName</b> + ".");
+}</pre></div>
 
 <!-- VBScript Example -->
 <div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
 <div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
   VBScript</div>
-Dim iphreeqc
-On Error Resume Next
+Dim iphreeqc, sInput
+
 Set iphreeqc = CreateObject("IPhreeqcCOM.Object")
-iphreeqc.<b class="bterm">ErrorFileOn</b> = True
-If (iphreeqc.RunFile("ex1") &lt;&gt; 0) Then
-    WScript.Echo("See " & iphreeqc.ErrorFileName & ".")
+iphreeqc.LoadDatabase("phreeqc.dat")
+iphreeqc.OutputFileOn = True
+
+sInput = ""
+sInput = sInput & "SOLUTION 1 Pure water     " & vbNewLine
+sInput = sInput & "EQUILIBRIUM_PHASES 1      " & vbNewLine
+sInput = sInput & "    Calcite 0 10          " & vbNewLine
+
+If (iphreeqc.RunString(sInput) = 0) Then
+    WScript.Echo("See " & iphreeqc.<b class="bterm">OutputFileName</b> & ".")
 End If</pre></div>
 
 <!-- Script -->
-<script type="text/javascript" language="JScript" src="ofvbanl.js"></script><span id="ofVBAISpan" class="ofvbaispan"><iframe id="ofVBAIFrame" frameborder="0" marginheight="0" marginwidth="4" scrolling="auto" width="100%" src="../links/proErrorFileOn_l.htm"></iframe>
+<script type="text/javascript" language="JScript" src="ofvbanl.js"></script>
+<span id="ofVBAISpan" class="ofvbaispan">
+<iframe id="ofVBAIFrame" frameborder="0" marginheight="0" marginwidth="4" scrolling="auto" width="100%" src="../links/proOutputFileName_l.htm"></iframe>
 </span>
 </body>
 </html>
