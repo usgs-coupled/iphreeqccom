@@ -339,13 +339,16 @@
     <None Include="..\help\html\mthGetErrorString.htm">
       <Filter>Html</Filter>
     </None>
+    <None Include="..\help\html\mthGetLogString.htm">
+      <Filter>Html</Filter>
+    </None>
+    <None Include="..\help\html\mthGetOutputString.htm">
+      <Filter>Html</Filter>
+    </None>
     <None Include="..\help\html\mthGetSelectedOutputArray.htm">
       <Filter>Html</Filter>
     </None>
-    <None Include="..\help\html\mthGetSelectedOutputColumnCount.htm">
-      <Filter>Html</Filter>
-    </None>
-    <None Include="..\help\html\mthGetSelectedOutputRowCount.htm">
+    <None Include="..\help\html\mthGetSelectedOutputString.htm">
       <Filter>Html</Filter>
     </None>
     <None Include="..\help\html\mthGetSelectedOutputValue.htm">
@@ -375,22 +378,46 @@
     <None Include="..\help\html\proColumnCount.htm">
       <Filter>Html</Filter>
     </None>
+    <None Include="..\help\html\proDumpFileName.htm">
+      <Filter>Html</Filter>
+    </None>
     <None Include="..\help\html\proDumpFileOn.htm">
       <Filter>Html</Filter>
     </None>
     <None Include="..\help\html\proDumpStringOn.htm">
       <Filter>Html</Filter>
     </None>
+    <None Include="..\help\html\proErrorFileName.htm">
+      <Filter>Html</Filter>
+    </None>
     <None Include="..\help\html\proErrorFileOn.htm">
+      <Filter>Html</Filter>
+    </None>
+    <None Include="..\help\html\proErrorStringOn.htm">
+      <Filter>Html</Filter>
+    </None>
+    <None Include="..\help\html\proId.htm">
       <Filter>Html</Filter>
     </None>
     <None Include="..\help\html\proLines.htm">
       <Filter>Html</Filter>
     </None>
+    <None Include="..\help\html\proLogFileName.htm">
+      <Filter>Html</Filter>
+    </None>
     <None Include="..\help\html\proLogFileOn.htm">
       <Filter>Html</Filter>
     </None>
+    <None Include="..\help\html\proLogStringOn.htm">
+      <Filter>Html</Filter>
+    </None>
+    <None Include="..\help\html\proOutputFileName.htm">
+      <Filter>Html</Filter>
+    </None>
     <None Include="..\help\html\proOutputFileOn.htm">
+      <Filter>Html</Filter>
+    </None>
+    <None Include="..\help\html\proOutputStringOn.htm">
       <Filter>Html</Filter>
     </None>
     <None Include="..\help\html\proRowCount.htm">
@@ -399,158 +426,8 @@
     <None Include="..\help\html\proSelectedOutputFileOn.htm">
       <Filter>Html</Filter>
     </None>
-    <None Include="..\help\html\proDumpFileName.htm">
+    <None Include="..\help\html\proSelectedOutputStringOn.htm">
       <Filter>Html</Filter>
-    </None>
-    <None Include="..\help\html\proId.htm">
-      <Filter>Html</Filter>
-    </None>
-    <None Include="examples\AccumulateLine.js">
-      <Filter>Examples</Filter>
-    </None>
-    <None Include="examples\ClearAccumulatedLines.js">
-      <Filter>Examples</Filter>
-    </None>
-    <None Include="examples\ColumnCount.js">
-      <Filter>Examples</Filter>
-    </None>
-    <None Include="examples\DumpFileOn.js">
-      <Filter>Examples</Filter>
-    </None>
-    <None Include="examples\DumpStringOn.js">
-      <Filter>Examples</Filter>
-    </None>
-    <None Include="examples\ErrorFileOn.js">
-      <Filter>Examples</Filter>
-    </None>
-    <None Include="examples\GetComponentList.js">
-      <Filter>Examples</Filter>
-    </None>
-    <None Include="examples\GetDumpString.js">
-      <Filter>Examples</Filter>
-    </None>
-    <None Include="examples\GetErrorString.js">
-      <Filter>Examples</Filter>
-    </None>
-    <None Include="examples\GetSelectedOutputArray.js">
-      <Filter>Examples</Filter>
-    </None>
-    <None Include="examples\GetSelectedOutputValue.js">
-      <Filter>Examples</Filter>
-    </None>
-    <None Include="examples\GetWarningString.js">
-      <Filter>Examples</Filter>
-    </None>
-    <None Include="examples\Id.js">
-      <Filter>Examples</Filter>
-    </None>
-    <None Include="examples\iphreeqc.js">
-      <Filter>Examples</Filter>
-    </None>
-    <None Include="examples\Lines.js">
-      <Filter>Examples</Filter>
-    </None>
-    <None Include="examples\LoadDatabase.js">
-      <Filter>Examples</Filter>
-    </None>
-    <None Include="examples\LoadDatabaseString.js">
-      <Filter>Examples</Filter>
-    </None>
-    <None Include="examples\LogFileOn.js">
-      <Filter>Examples</Filter>
-    </None>
-    <None Include="examples\OutputFileOn.js">
-      <Filter>Examples</Filter>
-    </None>
-    <None Include="examples\RowCount.js">
-      <Filter>Examples</Filter>
-    </None>
-    <None Include="examples\RunAccumulated.js">
-      <Filter>Examples</Filter>
-    </None>
-    <None Include="examples\RunFile.js">
-      <Filter>Examples</Filter>
-    </None>
-    <None Include="examples\RunString.js">
-      <Filter>Examples</Filter>
-    </None>
-    <None Include="examples\SelectedOutputFileOn.js">
-      <Filter>Examples</Filter>
-    </None>
-    <None Include="examples\AccumulateLine.vbs">
-      <Filter>Examples</Filter>
-    </None>
-    <None Include="examples\ClearAccumulatedLines.vbs">
-      <Filter>Examples</Filter>
-    </None>
-    <None Include="examples\ColumnCount.vbs">
-      <Filter>Examples</Filter>
-    </None>
-    <None Include="examples\DumpFileOn.vbs">
-      <Filter>Examples</Filter>
-    </None>
-    <None Include="examples\DumpStringOn.vbs">
-      <Filter>Examples</Filter>
-    </None>
-    <None Include="examples\ErrorFileOn.vbs">
-      <Filter>Examples</Filter>
-    </None>
-    <None Include="examples\GetComponentList.vbs">
-      <Filter>Examples</Filter>
-    </None>
-    <None Include="examples\GetDumpString.vbs">
-      <Filter>Examples</Filter>
-    </None>
-    <None Include="examples\GetErrorString.vbs">
-      <Filter>Examples</Filter>
-    </None>
-    <None Include="examples\GetSelectedOutputArray.vbs">
-      <Filter>Examples</Filter>
-    </None>
-    <None Include="examples\GetSelectedOutputValue.vbs">
-      <Filter>Examples</Filter>
-    </None>
-    <None Include="examples\GetWarningString.vbs">
-      <Filter>Examples</Filter>
-    </None>
-    <None Include="examples\Id.vbs">
-      <Filter>Examples</Filter>
-    </None>
-    <None Include="examples\iphreeqc.vbs">
-      <Filter>Examples</Filter>
-    </None>
-    <None Include="examples\Lines.vbs">
-      <Filter>Examples</Filter>
-    </None>
-    <None Include="examples\LoadDatabase.vbs">
-      <Filter>Examples</Filter>
-    </None>
-    <None Include="examples\LoadDatabaseString.vbs">
-      <Filter>Examples</Filter>
-    </None>
-    <None Include="examples\LogFileOn.vbs">
-      <Filter>Examples</Filter>
-    </None>
-    <None Include="examples\MultipleInstances.vbs">
-      <Filter>Examples</Filter>
-    </None>
-    <None Include="examples\OutputFileOn.vbs">
-      <Filter>Examples</Filter>
-    </None>
-    <None Include="examples\RowCount.vbs">
-      <Filter>Examples</Filter>
-    </None>
-    <None Include="examples\RunAccumulated.vbs">
-      <Filter>Examples</Filter>
-    </None>
-    <None Include="examples\RunFile.vbs">
-      <Filter>Examples</Filter>
-    </None>
-    <None Include="examples\RunString.vbs">
-      <Filter>Examples</Filter>
-    </None>
-    <None Include="examples\SelectedOutputFileOn.vbs">
-      <Filter>Examples</Filter>
     </None>
     <None Include="..\help\links\mthAccumulateLine_l.htm">
       <Filter>Links</Filter>
@@ -567,7 +444,22 @@
     <None Include="..\help\links\mthGetErrorString_l.htm">
       <Filter>Links</Filter>
     </None>
+    <None Include="..\help\links\mthGetLogString_l.htm">
+      <Filter>Links</Filter>
+    </None>
+    <None Include="..\help\links\mthGetOutputString_l.htm">
+      <Filter>Links</Filter>
+    </None>
     <None Include="..\help\links\mthGetSelectedOutputArray_l.htm">
+      <Filter>Links</Filter>
+    </None>
+    <None Include="..\help\links\mthGetSelectedOutputColumnCount_l.htm">
+      <Filter>Links</Filter>
+    </None>
+    <None Include="..\help\links\mthGetSelectedOutputRowCount_l.htm">
+      <Filter>Links</Filter>
+    </None>
+    <None Include="..\help\links\mthGetSelectedOutputString_l.htm">
       <Filter>Links</Filter>
     </None>
     <None Include="..\help\links\mthGetSelectedOutputValue_l.htm">
@@ -597,22 +489,46 @@
     <None Include="..\help\links\proColumnCount_l.htm">
       <Filter>Links</Filter>
     </None>
+    <None Include="..\help\links\proDumpFileName_l.htm">
+      <Filter>Links</Filter>
+    </None>
     <None Include="..\help\links\proDumpFileOn_l.htm">
       <Filter>Links</Filter>
     </None>
     <None Include="..\help\links\proDumpStringOn_l.htm">
       <Filter>Links</Filter>
     </None>
+    <None Include="..\help\links\proErrorFileName_l.htm">
+      <Filter>Links</Filter>
+    </None>
     <None Include="..\help\links\proErrorFileOn_l.htm">
+      <Filter>Links</Filter>
+    </None>
+    <None Include="..\help\links\proErrorStringOn_l.htm">
+      <Filter>Links</Filter>
+    </None>
+    <None Include="..\help\links\proId_l.htm">
       <Filter>Links</Filter>
     </None>
     <None Include="..\help\links\proLines_l.htm">
       <Filter>Links</Filter>
     </None>
+    <None Include="..\help\links\proLogFileName_l.htm">
+      <Filter>Links</Filter>
+    </None>
     <None Include="..\help\links\proLogFileOn_l.htm">
       <Filter>Links</Filter>
     </None>
+    <None Include="..\help\links\proLogStringOn_l.htm">
+      <Filter>Links</Filter>
+    </None>
+    <None Include="..\help\links\proOutputFileName_l.htm">
+      <Filter>Links</Filter>
+    </None>
     <None Include="..\help\links\proOutputFileOn_l.htm">
+      <Filter>Links</Filter>
+    </None>
+    <None Include="..\help\links\proOutputStringOn_l.htm">
       <Filter>Links</Filter>
     </None>
     <None Include="..\help\links\proRowCount_l.htm">
@@ -621,28 +537,232 @@
     <None Include="..\help\links\proSelectedOutputFileOn_l.htm">
       <Filter>Links</Filter>
     </None>
-    <None Include="..\help\html\proErrorFileName.htm">
+    <None Include="..\help\links\proSelectedOutputStringOn_l.htm">
+      <Filter>Links</Filter>
+    </None>
+    <None Include="..\help\links\proSelectedOutputFileName_l.htm">
+      <Filter>Links</Filter>
+    </None>
+    <None Include="..\help\html\proSelectedOutputFileName.htm">
       <Filter>Html</Filter>
+    </None>
+    <None Include="examples\AccumulateLine.js">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\ClearAccumulatedLines.js">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\ColumnCount.js">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\DumpFileName.js">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\DumpFileOn.js">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\DumpStringOn.js">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\ErrorFileName.js">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\ErrorFileOn.js">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\ErrorStringOn.js">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\GetComponentList.js">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\GetDumpString.js">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\GetErrorString.js">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\GetLogString.js">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\GetOutputString.js">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\GetSelectedOutputArray.js">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\GetSelectedOutputString.js">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\GetSelectedOutputValue.js">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\GetWarningString.js">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\Id.js">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\iphreeqc.js">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\Lines.js">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\LoadDatabase.js">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\LoadDatabaseString.js">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\LogFileName.js">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\LogFileOn.js">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\LogStringOn.js">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\OutputFileName.js">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\OutputFileOn.js">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\OutputStringOn.js">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\RowCount.js">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\RunAccumulated.js">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\RunFile.js">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\RunString.js">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\SelectedOutputFileOn.js">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\AccumulateLine.vbs">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\ClearAccumulatedLines.vbs">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\ColumnCount.vbs">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\DumpFileName.vbs">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\DumpFileOn.vbs">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\DumpStringOn.vbs">
+      <Filter>Examples</Filter>
     </None>
     <None Include="examples\ErrorFileName.vbs">
       <Filter>Examples</Filter>
     </None>
-    <None Include="..\help\html\proErrorStringOn.htm">
-      <Filter>Html</Filter>
-    </None>
-    <None Include="examples\ErrorStringOn.js">
+    <None Include="examples\ErrorFileOn.vbs">
       <Filter>Examples</Filter>
     </None>
     <None Include="examples\ErrorStringOn.vbs">
       <Filter>Examples</Filter>
     </None>
-    <None Include="..\help\html\mthGetOutputString.htm">
-      <Filter>Html</Filter>
+    <None Include="examples\GetComponentList.vbs">
+      <Filter>Examples</Filter>
     </None>
-    <None Include="examples\GetOutputString.js">
+    <None Include="examples\GetDumpString.vbs">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\GetErrorString.vbs">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\GetLogString.vbs">
       <Filter>Examples</Filter>
     </None>
     <None Include="examples\GetOutputString.vbs">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\GetSelectedOutputArray.vbs">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\GetSelectedOutputString.vbs">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\GetSelectedOutputValue.vbs">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\GetWarningString.vbs">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\Id.vbs">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\iphreeqc.vbs">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\Lines.vbs">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\LoadDatabase.vbs">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\LoadDatabaseString.vbs">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\LogFileName.vbs">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\LogFileOn.vbs">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\LogStringOn.vbs">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\MultipleInstances.vbs">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\OutputFileName.vbs">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\OutputFileOn.vbs">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\OutputStringOn.vbs">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\RowCount.vbs">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\RunAccumulated.vbs">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\RunFile.vbs">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\RunString.vbs">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\SelectedOutputFileOn.vbs">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\SelectedOutputFileName.vbs">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\SelectedOutputFileName.js">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\SelectedOutputStringOn.js">
+      <Filter>Examples</Filter>
+    </None>
+    <None Include="examples\SelectedOutputStringOn.vbs">
       <Filter>Examples</Filter>
     </None>
   </ItemGroup>

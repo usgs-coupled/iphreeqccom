@@ -196,6 +196,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <TargetMachine>MachineX86</TargetMachine>
+      <PerUserRedirection>true</PerUserRedirection>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -236,7 +237,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <TargetMachine>MachineX64</TargetMachine>
-      <PerUserRedirection>false</PerUserRedirection>
+      <PerUserRedirection>true</PerUserRedirection>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -983,16 +984,16 @@
     <None Include="..\help\html\mthGetErrorString.htm">
       <DeploymentContent>true</DeploymentContent>
     </None>
+    <None Include="..\help\html\mthGetLogString.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
     <None Include="..\help\html\mthGetOutputString.htm">
       <DeploymentContent>true</DeploymentContent>
     </None>
     <None Include="..\help\html\mthGetSelectedOutputArray.htm">
       <DeploymentContent>true</DeploymentContent>
     </None>
-    <None Include="..\help\html\mthGetSelectedOutputColumnCount.htm">
-      <DeploymentContent>true</DeploymentContent>
-    </None>
-    <None Include="..\help\html\mthGetSelectedOutputRowCount.htm">
+    <None Include="..\help\html\mthGetSelectedOutputString.htm">
       <DeploymentContent>true</DeploymentContent>
     </None>
     <None Include="..\help\html\mthGetSelectedOutputValue.htm">
@@ -1046,16 +1047,34 @@
     <None Include="..\help\html\proLines.htm">
       <DeploymentContent>true</DeploymentContent>
     </None>
+    <None Include="..\help\html\proLogFileName.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
     <None Include="..\help\html\proLogFileOn.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="..\help\html\proLogStringOn.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="..\help\html\proOutputFileName.htm">
       <DeploymentContent>true</DeploymentContent>
     </None>
     <None Include="..\help\html\proOutputFileOn.htm">
       <DeploymentContent>true</DeploymentContent>
     </None>
+    <None Include="..\help\html\proOutputStringOn.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
     <None Include="..\help\html\proRowCount.htm">
       <DeploymentContent>true</DeploymentContent>
     </None>
+    <None Include="..\help\html\proSelectedOutputFileName.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
     <None Include="..\help\html\proSelectedOutputFileOn.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="..\help\html\proSelectedOutputStringOn.htm">
       <DeploymentContent>true</DeploymentContent>
     </None>
     <None Include="..\help\links\mthAccumulateLine_l.htm">
@@ -1073,7 +1092,22 @@
     <None Include="..\help\links\mthGetErrorString_l.htm">
       <DeploymentContent>true</DeploymentContent>
     </None>
+    <None Include="..\help\links\mthGetLogString_l.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="..\help\links\mthGetOutputString_l.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
     <None Include="..\help\links\mthGetSelectedOutputArray_l.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="..\help\links\mthGetSelectedOutputColumnCount_l.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="..\help\links\mthGetSelectedOutputRowCount_l.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="..\help\links\mthGetSelectedOutputString_l.htm">
       <DeploymentContent>true</DeploymentContent>
     </None>
     <None Include="..\help\links\mthGetSelectedOutputValue_l.htm">
@@ -1103,28 +1137,58 @@
     <None Include="..\help\links\proColumnCount_l.htm">
       <DeploymentContent>true</DeploymentContent>
     </None>
+    <None Include="..\help\links\proDumpFileName_l.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
     <None Include="..\help\links\proDumpFileOn_l.htm">
       <DeploymentContent>true</DeploymentContent>
     </None>
     <None Include="..\help\links\proDumpStringOn_l.htm">
       <DeploymentContent>true</DeploymentContent>
     </None>
+    <None Include="..\help\links\proErrorFileName_l.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
     <None Include="..\help\links\proErrorFileOn_l.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="..\help\links\proErrorStringOn_l.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="..\help\links\proId_l.htm">
       <DeploymentContent>true</DeploymentContent>
     </None>
     <None Include="..\help\links\proLines_l.htm">
       <DeploymentContent>true</DeploymentContent>
     </None>
+    <None Include="..\help\links\proLogFileName_l.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
     <None Include="..\help\links\proLogFileOn_l.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="..\help\links\proLogStringOn_l.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="..\help\links\proOutputFileName_l.htm">
       <DeploymentContent>true</DeploymentContent>
     </None>
     <None Include="..\help\links\proOutputFileOn_l.htm">
       <DeploymentContent>true</DeploymentContent>
     </None>
+    <None Include="..\help\links\proOutputStringOn_l.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
     <None Include="..\help\links\proRowCount_l.htm">
       <DeploymentContent>true</DeploymentContent>
     </None>
+    <None Include="..\help\links\proSelectedOutputFileName_l.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
     <None Include="..\help\links\proSelectedOutputFileOn_l.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="..\help\links\proSelectedOutputStringOn_l.htm">
       <DeploymentContent>true</DeploymentContent>
     </None>
     <None Include="examples\AccumulateLine.js" />
@@ -1133,10 +1197,13 @@
     <None Include="examples\ClearAccumulatedLines.vbs" />
     <None Include="examples\ColumnCount.js" />
     <None Include="examples\ColumnCount.vbs" />
+    <None Include="examples\DumpFileName.js" />
+    <None Include="examples\DumpFileName.vbs" />
     <None Include="examples\DumpFileOn.js" />
     <None Include="examples\DumpFileOn.vbs" />
     <None Include="examples\DumpStringOn.js" />
     <None Include="examples\DumpStringOn.vbs" />
+    <None Include="examples\ErrorFileName.js" />
     <None Include="examples\ErrorFileName.vbs" />
     <None Include="examples\ErrorFileOn.js" />
     <None Include="examples\ErrorFileOn.vbs" />
@@ -1148,10 +1215,14 @@
     <None Include="examples\GetDumpString.vbs" />
     <None Include="examples\GetErrorString.js" />
     <None Include="examples\GetErrorString.vbs" />
+    <None Include="examples\GetLogString.js" />
+    <None Include="examples\GetLogString.vbs" />
     <None Include="examples\GetOutputString.js" />
     <None Include="examples\GetOutputString.vbs" />
     <None Include="examples\GetSelectedOutputArray.js" />
     <None Include="examples\GetSelectedOutputArray.vbs" />
+    <None Include="examples\GetSelectedOutputString.js" />
+    <None Include="examples\GetSelectedOutputString.vbs" />
     <None Include="examples\GetSelectedOutputValue.js" />
     <None Include="examples\GetSelectedOutputValue.vbs" />
     <None Include="examples\GetWarningString.js" />
@@ -1166,11 +1237,19 @@
     <None Include="examples\LoadDatabase.vbs" />
     <None Include="examples\LoadDatabaseString.js" />
     <None Include="examples\LoadDatabaseString.vbs" />
+    <None Include="examples\LogFileName.js" />
+    <None Include="examples\LogFileName.vbs" />
     <None Include="examples\LogFileOn.js" />
     <None Include="examples\LogFileOn.vbs" />
+    <None Include="examples\LogStringOn.js" />
+    <None Include="examples\LogStringOn.vbs" />
     <None Include="examples\MultipleInstances.vbs" />
+    <None Include="examples\OutputFileName.js" />
+    <None Include="examples\OutputFileName.vbs" />
     <None Include="examples\OutputFileOn.js" />
     <None Include="examples\OutputFileOn.vbs" />
+    <None Include="examples\OutputStringOn.js" />
+    <None Include="examples\OutputStringOn.vbs" />
     <None Include="examples\RowCount.js" />
     <None Include="examples\RowCount.vbs" />
     <None Include="examples\RunAccumulated.js" />
@@ -1179,8 +1258,12 @@
     <None Include="examples\RunFile.vbs" />
     <None Include="examples\RunString.js" />
     <None Include="examples\RunString.vbs" />
+    <None Include="examples\SelectedOutputFileName.js" />
+    <None Include="examples\SelectedOutputFileName.vbs" />
     <None Include="examples\SelectedOutputFileOn.js" />
     <None Include="examples\SelectedOutputFileOn.vbs" />
+    <None Include="examples\SelectedOutputStringOn.js" />
+    <None Include="examples\SelectedOutputStringOn.vbs" />
     <None Include="IPhreeqcCOM.def" />
     <None Include="COM.rgs" />
     <None Include="IPhreeqcCOM.rgs" />
