@@ -18,5 +18,6 @@ iphreeqc.AccumulateLine("        -temperature")
 iphreeqc.AccumulateLine("        -si     anhydrite  gypsum")
 iphreeqc.AccumulateLine("END")
 If (iphreeqc.RunAccumulated() = 0) Then
-    WScript.Echo("see phreeqc.out")
+    WScript.Echo("see " & iphreeqc.OutputFileName & ".")
 End If
+

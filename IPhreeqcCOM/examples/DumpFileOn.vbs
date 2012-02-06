@@ -1,4 +1,4 @@
-Dim iphreeqc, sInput, sDump
+Dim iphreeqc, sInput
 
 Set iphreeqc = CreateObject("IPhreeqcCOM.Object")
 iphreeqc.LoadDatabase("phreeqc.dat")
@@ -17,4 +17,4 @@ sInput = sInput & "    -equilibrium_phases  1" & vbNewLine
 If (iphreeqc.RunString(sInput) <> 0) Then
     WScript.Echo(iphreeqc.GetErrorString())
 End If
-WScript.Echo("see dump.out")
+WScript.Echo("see " & iphreeqc.DumpFileName & ".")

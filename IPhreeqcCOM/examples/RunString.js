@@ -7,4 +7,4 @@ sInput += "pH   7.0\n";
 
 iphreeqc.OutputFileOn = true;
 iphreeqc.RunString(sInput);
-WScript.Echo("see phreeqc.out");
+WScript.Echo("see " + iphreeqc.OutputFileName + ".");

@@ -18,5 +18,6 @@ iphreeqc.AccumulateLine("        -temperature");
 iphreeqc.AccumulateLine("        -si     anhydrite  gypsum");
 iphreeqc.AccumulateLine("END");
 if (iphreeqc.RunAccumulated() == 0) {
-    WScript.Echo("see phreeqc.out");
+    WScript.Echo("see " + iphreeqc.OutputFileName + ".");
 }
+

@@ -2,5 +2,7 @@ Dim iphreeqc
 Set iphreeqc = CreateObject("IPhreeqcCOM.Object")
 iphreeqc.LoadDatabase("phreeqc.dat")
 iphreeqc.SelectedOutputFileOn = True
-iphreeqc.RunFile("ex2")
-WScript.Echo("see ex2.sel")
+If (iphreeqc.RunFile("ex2") = 0) Then
+    WScript.Echo("See " & iphreeqc.SelectedOutputFileName & ".")
+End If
+

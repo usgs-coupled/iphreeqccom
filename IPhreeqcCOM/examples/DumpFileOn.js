@@ -15,4 +15,4 @@ input += "    -equilibrium_phases  1\n";
 if (iphreeqc.RunString(input) != 0) {
     WScript.Echo(iphreeqc.GetErrorString());
 }
-WScript.Echo("see dump.out");
+WScript.Echo("see " + iphreeqc.DumpFileName + ".");
