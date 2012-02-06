@@ -65,7 +65,6 @@ STDAPI DllUnregisterServer(void)
 }
 
 
-#if 1
 // DllInstall - Adds/Removes entries to the system registry per user per machine.
 STDAPI DllInstall(BOOL bInstall, LPCWSTR pszCmdLine)
 {
@@ -76,7 +75,9 @@ STDAPI DllInstall(BOOL bInstall, LPCWSTR pszCmdLine)
 	{
 		if (_wcsnicmp(pszCmdLine, szUserSwitch, _countof(szUserSwitch)) == 0)
 		{
+#if (_ATL_VER > 0x0800)
 			ATL::AtlSetPerUserRegistration(true);
+#endif
 		}
 	}
 
@@ -95,4 +96,3 @@ STDAPI DllInstall(BOOL bInstall, LPCWSTR pszCmdLine)
 
 	return hr;
 }
-#endif
