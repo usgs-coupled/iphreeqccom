@@ -152,29 +152,19 @@ echo "Exporting revision $REVISION of IPhreeqcCOM into sandbox..."
 	     
 (cd "$DIST_SANDBOX" && \
  	${SVN:-svn} export -q $EXTRA_EXPORT_OPTIONS --ignore-externals -r "$REVISION" \
-	     "http://internalbrr.cr.usgs.gov/svn_GW/IPhreeqc/$REPOS_PATH/include" \
-	     "$DISTNAME/IPhreeqcCOM/include")
-	     
-(cd "$DIST_SANDBOX" && \
- 	${SVN:-svn} export -q $EXTRA_EXPORT_OPTIONS --ignore-externals -r "$REVISION" \
-	     "http://internalbrr.cr.usgs.gov/svn_GW/IPhreeqc/$REPOS_PATH/src" \
+	     "http://internalbrr.cr.usgs.gov/svn_GW/IPhreeqc/branches/ErrorHandling/src" \
 	     "$DISTNAME/IPhreeqcCOM/IPhreeqc")
 	     
 (cd "$DIST_SANDBOX" && \
  	${SVN:-svn} export -q $EXTRA_EXPORT_OPTIONS --ignore-externals -r "$REVISION" \
-	     "http://internalbrr.cr.usgs.gov/svn_GW/phreeqc/$REPOS_PATH/database" \
+	     "http://internalbrr.cr.usgs.gov/svn_GW/phreeqc/trunk/database" \
 	     "$DISTNAME/IPhreeqcCOM/database")	     
 	     
 (cd "$DIST_SANDBOX" && \
  	${SVN:-svn} export -q $EXTRA_EXPORT_OPTIONS --ignore-externals -r "$REVISION" \
-	     "http://internalbrr.cr.usgs.gov/svn_GW/phreeqcpp/$REPOS_PATH/src" \
+	     "http://internalbrr.cr.usgs.gov/svn_GW/phreeqc3/trunk/src" \
 	     "$DISTNAME/IPhreeqcCOM/IPhreeqc/phreeqcpp")
 	     
-(cd "$DIST_SANDBOX" && \
- 	${SVN:-svn} export -q $EXTRA_EXPORT_OPTIONS --ignore-externals -r "$REVISION" \
-	     "http://internalbrr.cr.usgs.gov/svn_GW/phreeqc/$REPOS_PATH/src" \
-	     "$DISTNAME/IPhreeqcCOM/IPhreeqc/phreeqcpp/phreeqc")
-
 (cd "$DIST_SANDBOX" && \
  	${SVN:-svn} export -q $EXTRA_EXPORT_OPTIONS --ignore-externals -r "$REVISION" \
 	     "http://internalbrr.cr.usgs.gov/svn_GW/phreeqc/trunk/COMManuscript/C&Gfinal/examples/c" \
