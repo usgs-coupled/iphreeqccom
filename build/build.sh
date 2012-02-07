@@ -162,7 +162,7 @@ build() {
 # build IPhreeqcCOM.dll
   cd "${topdir}" && \
   cd "${objdir}" && \
-  MsBuild.exe IPhreeqcCOM.sln /t:IPhreeqcCOM /p:Configuration=Release /p:Platform=Win32 && \
+  MsBuild.exe IPhreeqcCOM.2005.sln /t:IPhreeqcCOM /p:Configuration=Release /p:Platform=Win32 && \
 # build IPhreeqcCOM.dll
   cd "${topdir}" && \
   cd "${objdir}" && \
