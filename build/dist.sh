@@ -152,7 +152,7 @@ echo "Exporting revision $REVISION of IPhreeqcCOM into sandbox..."
 	     
 (cd "$DIST_SANDBOX" && \
  	${SVN:-svn} export -q $EXTRA_EXPORT_OPTIONS --ignore-externals -r "$REVISION" \
-	     "http://internalbrr.cr.usgs.gov/svn_GW/IPhreeqc/branches/ErrorHandling/src" \
+	     "http://internalbrr.cr.usgs.gov/svn_GW/IPhreeqc/$REPOS_PATH/src" \
 	     "$DISTNAME/IPhreeqcCOM/IPhreeqc")
 	     
 (cd "$DIST_SANDBOX" && \
