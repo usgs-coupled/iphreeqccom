@@ -126,7 +126,7 @@
 
     <!-- database -->
     <DirectoryRef Id="DatabaseDir">
-      <Component Id="Databases" Guid="*" Win64="$(var.Win64)">
+      <Component Id="Databases" Guid="$(var.DatabaseGuid)" Win64="$(var.Win64)">
         <File Id="Amm.dat"       Name="Amm.dat"       Source="$(var.DatabaseDir)\Amm.dat" />
         <File Id="iso.dat"       Name="iso.dat"       Source="$(var.DatabaseDir)\iso.dat" />
         <File Id="llnl.dat"      Name="llnl.dat"      Source="$(var.DatabaseDir)\llnl.dat" />
