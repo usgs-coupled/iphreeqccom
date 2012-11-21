@@ -149,36 +149,64 @@ echo "Exporting revision $REVISION of IPhreeqcCOM into sandbox..."
  	${SVN:-svn} export -q $EXTRA_EXPORT_OPTIONS --ignore-externals -r "$REVISION" \
 	     "http://internalbrr.cr.usgs.gov/svn_GW/IPhreeqcCOM/$REPOS_PATH" \
 	     "$DISTNAME")
+if [ $? != 0 ] ; then
+  echo "svn checkout error"
+  exit $?;
+fi
 	     
 (cd "$DIST_SANDBOX" && \
  	${SVN:-svn} export -q $EXTRA_EXPORT_OPTIONS --ignore-externals -r "$REVISION" \
 	     "http://internalbrr.cr.usgs.gov/svn_GW/IPhreeqc/$REPOS_PATH/src" \
 	     "$DISTNAME/IPhreeqcCOM/IPhreeqc")
+if [ $? != 0 ] ; then
+  echo "svn checkout error"
+  exit $?;
+fi
 	     
 (cd "$DIST_SANDBOX" && \
  	${SVN:-svn} export -q $EXTRA_EXPORT_OPTIONS --ignore-externals -r "$REVISION" \
 	     "http://internalbrr.cr.usgs.gov/svn_GW/phreeqc/trunk/database" \
 	     "$DISTNAME/IPhreeqcCOM/database")	     
+if [ $? != 0 ] ; then
+  echo "svn checkout error"
+  exit $?;
+fi
 	     
 (cd "$DIST_SANDBOX" && \
  	${SVN:-svn} export -q $EXTRA_EXPORT_OPTIONS --ignore-externals -r "$REVISION" \
 	     "http://internalbrr.cr.usgs.gov/svn_GW/phreeqc3/trunk/src" \
 	     "$DISTNAME/IPhreeqcCOM/IPhreeqc/phreeqcpp")
+if [ $? != 0 ] ; then
+  echo "svn checkout error"
+  exit $?;
+fi
 	     
 (cd "$DIST_SANDBOX" && \
  	${SVN:-svn} export -q $EXTRA_EXPORT_OPTIONS --ignore-externals -r "$REVISION" \
 	     "http://internalbrr.cr.usgs.gov/svn_GW/phreeqc/trunk/COMManuscript/C&Gfinal/examples/c" \
 	     "$DISTNAME/msi/examples/c")
+if [ $? != 0 ] ; then
+  echo "svn checkout error"
+  exit $?;
+fi
 
 (cd "$DIST_SANDBOX" && \
  	${SVN:-svn} export -q $EXTRA_EXPORT_OPTIONS --ignore-externals -r "$REVISION" \
 	     "http://internalbrr.cr.usgs.gov/svn_GW/phreeqc/trunk/COMManuscript/C&Gfinal/examples/com" \
 	     "$DISTNAME/msi/examples/com")
+if [ $? != 0 ] ; then
+  echo "svn checkout error"
+  exit $?;
+fi
 
 (cd "$DIST_SANDBOX" && \
  	${SVN:-svn} export -q $EXTRA_EXPORT_OPTIONS --ignore-externals -r "$REVISION" \
 	     "http://internalbrr.cr.usgs.gov/svn_GW/phreeqc/trunk/COMManuscript/C&Gfinal/examples/fortran" \
 	     "$DISTNAME/msi/examples/fortran")
+if [ $? != 0 ] ; then
+  echo "svn checkout error"
+  exit $?;
+fi
 
 
 ver_major=`echo $VERSION | cut -d '.' -f 1`
