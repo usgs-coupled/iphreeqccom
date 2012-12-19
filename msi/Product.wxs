@@ -87,6 +87,14 @@
       </Component>
     </DirectoryRef>
 
+    <!-- zedgraph file -->
+    <DirectoryRef Id="BinDir">
+      <Component Id="ZedGraph.dll" Guid="*" Win64="$(var.Win64)">
+        <File Id="ZedGraph.dll" Source="$(var.SrcPath)\ZedGraph.dll" KeyPath="yes">
+        </File>
+      </Component>
+    </DirectoryRef>
+
     <!-- chm file -->
     <DirectoryRef Id="DocDir">
       <Component Id="IPhreeqcCOM.chm" Guid="*" Win64="$(var.Win64)">
@@ -161,6 +169,7 @@
     <Feature Id="ProductFeature" Title="msi" Level="1">
       <ComponentRef Id="IPhreeqcCOM.dll" />
       <ComponentRef Id="IPhreeqcCOM.tlb" />
+      <ComponentRef Id="ZedGraph.dll" />
       <ComponentRef Id="IPhreeqcCOM.chm" />
       <ComponentRef Id="IPhreeqc.pdf" />
       <ComponentRef Id="PHREEQCPP.RELEASE.txt" />
