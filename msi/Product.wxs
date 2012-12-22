@@ -90,7 +90,7 @@
     <!-- zedgraph file -->
     <DirectoryRef Id="BinDir">
       <Component Id="ZedGraph.dll" Guid="*" Win64="$(var.Win64)">
-        <File Id="ZedGraph.dll" Source="$(var.SrcPath)\ZedGraph.dll" KeyPath="yes">
+        <File Id="ZedGraph.dll" Source="$(var.SrcPath)\ZedGraph.dll" KeyPath="yes" Assembly=".net">
         </File>
       </Component>
     </DirectoryRef>
@@ -114,20 +114,11 @@
       </Component>
     </DirectoryRef>
 
-    <!-- phreeqcpp revisions -->
+    <!-- RELEASE.TXT -->
     <DirectoryRef Id="DocDir">
-      <Component Id="PHREEQCPP.RELEASE.txt" Guid="*" Win64="$(var.Win64)">
-        <File Id="PHREEQCPP.RELEASE.txt" Name="PHREEQCPP-RELEASE.txt" Source="..\IPhreeqcCOM\IPhreeqc\phreeqcpp\PHREEQCPP-RELEASE.txt" KeyPath="yes">
-          <Shortcut Id="PHREEQCPP.RELEASE.txt" Name="PHREEQCPP-RELEASE" Directory="ProgramMenuDir" Advertise="yes"/>
-        </File>
-      </Component>
-    </DirectoryRef>
-
-    <!-- revisions -->
-    <DirectoryRef Id="DocDir">
-      <Component Id="RELEASE.txt" Guid="*" Win64="$(var.Win64)">
-        <File Id="RELEASE.txt" Name="RELEASE.txt" Source="..\IPhreeqcCOM\IPhreeqc\phreeqcpp\phreeqc\revisions" KeyPath="yes">
-          <Shortcut Id="RELEASE.txt" Name="RELEASE" Directory="ProgramMenuDir" Advertise="yes"/>
+      <Component Id="RELEASE.TXT" Guid="*" Win64="$(var.Win64)">
+        <File Id="RELEASE.TXT" Name="RELEASE.TXT" Source="..\doc\RELEASE.TXT" KeyPath="yes">
+          <Shortcut Id="RELEASE.TXT" Name="RELEASE.TXT" Directory="ProgramMenuDir" Advertise="yes"/>
         </File>
       </Component>
     </DirectoryRef>
@@ -172,8 +163,7 @@
       <ComponentRef Id="ZedGraph.dll" />
       <ComponentRef Id="IPhreeqcCOM.chm" />
       <ComponentRef Id="IPhreeqc.pdf" />
-      <ComponentRef Id="PHREEQCPP.RELEASE.txt" />
-      <ComponentRef Id="RELEASE.txt" />
+      <ComponentRef Id="RELEASE.TXT" />
       <ComponentRef Id="Databases" />
       <ComponentGroupRef Id="Examples" />
       <MergeRef Id="CRT" />
