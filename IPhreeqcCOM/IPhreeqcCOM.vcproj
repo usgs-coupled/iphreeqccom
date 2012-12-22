@@ -81,7 +81,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				RegisterOutput="false"
+				RegisterOutput="true"
 				IgnoreImportLibrary="true"
 				LinkIncremental="2"
 				ModuleDefinitionFile=".\IPhreeqcCOM.def"
@@ -272,10 +272,14 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				RegisterOutput="false"
+				RegisterOutput="true"
 				IgnoreImportLibrary="true"
+				AdditionalOptions="/NOENTRY"
+				AdditionalDependencies="msvcrt.lib"
 				LinkIncremental="1"
+				IgnoreDefaultLibraryNames="nochkclr.obj"
 				ModuleDefinitionFile=".\IPhreeqcCOM.def"
+				ForceSymbolReferences="__DllMainCRTStartup@12"
 				GenerateDebugInformation="true"
 				SubSystem="2"
 				OptimizeReferences="2"
@@ -405,7 +409,7 @@
 	</Configurations>
 	<References>
 		<AssemblyReference
-			RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\ZedGraph.dll"
+			RelativePath="ZedGraph.dll"
 			AssemblyName="ZedGraph, Version=5.1.5.28844, PublicKeyToken=02a83cbd123fcd60, processorArchitecture=MSIL"
 		/>
 		<AssemblyReference
