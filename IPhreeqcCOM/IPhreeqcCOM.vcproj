@@ -56,7 +56,7 @@
 				Name="VCCLCompilerTool"
 				AdditionalOptions="/MP"
 				Optimization="0"
-				AdditionalIncludeDirectories="IPhreeqc;IPhreeqc/phreeqcpp;IPhreeqc/phreeqcpp/phreeqc"
+				AdditionalIncludeDirectories="IPhreeqc;IPhreeqc/phreeqcpp"
 				PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG;_USRDLL;_CRT_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_DEPRECATE;SWIG_SHARED_OBJ;SUPPORT_ERROR_INFO;PHREEQC_CPP;PHREEQC_CLASS;USE_PHRQ_ALLOC"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -150,7 +150,7 @@
 				Name="VCCLCompilerTool"
 				AdditionalOptions="/MP"
 				Optimization="0"
-				AdditionalIncludeDirectories="IPhreeqc;IPhreeqc/phreeqcpp;IPhreeqc/phreeqcpp/phreeqc"
+				AdditionalIncludeDirectories="IPhreeqc;IPhreeqc/phreeqcpp"
 				PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG;_USRDLL;_CRT_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_DEPRECATE;SWIG_SHARED_OBJ;SUPPORT_ERROR_INFO;PHREEQC_CPP;PHREEQC_CLASS;USE_PHRQ_ALLOC"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -245,7 +245,7 @@
 				Name="VCCLCompilerTool"
 				AdditionalOptions="/MP"
 				Optimization="2"
-				AdditionalIncludeDirectories="IPhreeqc;IPhreeqc/phreeqcpp;IPhreeqc/phreeqcpp/phreeqc"
+				AdditionalIncludeDirectories="IPhreeqc;IPhreeqc/phreeqcpp"
 				PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG;_USRDLL;_CRT_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_DEPRECATE;SWIG_SHARED_OBJ;SUPPORT_ERROR_INFO;PHREEQC_CPP;PHREEQC_CLASS;USE_PHRQ_ALLOC"
 				RuntimeLibrary="2"
 				UsePrecompiledHeader="0"
@@ -339,7 +339,7 @@
 				Name="VCCLCompilerTool"
 				AdditionalOptions="/MP"
 				Optimization="2"
-				AdditionalIncludeDirectories="IPhreeqc;IPhreeqc/phreeqcpp;IPhreeqc/phreeqcpp/phreeqc"
+				AdditionalIncludeDirectories="IPhreeqc;IPhreeqc/phreeqcpp"
 				PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG;_USRDLL;_CRT_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_DEPRECATE;SWIG_SHARED_OBJ;SUPPORT_ERROR_INFO;PHREEQC_CPP;PHREEQC_CLASS;USE_PHRQ_ALLOC"
 				RuntimeLibrary="2"
 				UsePrecompiledHeader="0"
@@ -2079,7 +2079,7 @@
 						Name="phreeqc"
 						>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\advection.cpp"
+							RelativePath=".\IPhreeqc\phreeqcpp\advection.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -2099,7 +2099,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\basicsubs.cpp"
+							RelativePath=".\IPhreeqc\phreeqcpp\basicsubs.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -2119,7 +2119,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\cl1.cpp"
+							RelativePath=".\IPhreeqc\phreeqcpp\cl1.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -2139,7 +2139,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\cl1mp.cpp"
+							RelativePath=".\IPhreeqc\phreeqcpp\cl1mp.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -2177,7 +2177,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\cvdense.cpp"
+							RelativePath=".\IPhreeqc\phreeqcpp\cvdense.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -2197,7 +2197,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\cvode.cpp"
+							RelativePath=".\IPhreeqc\phreeqcpp\cvode.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -2217,7 +2217,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\dense.cpp"
+							RelativePath=".\IPhreeqc\phreeqcpp\dense.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -2237,7 +2237,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\dw.cpp"
+							RelativePath=".\IPhreeqc\phreeqcpp\dw.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -2257,7 +2257,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\gases.cpp"
+							RelativePath=".\IPhreeqc\phreeqcpp\gases.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -2277,7 +2277,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\input.cpp"
+							RelativePath=".\IPhreeqc\phreeqcpp\input.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -2297,7 +2297,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\integrate.cpp"
+							RelativePath=".\IPhreeqc\phreeqcpp\integrate.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -2317,7 +2317,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\inverse.cpp"
+							RelativePath=".\IPhreeqc\phreeqcpp\inverse.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -2337,7 +2337,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\isotopes.cpp"
+							RelativePath=".\IPhreeqc\phreeqcpp\isotopes.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -2357,7 +2357,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\kinetics.cpp"
+							RelativePath=".\IPhreeqc\phreeqcpp\kinetics.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -2377,7 +2377,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\mainsubs.cpp"
+							RelativePath=".\IPhreeqc\phreeqcpp\mainsubs.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -2397,7 +2397,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\model.cpp"
+							RelativePath=".\IPhreeqc\phreeqcpp\model.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -2417,7 +2417,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\nvector.cpp"
+							RelativePath=".\IPhreeqc\phreeqcpp\nvector.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -2437,7 +2437,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\nvector_serial.cpp"
+							RelativePath=".\IPhreeqc\phreeqcpp\nvector_serial.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -2457,7 +2457,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\parse.cpp"
+							RelativePath=".\IPhreeqc\phreeqcpp\parse.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -2477,7 +2477,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\phqalloc.cpp"
+							RelativePath=".\IPhreeqc\phreeqcpp\phqalloc.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -2497,7 +2497,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\PHRQ_io_output.cpp"
+							RelativePath=".\IPhreeqc\phreeqcpp\PHRQ_io_output.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -2517,7 +2517,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\pitzer.cpp"
+							RelativePath=".\IPhreeqc\phreeqcpp\pitzer.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -2537,7 +2537,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\pitzer_structures.cpp"
+							RelativePath=".\IPhreeqc\phreeqcpp\pitzer_structures.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -2557,7 +2557,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\prep.cpp"
+							RelativePath=".\IPhreeqc\phreeqcpp\prep.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -2577,7 +2577,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\print.cpp"
+							RelativePath=".\IPhreeqc\phreeqcpp\print.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -2597,7 +2597,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\read.cpp"
+							RelativePath=".\IPhreeqc\phreeqcpp\read.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -2617,7 +2617,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\readtr.cpp"
+							RelativePath=".\IPhreeqc\phreeqcpp\readtr.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -2637,7 +2637,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\sit.cpp"
+							RelativePath=".\IPhreeqc\phreeqcpp\sit.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -2657,7 +2657,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\smalldense.cpp"
+							RelativePath=".\IPhreeqc\phreeqcpp\smalldense.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -2677,7 +2677,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\spread.cpp"
+							RelativePath=".\IPhreeqc\phreeqcpp\spread.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -2697,7 +2697,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\step.cpp"
+							RelativePath=".\IPhreeqc\phreeqcpp\step.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -2717,7 +2717,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\structures.cpp"
+							RelativePath=".\IPhreeqc\phreeqcpp\structures.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -2737,7 +2737,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\sundialsmath.cpp"
+							RelativePath=".\IPhreeqc\phreeqcpp\sundialsmath.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -2757,7 +2757,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\tally.cpp"
+							RelativePath=".\IPhreeqc\phreeqcpp\tally.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -2777,7 +2777,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\tidy.cpp"
+							RelativePath=".\IPhreeqc\phreeqcpp\tidy.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -2797,7 +2797,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\transport.cpp"
+							RelativePath=".\IPhreeqc\phreeqcpp\transport.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -2817,7 +2817,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\IPhreeqc\phreeqcpp\phreeqc\utilities.cpp"
+							RelativePath=".\IPhreeqc\phreeqcpp\utilities.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
