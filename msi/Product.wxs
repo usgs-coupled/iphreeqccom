@@ -90,7 +90,7 @@
     <!-- zedgraph file -->
     <DirectoryRef Id="BinDir">
       <Component Id="ZedGraph.dll" Guid="*" Win64="$(var.Win64)">
-        <File Id="ZedGraph.dll" Source="$(var.SrcPath)\ZedGraph.dll" KeyPath="yes" Assembly=".net">
+        <File Id="ZedGraph.dll" Source="..\IPhreeqcCOM\IPhreeqc\phreeqcpp\ZedGraph.dll" KeyPath="yes" Assembly=".net">
         </File>
       </Component>
     </DirectoryRef>
