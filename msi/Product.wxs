@@ -117,7 +117,7 @@
     <!-- RELEASE.TXT -->
     <DirectoryRef Id="DocDir">
       <Component Id="RELEASE.TXT" Guid="*" Win64="$(var.Win64)">
-        <File Id="RELEASE.TXT" Name="RELEASE.TXT" Source="..\doc\RELEASE.TXT" KeyPath="yes">
+        <File Id="RELEASE.TXT" Name="RELEASE.TXT" Source="..\phreeqc3-doc\RELEASE.TXT" KeyPath="yes">
           <Shortcut Id="RELEASE.TXT" Name="RELEASE.TXT" Directory="ProgramMenuDir" Advertise="yes"/>
         </File>
       </Component>
