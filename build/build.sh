@@ -37,8 +37,9 @@ tscriptname=`basename $0 .sh`
 export PKG=`echo $tscriptname | sed -e 's/\-[^\-]*\-[^\-]*$//'`
 export VER=`echo $tscriptname | sed -e "s/${PKG}\-//" -e 's/\-[^\-]*$//'`
 export REL=`echo $tscriptname | sed -e "s/${PKG}\-${VER}\-//"`
-export MAJOR=`echo $VER | sed -e 's/\.[^.]*//g'`
-export MINOR=`echo $VER | sed -e 's/[^\.]*\.//' -e 's/\.[^\.]*//'`
+export MAJOR=`echo $VER | sed -e 's/\./ /g' | awk '{ print $1 }'`
+export MINOR=`echo $VER | sed -e 's/\./ /g' | awk '{ print $2 }'`
+export PATCH=`echo $VER | sed -e 's/\./ /g' | awk '{ print $3 }'`
 export BASEPKG=${PKG}-${VER}-${REL}
 export FULLPKG=${BASEPKG}
 export DIFF_IGNORE="-x *.aps -x *.ncb -x *.opt -x *.dep -x *.mak -x *.chm"
@@ -168,9 +169,9 @@ build() {
   cd "${objdir}" && \
   MsBuild.exe IPhreeqcCOM.2005.sln /t:IPhreeqcCOM /p:Configuration=Release /p:Platform=x64 && \
 # build IPhreeqcCOM.msi
-  MsBuild.exe IPhreeqcCOM.2005.sln /t:msi /p:Configuration=Release /p:Platform=Win32 /p:TargetName=${FULLPKG}-win32 /p:Major=${MAJOR} /p:Minor=${MINOR} /p:Build=${REL} /p:ExampleDir=examples && \
+  MsBuild.exe IPhreeqcCOM.2005.sln /t:msi /p:Configuration=Release /p:Platform=Win32 /p:TargetName=${FULLPKG}-win32 /p:Major=${MAJOR} /p:Minor=${MINOR} /p:Patch=${PATCH} /p:Build=${REL} /p:ExampleDir=examples && \
 # build IPhreeqcCOMx64.msi
-  MsBuild.exe IPhreeqcCOM.2005.sln /t:msi /p:Configuration=Release /p:Platform=x64 /p:TargetName=${FULLPKG}-x64 /p:Major=${MAJOR} /p:Minor=${MINOR} /p:Build=${REL} /p:ExampleDir=examples )
+  MsBuild.exe IPhreeqcCOM.2005.sln /t:msi /p:Configuration=Release /p:Platform=x64 /p:TargetName=${FULLPKG}-x64 /p:Major=${MAJOR} /p:Minor=${MINOR} /p:Patch=${PATCH} /p:Build=${REL} /p:ExampleDir=examples )
 }
 check() {
   (cd ${objdir} && \
