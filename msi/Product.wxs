@@ -123,6 +123,13 @@
       </Component>
     </DirectoryRef>
 
+    <!-- NOTICE.TXT -->
+    <DirectoryRef Id="DocDir">
+      <Component Id="NOTICE.TXT" Guid="*" Win64="$(var.Win64)">
+        <File Id="NOTICE.TXT" Name="NOTICE.TXT" Source="..\phreeqc3-doc\NOTICE.TXT" KeyPath="yes"/>
+      </Component>
+    </DirectoryRef>
+
     <!-- database -->
     <DirectoryRef Id="DatabaseDir">
       <Component Id="Databases" Guid="$(var.DatabaseGuid)" Win64="$(var.Win64)">
@@ -164,6 +171,7 @@
       <ComponentRef Id="IPhreeqcCOM.chm" />
       <ComponentRef Id="IPhreeqc.pdf" />
       <ComponentRef Id="RELEASE.TXT" />
+      <ComponentRef Id="NOTICE.TXT" />
       <ComponentRef Id="Databases" />
       <ComponentGroupRef Id="Examples" />
       <MergeRef Id="CRT" />
