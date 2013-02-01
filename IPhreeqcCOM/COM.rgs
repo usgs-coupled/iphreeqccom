@@ -1,19 +1,19 @@
 HKCR
 {
-	IPhreeqcCOM.Object.2 = s 'IPhreeqcCOM Object Class'
+	IPhreeqcCOM.Object.3 = s 'IPhreeqcCOM Object Class'
 	{
 		CLSID = s '{C74CB8AF-C939-42B7-A88D-9594041A0CAF}'
 	}
 	IPhreeqcCOM.Object = s 'IPhreeqcCOM Object Class'
 	{
 		CLSID = s '{C74CB8AF-C939-42B7-A88D-9594041A0CAF}'
-		CurVer = s 'IPhreeqcCOM.Object.2'
+		CurVer = s 'IPhreeqcCOM.Object.3'
 	}
 	NoRemove CLSID
 	{
 		ForceRemove {C74CB8AF-C939-42B7-A88D-9594041A0CAF} = s 'IPhreeqcCOM Object Class'
 		{
-			ProgID = s 'IPhreeqcCOM.Object.2'
+			ProgID = s 'IPhreeqcCOM.Object.3'
 			VersionIndependentProgID = s 'IPhreeqcCOM.Object'
 			ForceRemove 'Programmable'
 			InprocServer32 = s '%MODULE%'

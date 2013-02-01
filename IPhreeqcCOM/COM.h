@@ -19,7 +19,7 @@ class ATL_NO_VTABLE CCOM :
 	public CComObjectRootEx<CComSingleThreadModel>,
 	public CComCoClass<CCOM, &CLSID_IPhreeqcCOMObject>,
 	public ISupportErrorInfo,
-	public IDispatchImpl<IPhreeqcCOM, &IID_IPhreeqcCOM, &LIBID_IPhreeqcCOMLib, /*wMajor =*/ 2, /*wMinor =*/ 0>
+	public IDispatchImpl<IPhreeqcCOM, &IID_IPhreeqcCOM, &LIBID_IPhreeqcCOMLib, /*wMajor =*/ 3, /*wMinor =*/ 0>
 {
 public:
 	CCOM()
