@@ -76,7 +76,7 @@ library IPhreeqcCOMLib
 {
 	importlib("stdole2.tlb");
 	[
-		uuid(C74CB8AF-C939-42B7-A88D-9594041A0CAF),
+		uuid(C74CB930-C939-42B7-A88D-9594041A0CAF),
 		helpstring("IPhreeqcCOM Object Class")
 	]
 	coclass IPhreeqcCOMObject

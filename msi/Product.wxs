@@ -72,7 +72,7 @@
         <File Id="IPhreeqcCOM.dll" Source="$(var.SrcPath)\IPhreeqcCOM.dll" KeyPath="yes">
           <TypeLib Id="{EDB4905E-CA79-4C56-BE59-575C71219AEA}" Description="IPhreeqcCOM 3.0 Type Library" HelpDirectory="DocDir" Language="0" MajorVersion="3" MinorVersion="0">
             <AppId Description="IPhreeqcCOM" Id="{9D82F65C-3B0F-4A65-A18C-95A231A04089}">
-              <Class Id="{C74CB8AF-C939-42B7-A88D-9594041A0CAF}" Context="InprocServer32" Description="IPhreeqcCOM Object Class" ThreadingModel="apartment" Programmable="yes">
+              <Class Id="{C74CB930-C939-42B7-A88D-9594041A0CAF}" Context="InprocServer32" Description="IPhreeqcCOM Object Class" ThreadingModel="apartment" Programmable="yes">
                 <ProgId Id="IPhreeqcCOM.Object.3" Description="IPhreeqcCOM Object Class">
                   <ProgId Id="IPhreeqcCOM.Object" Description="IPhreeqcCOM Object Class" />
                 </ProgId>
