@@ -647,6 +647,10 @@
 					</FileConfiguration>
 				</File>
 				<File
+					RelativePath=".\IPhreeqc\IPhreeqcLib.cpp"
+					>
+				</File>
+				<File
 					RelativePath=".\IPhreeqc\pp_sys.cpp"
 					>
 					<FileConfiguration
