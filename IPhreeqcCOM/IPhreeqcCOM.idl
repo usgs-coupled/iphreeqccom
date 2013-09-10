@@ -66,6 +66,9 @@ interface IPhreeqcCOM : IDispatch{
 	[propput, id(33), helpstring("property SelectedOutputStringOn")] HRESULT SelectedOutputStringOn([in] VARIANT_BOOL newVal);
 	[id(34), helpstring("method GetSelectedOutputString")] HRESULT GetSelectedOutputString([out,retval] BSTR* RHS);
 	[propget, id(35), helpstring("property Id")] HRESULT Id([out, retval] LONG* pVal);
+	[propget, id(36), helpstring("property CurrentSelectedOutputUserNumber")] HRESULT CurrentSelectedOutputUserNumber([out, retval] LONG* pVal);
+	[propput, id(36), helpstring("property CurrentSelectedOutputUserNumber")] HRESULT CurrentSelectedOutputUserNumber([in] LONG newVal);
+	[id(37), helpstring("method GetNthSelectedOutputUserNumberList")] HRESULT GetNthSelectedOutputUserNumberList([out,retval] VARIANT* RHS);
 };
 [
 	uuid(EDB4905E-CA79-4C56-BE59-575C71219AEA),

@@ -46,6 +46,10 @@
 			<param name="Local" value="html\mthGetLogString.htm">
 			</OBJECT>
 		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="GetNthSelectedOutputUserNumberList Method">
+			<param name="Local" value="html\mthGetNthSelectedOutputUserNumberList.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
 			<param name="Name" value="GetOutputString Method">
 			<param name="Local" value="html\mthGetOutputString.htm">
 			</OBJECT>
@@ -93,6 +97,10 @@
 		<LI> <OBJECT type="text/sitemap">
 			<param name="Name" value="ColumnCount Property">
 			<param name="Local" value="html\proColumnCount.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="CurrentSelectedOutputUserNumber Property">
+			<param name="Local" value="html\proCurrentSelectedOutputUserNumber.htm">
 			</OBJECT>
 		<LI> <OBJECT type="text/sitemap">
 			<param name="Name" value="DumpFileName Property">

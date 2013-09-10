@@ -123,6 +123,9 @@ public:
 	STDMETHOD(put_SelectedOutputStringOn)(VARIANT_BOOL newVal);
 	STDMETHOD(GetSelectedOutputString)(BSTR* retval);
 	STDMETHOD(get_Id)(LONG* pVal);
+	STDMETHOD(get_CurrentSelectedOutputUserNumber)(LONG* pVal);
+	STDMETHOD(put_CurrentSelectedOutputUserNumber)(LONG newVal);
+	STDMETHOD(GetNthSelectedOutputUserNumberList)(VARIANT* RHS);
 };
 
 OBJECT_ENTRY_AUTO(__uuidof(IPhreeqcCOMObject), CCOM)

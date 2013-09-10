@@ -947,3 +947,78 @@ STDMETHODIMP CCOM::get_Id(LONG* pVal)
 
 	return S_OK;
 }
+
+
+STDMETHODIMP CCOM::get_CurrentSelectedOutputUserNumber(LONG* pVal)
+{
+	if( !pVal )
+	{
+		return E_POINTER;
+	}
+	MACRO_CHECK_IPHREEQC_PTR();
+
+	*pVal = this->IPhreeqcPtr->GetCurrentSelectedOutputUserNumber();
+
+	return S_OK;
+}
+
+
+STDMETHODIMP CCOM::put_CurrentSelectedOutputUserNumber(LONG newVal)
+{
+	MACRO_CHECK_IPHREEQC_PTR();
+
+	if (this->IPhreeqcPtr->SetCurrentSelectedOutputUserNumber(newVal) == VR_INVALIDARG)
+	{
+		return E_INVALIDARG;
+	}
+	return S_OK;
+}
+
+
+STDMETHODIMP CCOM::GetNthSelectedOutputUserNumberList(VARIANT* retval)
+{
+	if( !retval )
+	{
+		return E_POINTER;
+	}
+	MACRO_CHECK_IPHREEQC_PTR();
+
+	try
+	{
+		long n = this->IPhreeqcPtr->GetSelectedOutputCount();
+
+		// Initialize the bounds for the array
+		SAFEARRAYBOUND safeBound[1];
+
+		// Set up the bounds
+		safeBound[0].cElements = n;
+		safeBound[0].lLbound = 0;
+
+		// Initialize the VARIANT
+		::VariantInit(retval);
+		retval->vt = VT_VARIANT | VT_ARRAY;
+		retval->parray = ::SafeArrayCreate(VT_VARIANT, 1, safeBound);
+		if (retval->parray == 0)
+		{
+			return E_OUTOFMEMORY;
+		}
+
+		long lDimension[1];
+		for(long i = 0; i < n; ++i)
+		{
+			lDimension[0] = i;
+			CComVariant variant(this->IPhreeqcPtr->GetNthSelectedOutputUserNumber(i));
+			HRESULT hr = ::SafeArrayPutElement(retval->parray, lDimension, &variant);
+			if (hr != S_OK)
+			{
+				return hr;
+			}
+		}
+	}
+	catch (std::bad_alloc)
+	{
+		return E_OUTOFMEMORY;
+	}
+
+	return S_OK;
+}
