@@ -2968,6 +2968,10 @@
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
 			<File
+				RelativePath=".\_IPhreeqcEvents_CP.H"
+				>
+			</File>
+			<File
 				RelativePath=".\COM.h"
 				>
 			</File>

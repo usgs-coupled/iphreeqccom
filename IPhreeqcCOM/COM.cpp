@@ -179,6 +179,10 @@ STDMETHODIMP CCOM::RunAccumulated(LONG* retval)
 #endif
 	}
 
+#if defined(SWIG_SHARED_OBJ)
+	Fire_ClickIn((long)0, (long)1);
+#endif
+
 	return S_OK;
 }
 

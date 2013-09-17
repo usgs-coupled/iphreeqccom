@@ -79,11 +79,22 @@ library IPhreeqcCOMLib
 {
 	importlib("stdole2.tlb");
 	[
+		uuid(B500E95B-7CD7-4fd3-B966-5B56A309842E),
+		helpstring("_IPhreeqcEvents Interface")
+	]
+	dispinterface _IPhreeqcEvents
+	{
+		properties:
+		methods:
+			[id(1), helpstring("method ClickIn")] void ClickIn([in] LONG x, [in] LONG y);
+	};
+	[
 		uuid(C74CB930-C939-42B7-A88D-9594041A0CAF),
 		helpstring("IPhreeqcCOM Object Class")
 	]
 	coclass IPhreeqcCOMObject
 	{
 		[default] interface IPhreeqcCOM;
+		[default, source] dispinterface _IPhreeqcEvents;
 	};
 };

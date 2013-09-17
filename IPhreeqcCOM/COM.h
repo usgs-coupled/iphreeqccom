@@ -5,6 +5,7 @@
 
 #include "IPhreeqcCOM.h"
 #include "IPhreeqc.hpp"
+#include "_IPhreeqcEvents_CP.H"
 
 
 #if defined(_WIN32_WCE) && !defined(_CE_DCOM) && !defined(_CE_ALLOW_SINGLE_THREADED_OBJECTS_IN_MTA)
@@ -19,7 +20,9 @@ class ATL_NO_VTABLE CCOM :
 	public CComObjectRootEx<CComSingleThreadModel>,
 	public CComCoClass<CCOM, &CLSID_IPhreeqcCOMObject>,
 	public ISupportErrorInfo,
-	public IDispatchImpl<IPhreeqcCOM, &IID_IPhreeqcCOM, &LIBID_IPhreeqcCOMLib, /*wMajor =*/ 3, /*wMinor =*/ 0>
+	public IDispatchImpl<IPhreeqcCOM, &IID_IPhreeqcCOM, &LIBID_IPhreeqcCOMLib, /*wMajor =*/ 3, /*wMinor =*/ 0>,
+	public IConnectionPointContainerImpl<CCOM>,
+	public CProxy_IPhreeqcEvents<CCOM>
 {
 public:
 	CCOM()
@@ -34,6 +37,7 @@ BEGIN_COM_MAP(CCOM)
 	COM_INTERFACE_ENTRY(IPhreeqcCOM)
 	COM_INTERFACE_ENTRY(IDispatch)
 	COM_INTERFACE_ENTRY(ISupportErrorInfo)
+	COM_INTERFACE_ENTRY(IConnectionPointContainer)
 END_COM_MAP()
 
 // ISupportsErrorInfo
@@ -126,6 +130,9 @@ public:
 	STDMETHOD(get_CurrentSelectedOutputUserNumber)(LONG* pVal);
 	STDMETHOD(put_CurrentSelectedOutputUserNumber)(LONG newVal);
 	STDMETHOD(GetNthSelectedOutputUserNumberList)(VARIANT* RHS);
+	BEGIN_CONNECTION_POINT_MAP(CCOM)
+		CONNECTION_POINT_ENTRY(__uuidof(_IPhreeqcEvents))
+	END_CONNECTION_POINT_MAP()
 };
 
 OBJECT_ENTRY_AUTO(__uuidof(IPhreeqcCOMObject), CCOM)
