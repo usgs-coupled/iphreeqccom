@@ -1045,16 +1045,14 @@ STDMETHODIMP CCOM::GetNthSelectedOutputUserNumberList(VARIANT* retval)
 /* static */
 double CCOM::callback(double x1, double x2, const char *str, void *cookie)
 {
-	if (cookie)
+	if (CCOM* pThis = static_cast<CCOM*>(cookie))
 	{
-		CCOM* pThis = static_cast<CCOM*>(cookie);
-		
 		CComVariant varResult;
 		varResult.vt = VT_R8;
-		varResult.dblVal = -99.99;
+		varResult.dblVal = -99.;
 		
 		CComBSTR bstrVal(str);
-		pThis->Fire_CallBack4(x1, x2, bstrVal, &varResult);
+		pThis->Fire_Callback(x1, x2, bstrVal, &varResult);
 
 		switch (varResult.vt)
 		{

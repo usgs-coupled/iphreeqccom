@@ -87,14 +87,7 @@ library IPhreeqcCOM
 	{
 		properties:
 		methods:
-			[id(1), helpstring("method ClickIn")] void ClickIn([in] LONG x, [in] LONG y);
-			[id(2), helpstring("method CallBack")] DOUBLE CallBack([in] DOUBLE x1, [in] DOUBLE x2, [in] BSTR str);
-			[id(3), helpstring("method ClickOut")] void ClickOut([in] LONG x, [in] LONG y, [out,retval] DOUBLE* ret);
-			[id(4), helpstring("method onNew")] void onNew(void);
-			[id(5), helpstring("method CallBack2")] void CallBack2([in] DOUBLE x1, [in] DOUBLE x2, [in] BSTR str, [in,out] DOUBLE* value);
-			[id(6), helpstring("method CallBack3")] void CallBack3([in] DOUBLE x1, [in] DOUBLE x2, [in] BSTR str, [out,retval] DOUBLE* val);
-			[id(7), helpstring("method CallBack4")] void CallBack4([in] DOUBLE x1, [in] DOUBLE x2, [in] BSTR str, [in,out] VARIANT* value);
-			[id(8), helpstring("method CallBack5")] void CallBack5([in] DOUBLE x1, [in] DOUBLE x2, [in] BSTR str, [out,retval] VARIANT* rvalue);
+			[id(1), helpstring("method Callback")] void Callback([in] DOUBLE x1, [in] DOUBLE x2, [in] BSTR str, [in,out] VARIANT* value);
 	};
 	[
 		uuid(C74CB930-C939-42B7-A88D-9594041A0CAF),
