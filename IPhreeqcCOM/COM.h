@@ -18,9 +18,9 @@
 
 class ATL_NO_VTABLE CCOM :
 	public CComObjectRootEx<CComSingleThreadModel>,
-	public CComCoClass<CCOM, &CLSID_IPhreeqcCOMObject>,
+	public CComCoClass<CCOM, &CLSID_Object>,
 	public ISupportErrorInfo,
-	public IDispatchImpl<IPhreeqcCOM, &IID_IPhreeqcCOM, &LIBID_IPhreeqcCOMLib, /*wMajor =*/ 3, /*wMinor =*/ 0>,
+	public IDispatchImpl<IPhreeqcCOM, &IID_IPhreeqcCOM, &LIBID_IPhreeqcCOM, /*wMajor =*/ 3, /*wMinor =*/ 0>,
 	public IConnectionPointContainerImpl<CCOM>,
 	public CProxy_IPhreeqcEvents<CCOM>
 {
@@ -70,6 +70,8 @@ END_COM_MAP()
 	{
 		delete this->IPhreeqcPtr;
 	}
+
+	static double callback(double x1, double x2, const char *str, void *cookie);
 
 private:
 
@@ -133,6 +135,7 @@ public:
 	BEGIN_CONNECTION_POINT_MAP(CCOM)
 		CONNECTION_POINT_ENTRY(__uuidof(_IPhreeqcEvents))
 	END_CONNECTION_POINT_MAP()
+	STDMETHOD(get_Version)(BSTR* pVal);
 };
 
-OBJECT_ENTRY_AUTO(__uuidof(IPhreeqcCOMObject), CCOM)
+OBJECT_ENTRY_AUTO(__uuidof(Object), CCOM)

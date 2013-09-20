@@ -69,13 +69,14 @@ interface IPhreeqcCOM : IDispatch{
 	[propget, id(36), helpstring("property CurrentSelectedOutputUserNumber")] HRESULT CurrentSelectedOutputUserNumber([out, retval] LONG* pVal);
 	[propput, id(36), helpstring("property CurrentSelectedOutputUserNumber")] HRESULT CurrentSelectedOutputUserNumber([in] LONG newVal);
 	[id(37), helpstring("method GetNthSelectedOutputUserNumberList")] HRESULT GetNthSelectedOutputUserNumberList([out,retval] VARIANT* RHS);
+	[propget, id(38), helpstring("property Version")] HRESULT Version([out, retval] BSTR* pVal);
 };
 [
 	uuid(EDB4905E-CA79-4C56-BE59-575C71219AEA),
 	version(3.0),
 	helpstring("IPhreeqcCOM 3.0 Type Library")
 ]
-library IPhreeqcCOMLib
+library IPhreeqcCOM
 {
 	importlib("stdole2.tlb");
 	[
@@ -87,12 +88,19 @@ library IPhreeqcCOMLib
 		properties:
 		methods:
 			[id(1), helpstring("method ClickIn")] void ClickIn([in] LONG x, [in] LONG y);
+			[id(2), helpstring("method CallBack")] DOUBLE CallBack([in] DOUBLE x1, [in] DOUBLE x2, [in] BSTR str);
+			[id(3), helpstring("method ClickOut")] void ClickOut([in] LONG x, [in] LONG y, [out,retval] DOUBLE* ret);
+			[id(4), helpstring("method onNew")] void onNew(void);
+			[id(5), helpstring("method CallBack2")] void CallBack2([in] DOUBLE x1, [in] DOUBLE x2, [in] BSTR str, [in,out] DOUBLE* value);
+			[id(6), helpstring("method CallBack3")] void CallBack3([in] DOUBLE x1, [in] DOUBLE x2, [in] BSTR str, [out,retval] DOUBLE* val);
+			[id(7), helpstring("method CallBack4")] void CallBack4([in] DOUBLE x1, [in] DOUBLE x2, [in] BSTR str, [in,out] VARIANT* value);
+			[id(8), helpstring("method CallBack5")] void CallBack5([in] DOUBLE x1, [in] DOUBLE x2, [in] BSTR str, [out,retval] VARIANT* rvalue);
 	};
 	[
 		uuid(C74CB930-C939-42B7-A88D-9594041A0CAF),
 		helpstring("IPhreeqcCOM Object Class")
 	]
-	coclass IPhreeqcCOMObject
+	coclass Object
 	{
 		[default] interface IPhreeqcCOM;
 		[default, source] dispinterface _IPhreeqcEvents;

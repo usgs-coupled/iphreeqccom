@@ -148,10 +148,13 @@ STDMETHODIMP CCOM::RunFile(BSTR filename, LONG* retval)
 	if(!retval )
 	{
 		return E_POINTER;
+		this->Lock();
 	}
 	MACRO_CHECK_IPHREEQC_PTR();
 
 	_bstr_t f(filename, true);
+
+	this->IPhreeqcPtr->SetBasicCallback(CCOM::callback, this);
 
 	if (*retval = this->IPhreeqcPtr->RunFile(f))
 	{
@@ -172,16 +175,14 @@ STDMETHODIMP CCOM::RunAccumulated(LONG* retval)
 	}
 	MACRO_CHECK_IPHREEQC_PTR();
 
+	this->IPhreeqcPtr->SetBasicCallback(CCOM::callback, this);
+
 	if (*retval = this->IPhreeqcPtr->RunAccumulated())
 	{
 #if defined(SUPPORT_ERROR_INFO)
 		return AtlReportError(GetObjectCLSID(), this->IPhreeqcPtr->GetErrorString());
 #endif
 	}
-
-#if defined(SWIG_SHARED_OBJ)
-	Fire_ClickIn((long)0, (long)1);
-#endif
 
 	return S_OK;
 }
@@ -226,6 +227,8 @@ STDMETHODIMP CCOM::RunString(BSTR input, LONG* retval)
 	}
 	MACRO_CHECK_IPHREEQC_PTR();
 
+	this->IPhreeqcPtr->SetBasicCallback(CCOM::callback, this);
+
 	_bstr_t in(input, true);
 
 	if (*retval = this->IPhreeqcPtr->RunString(in))
@@ -234,6 +237,18 @@ STDMETHODIMP CCOM::RunString(BSTR input, LONG* retval)
 		return AtlReportError(GetObjectCLSID(), this->IPhreeqcPtr->GetErrorString());
 #endif
 	}
+
+// COMMENT: {9/18/2013 7:00:06 PM}	//Fire_onNew();
+// COMMENT: {9/18/2013 7:00:06 PM}	//Fire_ClickIn(1, 2);
+// COMMENT: {9/18/2013 7:00:06 PM}	//{{
+// COMMENT: {9/18/2013 7:00:06 PM}	double val = 3.14;
+// COMMENT: {9/18/2013 7:00:06 PM}	//Fire_ClickOut(1, 2, &val);
+// COMMENT: {9/18/2013 7:00:06 PM}	CComBSTR bstrVal("pH");
+// COMMENT: {9/18/2013 7:00:06 PM}	Fire_CallBack2(1, 2, bstrVal, &val);
+// COMMENT: {9/18/2013 7:00:06 PM}	TCHAR buffer[90];
+// COMMENT: {9/18/2013 7:00:06 PM}	swprintf(buffer, 90, _T("%g"), val);
+// COMMENT: {9/18/2013 7:00:06 PM}	::MessageBox(0, buffer, _T("Fire_CallBack2"), MB_OK);
+// COMMENT: {9/18/2013 7:00:06 PM}	//}}
 
 	return S_OK;
 }
@@ -1023,6 +1038,60 @@ STDMETHODIMP CCOM::GetNthSelectedOutputUserNumberList(VARIANT* retval)
 	{
 		return E_OUTOFMEMORY;
 	}
+
+	return S_OK;
+}
+
+/* static */
+double CCOM::callback(double x1, double x2, const char *str, void *cookie)
+{
+	if (cookie)
+	{
+		CCOM* pThis = static_cast<CCOM*>(cookie);
+		
+		CComVariant varResult;
+		varResult.vt = VT_R8;
+		varResult.dblVal = -99.99;
+		
+		CComBSTR bstrVal(str);
+		pThis->Fire_CallBack4(x1, x2, bstrVal, &varResult);
+
+		switch (varResult.vt)
+		{
+		case VT_R8:
+			// no-op
+			break;
+		case VT_R4:
+			varResult.dblVal = (double)varResult.fltVal;
+			break;
+		case VT_I2:
+			varResult.dblVal = (double)varResult.iVal;
+			break;
+		case VT_I4:
+			varResult.dblVal = (double)varResult.lVal;
+			break;
+		case VT_I8:
+			varResult.dblVal = (double)varResult.iVal;
+			break;
+		default:
+			varResult.dblVal = 0.0;
+			break;
+		}
+		return varResult.dblVal;
+	}
+	return 0.0;
+}
+
+STDMETHODIMP CCOM::get_Version(BSTR* pVal)
+{
+	if( !pVal )
+	{
+		return E_POINTER;
+	}
+	MACRO_CHECK_IPHREEQC_PTR();
+
+	CComBSTR bstrVal("3.0.7-8065");
+	*pVal = ::SysAllocString(bstrVal.m_str);
 
 	return S_OK;
 }
