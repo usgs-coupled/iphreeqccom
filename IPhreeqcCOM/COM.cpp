@@ -7,6 +7,7 @@
 #include <comutil.h>  // _bstr_t
 #include <atlsafe.h>  // CComSafeArray
 //#include <HtmlHelp.h>
+#include "../build/version.h"
 
 #define MACRO_CHECK_IPHREEQC_PTR() do {if (this->IPhreeqcPtr == 0) {return E_OUTOFMEMORY;}} while (0)
 
@@ -237,18 +238,6 @@ STDMETHODIMP CCOM::RunString(BSTR input, LONG* retval)
 		return AtlReportError(GetObjectCLSID(), this->IPhreeqcPtr->GetErrorString());
 #endif
 	}
-
-// COMMENT: {9/18/2013 7:00:06 PM}	//Fire_onNew();
-// COMMENT: {9/18/2013 7:00:06 PM}	//Fire_ClickIn(1, 2);
-// COMMENT: {9/18/2013 7:00:06 PM}	//{{
-// COMMENT: {9/18/2013 7:00:06 PM}	double val = 3.14;
-// COMMENT: {9/18/2013 7:00:06 PM}	//Fire_ClickOut(1, 2, &val);
-// COMMENT: {9/18/2013 7:00:06 PM}	CComBSTR bstrVal("pH");
-// COMMENT: {9/18/2013 7:00:06 PM}	Fire_CallBack2(1, 2, bstrVal, &val);
-// COMMENT: {9/18/2013 7:00:06 PM}	TCHAR buffer[90];
-// COMMENT: {9/18/2013 7:00:06 PM}	swprintf(buffer, 90, _T("%g"), val);
-// COMMENT: {9/18/2013 7:00:06 PM}	::MessageBox(0, buffer, _T("Fire_CallBack2"), MB_OK);
-// COMMENT: {9/18/2013 7:00:06 PM}	//}}
 
 	return S_OK;
 }
@@ -1088,7 +1077,7 @@ STDMETHODIMP CCOM::get_Version(BSTR* pVal)
 	}
 	MACRO_CHECK_IPHREEQC_PTR();
 
-	CComBSTR bstrVal("3.0.7-8065");
+	CComBSTR bstrVal(VERSION_STRING);
 	*pVal = ::SysAllocString(bstrVal.m_str);
 
 	return S_OK;

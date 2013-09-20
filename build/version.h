@@ -1,6 +1,6 @@
 #define NAME          "IPhreeqcCOM"
-#define VER_MAJOR      2
-#define VER_MINOR     17
+#define VER_MAJOR      3
+#define VER_MINOR      0
 #define VER_PATCH      0
 #define VER_REVISION   0
 
@@ -20,3 +20,16 @@
 #define PRODUCT_NAME   NAME \
                        "-" APR_STRINGIFY(VER_MAJOR) \
                        "." APR_STRINGIFY(VER_MINOR)
+
+#if defined(_WIN64)
+#define VERSION_STRING         APR_STRINGIFY(VER_MAJOR) \
+                           "." APR_STRINGIFY(VER_MINOR) \
+                           "." APR_STRINGIFY(VER_PATCH) \
+                           "-" APR_STRINGIFY(VER_REVISION) \
+                           "-x64"
+#else
+#define VERSION_STRING         APR_STRINGIFY(VER_MAJOR) \
+                           "." APR_STRINGIFY(VER_MINOR) \
+                           "." APR_STRINGIFY(VER_PATCH) \
+                           "-" APR_STRINGIFY(VER_REVISION)
+#endif
