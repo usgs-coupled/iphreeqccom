@@ -5,6 +5,7 @@
 
 #include "IPhreeqcCOM.h"
 #include "IPhreeqc.hpp"
+#include "_IPhreeqcEvents_CP.H"
 
 
 #if defined(_WIN32_WCE) && !defined(_CE_DCOM) && !defined(_CE_ALLOW_SINGLE_THREADED_OBJECTS_IN_MTA)
@@ -17,9 +18,12 @@
 
 class ATL_NO_VTABLE CCOM :
 	public CComObjectRootEx<CComSingleThreadModel>,
-	public CComCoClass<CCOM, &CLSID_IPhreeqcCOMObject>,
+	public CComCoClass<CCOM, &CLSID_Object>,
 	public ISupportErrorInfo,
-	public IDispatchImpl<IPhreeqcCOM, &IID_IPhreeqcCOM, &LIBID_IPhreeqcCOMLib, /*wMajor =*/ 3, /*wMinor =*/ 0>
+	public IDispatchImpl<IPhreeqcCOM, &IID_IPhreeqcCOM, &LIBID_IPhreeqcCOM, /*wMajor =*/ 3, /*wMinor =*/ 0>,
+	public IConnectionPointContainerImpl<CCOM>,
+	public CProxy_IPhreeqcEvents<CCOM>,
+	public IProvideClassInfo2Impl<&CLSID_Object, &DIID__IPhreeqcEvents, &LIBID_IPhreeqcCOM, /*wMajor =*/ 3, /*wMinor =*/ 0>   /* WScript.ConnectObject */
 {
 public:
 	CCOM()
@@ -34,6 +38,9 @@ BEGIN_COM_MAP(CCOM)
 	COM_INTERFACE_ENTRY(IPhreeqcCOM)
 	COM_INTERFACE_ENTRY(IDispatch)
 	COM_INTERFACE_ENTRY(ISupportErrorInfo)
+	COM_INTERFACE_ENTRY(IConnectionPointContainer)
+	COM_INTERFACE_ENTRY(IProvideClassInfo)           /* WScript.ConnectObject */
+	COM_INTERFACE_ENTRY(IProvideClassInfo2)          /* WScript.ConnectObject */
 END_COM_MAP()
 
 // ISupportsErrorInfo
@@ -66,6 +73,8 @@ END_COM_MAP()
 	{
 		delete this->IPhreeqcPtr;
 	}
+
+	static double callback(double x1, double x2, const char *str, void *cookie);
 
 private:
 
@@ -126,6 +135,10 @@ public:
 	STDMETHOD(get_CurrentSelectedOutputUserNumber)(LONG* pVal);
 	STDMETHOD(put_CurrentSelectedOutputUserNumber)(LONG newVal);
 	STDMETHOD(GetNthSelectedOutputUserNumberList)(VARIANT* RHS);
+	STDMETHOD(get_Version)(BSTR* pVal);
+	BEGIN_CONNECTION_POINT_MAP(CCOM)
+		CONNECTION_POINT_ENTRY(__uuidof(_IPhreeqcEvents))
+	END_CONNECTION_POINT_MAP()
 };
 
-OBJECT_ENTRY_AUTO(__uuidof(IPhreeqcCOMObject), CCOM)
+OBJECT_ENTRY_AUTO(__uuidof(Object), CCOM)

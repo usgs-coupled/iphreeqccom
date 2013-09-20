@@ -2968,6 +2968,10 @@
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
 			<File
+				RelativePath=".\_IPhreeqcEvents_CP.H"
+				>
+			</File>
+			<File
 				RelativePath=".\COM.h"
 				>
 			</File>
@@ -3054,6 +3058,14 @@
 		<Filter
 			Name="Examples"
 			>
+			<File
+				RelativePath=".\examples\Callback.js"
+				>
+			</File>
+			<File
+				RelativePath=".\examples\Callback.vbs"
+				>
+			</File>
 			<File
 				RelativePath=".\examples\GetComponentList.js"
 				>
