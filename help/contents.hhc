@@ -179,5 +179,14 @@
 			<param name="Local" value="html\proVersion.htm">
 			</OBJECT>
 	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Events">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Callback Event">
+			<param name="Local" value="html\evtCallback.htm">
+			</OBJECT>
+	</UL>
 </UL>
 </BODY></HTML>

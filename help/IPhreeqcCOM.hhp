@@ -9,6 +9,7 @@ Title=IPhreeqcCOM Reference
 
 
 [FILES]
+html\evtCallback.htm
 html\inline.js
 html\mthAccumulateLine.htm
 html\mthClearAccumulatedLines.htm
@@ -50,6 +51,7 @@ html\proSelectedOutputFileOn.htm
 html\proSelectedOutputStringOn.htm
 html\proVersion.htm
 html\sExpCollapse.js
+links\evtCallback_l.htm
 links\mthAccumulateLine_l.htm
 links\mthClearAccumulatedLines_l.htm
 links\mthGetComponentList_l.htm

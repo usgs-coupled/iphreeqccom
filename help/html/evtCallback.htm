@@ -1,0 +1,193 @@
+<html dir="ltr" xmlns:msxsl="urn:schemas-microsoft-com:xslt"><head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<META HTTP-EQUIV="assetid" CONTENT="HV05203190">
+<META NAME="lcid" CONTENT="1033">
+<title>Callback Event</title><link rel="stylesheet" type="text/css" href="office10.css">
+<script type="text/javascript" language="Javascript" src="sExpCollapse.js"></script>
+<script type="text/javascript" language="JavaScript" src="inline.js"></script>
+</head>
+<body>
+
+<!-- Top Heading -->
+<h1>Callback Event</h1>
+
+<!-- Links -->
+<DIV class="ofvbanav">
+<span class="ofvbanavreuse" id="seealso" onclick="toggleList()" onkeypress="toggleList()"></span>
+<span class="ofvbanavreuse" id="appliesto" onclick="toggleList()" onkeypress="toggleList()"></span>
+<a class="ofvbanavex" href="#example"><span class="ofvbanavreuse" id="example"></span></a>
+<span class="ofvbanavreuse" id="specifics" onclick="toggleList()" onkeypress="toggleList()"></span>
+</DIV>
+
+<!-- Description -->
+<p>Occurs when a call is made to <b class="bterm">CALLBACK</b> from within a PHREEQC Basic program.</p>
+
+
+<!-- Prototype -->
+<p class="signature"><b class="bterm">Sub</b>
+<i>object</i><b class="bterm">_Callback(</b>
+<b class="bterm">x1</b>,
+<b class="bterm">x2</b>,
+<b class="bterm">str</b>,
+<b class="bterm">value</b> )</p>
+<p><i>object   </i>   An object of type <b class="bterm">IPhreeqcCOM</b> declared with events. </p>
+<p><b class="runinhead"><i>x1</i></b>   Required <b class="bterm">Double</b>. The first argument given to the <b class="bterm">CALLBACK</b> function.</p>
+<p><b class="runinhead"><i>x2</i></b>   Required <b class="bterm">Double</b>. The second argument given to the <b class="bterm">CALLBACK</b> function.</p>
+<p><b class="runinhead"><i>str</i></b>   Required <b class="bterm">String</b>. The third argument given to the <b class="bterm">CALLBACK</b> function.</p>
+<p><b class="runinhead"><i>value</i></b>   <b class="bterm">Double</b>. The value returned to the PHREEQC Basic function <b class="bterm">CALLBACK</b>.</p>
+
+<!-- Remarks -->
+<h2>Remarks</h2>
+<p>Currently, the JScript example doesn't work correctly.  The value returned to the PHREEQC Basic function <b class="bterm">CALLBACK</b> is not updated.</p>
+
+<!-- Example -->
+<h2><a id="#example" name="#example">Example</a></h2><p>This example uses the <b class="bterm">CALLBACK</b> functionality to set the year column of the selected output.</p>
+
+<!-- JScript Example -->
+<div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
+<div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
+  JScript (*** BROKEN See Remarks. ***)</div>
+var iphreeqc = WScript.CreateObject("IPhreeqcCOM.Object");
+WScript.ConnectObject(iphreeqc, "iphreeqc_");
+
+var year = 2012
+
+iphreeqc.LoadDatabase("phreeqc.dat");
+
+iphreeqc.AccumulateLine("SOLUTION 1-2");
+iphreeqc.AccumulateLine("END");
+iphreeqc.AccumulateLine("EQUILIBRIUM_PHASES 1");
+iphreeqc.AccumulateLine("   CO2(g) -1.5 10");
+iphreeqc.AccumulateLine("EQUILIBRIUM_PHASES 2");
+iphreeqc.AccumulateLine("   Calcite 0   10");
+iphreeqc.AccumulateLine("SELECTED_OUTPUT 1");
+iphreeqc.AccumulateLine("   -reset false");
+iphreeqc.AccumulateLine("USER_PUNCH");
+iphreeqc.AccumulateLine("   -Heading  pH  SR(calcite)  Year");
+iphreeqc.AccumulateLine("   10 PUNCH -LA(\"H+\"), SR(\"calcite\")");
+iphreeqc.AccumulateLine("   20 PUNCH <b class="bterm">CALLBACK</b>(cell_no, -LA(\"H+\"), \"Year\")");
+iphreeqc.AccumulateLine("END");
+iphreeqc.AccumulateLine("RUN_CELLS");
+iphreeqc.AccumulateLine("   -cells 1-2");
+iphreeqc.AccumulateLine("END");
+
+iphreeqc.SelectedOutputFileOn = true;
+
+if (iphreeqc.RunAccumulated() == 0) {
+    WScript.Echo("see " + iphreeqc.SelectedOutputFileName + ".");
+}
+
+WScript.DisconnectObject(iphreeqc);
+
+iphreeqc = null
+
+function iphreeqc_<b class="bterm">CallBack</b>(x1, x2, str, value) {
+    var value = -1;
+    if (str == "Year") {
+        value = year;
+        year = year + 1;
+    }
+}</pre></div>
+
+<!-- Python (with pywin32) Example -->
+<div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
+<div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
+  Python (with pywin32)</div>
+from win32com.client import DispatchWithEvents
+
+def RunWithCallback():
+    class IPhreeqcCOMEvents:
+        def __init__(self):
+           self.year = 2012
+
+        def OnCallback(self, x1, x2, str, value):
+            value = -1
+            if str == "Year":
+                value = self.year
+                self.year += 1
+            return value
+
+    iphreeqc = DispatchWithEvents("IPhreeqcCOM.Object", IPhreeqcCOMEvents)
+
+    iphreeqc.LoadDatabase("phreeqc.dat")
+
+    iphreeqc.AccumulateLine("SOLUTION 1-2")
+    iphreeqc.AccumulateLine("END")
+    iphreeqc.AccumulateLine("EQUILIBRIUM_PHASES 1")
+    iphreeqc.AccumulateLine("   CO2(g) -1.5 10")
+    iphreeqc.AccumulateLine("EQUILIBRIUM_PHASES 2")
+    iphreeqc.AccumulateLine("   Calcite 0   10")
+    iphreeqc.AccumulateLine("SELECTED_OUTPUT 1")
+    iphreeqc.AccumulateLine("   -reset false")
+    iphreeqc.AccumulateLine("USER_PUNCH")
+    iphreeqc.AccumulateLine("   -Heading  pH  SR(calcite)  Year")
+    iphreeqc.AccumulateLine("   10 PUNCH -LA(\"H+\"), SR(\"calcite\")")
+    iphreeqc.AccumulateLine("   20 PUNCH CALLBACK(cell_no, -LA(\"H+\"), \"Year\")")
+    iphreeqc.AccumulateLine("END")
+    iphreeqc.AccumulateLine("RUN_CELLS")
+    iphreeqc.AccumulateLine("   -cells 1-2")
+    iphreeqc.AccumulateLine("END")
+
+    iphreeqc.SelectedOutputFileOn = True
+
+    if iphreeqc.RunAccumulated() == 0:
+        print "see " + iphreeqc.SelectedOutputFileName + "."
+
+if __name__ == '__main__':
+    RunWithCallback()</pre></div>
+
+<!-- VBScript Example -->
+<div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
+<div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
+  VBScript</div>
+Dim iphreeqc, year
+
+Set iphreeqc = CreateObject("IPhreeqcCOM.Object")
+WScript.ConnectObject iphreeqc, "iphreeqc_"
+
+year = 2012
+
+iphreeqc.LoadDatabase("phreeqc.dat")
+
+iphreeqc.AccumulateLine("SOLUTION 1-2")
+iphreeqc.AccumulateLine("END")
+iphreeqc.AccumulateLine("EQUILIBRIUM_PHASES 1")
+iphreeqc.AccumulateLine("   CO2(g) -1.5 10")
+iphreeqc.AccumulateLine("EQUILIBRIUM_PHASES 2")
+iphreeqc.AccumulateLine("   Calcite 0   10")
+iphreeqc.AccumulateLine("SELECTED_OUTPUT 1")
+iphreeqc.AccumulateLine("   -reset false")
+iphreeqc.AccumulateLine("USER_PUNCH")
+iphreeqc.AccumulateLine("   -Heading  pH  SR(calcite)  Year")
+iphreeqc.AccumulateLine("   10 PUNCH -LA(""H+""), SR(""calcite"")")
+iphreeqc.AccumulateLine("   20 PUNCH <b class="bterm">CALLBACK</b>(cell_no, -LA(""H+""), ""Year"")")
+iphreeqc.AccumulateLine("END")
+iphreeqc.AccumulateLine("RUN_CELLS")
+iphreeqc.AccumulateLine("   -cells 1-2")
+iphreeqc.AccumulateLine("END")
+
+iphreeqc.SelectedOutputFileOn = True
+
+If (iphreeqc.RunAccumulated() = 0) Then
+    WScript.Echo("See " & iphreeqc.SelectedOutputFileName & ".")
+End If
+
+WScript.DisconnectObject iphreeqc
+
+Set iphreeqc = Nothing
+
+Sub iphreeqc_<b class="bterm">CallBack</b>(x1, x2, str, value)
+    value = -1
+    If (str = "Year") Then
+        value = year
+        year = year + 1
+    End If
+End Sub</pre></div>
+
+<!-- Script -->
+<script type="text/javascript" language="JScript" src="mk:@msitstore:msohlp11.chm::/html/ofvbanl.js"></script>
+<span id="ofVBAISpan" class="ofvbaispan">
+<iframe id="ofVBAIFrame" frameborder="0" marginheight="0" marginwidth="4" scrolling="auto" width="100%" src="../links/evtCallback_l.htm"></iframe>
+</span>
+</body>
+</html>
