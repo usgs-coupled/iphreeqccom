@@ -87,7 +87,7 @@ library IPhreeqcCOM
 	{
 		properties:
 		methods:
-			[id(1), helpstring("method Callback")] void Callback([in] DOUBLE x1, [in] DOUBLE x2, [in] BSTR str, [in,out] VARIANT* value);
+			[id(1), helpstring("event Callback")] void Callback([in] DOUBLE x1, [in] DOUBLE x2, [in] BSTR str, [in,out] VARIANT* value);
 	};
 	[
 		uuid(C74CB930-C939-42B7-A88D-9594041A0CAF),
