@@ -1,0 +1,39 @@
+<html dir="ltr" xmlns:msxsl="urn:schemas-microsoft-com:xslt"><head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<META HTTP-EQUIV="assetid" CONTENT="HV05203190">
+<META NAME="lcid" CONTENT="1033">
+<title>ex2</title><link rel="stylesheet" type="text/css" href="office10.css">
+</head>
+<body>
+
+<div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
+<div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
+ex2</div>
+TITLE Example 2.--Temperature dependence of solubility
+                  of gypsum and anhydrite
+SOLUTION 1 Pure water
+        pH      7.0
+        temp    25.0
+EQUILIBRIUM_PHASES 1
+        Gypsum          0.0     1.0
+        Anhydrite       0.0     1.0
+REACTION_TEMPERATURE 1
+        25.0 75.0 in 51 steps
+SELECTED_OUTPUT
+        -file   ex2.sel
+        -temperature
+        -si     anhydrite  gypsum
+USER_GRAPH 1 Example 2
+        -headings Temperature Gypsum Anhydrite
+        -chart_title "Gypsum-Anhydrite Stability"
+        -axis_scale x_axis 25 75 5 0
+        -axis_scale y_axis auto 0.05 0.1
+        -axis_titles "Temperature, in degrees celsius" "Saturation index"
+        -initial_solutions false
+  -start
+  10 graph_x TC
+  20 graph_y SI("Gypsum") SI("Anhydrite")
+  -end
+END</pre></div>
+</body>
+</html>

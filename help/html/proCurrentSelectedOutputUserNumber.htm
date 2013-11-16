@@ -19,15 +19,15 @@
 </DIV>
 
 <!-- Description -->
-<p><b class="bterm">True</b> to turn on the selected-output file. The file will be named <b class="bterm"><I>selected.out</I></b> &nbsp;unless a FileName was specified within the SELECTED_OUTPUT keyword data block. The initial setting is <b class="bterm">False</b>. Read/write <b class="bterm">Boolean</b>.</p>
+<p>Returns or sets the current selected-output user number. Read/write <b class="bterm">Long</b>.</p>
 
 <!-- Remarks -->
 <h2>Remarks</h2>
-<p>The <b class="bterm">SelectedOutputFileOn</b> property is used only by the Run methods: <a class="ofvbalink" href="mthRunAccumulated.htm">RunAccumulated</a>, <a class="ofvbalink" href="mthRunFile.htm">RunFile</a> and <a class="ofvbalink" href="mthRunString.htm">RunString</a>.</p>
+<p>The <b class="bterm">CurrentSelectedOutputUserNumber</b> property is subsequently used by the selected-output access methods and properties: (<a class="ofvbalink" href="proColumnCount.htm">ColumnCount</a>, <a class="ofvbalink" href="mthGetSelectedOutputArray.htm">GetSelectedOutputArray</a>, <a class="ofvbalink" href="mthGetSelectedOutputString.htm">GetSelectedOutputString</a>, <a class="ofvbalink" href="mthGetSelectedOutputValue.htm">GetSelectedOutputValue</a>, <a class="ofvbalink" href="proSelectedOutputFileName.htm">SelectedOutputFileName</a>, <a class="ofvbalink" href="proSelectedOutputFileOn.htm">SelectedOutputFileOn</a> and <a class="ofvbalink" href="proRowCount.htm">RowCount</a>).</p>
 
 <!-- Example -->
 <h2><a id="#example" name="#example">Example</a></h2>
-<p>This example runs <b class="bterm"><I>ex2</I></b> &nbsp;with the selected-output file turned on.</p>
+<p>This example runs the <b class="bterm"><I><a class="ofvbanavex" href="multi_punch.htm">multi_punch</a></I></b> &nbspinput file and writes the selected-output to multiple files.</p>
 
 <!-- JScript Example -->
 <div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
@@ -35,9 +35,24 @@
   JScript</div>
 var iphreeqc = new ActiveXObject("IPhreeqcCOM.Object");
 iphreeqc.LoadDatabase("phreeqc.dat");
-iphreeqc.<b class="bterm">SelectedOutputFileOn</b> = true;
-if (iphreeqc.RunFile("ex2") == 0) {
-    WScript.Echo("See " + iphreeqc.SelectedOutputFileName + ".");
+iphreeqc.RunFile("multi_punch");
+
+var fso = new ActiveXObject("Scripting.FileSystemObject");
+
+var nums = iphreeqc.GetNthSelectedOutputUserNumberList().toArray();
+for (var i in nums) {
+    var ts = fso.CreateTextFile("sel_out." + nums[i] + ".out", true);
+
+    iphreeqc.CurrentSelectedOutputUserNumber = nums[i];
+    var arr = iphreeqc.GetSelectedOutputArray().toArray();
+    for (var i = 0; i < iphreeqc.RowCount; ++i) {
+        for (var j = 0; j < iphreeqc.ColumnCount; ++j) {
+            // Note: JScript doesn't support multi-dimensional arrays
+            ts.Write(arr[i + j*iphreeqc.RowCount] + ",");
+        }
+        ts.WriteLine();
+    }
+    ts.Close()
 }
 </pre></div>
 
@@ -45,13 +60,29 @@ if (iphreeqc.RunFile("ex2") == 0) {
 <div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
 <div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
   VBScript</div>
-Dim iphreeqc
+Dim iphreeqc, fso, num, nums, arr
+
 Set iphreeqc = CreateObject("IPhreeqcCOM.Object")
 iphreeqc.LoadDatabase("phreeqc.dat")
-iphreeqc.<b class="bterm">SelectedOutputFileOn</b> = True
-If (iphreeqc.RunFile("ex2") = 0) Then
-    WScript.Echo("See " & iphreeqc.SelectedOutputFileName & ".")
-End If
+iphreeqc.RunFile("multi_punch")
+
+Set fso = CreateObject("Scripting.FileSystemObject")
+
+nums = iphreeqc.GetNthSelectedOutputUserNumberList()
+
+For Each num in nums
+    Set ts = fso.CreateTextFile("sel_out." & CStr(num) & ".out", True)
+
+    iphreeqc.CurrentSelectedOutputUserNumber = num
+    arr = iphreeqc.GetSelectedOutputArray()
+    For i = LBound(arr, 1) To UBound(arr, 1)
+        For j = LBound(arr, 2) To UBound(arr, 2)
+            ts.Write(CStr(arr(i, j)) & ",")
+        Next
+        ts.WriteLine()
+    Next
+    ts.Close()
+Next
 </pre></div>
 
 <!-- Script -->

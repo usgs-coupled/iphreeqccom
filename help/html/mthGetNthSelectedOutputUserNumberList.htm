@@ -30,7 +30,8 @@
 <!-- Remarks -->
 
 <!-- Example -->
-<h2><a id="#example" name="#example">Example</a></h2><p>This example runs the <b class="bterm"><I>ex2</I></b> &nbspinput file and echos the list of components.</p>
+<h2><a id="#example" name="#example">Example</a></h2>
+<p>This example runs the <b class="bterm"><I><a class="ofvbanavex" href="multi_punch.htm">multi_punch</a></I></b> &nbspinput file and echos the list of SELECTED_OUTPUT user numbers.</p>
 
 <!-- JScript Example -->
 <div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
@@ -38,11 +39,11 @@
   JScript</div>
 var iphreeqc = new ActiveXObject("IPhreeqcCOM.Object");
 iphreeqc.LoadDatabase("phreeqc.dat");
-iphreeqc.RunFile("ex2");
-var str = "components:\n";
-var comps = iphreeqc.<b class="bterm">GetComponentList</b>().toArray();
-for (var i in comps) {
-    str += comps[i] + "\n";
+iphreeqc.RunFile("multi_punch");
+var str = "Defined selected-output numbers:\n";
+var nums = iphreeqc.GetNthSelectedOutputUserNumberList().toArray();
+for (var i in nums) {
+    str += nums[i] + "\n";
 }
 WScript.Echo(str);</pre></div>
 
@@ -50,14 +51,14 @@ WScript.Echo(str);</pre></div>
 <div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
 <div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
   VBScript</div>
-Dim iphreeqc, comp, comps, str
+Dim iphreeqc, num, nums, str
 Set iphreeqc = CreateObject("IPhreeqcCOM.Object")
 iphreeqc.LoadDatabase("phreeqc.dat")
-iphreeqc.RunFile("ex2")
-str = "components:" & vbNewLine
-comps = iphreeqc.<b class="bterm">GetComponentList</b>()
-For Each comp in comps
-    str = str & comp & vbNewLine
+iphreeqc.RunFile("multi_punch")
+str = "Defined selected-output numbers:" & vbNewLine
+nums = iphreeqc.GetNthSelectedOutputUserNumberList()
+For Each num in nums
+    str = str & num & vbNewLine
 Next
 WScript.Echo(str)</pre></div>
 
