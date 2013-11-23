@@ -20,10 +20,10 @@ class ATL_NO_VTABLE CCOM :
 	public CComObjectRootEx<CComSingleThreadModel>,
 	public CComCoClass<CCOM, &CLSID_Object>,
 	public ISupportErrorInfo,
-	public IDispatchImpl<IPhreeqcCOM, &IID_IPhreeqcCOM, &LIBID_IPhreeqcCOM, /*wMajor =*/ 3, /*wMinor =*/ 0>,
+	public IDispatchImpl<IPhreeqcCOM, &IID_IPhreeqcCOM, &LIBID_IPhreeqcCOM, /*wMajor =*/ 4, /*wMinor =*/ 0>,
 	public IConnectionPointContainerImpl<CCOM>,
 	public CProxy_IPhreeqcEvents<CCOM>,
-	public IProvideClassInfo2Impl<&CLSID_Object, &DIID__IPhreeqcEvents, &LIBID_IPhreeqcCOM, /*wMajor =*/ 3, /*wMinor =*/ 0>   /* WScript.ConnectObject */
+	public IProvideClassInfo2Impl<&CLSID_Object, &DIID__IPhreeqcEvents, &LIBID_IPhreeqcCOM, /*wMajor =*/ 4, /*wMinor =*/ 0>   /* WScript.ConnectObject */
 {
 public:
 	CCOM()
