@@ -12,7 +12,7 @@ Language=0x409 English (United States)
 Title=IPhreeqcCOM Reference
 
 [WINDOWS]
-main=,"contents.hhc",,"html\objIPhreeqc.htm",,,,,,0x2520,,0x300e,,,,,,,,0
+main=,"contents.hhc",,"html\objIPhreeqc.htm",,,,,,0x2120,,0x300e,,,,,,,,0
 
 
 [FILES]
