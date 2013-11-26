@@ -33,9 +33,9 @@ WScript.DisconnectObject(iphreeqc);
 iphreeqc = null
 
 function iphreeqc_Callback(x1, x2, str, value) {
-	var value = -1;
-	if (str == "Year") {
-		value = year;
-		year = year + 1;
-	}
+    var value = -1;
+    if (str == "Year") {
+        value = year;
+        year = year + 1;
+    }
 }
