@@ -27,7 +27,7 @@ iphreeqc.AccumulateLine("END")
 iphreeqc.SelectedOutputFileOn = True
 
 If (iphreeqc.RunAccumulated() = 0) Then
-     WScript.Echo("See " & iphreeqc.SelectedOutputFileName & ".")
+    WScript.Echo("See " & iphreeqc.SelectedOutputFileName & ".")
 End If
 
 WScript.DisconnectObject iphreeqc
@@ -35,10 +35,9 @@ WScript.DisconnectObject iphreeqc
 Set iphreeqc = Nothing
 
 Sub iphreeqc_CallBack(x1, x2, str, value)
-	value = -1
-	If (str = "Year") Then
-		value = year
-		year = year + 1
-	End If
+    value = -1
+    If (str = "Year") Then
+        value = year
+        year = year + 1
+    End If
 End Sub
-
