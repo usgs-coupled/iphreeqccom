@@ -4,7 +4,7 @@ def RunWithCallback():
     class IPhreeqcCOMEvents:
         def __init__(self):
            self.year = 2012
-        
+
         def OnCallback(self, x1, x2, str, value):
             value = -1
             if str == "Year":
@@ -13,9 +13,9 @@ def RunWithCallback():
             return value
 
     iphreeqc = DispatchWithEvents("IPhreeqcCOM.Object", IPhreeqcCOMEvents)
-    
+
     iphreeqc.LoadDatabase("phreeqc.dat")
-    
+
     iphreeqc.AccumulateLine("SOLUTION 1-2")
     iphreeqc.AccumulateLine("END")
     iphreeqc.AccumulateLine("EQUILIBRIUM_PHASES 1")
@@ -32,9 +32,9 @@ def RunWithCallback():
     iphreeqc.AccumulateLine("RUN_CELLS")
     iphreeqc.AccumulateLine("   -cells 1-2")
     iphreeqc.AccumulateLine("END")
-    
+
     iphreeqc.SelectedOutputFileOn = True
-    
+
     if iphreeqc.RunAccumulated() == 0:
         print "see " + iphreeqc.SelectedOutputFileName + "."
 
