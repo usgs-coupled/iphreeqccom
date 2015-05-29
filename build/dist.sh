@@ -165,7 +165,7 @@ fi
 	     
 (cd "$DIST_SANDBOX" && \
  	${SVN:-svn} export -q $EXTRA_EXPORT_OPTIONS --ignore-externals -r "$REVISION" \
-	     "http://internalbrr.cr.usgs.gov/svn_GW/phreeqc/trunk/database" \
+	     "http://internalbrr.cr.usgs.gov/svn_GW/phreeqc3/trunk/database" \
 	     "$DISTNAME/IPhreeqcCOM/database")	     
 if [ $? != 0 ] ; then
   echo "svn checkout error"
