@@ -9,6 +9,9 @@
             <ComponentRef Id="phreeqc.dat_1" />
             <ComponentRef Id="phreeqc.dat_2" />
             <ComponentRef Id="runphreeqc.xls" />
+            <ComponentRef Id="runphreeqc_1.xls" />
+            <ComponentRef Id="runphreeqc_2.xls" />
+            <ComponentRef Id="runphreeqc_3.xlsm" />
             <ComponentRef Id="Gypsum.py" />
             <ComponentRef Id="parallel_advect.py" />
             <ComponentRef Id="phreeqc.dat_3" />
@@ -50,6 +53,15 @@
                         </Component>
                         <Component Id="runphreeqc.xls" Guid="*">
                             <File Id="runphreeqc.xls" KeyPath="yes" Source="$(var.ExampleDir)\com\excel\runphreeqc.xls" />
+                        </Component>
+                        <Component Id="runphreeqc_1.xls" Guid="*">
+                          <File Id="runphreeqc_1.xls" KeyPath="yes" Source="$(var.ExampleDir)\com\excel\runphreeqc_1.xls" />
+                        </Component>
+                        <Component Id="runphreeqc_2.xls" Guid="*">
+                          <File Id="runphreeqc_2.xls" KeyPath="yes" Source="$(var.ExampleDir)\com\excel\runphreeqc_2.xls" />
+                        </Component>
+                        <Component Id="runphreeqc_3.xlsm" Guid="*">
+                          <File Id="runphreeqc_3.xlsm" KeyPath="yes" Source="$(var.ExampleDir)\com\excel\runphreeqc_3.xlsm" />
                         </Component>
                     </Directory>
                     <Directory Id="python" Name="python">
