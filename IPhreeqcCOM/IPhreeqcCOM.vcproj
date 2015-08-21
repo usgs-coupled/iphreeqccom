@@ -57,7 +57,7 @@
 				Name="VCCLCompilerTool"
 				AdditionalOptions="/MP"
 				Optimization="0"
-				AdditionalIncludeDirectories="IPhreeqc;IPhreeqc/phreeqcpp;IPhreeqc/phreeqcpp/PhreeqcKeywords"
+				AdditionalIncludeDirectories="IPhreeqc;IPhreeqc/phreeqcpp;IPhreeqc/phreeqcpp/common;IPhreeqc/phreeqcpp/PhreeqcKeywords"
 				PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG;_USRDLL;_CRT_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_DEPRECATE;SWIG_SHARED_OBJ;SUPPORT_ERROR_INFO;PHREEQC_CPP;PHREEQC_CLASS;USE_PHRQ_ALLOC;MULTICHART"
 				MinimalRebuild="false"
 				BasicRuntimeChecks="0"
@@ -153,7 +153,7 @@
 				Name="VCCLCompilerTool"
 				AdditionalOptions="/MP"
 				Optimization="0"
-				AdditionalIncludeDirectories="IPhreeqc;IPhreeqc/phreeqcpp;IPhreeqc/phreeqcpp/PhreeqcKeywords"
+				AdditionalIncludeDirectories="IPhreeqc;IPhreeqc/phreeqcpp;IPhreeqc/phreeqcpp/common;IPhreeqc/phreeqcpp/PhreeqcKeywords"
 				PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG;_USRDLL;_CRT_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_DEPRECATE;SWIG_SHARED_OBJ;SUPPORT_ERROR_INFO;PHREEQC_CPP;PHREEQC_CLASS;USE_PHRQ_ALLOC;MULTICHART"
 				MinimalRebuild="false"
 				BasicRuntimeChecks="0"
@@ -250,7 +250,7 @@
 				Name="VCCLCompilerTool"
 				AdditionalOptions="/MP"
 				Optimization="2"
-				AdditionalIncludeDirectories="IPhreeqc;IPhreeqc/phreeqcpp;IPhreeqc/phreeqcpp/PhreeqcKeywords"
+				AdditionalIncludeDirectories="IPhreeqc;IPhreeqc/phreeqcpp;IPhreeqc/phreeqcpp/common;IPhreeqc/phreeqcpp/PhreeqcKeywords"
 				PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG;_USRDLL;_CRT_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_DEPRECATE;SWIG_SHARED_OBJ;SUPPORT_ERROR_INFO;PHREEQC_CPP;PHREEQC_CLASS;USE_PHRQ_ALLOC;MULTICHART"
 				RuntimeLibrary="2"
 				UsePrecompiledHeader="0"
@@ -349,7 +349,7 @@
 				Name="VCCLCompilerTool"
 				AdditionalOptions="/MP"
 				Optimization="2"
-				AdditionalIncludeDirectories="IPhreeqc;IPhreeqc/phreeqcpp;IPhreeqc/phreeqcpp/PhreeqcKeywords"
+				AdditionalIncludeDirectories="IPhreeqc;IPhreeqc/phreeqcpp;IPhreeqc/phreeqcpp/common;IPhreeqc/phreeqcpp/PhreeqcKeywords"
 				PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG;_USRDLL;_CRT_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_DEPRECATE;SWIG_SHARED_OBJ;SUPPORT_ERROR_INFO;PHREEQC_CPP;PHREEQC_CLASS;USE_PHRQ_ALLOC;MULTICHART"
 				RuntimeLibrary="2"
 				UsePrecompiledHeader="0"
@@ -1788,40 +1788,8 @@
 						</FileConfiguration>
 					</File>
 					<File
-						RelativePath=".\IPhreeqc\phreeqcpp\Parser.cxx"
+						RelativePath=".\IPhreeqc\phreeqcpp\common\Parser.cxx"
 						>
-						<FileConfiguration
-							Name="Debug|Win32"
-							>
-							<Tool
-								Name="VCCLCompilerTool"
-								UsePrecompiledHeader="0"
-							/>
-						</FileConfiguration>
-						<FileConfiguration
-							Name="Debug|x64"
-							>
-							<Tool
-								Name="VCCLCompilerTool"
-								UsePrecompiledHeader="0"
-							/>
-						</FileConfiguration>
-						<FileConfiguration
-							Name="Release|Win32"
-							>
-							<Tool
-								Name="VCCLCompilerTool"
-								UsePrecompiledHeader="0"
-							/>
-						</FileConfiguration>
-						<FileConfiguration
-							Name="Release|x64"
-							>
-							<Tool
-								Name="VCCLCompilerTool"
-								UsePrecompiledHeader="0"
-							/>
-						</FileConfiguration>
 					</File>
 					<File
 						RelativePath=".\IPhreeqc\phreeqcpp\PBasic.cpp"
@@ -1900,44 +1868,12 @@
 						</FileConfiguration>
 					</File>
 					<File
-						RelativePath=".\IPhreeqc\phreeqcpp\PHRQ_base.cxx"
+						RelativePath=".\IPhreeqc\phreeqcpp\common\PHRQ_base.cxx"
 						>
-						<FileConfiguration
-							Name="Debug|Win32"
-							>
-							<Tool
-								Name="VCCLCompilerTool"
-								UsePrecompiledHeader="0"
-							/>
-						</FileConfiguration>
-						<FileConfiguration
-							Name="Release|Win32"
-							>
-							<Tool
-								Name="VCCLCompilerTool"
-								UsePrecompiledHeader="0"
-							/>
-						</FileConfiguration>
 					</File>
 					<File
-						RelativePath=".\IPhreeqc\phreeqcpp\PHRQ_io.cpp"
+						RelativePath=".\IPhreeqc\phreeqcpp\common\PHRQ_io.cpp"
 						>
-						<FileConfiguration
-							Name="Debug|Win32"
-							>
-							<Tool
-								Name="VCCLCompilerTool"
-								UsePrecompiledHeader="0"
-							/>
-						</FileConfiguration>
-						<FileConfiguration
-							Name="Release|Win32"
-							>
-							<Tool
-								Name="VCCLCompilerTool"
-								UsePrecompiledHeader="0"
-							/>
-						</FileConfiguration>
 					</File>
 					<File
 						RelativePath=".\IPhreeqc\phreeqcpp\PHRQ_io_output.cpp"
@@ -2908,40 +2844,8 @@
 						</FileConfiguration>
 					</File>
 					<File
-						RelativePath=".\IPhreeqc\phreeqcpp\Utils.cxx"
+						RelativePath=".\IPhreeqc\phreeqcpp\common\Utils.cxx"
 						>
-						<FileConfiguration
-							Name="Debug|Win32"
-							>
-							<Tool
-								Name="VCCLCompilerTool"
-								UsePrecompiledHeader="0"
-							/>
-						</FileConfiguration>
-						<FileConfiguration
-							Name="Debug|x64"
-							>
-							<Tool
-								Name="VCCLCompilerTool"
-								UsePrecompiledHeader="0"
-							/>
-						</FileConfiguration>
-						<FileConfiguration
-							Name="Release|Win32"
-							>
-							<Tool
-								Name="VCCLCompilerTool"
-								UsePrecompiledHeader="0"
-							/>
-						</FileConfiguration>
-						<FileConfiguration
-							Name="Release|x64"
-							>
-							<Tool
-								Name="VCCLCompilerTool"
-								UsePrecompiledHeader="0"
-							/>
-						</FileConfiguration>
 					</File>
 				</Filter>
 			</Filter>
