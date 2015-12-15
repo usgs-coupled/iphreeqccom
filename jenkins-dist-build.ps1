@@ -33,6 +33,10 @@ if ([string]::IsNullOrEmpty($Env:REL) -or $Env:REL.CompareTo('HEAD') -eq 0) {
   $Env:REL = $HEAD
 }
 
+if (-Not (Test-Path .\jenkins-dist-build.ps1)) {
+  svn --config-dir C:\Users\jenkins\svn-jenkins export http://internalbrr.cr.usgs.gov/svn_GW/IPhreeqcCOM/trunk/jenkins-dist-build.ps1
+}
+
 ${Env:VER_TAG}="r$Env:REL"
 ${Env:VER_NUMTAG}="-$Env:REL"
 ${Env:VERSION_LONG}="$Env:ver_major.$Env:ver_minor.$Env:ver_patch.$Env:REL"
