@@ -1200,6 +1200,10 @@
 						</FileConfiguration>
 					</File>
 					<File
+						RelativePath=".\IPhreeqc\phreeqcpp\Dictionary.cpp"
+						>
+					</File>
+					<File
 						RelativePath=".\IPhreeqc\phreeqcpp\dumper.cpp"
 						>
 						<FileConfiguration
@@ -2217,6 +2221,10 @@
 					</File>
 					<File
 						RelativePath=".\IPhreeqc\phreeqcpp\SelectedOutput.cpp"
+						>
+					</File>
+					<File
+						RelativePath=".\IPhreeqc\phreeqcpp\Serializer.cxx"
 						>
 					</File>
 					<File
