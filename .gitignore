@@ -1,0 +1,27 @@
+
+# /
+/IPhreeqcCOM.ncb
+/IPhreeqcCOM.suo
+/ipch
+
+# /IPhreeqcCOM/
+/IPhreeqcCOM/Debug
+/IPhreeqcCOM/Release
+/IPhreeqcCOM/ReleasePS
+/IPhreeqcCOM/x64
+
+# /IPhreeqcCOM/examples/
+/IPhreeqcCOM/examples/ex2.sel
+/IPhreeqcCOM/examples/phreeqc.err
+/IPhreeqcCOM/examples/phreeqc.log
+/IPhreeqcCOM/examples/phreeqc.out
+/IPhreeqcCOM/examples/selected_1.0.out
+
+# /help/
+/help/IPhreeqcCOM.chm
+
+# /msi/
+/msi/bin
+/msi/obj
+
+# /msi/examples/
