@@ -142,18 +142,19 @@
     <!-- database -->
     <DirectoryRef Id="DatabaseDir">
       <Component Id="Databases" Guid="$(var.DatabaseGuid)" Win64="$(var.Win64)">
-        <File Id="Amm.dat"       Name="Amm.dat"       Source="$(var.DatabaseDir)\Amm.dat" />
-        <File Id="ColdChem.dat"  Name="ColdChem.dat"  Source="$(var.DatabaseDir)\ColdChem.dat" />
-        <File Id="core10.dat"    Name="core10.dat"    Source="$(var.DatabaseDir)\core10.dat" />
-        <File Id="frezchem.dat"  Name="frezchem.dat"  Source="$(var.DatabaseDir)\frezchem.dat" />
-        <File Id="iso.dat"       Name="iso.dat"       Source="$(var.DatabaseDir)\iso.dat" />
-        <File Id="llnl.dat"      Name="llnl.dat"      Source="$(var.DatabaseDir)\llnl.dat" />
-        <File Id="minteq.dat"    Name="minteq.dat"    Source="$(var.DatabaseDir)\minteq.dat" />
-        <File Id="minteq.v4.dat" Name="minteq.v4.dat" Source="$(var.DatabaseDir)\minteq.v4.dat" />
-        <File Id="phreeqc.dat"   Name="phreeqc.dat"   Source="$(var.DatabaseDir)\phreeqc.dat" />
-        <File Id="pitzer.dat"    Name="pitzer.dat"    Source="$(var.DatabaseDir)\pitzer.dat" />
-        <File Id="sit.dat"       Name="sit.dat"       Source="$(var.DatabaseDir)\sit.dat" />
-        <File Id="wateq4f.dat"   Name="wateq4f.dat"   Source="$(var.DatabaseDir)\wateq4f.dat" />
+        <File Id="Amm.dat"            Name="Amm.dat"            Source="$(var.DatabaseDir)\Amm.dat" />
+        <File Id="ColdChem.dat"       Name="ColdChem.dat"       Source="$(var.DatabaseDir)\ColdChem.dat" />
+        <File Id="core10.dat"         Name="core10.dat"         Source="$(var.DatabaseDir)\core10.dat" />
+        <File Id="frezchem.dat"       Name="frezchem.dat"       Source="$(var.DatabaseDir)\frezchem.dat" />
+        <File Id="iso.dat"            Name="iso.dat"            Source="$(var.DatabaseDir)\iso.dat" />
+        <File Id="llnl.dat"           Name="llnl.dat"           Source="$(var.DatabaseDir)\llnl.dat" />
+        <File Id="minteq.dat"         Name="minteq.dat"         Source="$(var.DatabaseDir)\minteq.dat" />
+        <File Id="minteq.v4.dat"      Name="minteq.v4.dat"      Source="$(var.DatabaseDir)\minteq.v4.dat" />
+        <File Id="phreeqc.dat"        Name="phreeqc.dat"        Source="$(var.DatabaseDir)\phreeqc.dat" />
+        <File Id="pitzer.dat"         Name="pitzer.dat"         Source="$(var.DatabaseDir)\pitzer.dat" />
+        <File Id="sit.dat"            Name="sit.dat"            Source="$(var.DatabaseDir)\sit.dat" />
+        <File Id="Tipping_Hurley.dat" Name="Tipping_Hurley.dat" Source="$(var.DatabaseDir)\Tipping_Hurley.dat" />
+        <File Id="wateq4f.dat"        Name="wateq4f.dat"        Source="$(var.DatabaseDir)\wateq4f.dat" />
       </Component>
     </DirectoryRef>
 
