@@ -1,0 +1,105 @@
+#
+# https://code.chs.usgs.gov/coupled/iphreeqccom
+#
+image: buildpack-deps:bionic-scm
+
+stages:
+  - sync
+
+before_script:
+  - eval $(ssh-agent -s)
+  - echo "${SSH_PRIVATE_KEY_ENC}" | base64 --decode | tr -d '\r' | ssh-add -
+  - mkdir -p ~/.ssh
+  - chmod 700 ~/.ssh
+  - ssh-keyscan ${CI_SERVER_HOST} >> ~/.ssh/known_hosts
+  - chmod 644 ~/.ssh/known_hosts
+  - git config --global user.email "darth@empire.com"
+  - git config --global user.name "Darth Vader"
+ 
+subtree-sync:
+  stage: sync
+
+  ##
+  ## Only run if on the master branch and the variable GROUP is set
+  ##
+  ## change this to
+  ## only:
+  ##  - master@$GROUP/iphreeqccom
+  ## and set GROUP to coupled before merge
+  only:
+    refs:
+      - master
+    variables:
+      - $GROUP
+  
+  script:
+    ##
+    ## Must re-clone in order for the subtree merge to work
+    ## tried re-setting the url for the origin but didn't work
+    ##
+    - cd ..
+    - rm -rf ${CI_PROJECT_NAME}
+    - git clone git@${CI_SERVER_HOST}:${CI_PROJECT_PATH}.git
+    - cd ${CI_PROJECT_NAME}
+
+    ##
+    ## Sync subtrees
+    ##
+    - |
+      #!/bin/bash -e
+      #
+      # IPhreeqcCOM/         git@${CI_SERVER_HOST}:${GROUP}/iphreeqccom.git
+      # ├─IPhreeqcCOM/       ├─IPhreeqcCOM
+      # │ ├─database/        │ ├─git@${CI_SERVER_HOST}:${GROUP}/subtrees/phreeqc3-database.git                                 IPhreeqcCOM/database
+      # │ └─IPhreeqc/        │ └─git@${CI_SERVER_HOST}:${GROUP}/subtrees/IPhreeqc-src.git                                      IPhreeqcCOM/IPhreeqc
+      # │   └─phreeqcpp/     │   └─git@${CI_SERVER_HOST}:${GROUP}/subtrees/phreeqc3-src.git                                    IPhreeqcCOM/IPhreeqc/phreeqcpp
+      # │     └─common/      │     └─git@${CI_SERVER_HOST}:${GROUP}/subtrees/phreeqc3-src-common.git                           IPhreeqcCOM/IPhreeqc/phreeqcpp/common
+      # ├─msi/               ├─msi
+      # │ └─examples/        │ └─examples
+      # │   ├─c/             │   ├─git@${CI_SERVER_HOST}:${GROUP}/subtrees/phreeqc-commanuscript-cgfinal-examples-c.git        msi/examples/c
+      # │   ├─com/           │   ├─git@${CI_SERVER_HOST}:${GROUP}/subtrees/phreeqc-commanuscript-cgfinal-examples-com.git      msi/examples/com
+      # │   └─fortran/       │   └─git@${CI_SERVER_HOST}:${GROUP}/subtrees/phreeqc-COMManuscript-CGfinal-examples-fortran.git  msi/examples/fortran
+      # └─phreeqc3-doc/      └─git@${CI_SERVER_HOST}:${GROUP}/subtrees/phreeqc3-doc.git                                        phreeqc3-doc
+
+      git_subtree() {
+        git subtree "${1}" --prefix="${2}" "${4}" master 2>&1 | grep -v "^[[:digit:]].*/[[:digit:]].*"
+      }
+
+      declare -A urls=( \
+        ["phreeqc3-database"]="git@${CI_SERVER_HOST}:${GROUP}/subtrees/phreeqc3-database.git" \
+        ["IPhreeqc-src"]="git@${CI_SERVER_HOST}:${GROUP}/subtrees/IPhreeqc-src.git" \
+        ["phreeqc-commanuscript-cgfinal-examples-c"]="git@${CI_SERVER_HOST}:${GROUP}/subtrees/phreeqc-commanuscript-cgfinal-examples-c.git" \
+        ["phreeqc-commanuscript-cgfinal-examples-com"]="git@${CI_SERVER_HOST}:${GROUP}/subtrees/phreeqc-commanuscript-cgfinal-examples-com.git" \
+        ["phreeqc-COMManuscript-CGfinal-examples-fortran"]="git@${CI_SERVER_HOST}:${GROUP}/subtrees/phreeqc-COMManuscript-CGfinal-examples-fortran.git" \
+        ["phreeqc3-doc"]="git@${CI_SERVER_HOST}:${GROUP}/subtrees/phreeqc3-doc.git" \
+      )
+
+      declare -A prefixes=( \
+        ["phreeqc3-database"]="IPhreeqcCOM/database" \
+        ["IPhreeqc-src"]="IPhreeqcCOM/IPhreeqc" \
+        ["phreeqc-commanuscript-cgfinal-examples-c"]="msi/examples/c" \
+        ["phreeqc-commanuscript-cgfinal-examples-com"]="msi/examples/com" \
+        ["phreeqc-COMManuscript-CGfinal-examples-fortran"]="msi/examples/fortran" \
+        ["phreeqc3-doc"]="phreeqc3-doc" \
+      )
+
+      export GIT_EDITOR=true
+
+      for remote in "${!urls[@]}"; do
+        git_subtree "pull" "${prefixes[$remote]}" "$remote" "${urls[$remote]}"
+      done
+
+      for remote in "${!urls[@]}"; do
+        git_subtree "push" "${prefixes[$remote]}" "$remote" "${urls[$remote]}"
+      done
+
+      git push origin master
+      git status
+
+## Upstream Projects
+## iphreeqc-src https://code.chs.usgs.gov/coupled/subtrees/iphreeqc-src
+## phreeqc-commanuscript-cgfinal-examples-c https://code.chs.usgs.gov/coupled/subtrees/phreeqc-commanuscript-cgfinal-examples-c
+## phreeqc-commanuscript-cgfinal-examples-com https://code.chs.usgs.gov/coupled/subtrees/phreeqc-commanuscript-cgfinal-examples-com
+## phreeqc-COMManuscript-CGfinal-examples-fortran https://code.chs.usgs.gov/coupled/subtrees/phreeqc-COMManuscript-CGfinal-examples-fortran
+## phreeqc3-database https://code.chs.usgs.gov/coupled/subtrees/phreeqc3-database
+## phreeqc3-doc https://code.chs.usgs.gov/coupled/subtrees/phreeqc3-doc
