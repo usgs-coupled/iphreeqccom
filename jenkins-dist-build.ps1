@@ -60,6 +60,8 @@ Write-Output "2 LastExitCode=$LastExitCode"
 
 # duplicate build/dist.sh
 $sed_files=@('build/version.h', `
+             'msi/examples/c/advect/README.txt', `
+             'msi/examples/fortran/advect/README.txt', `
              'phreeqc3-doc/RELEASE.TXT')
 
 foreach ($file in $sed_files) {
@@ -74,6 +76,7 @@ foreach ($file in $sed_files) {
        -replace "@VERSION_LONG@",                       "$Env:VERSION_LONG" `
        -replace "@VER_DATE@",                           "$Env:RELEASE_DATE" `
        -replace "@VERSION@",                            "$Env:VER" `
+       -replace "@REVISION@",                           "$Env:REL" `
   } | Set-Content $file
 }
 

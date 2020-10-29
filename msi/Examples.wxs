@@ -5,6 +5,7 @@
             <ComponentRef Id="advect.c" />
             <ComponentRef Id="ic" />
             <ComponentRef Id="phreeqc.dat_1" />
+            <ComponentRef Id="README.txt_1" />
             <ComponentRef Id="phreeqc.dat_2" />
             <ComponentRef Id="runphreeqc.xls" />
             <ComponentRef Id="runphreeqc_1.xls" />
@@ -18,6 +19,7 @@
             <ComponentRef Id="advect.f90" />
             <ComponentRef Id="ic_1" />
             <ComponentRef Id="phreeqc.dat_4" />
+            <ComponentRef Id="README.txt_2" />
         </ComponentGroup>
     </Fragment>
     <Fragment>
@@ -33,6 +35,9 @@
                         </Component>
                         <Component Id="phreeqc.dat_1" Guid="*">
                             <File Id="phreeqc.dat_1" KeyPath="yes" Source="$(var.ExampleDir)\c\advect\phreeqc.dat" />
+                        </Component>
+                        <Component Id="README.txt_1" Guid="*">
+                            <File Id="README.txt_1" KeyPath="yes" Source="$(var.ExampleDir)\c\advect\README.txt" />
                         </Component>
                     </Directory>
                 </Directory>
@@ -82,6 +87,9 @@
                         </Component>
                         <Component Id="phreeqc.dat_4" Guid="*">
                             <File Id="phreeqc.dat_4" KeyPath="yes" Source="$(var.ExampleDir)\fortran\advect\phreeqc.dat" />
+                        </Component>
+                        <Component Id="README.txt_2" Guid="*">
+                            <File Id="README.txt_2" KeyPath="yes" Source="$(var.ExampleDir)\fortran\advect\README.txt" />
                         </Component>
                     </Directory>
                 </Directory>
