@@ -3,8 +3,6 @@
     <Fragment>
         <ComponentGroup Id="Examples">
             <ComponentRef Id="advect.c" />
-            <ComponentRef Id="advect_c.sln" />
-            <ComponentRef Id="advect_c.vcproj" />
             <ComponentRef Id="ic" />
             <ComponentRef Id="phreeqc.dat_1" />
             <ComponentRef Id="phreeqc.dat_2" />
@@ -18,8 +16,6 @@
             <ComponentRef Id="pitzer.dat_1" />
             <ComponentRef Id="wateq4f.dat_1" />
             <ComponentRef Id="advect.f90" />
-            <ComponentRef Id="advect.sln" />
-            <ComponentRef Id="advect.vfproj" />
             <ComponentRef Id="ic_1" />
             <ComponentRef Id="phreeqc.dat_4" />
         </ComponentGroup>
@@ -31,12 +27,6 @@
                     <Directory Id="advect" Name="advect">
                         <Component Id="advect.c" Guid="*">
                             <File Id="advect.c" KeyPath="yes" Source="$(var.ExampleDir)\c\advect\advect.c" />
-                        </Component>
-                        <Component Id="advect_c.sln" Guid="*">
-                            <File Id="advect_c.sln" KeyPath="yes" Source="$(var.ExampleDir)\c\advect\advect_c.sln" />
-                        </Component>
-                        <Component Id="advect_c.vcproj" Guid="*">
-                            <File Id="advect_c.vcproj" KeyPath="yes" Source="$(var.ExampleDir)\c\advect\advect_c.vcproj" />
                         </Component>
                         <Component Id="ic" Guid="*">
                             <File Id="ic" KeyPath="yes" Source="$(var.ExampleDir)\c\advect\ic" />
@@ -86,12 +76,6 @@
                     <Directory Id="advect_1" Name="advect">
                         <Component Id="advect.f90" Guid="*">
                             <File Id="advect.f90" KeyPath="yes" Source="$(var.ExampleDir)\fortran\advect\advect.f90" />
-                        </Component>
-                        <Component Id="advect.sln" Guid="*">
-                            <File Id="advect.sln" KeyPath="yes" Source="$(var.ExampleDir)\fortran\advect\advect.sln" />
-                        </Component>
-                        <Component Id="advect.vfproj" Guid="*">
-                            <File Id="advect.vfproj" KeyPath="yes" Source="$(var.ExampleDir)\fortran\advect\advect.vfproj" />
                         </Component>
                         <Component Id="ic_1" Guid="*">
                             <File Id="ic_1" KeyPath="yes" Source="$(var.ExampleDir)\fortran\advect\ic" />
