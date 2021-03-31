@@ -1,16 +1,24 @@
-# set date
+#
+# To get the Invoke-WebRequest to work under the 'nt authority\system' account, the DOIRootCA2.cer
+# CA needs to be installed by running internet explorer as system using 'psexec -sid cmd' from
+# Sysinternals.  The -UseBasicParsing flag may also be required.
+#
+
+#
+# set DATE
+#
 if ([string]::IsNullOrEmpty($Env:DATE)) {
   $Env:DATE = date +%x
 }
-Write-Output "0 LastExitCode=$LastExitCode"
-${Env:RELEASE_DATE} = date -d ${Env:DATE} "+%B %e, %G"
+$Env:DATE = date -d $Env:DATE +%x
+$Env:RELEASE_DATE = date -d $Env:DATE "+%B %e, %G"
 
-# set ver
-${PPK}="${Env:PUBLIC}\rsa-key-20151119.ppk"
+#
+# set VER
+#
 if ([string]::IsNullOrEmpty($Env:VER)) {
-  $SRC_FILE=(plink -i ${PPK} charlton@parkplace `
-            "cd ftp/iphreeqc; ls -t IPhreeqcCOM-*-*.msi | awk '{if (NR == 1) {print}}'")
-  $v = ($SRC_FILE -replace "^IPhreeqcCOM-", "" -replace "-.*msi$", "") -split "\."
+  $request = Invoke-WebRequest https://raw.githubusercontent.com/usgs-coupled/phreeqc-version/main/phreeqc-version.txt -UseBasicParsing
+  $v = ($request.Content) -split "\."
   if ([string]::IsNullOrEmpty($v[2])) {
     $v[2] = 0
   }
@@ -26,10 +34,16 @@ else {
   $Env:ver_minor = $v[1]
   $Env:ver_patch = $v[2]
 }
-Write-Output "1 LastExitCode=$LastExitCode"
-# set HEAD
-[string]$HEAD=(-split (svn --config-dir C:\Users\jenkins\svn-jenkins st -v IPhreeqcCOM.2005.sln))[0]
-if ([string]::IsNullOrEmpty($Env:REL) -or $Env:REL.CompareTo('HEAD') -eq 0) {
+if ([string]::IsNullOrEmpty($v[0]) -or [string]::IsNullOrEmpty($v[1]) -or [string]::IsNullOrEmpty($v[2])) {
+  throw "Bad VER"
+}
+
+#
+# set REL
+#
+Invoke-WebRequest https://raw.githubusercontent.com/usgs-coupled/phreeqc-version/main/ver.py -OutFile ver.py -UseBasicParsing
+$HEAD=$(python ver.py)
+if ([string]::IsNullOrEmpty($Env:REL)) {
   $Env:REL = $HEAD
 }
 
