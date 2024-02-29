@@ -43,6 +43,19 @@
 
 The following example creates an IPhreeqcCOM object, loads the <b class="bterm"><I>phreeqc.dat</I></b> &nbsp;database and runs the <b class="bterm"><I><a class="ofvbanavex" href="ex1.htm">ex1</a></I></b> &nbsp;example.
 
+<!-- Powershell Example -->
+<div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
+<div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
+  Powershell</div>
+  [System.IO.Directory]::SetCurrentDirectory("$(Get-Location)")
+  $iphreeqc = New-Object -ComObject IPhreeqcCOM.Object
+  $iphreeqc.LoadDatabase("phreeqc.dat")
+  $iphreeqc.OutputFileOn = $true
+  $iphreeqc.OutputFileName = "ex1.out"
+  if ($iphreeqc.RunFile("ex1") -eq 0) {
+      Write-Host "see $($iphreeqc.OutputFileName)."
+  }</pre></div>
+  
 <!-- JScript Example -->
 <div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
 <div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
@@ -57,7 +70,7 @@ if (iphreeqc.RunFile("ex1") == 0) {
 <!-- VBScript Example -->
 <div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
 <div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
-  VBScript</div>
+  VBScript (Deprecated)</div>
 Dim iphreeqc
 Set iphreeqc = CreateObject("IPhreeqcCOM.Object")
 iphreeqc.LoadDatabase("phreeqc.dat")
