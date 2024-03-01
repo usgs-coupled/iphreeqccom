@@ -34,6 +34,25 @@
 <!-- Example -->
 <h2><a id="#example" name="#example">Example</a></h2><p>This example runs the <b class="bterm"><I><a class="ofvbanavex" href="ex2.htm">ex2</a></I></b> &nbsp;input file and writes the selected-output array to stdout.</p>
 
+<!-- Powershell Example -->
+<div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
+<div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
+  Powershell</div>
+[System.IO.Directory]::SetCurrentDirectory("$(Get-Location)")
+$iphreeqc = New-Object -ComObject IPhreeqcCOM.Object
+$iphreeqc.LoadDatabase("phreeqc.dat") | Out-Null
+$iphreeqc.RunFile("ex2") | Out-Null
+
+$arr = $iphreeqc.GetSelectedOutputArray()
+$selout = "selected-output:`n"
+foreach($i in 0..$arr.GetUpperBound(0)) {
+    foreach($j in 0..$arr.GetUpperBound(1)) {
+        $selout += "$($arr[$i, $j]) "
+    }
+    $selout += "`n"
+}
+Write-Host $selout</pre></div>
+
 <!-- JScript Example -->
 <div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
 <div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
@@ -56,7 +75,7 @@ WScript.Echo(selout);</pre></div>
 <!-- VBScript Example -->
 <div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
 <div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
-  VBScript (Deprecated)</div>
+  VBScript</div>
 Dim iphreeqc, arr, selout, i, j
 Set iphreeqc = CreateObject("IPhreeqcCOM.Object")
 iphreeqc.LoadDatabase("phreeqc.dat")
