@@ -31,6 +31,18 @@
 <!-- Example -->
 <h2><a id="#example" name="#example">Example</a></h2><p>This example reads the <b class="bterm"><I>phreeqc.dat</I></b> &nbsp;database into a <b class="bterm">String</b> and loads it into the IPhreeqcCOM object.</p>
 
+<!-- Powershell Example -->
+<div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
+<div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
+  Powershell</div>
+$strDB = Get-Content -Path .\phreeqc.dat -Raw
+$iphreeqc = New-Object -ComObject IPhreeqcCOM.Object
+if ($iphreeqc.LoadDatabaseString($strDB) -eq 0) {
+    Write-Host "database ok"
+} else {
+    Write-Host "database contains errors"
+}</pre></div>
+
 <!-- JScript Example -->
 <div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
 <div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
