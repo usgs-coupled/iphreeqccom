@@ -34,8 +34,25 @@
 <div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
 <div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
   Powershell</div>
-xxxPASTE_HERExxx
-</pre></div>
+[System.IO.Directory]::SetCurrentDirectory($PSScriptRoot)
+$iphreeqc = New-Object -ComObject IPhreeqcCOM.Object
+$iphreeqc.LoadDatabase("phreeqc.dat") | Out-Null
+$iphreeqc.DumpFileOn = $true
+
+$in = ""
+$in += "SOLUTION 1 Pure water     `n"
+$in += "EQUILIBRIUM_PHASES 1      `n"
+$in += "    Calcite 0 10          `n"
+$in += "SAVE solution 1           `n"
+$in += "SAVE equilibrium_phases 1 `n"
+$in += "DUMP                      `n"
+$in += "    -solution 1           `n"
+$in += "    -equilibrium_phases  1`n"
+
+if ($iphreeqc.RunString($in) -ne 0) {
+    Write-Host $iphreeqc.GetErrorString()
+}
+Write-Host "see $($iphreeqc.<b class="bterm">DumpFileName</b>)."</pre></div>
 
 <!-- JScript Example -->
 <div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>

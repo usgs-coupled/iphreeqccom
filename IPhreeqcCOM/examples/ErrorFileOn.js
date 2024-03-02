@@ -3,6 +3,6 @@ try {
     iphreeqc.ErrorFileOn = true;
     iphreeqc.RunFile("ex1");
 }
-catch(e) {
-    WScript.Echo("See phreeqc.err");
+catch (e) {
+    WScript.Echo("See " + iphreeqc.ErrorFileName + ".");
 }

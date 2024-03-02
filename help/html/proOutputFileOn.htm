@@ -20,7 +20,7 @@
 </DIV>
 
 <!-- Description -->
-<p><b class="bterm">True</b> to turn on output to the <b class="bterm"><I>phreeqc.out</I></b> &nbsp;file. The initial setting is <b class="bterm">False</b>. Read/write <b class="bterm">Boolean</b>.</p>
+<p><b class="bterm">True</b> to turn on output to the <b class="bterm"><I>phreeqc.id.out</I></b> &nbsp;file. The initial setting is <b class="bterm">False</b>. Read/write <b class="bterm">Boolean</b>.</p>
 
 <!-- Remarks -->
 <h2>Remarks</h2>
@@ -28,14 +28,18 @@
 
 <!-- Example -->
 <h2><a id="#example" name="#example">Example</a></h2>
-<p>This example runs <b class="bterm"><I><a class="ofvbanavex" href="ex2.htm">ex2</a></I></b> &nbsp;with the <b class="bterm"><I>phreeqc.out</I></b> &nbsp;file turned on.</p>
+<p>This example runs <b class="bterm"><I><a class="ofvbanavex" href="ex2.htm">ex2</a></I></b> &nbsp;with the <b class="bterm"><I>phreeqc.id.out</I></b> &nbsp;file turned on.</p>
 
 <!-- Powershell Example -->
 <div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
 <div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
   Powershell</div>
-PASTE_HERE
-</pre></div>
+[System.IO.Directory]::SetCurrentDirectory($PSScriptRoot)
+$iphreeqc = New-Object -ComObject IPhreeqcCOM.Object
+$iphreeqc.LoadDatabase("phreeqc.dat") | Out-Null
+$iphreeqc.<b class="bterm">OutputFileOn</b> = $true
+$iphreeqc.RunFile("ex2") | Out-Null
+Write-Host "see $($iphreeqc.OutputFileName)"</pre></div>
 
 <!-- JScript Example -->
 <div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
@@ -45,7 +49,7 @@ var iphreeqc = new ActiveXObject("IPhreeqcCOM.Object");
 iphreeqc.LoadDatabase("phreeqc.dat");
 iphreeqc.<b class="bterm">OutputFileOn</b> = true;
 iphreeqc.RunFile("ex2");
-WScript.Echo("see phreeqc.out");</pre></div>
+WScript.Echo("see " + iphreeqc.OutputFileName);</pre></div>
 
 <!-- VBScript Example -->
 <div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
@@ -56,7 +60,7 @@ Set iphreeqc = CreateObject("IPhreeqcCOM.Object")
 iphreeqc.LoadDatabase("phreeqc.dat")
 iphreeqc.<b class="bterm">OutputFileOn</b> = True
 iphreeqc.RunFile("ex2")
-WScript.Echo("see phreeqc.out")</pre></div>
+WScript.Echo("see " & iphreeqc.OutputFileName)</pre></div>
 
 <!-- Script -->
 <script type="text/javascript" language="JScript" src="ofvbanl.js"></script>
