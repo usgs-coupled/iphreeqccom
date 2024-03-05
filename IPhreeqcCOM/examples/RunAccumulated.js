@@ -20,4 +20,3 @@ iphreeqc.AccumulateLine("END");
 if (iphreeqc.RunAccumulated() == 0) {
     WScript.Echo("see " + iphreeqc.OutputFileName + ".");
 }
-

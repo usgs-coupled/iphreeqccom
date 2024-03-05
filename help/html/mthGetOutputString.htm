@@ -34,6 +34,24 @@
 <!-- Example -->
 <h2><a id="#example" name="#example">Example</a></h2><p>This example equilibrates pure water with calcite and displays the results.</p>
 
+<!-- Powershell Example -->
+<div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
+<div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
+  Powershell</div>
+[System.IO.Directory]::SetCurrentDirectory($PSScriptRoot)
+$iphreeqc = New-Object -ComObject IPhreeqcCOM.Object
+$iphreeqc.LoadDatabase("phreeqc.dat") | Out-Null
+$iphreeqc.OutputStringOn = $true
+
+$in = ""
+$in += "SOLUTION 1 Pure water     `n"
+$in += "EQUILIBRIUM_PHASES 1      `n"
+$in += "    Calcite 0 10          `n"
+
+if ($iphreeqc.RunString($in) -eq 0) {
+    Write-Host $iphreeqc.<b class="bterm">GetOutputString</b>()
+}</pre></div>
+
 <!-- JScript Example -->
 <div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
 <div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
@@ -54,7 +72,7 @@ if (iphreeqc.RunString(input) == 0) {
 <!-- VBScript Example -->
 <div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
 <div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
-  VBScript</div>
+  VBScript (Deprecated)</div>
 Dim iphreeqc, sInput
 
 Set iphreeqc = CreateObject("IPhreeqcCOM.Object")

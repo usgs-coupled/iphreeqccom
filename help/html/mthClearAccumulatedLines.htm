@@ -27,6 +27,18 @@
 <!-- Example -->
 <h2><a id="#example" name="#example">Example</a></h2><p>This example loads some keyword input, clears the input, and displays the results.</p>
 
+<!-- Powershell Example -->
+<div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
+<div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
+  Powershell</div>
+$iphreeqc = New-Object -ComObject IPhreeqcCOM.Object
+$iphreeqc.AccumulateLine("SOLUTION 1")
+$iphreeqc.AccumulateLine("END")
+Write-Host "The accumulated input is:`n$($iphreeqc.Lines)"
+$iphreeqc.<b class="bterm">ClearAccumulatedLines</b>()
+Write-Host "The accumulated input now is:`n$($iphreeqc.Lines)"</pre></div>
+
+
 <!-- JScript Example -->
 <div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
 <div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
@@ -42,7 +54,7 @@ WScript.Echo("The accumulated input now is:\n" + iphreeqc.<b class="bterm">Lines
 <!-- VBScript Example -->
 <div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
 <div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
-  VBScript</div>
+  VBScript (Deprecated)</div>
 Dim iphreeqc
 Set iphreeqc = CreateObject("IPhreeqcCOM.Object")
 iphreeqc.AccumulateLine("SOLUTION 1")

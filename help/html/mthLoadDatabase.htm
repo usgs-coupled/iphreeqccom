@@ -32,6 +32,18 @@
 <h2><a id="#example" name="#example">Example</a></h2>
 <p>This example loads the <b class="bterm"><I>phreeqc.dat</I></b> &nbsp;database into the IPhreeqcCOM object.</p>
 
+<!-- Powershell Example -->
+<div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
+<div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
+  Powershell</div>
+[System.IO.Directory]::SetCurrentDirectory($PSScriptRoot)
+$iphreeqc = New-Object -ComObject IPhreeqcCOM.Object
+if ($iphreeqc.<b class="bterm">LoadDatabase</b>("phreeqc.dat") -eq 0) {
+    Write-Host "database ok"
+} else {
+    Write-Host "database contains errors"
+}</pre></div>
+
 <!-- JScript Example -->
 <div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
 <div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
@@ -47,7 +59,7 @@ if (iphreeqc.<b class="bterm">LoadDatabase</b>("phreeqc.dat") == 0) {
 <!-- VBScript Example -->
 <div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
 <div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
-  VBScript</div>
+  VBScript (Deprecated)</div>
 Dim iphreeqc
 Set iphreeqc = CreateObject("IPhreeqcCOM.Object")
 If (iphreeqc.<b class="bterm">LoadDatabase</b>("phreeqc.dat") = 0) Then

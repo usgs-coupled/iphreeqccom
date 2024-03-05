@@ -23,6 +23,22 @@
 <h2><a id="#example" name="#example">Example</a></h2>
 <p>This example runs <b class="bterm"><I><a class="ofvbanavex" href="ex2.htm">ex2</a></I></b> &nbsp;with the <b class="bterm"><I>phreeqc.log</I></b> &nbsp;file turned on.</p>
 
+<!-- Powershell Example -->
+<div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
+<div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
+  Powershell</div>
+[System.IO.Directory]::SetCurrentDirectory($PSScriptRoot)
+$iphreeqc = New-Object -ComObject IPhreeqcCOM.Object
+$iphreeqc.LoadDatabase("phreeqc.dat") | Out-Null
+
+# turn logging on
+$iphreeqc.AccumulateLine("KNOBS; -logfile true")
+$iphreeqc.RunAccumulated() | Out-Null
+
+$iphreeqc.<b class="bterm">LogFileOn</b> = $true
+$iphreeqc.RunFile("ex2") | Out-Null
+Write-Host "See $($iphreeqc.LogFileName)."</pre></div>
+
 <!-- JScript Example -->
 <div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
 <div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
@@ -36,12 +52,12 @@ iphreeqc.RunAccumulated();
 
 iphreeqc.<b class="bterm">LogFileOn</b> = true;
 iphreeqc.RunFile("ex2");
-WScript.Echo("see phreeqc.log");</pre></div>
+WScript.Echo("see " + iphreeqc.LogFileName);</pre></div>
 
 <!-- VBScript Example -->
 <div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
 <div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
-  VBScript</div>
+  VBScript (Deprecated)</div>
 Dim iphreeqc
 Set iphreeqc = CreateObject("IPhreeqcCOM.Object")
 iphreeqc.LoadDatabase("phreeqc.dat")
@@ -52,7 +68,7 @@ iphreeqc.RunAccumulated()
 
 iphreeqc.<b class="bterm">LogFileOn</b> = True
 iphreeqc.RunFile("ex2")
-WScript.Echo("see phreeqc.log")</pre></div>
+WScript.Echo("see " & iphreeqc.LogFileName)</pre></div>
 
 <!-- Script -->
 <script type="text/javascript" language="JScript" src="ofvbanl.js"></script><span id="ofVBAISpan" class="ofvbaispan"><iframe id="ofVBAIFrame" frameborder="0" marginheight="0" marginwidth="4" scrolling="auto" width="100%" src="../links/proLogFileOn_l.htm"></iframe>

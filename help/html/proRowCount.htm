@@ -30,6 +30,17 @@
 <h2><a id="#example" name="#example">Example</a></h2>
 <p>This example runs <b class="bterm"><I><a class="ofvbanavex" href="ex2.htm">ex2</a></I></b> &nbsp;and displays the number of rows in the selected-output array.</p>
 
+<!-- Powershell Example -->
+<div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
+<div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
+  Powershell</div>
+[System.IO.Directory]::SetCurrentDirectory($PSScriptRoot)
+$iphreeqc = New-Object -ComObject IPhreeqcCOM.Object
+$iphreeqc.LoadDatabase("phreeqc.dat") | Out-Null
+$iphreeqc.RunFile("ex2") | Out-Null
+Write-Host(-join("The current selected-output array contains ", `
+    "$($iphreeqc.<b class="bterm">RowCount</b>) rows."))</pre></div>
+
 <!-- JScript Example -->
 <div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
 <div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
@@ -44,7 +55,7 @@ WScript.Echo("The current selected-output array contains " +
 <!-- VBScript Example -->
 <div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
 <div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
-  VBScript</div>
+  VBScript (Deprecated)</div>
 Dim iphreeqc
 Set iphreeqc = CreateObject("IPhreeqcCOM.Object")
 iphreeqc.LoadDatabase("phreeqc.dat")

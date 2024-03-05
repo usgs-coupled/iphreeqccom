@@ -29,6 +29,31 @@
 <h2><a id="#example" name="#example">Example</a></h2>
 <p>This example runs the <b class="bterm"><I><a class="ofvbanavex" href="multi_punch.htm">multi_punch</a></I></b> &nbspinput file and writes the selected-output to multiple files.</p>
 
+<!-- Powershell Example -->
+<div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
+<div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
+  Powershell</div>
+[System.IO.Directory]::SetCurrentDirectory($PSScriptRoot)
+$iphreeqc = New-Object -ComObject IPhreeqcCOM.Object
+$iphreeqc.LoadDatabase("phreeqc.dat") | Out-Null
+$iphreeqc.RunFile("multi_punch") | Out-Null
+
+$fso = New-Object -ComObject Scripting.FileSystemObject
+$nums = $iphreeqc.GetNthSelectedOutputUserNumberList()
+foreach($num in $nums) {
+    $ts = $fso.CreateTextFile("sel_out.$num.out", $true)
+
+    $iphreeqc.CurrentSelectedOutputUserNumber = $num
+    $arr = $iphreeqc.GetSelectedOutputArray()
+    for ($i = 0; $i -lt $iphreeqc.RowCount; ++$i) {
+        for ($j = 0; $j -lt $iphreeqc.ColumnCount; ++$j) {
+            $ts.Write("$($arr[$i, $j]),")
+        }
+        $ts.WriteLine()
+    }
+    $ts.Close()
+}</pre></div>
+
 <!-- JScript Example -->
 <div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
 <div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
@@ -59,7 +84,7 @@ for (var i in nums) {
 <!-- VBScript Example -->
 <div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
 <div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
-  VBScript</div>
+  VBScript (Deprecated)</div>
 Dim iphreeqc, fso, num, nums, arr
 
 Set iphreeqc = CreateObject("IPhreeqcCOM.Object")

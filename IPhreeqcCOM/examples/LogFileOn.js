@@ -7,4 +7,4 @@ iphreeqc.RunAccumulated();
 
 iphreeqc.LogFileOn = true;
 iphreeqc.RunFile("ex2");
-WScript.Echo("see phreeqc.log");
+WScript.Echo("see " + iphreeqc.LogFileName);

@@ -122,7 +122,7 @@ def RunWithCallback():
     iphreeqc.AccumulateLine("USER_PUNCH")
     iphreeqc.AccumulateLine("   -Heading  pH  SR(calcite)  Year")
     iphreeqc.AccumulateLine("   10 PUNCH -LA(\"H+\"), SR(\"calcite\")")
-    iphreeqc.AccumulateLine("   20 PUNCH CALLBACK(cell_no, -LA(\"H+\"), \"Year\")")
+    iphreeqc.AccumulateLine("   20 PUNCH <b class="bterm">CALLBACK</b>(cell_no, -LA(\"H+\"), \"Year\")")
     iphreeqc.AccumulateLine("END")
     iphreeqc.AccumulateLine("RUN_CELLS")
     iphreeqc.AccumulateLine("   -cells 1-2")
@@ -139,7 +139,7 @@ if __name__ == '__main__':
 <!-- VBScript Example -->
 <div style="background-color:#ddd;padding-top:0px;padding-left:3px;padding-right:3px;padding-bottom:0px"><pre>
 <div style="background-color:#ddd;padding-top:3px;padding-left:3px;padding-right:3px;padding-bottom:3px;white-space:nowrap;border-bottom:solid 1px #aaa;height:15px;word-spacing:normal;letter-spacing:normal">
-  VBScript</div>
+  VBScript (Deprecated)</div>
 Dim iphreeqc, year
 
 Set iphreeqc = CreateObject("IPhreeqcCOM.Object")
