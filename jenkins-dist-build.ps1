@@ -48,13 +48,14 @@ Invoke-WebRequest https://raw.githubusercontent.com/usgs-coupled/phreeqc-version
 $HEAD=$(python rel.py)
 if ([string]::IsNullOrEmpty($Env:REL)) {
   $Env:REL = $HEAD
+  $Env:MSI_PATCH = $Env:REL -replace '-.*', ''
 }
 
 ${Env:VER_TAG}="r$Env:REL"
 ${Env:VER_NUMTAG}="-$Env:REL"
 ${Env:VERSION_LONG}="$Env:ver_major.$Env:ver_minor.$Env:ver_patch.$Env:REL"
 ${Env:VER_UC}="$Env:ver_major.$Env:ver_minor.$Env:ver_patch.$Env:REL"
-${Env:MSI_VERSION}="$Env:ver_major.$Env:ver_minor.$Env:REL"
+${Env:MSI_VERSION}="$Env:ver_major.$Env:ver_minor.$Env:MSI_PATCH"
 ${Env:FULLPKG}="$Env:NAME-$Env:VER-$Env:REL"
 ${Env:DOWNLOADS}="${Env:PUBLIC}\Downloads"
 
@@ -86,7 +87,7 @@ foreach ($file in $sed_files) {
     $_ -replace "(#define *VER_MAJOR\s*)[0-9]*",        "`${1}$Env:ver_major" `
        -replace "(#define *VER_MINOR\s*)[0-9]*",        "`${1}$Env:ver_minor" `
        -replace "(#define *VER_PATCH\s*)[0-9]*",        "`${1}$Env:ver_patch" `
-       -replace "(#define *VER_REVISION\s*)[0-9]*",     "`${1}$Env:REL" `
+       -replace "(#define *VER_REVISION\s*)[0-9]*",     "`${1}$Env:MSI_PATCH" `
        -replace "@RELEASE_DATE@",                       "$Env:RELEASE_DATE" `
        -replace "@PHREEQC_VER@",                        "$Env:VER" `
        -replace "@PHREEQC_DATE@",                       "$Env:RELEASE_DATE" `
