@@ -51,9 +51,9 @@ Invoke-WebRequest https://raw.githubusercontent.com/usgs-coupled/phreeqc-version
 $HEAD=$(python rel.py)
 if ([string]::IsNullOrEmpty($Env:REL)) {
   $Env:REL = $HEAD
-  $Env:MSI_PATCH = $Env:REL -replace '-.*', ''
 }
 
+${Env:MSI_PATCH}=$Env:REL -replace '-.*', ''
 ${Env:VER_TAG}="r$Env:REL"
 ${Env:VER_NUMTAG}="-$Env:REL"
 ${Env:VERSION_LONG}="$Env:ver_major.$Env:ver_minor.$Env:ver_patch.$Env:REL"
@@ -70,6 +70,7 @@ Write-Output "Env:ver_major=$Env:ver_minor"
 Write-Output "Env:ver_major=$Env:ver_patch"
 Write-Output "Env:VER=$Env:VER"
 Write-Output "Env:REL=$Env:REL"
+Write-Output "Env:MSI_PATCH=$Env:MSI_PATCH"
 Write-Output "Env:VER_TAG=$Env:VER_TAG"
 Write-Output "Env:VER_NUMTAG=$Env:VER_NUMTAG"
 Write-Output "Env:VERSION_LONG=$Env:VERSION_LONG"
