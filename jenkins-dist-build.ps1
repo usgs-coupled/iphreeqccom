@@ -117,9 +117,9 @@ Invoke-Expression "$MsBuild $opts_win32"
 Invoke-Expression "$MsBuild $opts_x64"
 
 # build IPhreeqcCOM.msi
-[string]$opts_msi="IPhreeqcCOM.2005.sln /t:msi /p:Configuration=Release /p:Platform=Win32 /p:TargetName=$Env:FULLPKG-win32 /p:Major=$Env:ver_major /p:Minor=$Env:ver_minor /p:Patch=$Env:ver_patch /p:Build=$Env:REL /p:ExampleDir=examples"
+[string]$opts_msi="IPhreeqcCOM.2005.sln /t:msi /p:Configuration=Release /p:Platform=Win32 /p:TargetName=$Env:FULLPKG-win32 /p:Major=$Env:ver_major /p:Minor=$Env:ver_minor /p:Patch=$Env:ver_patch /p:Build=$Env:MSI_PATCH /p:ExampleDir=examples"
 Invoke-Expression "$MsBuild $opts_msi"
 
 # build IPhreeqcCOMx64.msi
-[string]$opts_msi_x64="IPhreeqcCOM.2005.sln /t:msi /p:Configuration=Release /p:Platform=x64 /p:TargetName=$Env:FULLPKG-x64 /p:Major=$Env:ver_major /p:Minor=$Env:ver_minor /p:Patch=$Env:ver_patch /p:Build=$Env:REL /p:ExampleDir=examples"
+[string]$opts_msi_x64="IPhreeqcCOM.2005.sln /t:msi /p:Configuration=Release /p:Platform=x64 /p:TargetName=$Env:FULLPKG-x64 /p:Major=$Env:ver_major /p:Minor=$Env:ver_minor /p:Patch=$Env:ver_patch /p:Build=$Env:MSI_PATCH /p:ExampleDir=examples"
 Invoke-Expression "$MsBuild $opts_msi_x64"
