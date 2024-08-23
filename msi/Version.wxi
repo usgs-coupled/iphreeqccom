@@ -13,7 +13,7 @@
   <?define Manufacturer="U.S. Geological Survey"?>
 <?if $(sys.BUILDARCH)=x64 ?>
   <?define UpgradeGuid="{42FC55D6-2BAA-4b1e-A6F0-F580D60549AF}"?>
-  <?define DatabaseGuid="{259B03E9-487D-4762-BF62-46FBC110A8BF}"?>
+  <?define DatabaseGuid="{21C2FFFF-2BAA-4C3D-BF26-0674A85E31AE}"?>
   <?define Description="USGS $(var.Name) x64 $(var.Major).$(var.Minor).$(var.Patch)-$(var.Build) Installer"?>
   <?define FeatureTitle="$(var.Name) x64 $(var.Major).$(var.Minor).$(var.Patch)-$(var.Build)"?>
   <?define FullName="$(var.Name) x64 $(var.Major).$(var.Minor).$(var.Patch)-$(var.Build)"?>
@@ -24,7 +24,7 @@
   <?define Win64="yes"?>
 <?else?>
   <?define UpgradeGuid="{A9DFCAEA-D23A-44a2-AC9B-A471A723E8E7}"?>
-  <?define DatabaseGuid="{E786B948-DC4D-42d0-9EA5-AC3397254D59}"?>
+  <?define DatabaseGuid="{B01068C2-6031-4029-83C0-0A50879FBBF4}"?>
   <?define Description="USGS $(var.Name) $(var.Major).$(var.Minor).$(var.Patch)-$(var.Build) Installer"?>
   <?define FeatureTitle="$(var.Name) $(var.Major).$(var.Minor).$(var.Patch)-$(var.Build)"?>
   <?define FullName="$(var.Name) $(var.Major).$(var.Minor).$(var.Patch)-$(var.Build)"?>
