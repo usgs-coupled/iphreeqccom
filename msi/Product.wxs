@@ -159,6 +159,7 @@
         <File Id="PHREEQC_ThermoddemV1.10_15Dec2020.dat" Name="PHREEQC_ThermoddemV1.10_15Dec2020.dat" Source="$(var.DatabaseDir)\PHREEQC_ThermoddemV1.10_15Dec2020.dat" />
         <File Id="pitzer.dat"                            Name="pitzer.dat"                            Source="$(var.DatabaseDir)\pitzer.dat" />
         <File Id="sit.dat"                               Name="sit.dat"                               Source="$(var.DatabaseDir)\sit.dat" />
+        <File Id="stimela.dat"                           Name="stimela.dat"                           Source="$(var.DatabaseDir)\stimela.dat" />
         <File Id="Tipping_Hurley.dat"                    Name="Tipping_Hurley.dat"                    Source="$(var.DatabaseDir)\Tipping_Hurley.dat" />
         <File Id="wateq4f.dat"                           Name="wateq4f.dat"                           Source="$(var.DatabaseDir)\wateq4f.dat" />
       </Component>
